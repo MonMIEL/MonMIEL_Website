@@ -12,6 +12,15 @@ header {
 section {
 	margin: 0 auto;
 	width: 960px;
+	background-color: rgba(255, 255, 255, 0.5);
+	/*border-radius*/
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+    border-radius:15px;
+}
+
+section h1 {
+
 }
 
 footer {
