@@ -1,0 +1,10 @@
+body {
+	/* background: url("img/bg_fondbleu.jpg") repeat-x #4572A7; */
+	background-color: #C9CBCF;
+}
+
+#header {
+	margin: 0 auto;
+	width: 978px;
+	height: 133px;
+}
