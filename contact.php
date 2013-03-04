@@ -31,7 +31,7 @@ if (isset($_POST['envoye']))
     /* Si le formulaire n'est pas posté de notre site on renvoie
     * vers la page d'accueil */
     if($_SERVER['HTTP_REFERER'] != 'http://localhost/')
-    {
+    { 
         header('Location: http://localhost/');
     }
     /* On vérifie que tous les champs sont remplis */
