@@ -1,4 +1,4 @@
-<div id="menu">
+<nav>
     <ul>
         <li>Accueil</li>
         <li>Problématique</li>
@@ -6,4 +6,4 @@
         <li>Liens utiles</li>
         <li>Contact</li>
     </ul>
-</div>
+</nav>

@@ -5,11 +5,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-    <?php include("header.php"); ?>
+	<header>
+		<img src="img/header.png" alt="" />
+	</header>
 
-    <?php include("menu.php"); ?>
+	<nav>
+		<ul>
+			<li>Accueil</li>
+			<li>Problématique</li>
+			<li>Simulez votre mix</li>
+			<li>Liens utiles</li>
+			<li>Contact</li>
+		</ul>
+	</nav>
 
-    <div id="contenu">
+	<section>
         <form id=contact>
             <fieldset>
                 <legend>Formulaire de contact</legend>
@@ -34,6 +44,8 @@
         </form>
     </div>
 
-    <?php include("footer.php"); ?>
+	<footer>
+		
+	</footer>
 </body>
 </html>
