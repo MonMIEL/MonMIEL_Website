@@ -3,8 +3,18 @@ body {
 	background-color: #C9CBCF;
 }
 
-#header {
+header {
 	margin: 0 auto;
 	width: 978px;
 	height: 133px;
+}
+
+section {
+	margin: 0 auto;
+	width: 960px;
+}
+
+footer {
+	margin: 0 auto;
+	width: 960px;
 }
