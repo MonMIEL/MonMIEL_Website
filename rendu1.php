@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
-
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="js/bootstrap.js"></script>
 		
 		<script src="js/highchart/highcharts.js"></script>
@@ -105,6 +105,7 @@
 		<section>
 			<div id="consommation">
 				<h1>Consommation</h1>
+				 <div id="chart_conso" class="chart"></div>
 			</div>
 
 			<div id="parc">
