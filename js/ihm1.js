@@ -4,10 +4,19 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2012, Script Tutorials
  * http://www.script-tutorials.com/
  */
+var anneeRef;
+function showDivScenario(anneeRef1){
+    document.getElementById('Scenario').style.display = "block";
+    anneeRef=anneeRef1;
+    var name1="dsf ";
+    alert(anneeRef);
+    //chart_Scenario.series.chart.series.data[0].name=name1;
+    //chart_Scenario.series.chart.setTitle({text: "New Title"});
+}
 
 // Change Chart type function
 function ChangeChartType(chart, series, newType) {
@@ -16,14 +25,14 @@ function ChangeChartType(chart, series, newType) {
         var srs = series[0];
         try {
             srs.chart.addSeries({
-                type: newType,
-                stack: srs.stack,
-                yaxis: srs.yaxis,
-                name: srs.name,
-                color: srs.color,
-                data: srs.options.data
-            },
-            false);
+                    type: newType,
+                    stack: srs.stack,
+                    yaxis: srs.yaxis,
+                    name: srs.name,
+                    color: srs.color,
+                    data: srs.options.data
+                },
+                false);
             series[0].remove();
         } catch (e) {
         }
@@ -32,7 +41,6 @@ function ChangeChartType(chart, series, newType) {
 
 // Two charts definition
 var chart_Scenario, chart2, chart3;
-
 // Once DOM (document) is finished loading
 $(document).ready(function() {
 
@@ -52,18 +60,18 @@ $(document).ready(function() {
             enabled: false
         },
         /*labels: {
-            items: [{
-                html: 'helloTest',
-                style:{
-                    left: '100px',
-                    top: '100px'
-                }
-            }],
-            style: null
-        },*/
+         items: [{
+         html: 'helloTest',
+         style:{
+         left: '100px',
+         top: '100px'
+         }
+         }],
+         style: null
+         },*/
         /*title: {
-            text: 'Fruit Consumption'
-        },*/
+         text: 'Fruit Consumption'
+         },*/
         xAxis: {
             title: {
                 text: 'Année'
@@ -81,19 +89,19 @@ $(document).ready(function() {
         },
         series: [
             {
-            name: 'Quantité',
-            data: [{
-                name: 'Consommation en 2012',
-                color: '#00FF00',
-                x: 2012,
-                y: 100
-            }, {//Prévention de la consommation énergétique
-                name: 'Consommation en 2050',
-                color: '#FF00FF',
-                x: 2050,
-                y: 1000
+                name: 'Quantité',
+                data: [{
+                    name: anneeRef,
+                    color: '#00FF00',
+                    x: 2012,
+                    y: 100
+                }, {//Prévention de la consommation énergétique
+                    name: 'Consommation en 2050',
+                    color: '#FF00FF',
+                    x: 2050,
+                    y: 1000
+                }]
             }]
-        }]
 
     });
 
@@ -130,8 +138,8 @@ $(document).ready(function() {
                 showInLegend: true
             }
         },
-         series: [{
-         type: 'pie',
+        series: [{
+            type: 'pie',
             name: 'Dev #1',
             data: [
                 ['Processing.js', 5],
@@ -145,7 +153,7 @@ $(document).ready(function() {
                 ['Canvas', 80],
                 ['Javascript', 90]
             ]
-         }]
+        }]
     });
 
     chart3 = new Highcharts.Chart({

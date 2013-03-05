@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ihm1.css">
 
     <!-- add scripts -->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -28,40 +29,42 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/highchart/highcharts.js"></script>
     <script src="js/highchart/gray.js"></script>
-    <script src="js/highchart/main.js"></script>
-
+    <script src="js/ihm1.js"></script>
 </head>
 <body>
     <?php include("header.php"); ?>
     <?php include("menu.php"); ?>
 
     <?php
-        $var_anneeRef = 2012;
+        $var_anneeRef = 2011;
         // $$var_anneeRef contient la valeur numérique de l'année de référence entrée par l'utilisateur
     ?>
     <!-- Chart type switchers -->
-        <div class="actions">
-            <button class="switcher" id="column">column</button>
-            <button class="switcher" id="area">area</button>
-            <button class="switcher" id="line">line</button>
-            <button class="switcher" id="spline">Spine</button>
-            <button class="switcher" id="areaspline">areaspline</button>
-        </div>
-        <section>
+    <!-- <div class="actions">
+        <button class="switcher" id="column">column</button>
+        <button class="switcher" id="area">area</button>
+        <button class="switcher" id="line">line</button>
+        <button class="switcher" id="spline">Spine</button>
+        <button class="switcher" id="areaspline">areaspline</button>
+    </div> -->
+    <section>
 
-        <!-- Horizon section -->
+    <!-- Horizon section -->
         <div id="Horizon">
-            <h1>Horizon</h1>
-            <label for="anneeRef">1/ Indiquer l'année de Référence</label>
+            <h1>Etape 1 : Horizon</h1>
+            <label for="anneeRef">Indiquer l'année de Référence</label>
             <input id="anneeRef" name="anneeRef" type="text" placeholder="exemple: 2012" autofocus>
+            <ul class="pager">
+                <li><a href="#" onclick="showDivScenario(<?php echo $var_anneeRef; ?>)">Valider</a></li>
+            </ul>
         </div>
 
         <!-- Scenario section -->
-        <div id="Scenario">
+        <div id="Scenario" style="display:none;">
             <!--Titre-->
-            <h1>Scénario</h1>
+            <h1>Etape 2 : Scénario</h1>
             <!--Label-->
-            <label for="anneeRef">2/ Indiquer la quantité de la production</label>
+            <label for="anneeRef">Indiquer la quantité de la production</label>
             <!--Scenario-->
             <div class="navbar nav-tabs">
                 <div class="navbar-inner">
