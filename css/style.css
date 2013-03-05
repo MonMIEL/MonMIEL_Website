@@ -38,8 +38,8 @@ section {
 footer {
 	margin: 0 auto;
 	width: 960px;
-	height: 200px;
+	height: 150px;
 	background: url("../img/footer.png") repeat-x #3D3D3D;
 	color: #FAFAFA;
-	padding: 25px 0 10px 0;
+	padding: 10px 0 10px 0;
 }
