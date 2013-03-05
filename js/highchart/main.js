@@ -39,30 +39,50 @@ $(document).ready(function() {
     // First chart initialization
     chart_Scenario = new Highcharts.Chart({
         chart: {
-            renderTo: 'chart_Scenario'
+            renderTo: 'chart_Scenario',
+            type: 'line',
+            backgroundColor: '#FFFFFF',
+            style: {
+                fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
+                fontSize: '50px'
+            },
+            animation: false
         },
-
-        title: {
-            text: 'Logarithmic axis demo'
+        credits: {
+            enabled: false
         },
-
+        /*labels: {
+            items: [{
+                html: 'helloTest',
+                style:{
+                    left: '100px',
+                    top: '100px'
+                }
+            }],
+            style: null
+        },*/
+            title: {
+            text: 'Fruit Consumption'
+        },
         xAxis: {
-            tickInterval: 1
+            title: {
+                text: 'Année'
+            }
+            //categories: ['Apples', 'Bananas', 'Oranges']
         },
-
         yAxis: {
-            type: 'logarithmic',
-            minorTickInterval: 0.1
+            title: {
+                text: 'Quantité de l\'Energie',
+                style: {
+                    color: '#6D869F',
+                    fontWeight: 'bold'
+                }
+            }
         },
-
-        tooltip: {
-            headerFormat: '<b>{series.name}</b><br />',
-            pointFormat: 'x = {point.x}, y = {point.y}'
-        },
-
         series: [{
-            data: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],
-            pointStart: 1
+            name: 'Quantité de l\'Energie',
+            //data: [1, 0, 4]
+            data: [100,1000]
         }]
 
     });
