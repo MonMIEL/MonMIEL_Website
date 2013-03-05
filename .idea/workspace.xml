@@ -2,41 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daa2be13-8104-4d71-82fd-0b13b4a5114e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/RTE_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/footer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/home.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/imag.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/logo-ujf-gs.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/logo_ujf.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/miage.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/rte.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/Whitewashed.Grunge.Textures.by.WebTreatsETC/webtreats_whitewashed_grunge.pat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/Whitewashed.Grunge.Textures.by.WebTreatsETC/webtreats_whitewashed_grunge_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/Whitewashed.Grunge.Textures.by.WebTreatsETC/webtreats_whitewashed_grunge_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/Whitewashed.Grunge.Textures.by.WebTreatsETC/webtreats_whitewashed_grunge_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/Whitewashed.Grunge.Textures.by.WebTreatsETC/webtreats_whitewashed_grunge_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/Whitewashed.Grunge.Textures.by.WebTreatsETC/webtreats_whitewashed_grunge_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/Whitewashed.Grunge.Textures.by.WebTreatsETC/webtreats_whitewashed_grunge_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/Whitewashed.Grunge.Textures.by.WebTreatsETC/webtreats_whitewashed_grunge_patterns.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/webtreats_whitewashed_grunge.pat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/webtreats_whitewashed_grunge_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/webtreats_whitewashed_grunge_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/webtreats_whitewashed_grunge_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/webtreats_whitewashed_grunge_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/webtreats_whitewashed_grunge_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/webtreats_whitewashed_grunge_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/webtreats_whitewashed_grunge_patterns.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/Whitewashed.Grunge.Textures.by.WebTreatsETC/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/readme.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/bg_fondbleu.jpg" afterPath="$PROJECT_DIR$/texture/webtreats_whitewashed_grunge_patterns/bg_fondbleu.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/bg_fondbleu.jpg" afterPath="$PROJECT_DIR$/img/bg_fondbleu.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/header.png" afterPath="$PROJECT_DIR$/img/header.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menu.php" afterPath="$PROJECT_DIR$/menu.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ihm1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/highchart/main.js" afterPath="$PROJECT_DIR$/js/highchart/main.js" />
     </list>
     <ignored path="MonMIEL_Website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,28 +24,30 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="ihm1.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ihm1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="23" selection-start="39" selection-end="39" vertical-scroll-proportion="0.026548672">
+            <state line="52" column="22" selection-start="1960" selection-end="1960" vertical-scroll-proportion="-9.375">
+              <folding>
+                <element signature="tag#head#0;tag#html#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/highchart/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="39" column="43" selection-start="995" selection-end="995" vertical-scroll-proportion="0.30560273">
               <folding />
             </state>
           </provider>
@@ -86,19 +56,17 @@
       <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="596" selection-end="596" vertical-scroll-proportion="-0.0">
+            <state line="1" column="10" selection-start="16" selection-end="16" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/menu.php">
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="18" selection-start="120" selection-end="120" vertical-scroll-proportion="-1.875">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,16 +84,17 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ihm1.php" />
         <option value="$PROJECT_DIR$/menu.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/ihm1.php" />
+        <option value="$PROJECT_DIR$/js/highchart/main.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-1314" />
-    <option name="y" value="764" />
+    <option name="y" value="-4" />
     <option name="width" value="1315" />
     <option name="height" value="773" />
   </component>
@@ -183,7 +152,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MonMIEL_Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MonMIEL_Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="highchart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MonMIEL_Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MonMIEL_Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MonMIEL_Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MonMIEL_Website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="highchart" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -215,7 +234,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1314" y="764" width="1315" height="773" extended-state="6" />
+    <frame x="-1314" y="-4" width="1315" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -304,13 +323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="596" selection-end="596" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/menu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="18" selection-start="120" selection-end="120" vertical-scroll-proportion="-1.875">
@@ -322,7 +334,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="23" selection-start="39" selection-end="39" vertical-scroll-proportion="0.026548672">
+        <state line="10" column="38" selection-start="0" selection-end="2291" vertical-scroll-proportion="18.958334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="10" selection-start="16" selection-end="16" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ihm1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="22" selection-start="1960" selection-end="1960" vertical-scroll-proportion="-9.375">
+          <folding>
+            <element signature="tag#head#0;tag#html#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/highchart/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="43" selection-start="995" selection-end="995" vertical-scroll-proportion="0.30560273">
           <folding />
         </state>
       </provider>
