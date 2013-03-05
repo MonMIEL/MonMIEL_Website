@@ -9,14 +9,9 @@
         <title></title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/bootstrap.css">
-        <style>
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-        </style>
         <link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
 
         <script src="js/bootstrap.js"></script>
     </head>
