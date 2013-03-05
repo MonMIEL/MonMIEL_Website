@@ -30,11 +30,29 @@
     <button class="switcher" id="spline">Spine</button>
     <button class="switcher" id="areaspline">areaspline</button>
 </div>
+<section>
+			<div id="Horizon">
+				<h1>Horizon</h1>
+				<label for="annee">Année sélectionnée</label>
+				<input id="annee" name="annee" type=text placeholder="exemple : 2012" required autofocus>
+			</div>
 
-<!-- two different charts -->
-<div id="chart_3" class="chart"></div>
-<div id="chart_1" class="chart"></div>
+			<div id="Scenario">
+				<h1>Scénario</h1>
+			</div>
+				<!-- two different charts -->
+				<div id="chart_3" class="chart"></div>
+
+			<div id="monmix">
+				<h1>Mon MIx ELectrique</h1>
+			</div>
+			<div id="chart_1" class="chart"></div>
+	
+			<div id="simuler">
+				<h1> Simuler </h1>
+			</div>
 <div id="chart_2" class="chart"></div>
+		</section>
 </body>
 <? include("footer.php"); ?>
 </html>
