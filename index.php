@@ -47,11 +47,12 @@
 				<h1>Mon MIx ELectrique</h1>
 			</div>
 			<div id="chart_1" class="chart"></div>
+
+<div id="chart_2" class="chart"></div>
 	
 			<div id="simuler">
-				<h1> Simuler </h1>
+				<input type="button" value="simuler"/>
 			</div>
-<div id="chart_2" class="chart"></div>
 		</section>
 </body>
 <? include("footer.php"); ?>
