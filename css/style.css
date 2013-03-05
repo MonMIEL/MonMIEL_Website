@@ -43,6 +43,32 @@ section {
 	text-align: center;
 }
 
+#parc .row.autre .progress {
+	opacity: 0.5;
+	filter:alpha(opacity=50); 
+	border:0;
+}
+
+#parc .row.autre .span2,
+#parc .row.autre .span1,
+#parc .row.legende .span1,
+#parc .row.legende .span2 {
+	margin-top: 0px;
+}
+
+#parc .legende-verte,
+#parc .legende-jaune {
+	font-weight: bold;
+}
+
+#parc .legende-verte {
+	color: #356E35;
+}
+
+#parc .legende-jaune {
+	color: #6A4D23;
+}
+
 #parc .span2,
 #parc .span1 {
 	margin-top: 10px;

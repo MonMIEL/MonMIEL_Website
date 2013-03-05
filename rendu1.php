@@ -112,7 +112,7 @@
 				<h1>Parc calculé</h1>
 				<div class="row first">
 					<div class="span2">Type parc</div>
-					<div class="span6">GW</div>
+					<div class="span6">Puissance du parc en GW</div>
 					<div class="span1">Parc actuel</div>
 					<div class="span1">Parc ciblé</div>
 					<div class="span1">Evolution de la puissance</div>
@@ -159,9 +159,65 @@
 					<div class="span1">20</div>
 					<div class="span1">-60</div>
 				</div>
+				<div class="row">
+					<div class="span2">Hydraulique</div>
+					<div class="span6">
+						<div class="first progress progress-success progress-striped active">
+						  <div class="bar" style="width: 70%;"></div>
+						</div>
+						<div class="progress progress-warning progress-striped active">
+						  <div class="bar" style="width: 70%;"></div>
+						</div>
+					</div>
+					<div class="span1">70</div>
+					<div class="span1">70</div>
+					<div class="span1">0</div>
+				</div>
+				<div class="row">
+					<div class="span2">Centrales à flammes</div>
+					<div class="span6">
+						<div class="first progress progress-success progress-striped active">
+						  <div class="bar" style="width: 35%;"></div>
+						</div>
+						<div class="progress progress-warning progress-striped active">
+						  <div class="bar" style="width: 55%;"></div>
+						</div>
+					</div>
+					<div class="span1">35</div>
+					<div class="span1">55</div>
+					<div class="span1">+20</div>
+				</div>
+				<div class="row autre">
+					<div class="span2">STEP</div>
+					<div class="span6">
+						<div class="progress progress-danger progress-striped">
+						  <div class="bar" style="width:100%;"></div>
+						</div>
+					</div>
+					<div class="span1">0</div>
+					<div class="span1">0</div>
+					<div class="span1">0</div>
+				</div>
+				<div class="row">
+					<div class="span2">Légende</div>
+					<div class="span1"></div>
+					<div class="span4 legende-verte">
+						2013
+						<div class="progress progress-success progress-striped active">
+						  <div class="bar" style="width: 100%;"></div>
+						</div>
+					</div>
+					<div class="span4 legende-jaune">
+						2050
+						<div class="progress progress-warning progress-striped active">
+						  <div class="bar" style="width: 100%;"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div id="calcul">
+				<!-- Afficher bouton -->
 			</div>
 			
 		</section>
