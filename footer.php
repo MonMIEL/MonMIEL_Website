@@ -6,9 +6,9 @@
 	</div>
 	<div class="span4">
 		<h4>Partenaires</h4>
-		<img src="img/logo-ujf-gs.gif" style="height: 45px;"/></br></br>
-		<img src="img/RTE_logo.png" style="height: 45px;"/>
-		<img src="img/imag.jpg" style="height: 45px;"/>
+		<img src="img/rte.png" style="height: 45px;"/></br></br>
+		<img src="img/logo-ujf-gs.gif" style="height: 45px;"/>
+		<img src="img/miage.png" style="height: 45px;"/>
 	</div>
 	<div class="span4">
 		<h4>Plan du site</h4>
