@@ -26,7 +26,8 @@
 					chart = new Highcharts.Chart({
 						chart: {
 							renderTo: 'chart_conso',
-							type: 'area'
+							type: 'area',
+							backgroundColor: 'rgba(255,255,255,0.5)'
 						},
 						title: {
 							text: 'Consommation'
@@ -35,7 +36,7 @@
 							text: 'Année de reférence : 2050'
 						},
 						xAxis: {
-							categories: ['janvier', 'mars', 'mai', 'juillet', 'septembre', 'nombre', 'decembre'],
+							categories: ['Janvier', 'Mars', 'Mai', 'Juillet', 'Septembre', 'Novembre', 'Decembre'],
 							tickmarkPlacement: 'on',
 							title: {
 								enabled: false
@@ -87,7 +88,7 @@
 							name: 'STEP',
 							data: [0, 0, 0, 0, 0, 0, 0]
 						}, {
-							name: 'IMPORT',
+							name: 'Import',
 							data: [0, 0, 0, 0, 0, 0, 0]
 						}]
 					});
@@ -108,110 +109,125 @@
 				<h1>Consommation</h1>
 				 <div id="chart_conso" class="chart"></div>
 			</div>
+			
 
 			<div id="parc">
+				<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 				<h1>Parc calculé</h1>
-				<div class="row first">
-					<div class="span2">Type parc</div>
-					<div class="span6">Puissance du parc en GW</div>
-					<div class="span1">Parc actuel</div>
-					<div class="span1">Parc ciblé</div>
-					<div class="span1">Evolution de la puissance</div>
-				</div>
-				<div class="row">
-					<div class="span2">Nucléaire</div>
-					<div class="span6">
-						<div class="first progress progress-success progress-striped active">
-						  <div class="bar" style="width: 50%;"></div>
-						</div>
-						<div class="progress progress-warning progress-striped active">
-						  <div class="bar" style="width: 65%;"></div>
-						</div>
+				<div class="bloc">
+					<div class="row first">
+						<div class="span2">Type parc</div>
+						<div class="span6">Puissance du parc en GW</div>
+						<div class="span1">Parc actuel</div>
+						<div class="span1">Parc ciblé</div>
+						<div class="span2 evol">Evolution de la puissance</div>
 					</div>
-					<div class="span1">50</div>
-					<div class="span1">65</div>
-					<div class="span1">+15</div>
-				</div>
-				<div class="row">
-					<div class="span2">Photovoltaïque</div>
-					<div class="span6">
-						<div class="first progress progress-success progress-striped active">
-						  <div class="bar" style="width: 50%;"></div>
+					<div class="row">
+						<div class="span2">Nucléaire</div>
+						<div class="span6">
+							<div class="first progress progress-success progress-striped active">
+							  <div class="bar" style="width: 50%;"></div>
+							</div>
+							<div class="progress progress-warning progress-striped active">
+							  <div class="bar" style="width: 65%;"></div>
+							</div>
 						</div>
-						<div class="progress progress-warning progress-striped active">
-						  <div class="bar" style="width: 65%;"></div>
-						</div>
+						<div class="span1">50</div>
+						<div class="span1">65</div>
+						<div class="span1">+15</div>
 					</div>
-					<div class="span1">50</div>
-					<div class="span1">65</div>
-					<div class="span1">+15</div>
-				</div>
-				<div class="row">
-					<div class="span2">Eolien</div>
-					<div class="span6">
-						<div class="first progress progress-success progress-striped active">
-						  <div class="bar" style="width: 80%;"></div>
+					<div class="row">
+						<div class="span2">Photovoltaïque</div>
+						<div class="span6">
+							<div class="first progress progress-success progress-striped active">
+							  <div class="bar" style="width: 50%;"></div>
+							</div>
+							<div class="progress progress-warning progress-striped active">
+							  <div class="bar" style="width: 65%;"></div>
+							</div>
 						</div>
-						<div class="progress progress-warning progress-striped active">
-						  <div class="bar" style="width: 20%;"></div>
-						</div>
+						<div class="span1">50</div>
+						<div class="span1">65</div>
+						<div class="span1">+15</div>
 					</div>
-					<div class="span1">80</div>
-					<div class="span1">20</div>
-					<div class="span1">-60</div>
-				</div>
-				<div class="row">
-					<div class="span2">Hydraulique</div>
-					<div class="span6">
-						<div class="first progress progress-success progress-striped active">
-						  <div class="bar" style="width: 70%;"></div>
+					<div class="row">
+						<div class="span2">Eolien</div>
+						<div class="span6">
+							<div class="first progress progress-success progress-striped active">
+							  <div class="bar" style="width: 80%;"></div>
+							</div>
+							<div class="progress progress-warning progress-striped active">
+							  <div class="bar" style="width: 20%;"></div>
+							</div>
 						</div>
-						<div class="progress progress-warning progress-striped active">
-						  <div class="bar" style="width: 70%;"></div>
-						</div>
+						<div class="span1">80</div>
+						<div class="span1">20</div>
+						<div class="span1">-60</div>
 					</div>
-					<div class="span1">70</div>
-					<div class="span1">70</div>
-					<div class="span1">0</div>
-				</div>
-				<div class="row">
-					<div class="span2">Centrales à flammes</div>
-					<div class="span6">
-						<div class="first progress progress-success progress-striped active">
-						  <div class="bar" style="width: 35%;"></div>
+					<div class="row">
+						<div class="span2">Hydraulique</div>
+						<div class="span6">
+							<div class="first progress progress-success progress-striped active">
+							  <div class="bar" style="width: 70%;"></div>
+							</div>
+							<div class="progress progress-warning progress-striped active">
+							  <div class="bar" style="width: 70%;"></div>
+							</div>
 						</div>
-						<div class="progress progress-warning progress-striped active">
-						  <div class="bar" style="width: 55%;"></div>
-						</div>
+						<div class="span1">70</div>
+						<div class="span1">70</div>
+						<div class="span1">0</div>
 					</div>
-					<div class="span1">35</div>
-					<div class="span1">55</div>
-					<div class="span1">+20</div>
-				</div>
-				<div class="row autre">
-					<div class="span2">STEP</div>
-					<div class="span6">
-						<div class="progress progress-danger progress-striped">
-						  <div class="bar" style="width:100%;"></div>
+					<div class="row">
+						<div class="span2">Centrales à flammes</div>
+						<div class="span6">
+							<div class="first progress progress-success progress-striped active">
+							  <div class="bar" style="width: 35%;"></div>
+							</div>
+							<div class="progress progress-warning progress-striped active">
+							  <div class="bar" style="width: 55%;"></div>
+							</div>
 						</div>
+						<div class="span1">35</div>
+						<div class="span1">55</div>
+						<div class="span1">+20</div>
 					</div>
-					<div class="span1">0</div>
-					<div class="span1">0</div>
-					<div class="span1">0</div>
-				</div>
-				<div class="row">
-					<div class="span2">Légende</div>
-					<div class="span1"></div>
-					<div class="span4 legende-verte">
-						2013
-						<div class="progress progress-success progress-striped active">
-						  <div class="bar" style="width: 100%;"></div>
+					<div class="row autre">
+						<div class="span2">STEP</div>
+						<div class="span6">
+							<div class="progress progress-danger progress-striped">
+							  <div class="bar" style="width:100%;"></div>
+							</div>
 						</div>
+						<div class="span1">0</div>
+						<div class="span1">0</div>
+						<div class="span1">0</div>
 					</div>
-					<div class="span4 legende-jaune">
-						2050
-						<div class="progress progress-warning progress-striped active">
-						  <div class="bar" style="width: 100%;"></div>
+					<div class="row autre">
+						<div class="span2">Import</div>
+						<div class="span6">
+							<div class="progress progress-danger progress-striped">
+							  <div class="bar" style="width:100%;"></div>
+							</div>
+						</div>
+						<div class="span1">0</div>
+						<div class="span1">0</div>
+						<div class="span1">0</div>
+					</div>
+					<div class="row">
+						<div class="span2">Légende</div>
+						<div class="span1"></div>
+						<div class="span4 legende-verte">
+							2013
+							<div class="progress progress-success progress-striped active">
+							  <div class="bar" style="width: 100%;"></div>
+							</div>
+						</div>
+						<div class="span4 legende-jaune">
+							2050
+							<div class="progress progress-warning progress-striped active">
+							  <div class="bar" style="width: 100%;"></div>
+							</div>
 						</div>
 					</div>
 				</div>

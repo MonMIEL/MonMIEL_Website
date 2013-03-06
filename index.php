@@ -22,7 +22,7 @@
 		<?php include("header.php"); ?>
 		
 		<?php include("menu.php"); ?>
-
+		
 		<section>
 			<div id="Horizon">
 				<h1>Horizon</h1>
