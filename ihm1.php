@@ -10,7 +10,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/ihm1.css">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
@@ -26,8 +30,8 @@
 	
 	<!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">
-		function updateTextInput(val) {
-			document.getElementById('textInput').value=val; 
+		function updateTextInput(id,val) {
+			document.getElementById(id).value=val; 
 		}
 	</script>
 	<!-- script d'affichage du contenu du slider -->
@@ -68,6 +72,7 @@
             <!--Titre-->
             <h1>Etape 2 : Scénario</h1>
             <!--Label-->
+            <label for="anneeRef">Indiquer la quantité de la production</label>
             <!--Scenario-->
             <div class="navbar nav-tabs">
                 <div class="navbar-inner">
@@ -94,19 +99,57 @@
 
         <!-- MonMix section -->
         <div id="monmix" style="display:none;">
-            <h1>Etape 3 : Mon MIx ELectrique</h1>
-			<div class="row">
-				<div class="span1">
-						Nucléaire
-				</div>
-				
-				<div class="span3">
-					<input type="range" min="0" max="100" name="nucleaire" onchange="updateTextInput(this.value);">
+			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
+            <h1>Mon MIx ELectrique</h1>
+			<div class="bloc" style="width:50%;">
+				<div class="row first">
+					<div class="span3">Energie</div>
+					<div class="span1">%</div>
+					<div class="span1">GWh</div>
 				</div>
 
-				<div class="span1">
-					<input type="text" id="textInput" value="" style="width:30px; background:none;"> %
+				<div class="row">					
+					<div class="span3">Nucléaire<input type="range" value="25" min="0" max="100" name="nucleaire" onchange="updateTextInput('nuc',this.value);"></div>
+					<div class="span1"><input type="text" id="nuc" value="25" style="width:30px; background:none;">%</div>
+					<div class="span1"><?php $variable = '200'; ?>200</div>
 				</div>
+				
+				<div class="row">					
+					<div class="span3">Photovoltaïque<input type="range" value="8" min="0" max="100" name="nucleaire" onchange="updateTextInput('pho',this.value);"></div>
+					<div class="span1"><input type="text" id="pho" value="8" style="width:30px; background:none;">%</div>
+					<div class="span1"><?php $variable = '200'; ?>200</div>
+				</div>
+
+				<div class="row">					
+					<div class="span3">Eolien<input type="range" value="17" min="0" max="100" name="nucleaire" onchange="updateTextInput('eol',this.value);"></div>
+					<div class="span1"><input type="text" id="eol" value="17" style="width:30px; background:none;">%</div>
+					<div class="span1"><?php $variable = '200'; ?>200</div>
+				</div>
+
+				<div class="row">					
+					<div class="span3">Hydraulique<input type="range" value="13" min="0" max="100" name="nucleaire" onchange="updateTextInput('hyd',this.value);"></div>
+					<div class="span1"><input type="text" id="hyd" value="13" style="width:30px; background:none;">%</div>
+					<div class="span1"><?php $variable = '200'; ?>200</div>
+				</div>
+
+				<div class="row">					
+					<div class="span3">Centrales à flammes<input type="range" value="37" min="0" max="100" name="nucleaire" onchange="updateTextInput('cen',this.value);"></div>
+					<div class="span1"><input type="text" id="cen" value="37" style="width:30px; background:none;">%</div>
+					<div class="span1"><?php $variable = '200'; ?>200</div>
+				</div>
+
+				<div class="row">					
+					<div class="span3">STEP<input type="range" value="" min="0" max="100" name="nucleaire" onchange="updateTextInput('ste',this.value);"></div>
+					<div class="span1"><input type="text" id="ste" value="" style="width:30px; background:none;">%</div>
+					<div class="span1"><?php $variable = '200'; ?>200</div>
+				</div>
+
+				<div class="row">					
+					<div class="span3">Import<input type="range" value="" min="0" max="100" name="nucleaire" onchange="updateTextInput('imp',this.value);"></div>
+					<div class="span1"><input type="text" id="imp" value="" style="width:30px; background:none;">%</div>
+					<div class="span1"><?php $variable = '200'; ?>200</div>
+				</div>
+				
 			</div>
         </div>
 
