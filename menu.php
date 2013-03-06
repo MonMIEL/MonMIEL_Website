@@ -3,9 +3,9 @@
     <ul class="nav">
 	  <li id="home"><a href="#"><img src="img/home.png" /></a></li>
       <li onmouseover="this.className='active'" onmouseout="this.className=''"><a href="#">Problématique</a></li>
-      <li onmouseover="this.className='active'" onmouseout="this.className=''"><a href="">Simulez votre mix</a></li>
+      <li onmouseover="this.className='active'" onmouseout="this.className=''"><a href="index.php">Simulez votre mix</a></li>
 	  <li onmouseover="this.className='active'" onmouseout="this.className=''"><a href="#">Liens utiles</a></li>
-	  <li onmouseover="this.className='active'" onmouseout="this.className=''"><a href="#">Contact</a></li>
+	  <li onmouseover="this.className='active'" onmouseout="this.className=''"><a href="contact.php">Contact</a></li>
     </ul>
   </div>
 </div>
