@@ -72,15 +72,13 @@
         <div id="horizon">
             <h1 id="titleHorizon">Etape 1 : Horizon</h1>
             <!--<ul class="pager">-->
-            <div>
-                <div id="labelHorizon" class="labelIhm1">Indiquer l'année de Référence</div>
-                <select>
-                    <option>2011</option>
-                    <option>2012</option>
-                </select>
-                <li>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></li>
+            <div class="bloc">
+                <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de référence</label>
+                <div>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></div>
                 <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
-                <button id="buttonValiderHorizon" onclick="validerHorizon()">Valider</button>
+				<div class="bouton">
+					<a onclick="validerHorizon()"><span class="but-icon"></span>Valider</a>
+				</div>
             </div>
 
         </div>
@@ -177,7 +175,7 @@
 				<div class="row">					
 					<div class="span3">Centrales à flammes<input type="range" value="37" min="0" max="100" name="nucleaire" onchange="updateTextInput('cen',this.value);"></div>
 					<div class="span1"><input type="text" id="cen" value="37" style="width:30px; background:none;">%</div>
-					<div class="span1"><input type="text" id="cen_gwh" style="width:50px; background:none;"></div>
+					<div class="span1"><?php $variable = '200'; ?>200</div>
 				</div>
 
 				<div class="row">					
