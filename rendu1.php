@@ -234,7 +234,10 @@
 			</div>
 
 			<div id="calcul">
-				<!-- Afficher bouton -->
+				<img class="separateur" src="img/separateur.jpg" alt="separateur" />
+				<div class="bouton">
+					<a href=""><span class="but-icon"></span>Calculer le mix énergétique</a>
+				</div>
 			</div>
 			
 		</section>
