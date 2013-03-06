@@ -25,18 +25,9 @@
     </head>
     <body>
 		
-		<? include("header.php"); ?>
+		<?php include("header.php"); ?>
 		
-		<? include("menu.php"); ?>
-
-		<!-- Chart type switchers -->
-		<div class="actions">
-			<button class="switcher" id="column">column</button>
-			<button class="switcher" id="area">area</button>
-			<button class="switcher" id="line">line</button>
-			<button class="switcher" id="spline">Spine</button>
-			<button class="switcher" id="areaspline">areaspline</button>
-		</div>
+		<?php include("menu.php"); ?>
 		
 		<section>
 			<div id="Horizon">
@@ -55,13 +46,8 @@
 				<h1>Mon MIx ELectrique</h1>
 			</div>
 
-			<div id="simuler">
-				<div class="bouton">
-					<a href="rendu1.php"><span class="but-icon"></span>Simuler</a>
-				</div>
-			</div>
 		</section>
 
-		<? include("footer.php"); ?>
+		<?php include("footer.php"); ?>
     </body>
 </html>

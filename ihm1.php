@@ -178,7 +178,9 @@
         </div>
 
         <div id="simuler">
-
+			<div class="bouton">
+				<a href="rendu1.php"><span class="but-icon"></span>Simuler</a>
+			</div>
         </div>
     </section>
 
