@@ -9,13 +9,25 @@
  * http://www.script-tutorials.com/
  */
 var anneeRef;
-function showDivScenario(anneeRef1){
-    document.getElementById('Scenario').style.display = "block";
-    anneeRef=anneeRef1;
-    var name1="dsf ";
-    alert(anneeRef);
-    //chart_Scenario.series.chart.series.data[0].name=name1;
-    //chart_Scenario.series.chart.setTitle({text: "New Title"});
+function showDivScenario(){
+    //Récupération des données entrées
+    anneeRef=document.getElementById("anneeRef").value;
+
+    if(parseInt(anneeRef)>=2011 && parseInt(anneeRef)<=2012){
+        //Affichage du contenu suivant
+        document.getElementById('Scenario').style.display = "block";
+
+        //alert(anneeRef);
+        //console.log(chart_Scenario.series[0].data[0].name);
+
+        //MaJ du nom du premier point par rapport à la donnée anneeRef
+        chart_Scenario.series[0].data[0].name = "Consommation de "+anneeRef;
+        chart_Scenario.series[0].data[0].x = parseInt(anneeRef);
+        chart_Scenario.render();
+    }else{
+        var label =document.getElementById('labelAnneeRef');
+        label.innerHTML="<div style=\"color:red\">"+"Valeur "+anneeRef+" n'est pas supportée</div></br>Indiquer l'année de Référence entre 2011 et 2012";
+    }
 }
 
 // Change Chart type function
@@ -48,6 +60,7 @@ $(document).ready(function() {
     chart_Scenario = new Highcharts.Chart({
         chart: {
             renderTo: 'chart_Scenario',
+            width: 940,
             type: 'line',
             backgroundColor: '#FFFFFF',
             style: {
@@ -87,13 +100,18 @@ $(document).ready(function() {
                 }
             }
         },
+        events: {
+            redraw: function() {
+                alert ('The chart was just redrawn');
+            }
+        },
         series: [
             {
                 name: 'Quantité',
                 data: [{
                     name: anneeRef,
                     color: '#00FF00',
-                    x: 2012,
+                    x: 2010,
                     y: 100
                 }, {//Prévention de la consommation énergétique
                     name: 'Consommation en 2050',
