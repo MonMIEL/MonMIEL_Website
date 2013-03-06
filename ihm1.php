@@ -70,7 +70,7 @@
 
     <!-- Horizon section -->
         <div id="horizon">
-            <h1 id="titleHorizon">Etape 1 : Horizon</h1>
+            <h1 id="titleHorizon">Etape 1 : Horizon<i class="icon-ok"></i></h1>
             <!--<ul class="pager">-->
             <div class="bloc">
                 <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de référence</label>
