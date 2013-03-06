@@ -127,8 +127,8 @@
 			<div class="bloc" style="width:50%;">
 				<div class="row first">
 					<div class="span3">Energie</div>
-					<div class="span1">%</div>
-					<div class="span1">GWh</div>
+					<div class="span1" style="margin-top:0;">%</div>
+					<div class="span1" style="margin-top:0;">GWh</div>
 				</div>
 
 				<div class="row">					
