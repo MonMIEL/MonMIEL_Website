@@ -14,33 +14,30 @@
         <link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
-
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="js/bootstrap.js"></script>
+		
+		<script src="js/highchart/highcharts.js"></script>
+        <script src="js/rendu2.js"></script>
     </head>
     <body>
-		
 		<?php include("header.php"); ?>
 		
 		<?php include("menu.php"); ?>
-		
+
 		<section>
-			<div id="Horizon">
-				<h1>Horizon</h1>
-				<label for="annee">Année sélectionnée</label>
-				<input id="annee" name="annee" type=text placeholder="exemple : 2012" required autofocus>
-			</div>
+			<div class="aliane"><img src="img/aliane3.png"/></div>
+            <div class="row first">
+                <div id="Mixdemandé" class="span6">
+                    <h1>Mix demandé</h1>
+                    <div id="chart_1" class="chart"></div>
+                </div>
 
-			<div id="Scenario">
-				<h1>Scénario</h1>
-			</div>
-
-			<div id="monmix">
-				<h1>Mon MIx ELectrique</h1>
-			</div>
-
-			<div id="simuler">
-
-			</div>
+                <div id="Mixcalculé" class="span6">
+                    <h1>Mix Calculé</h1>
+                    <div id="chart_2" class="chart"></div>
+                </div>
+            </div>
 		</section>
 
 		<?php include("footer.php"); ?>
