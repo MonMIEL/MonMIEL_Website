@@ -10,15 +10,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.css">
 
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/ihm1.css">
@@ -30,6 +23,14 @@
     <script src="js/highchart/highcharts.js"></script>
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
+	
+	<!-- script d'affichage du contenu du slider -->
+	<script rel="text/javasript">
+		function updateTextInput(val) {
+			document.getElementById('textInput').value=val; 
+		}
+	</script>
+	<!-- script d'affichage du contenu du slider -->
 </head>
 <body>
     <?php include("header.php"); ?>
@@ -89,6 +90,19 @@
         <!-- MonMix section -->
         <div id="monmix">
             <h1>Mon MIx ELectrique</h1>
+			<div class="row">
+				<div class="span1">
+						Nucléaire
+				</div>
+				
+				<div class="span3">
+					<input type="range" min="0" max="100" name="nucleaire" onchange="updateTextInput(this.value);">
+				</div>
+
+				<div class="span1">
+					<input type="text" id="textInput" value="" style="width:30px; background:none;"> %
+				</div>
+			</div>
         </div>
 
         <div id="simuler">
