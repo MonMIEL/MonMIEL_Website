@@ -17,5 +17,15 @@ input[type="range"]::-webkit-slider-thumb {
     border: solid black 1px;
 }
 
-#contenantChartScenario{
+#titleHorizon{
+    text-align: center;
+}
+#titleScenario{
+    text-align: center;
+}
+#titleMonMix{
+    text-align: center;
+}
+.labelIhm1{
+    text-align: center;
 }

@@ -39,6 +39,14 @@
 <body>
     <?php include("header.php"); ?>
     <?php include("menu.php"); ?>
+    <!--<form class="form-inline">
+        <input type="text" class="input-small" placeholder="Email">
+        <input type="password" class="input-small" placeholder="Password">
+        <label class="checkbox">
+            <input type="checkbox"> Remember me
+        </label>
+        <button type="submit" class="btn">Sign in</button>
+    </form>-->
 
     <?php
         $var_anneeRef = 2011;
@@ -53,13 +61,18 @@
         <button class="switcher" id="areaspline">areaspline</button>
     </div> -->
     <section>
+        <div class="aliane"><img src="img/aliane1.png"/></div>
 
     <!-- Horizon section -->
-        <div id="Horizon">
-            <h1>Etape 1 : Horizon</h1>
+        <div id="horizon">
+            <h1 id="titleHorizon">Etape 1 : Horizon</h1>
             <!--<ul class="pager">-->
             <div>
-                <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de Référence</label>
+                <div id="labelHorizon" class="labelIhm1">Indiquer l'année de Référence</div>
+                <select>
+                    <option>2011</option>
+                    <option>2012</option>
+                </select>
                 <li>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></li>
                 <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
                 <button id="buttonValiderHorizon" onclick="validerHorizon()">Valider</button>
@@ -68,15 +81,16 @@
         </div>
 
         <!-- Scenario section -->
-        <div id="Scenario" style="display:none;">
+        <div id="scenario" style="display:none;">
+            <img class="separateur" src="img/separateur.jpg" alt="separateur" />
             <!--Titre-->
-            <h1>Etape 2 : Scénario</h1>
+            <h1 id="titleScenario">Etape 2 : Scénario</h1>
 
             <!--Label-->
-            <label for="anneeRef">Indiquer la quantité de la production</label>
+            <div id="labelScenario" class="labelIhm1">Indiquer la quantité de la consommation annuelle en 2050</div>
 
             <!--NavBar-->
-            <div class="navbar nav-tabs">
+            <div class="navbar nav-tabs" style="width:700px">
                 <div class="navbar-inner">
                     <a class="brand">Type de scénario</a>
                     <ul class="nav">
@@ -93,10 +107,10 @@
                         <tr>
                             <td><div id="chart_Scenario" class="chart" style="height:300px;"></div></td>
                             <td><div id="tab_chart_Scenario">
-                                <table>
-                                    <tr>
-                                        <td>Année</td>
-                                        <td>Quantité</td>
+                                <table class="table table-bordered">
+                                    <tr class="success">
+                                        <th>Année</th>
+                                        <th>Quantité</th>
                                     </tr>
                                     <tr>
                                         <td id="tab_chart_Scenario.id"></td>
@@ -119,8 +133,9 @@
 
         <!-- MonMix section -->
         <div id="monmix" style="display:none;">
+            <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
-            <h1>Mon MIx ELectrique</h1>
+            <h1 id="titleMonMix">Mon MIx ELectrique</h1>
 			<div class="bloc" style="width:50%;">
 				<div class="row first">
 					<div class="span3">Energie</div>
