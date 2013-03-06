@@ -128,13 +128,13 @@
 				</div>
 
 				<div class="row">					
-					<div class="span3">STEP<input type="range" value="" min="0" max="100" name="nucleaire" onchange="updateTextInput('ste',this.value);"></div>
+					<div class="span3">STEP<input type="range" value="" min="0" max="100" name="nucleaire" disabled  onchange="updateTextInput('ste',this.value);" style="background-color:#94A0AD;"></div>
 					<div class="span1"><input type="text" id="ste" value="" style="width:30px; background:none;">%</div>
 					<div class="span1"><?php $variable = '200'; ?>200</div>
 				</div>
 
 				<div class="row">					
-					<div class="span3">Import<input type="range" value="" min="0" max="100" name="nucleaire" onchange="updateTextInput('imp',this.value);"></div>
+					<div class="span3">Import<input type="range" value="" min="0" max="100" name="nucleaire" disabled onchange="updateTextInput('imp',this.value);" style="background-color:#94A0AD;"></div>
 					<div class="span1"><input type="text" id="imp" value="" style="width:30px; background:none;">%</div>
 					<div class="span1"><?php $variable = '200'; ?>200</div>
 				</div>
