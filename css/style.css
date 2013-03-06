@@ -4,6 +4,10 @@ body {
 	font-family: 'Electrolize', sans-serif;
 }
 
+#body-wrapped {
+	background: url("../img/bg_rayures.png") transparent;
+}
+
 header {
 	margin: 0 auto;
 	width: 978px;
@@ -20,7 +24,9 @@ header {
 	filter:alpha(opacity=50); 
 	border:0;
 }
-
+.aliane {
+	text-align:center;
+}
 section {
 	margin: 10px auto 0 auto;
 	width: 940px;
@@ -33,6 +39,45 @@ section {
 	-webkit-border-top-right-radius:5px;
 	-moz-border-radius-topright:5px;
     border-top-right-radius: 5px;
+}
+
+#parc .row {
+	text-align: center;
+}
+
+#parc .row.autre .progress {
+	opacity: 0.5;
+	filter:alpha(opacity=50); 
+	border:0;
+}
+
+#parc .row.autre .span2,
+#parc .row.autre .span1,
+#parc .row.legende .span1,
+#parc .row.legende .span2 {
+	margin-top: 0px;
+}
+
+#parc .legende-verte,
+#parc .legende-jaune {
+	font-weight: bold;
+}
+
+#parc .legende-verte {
+	color: #356E35;
+}
+
+#parc .legende-jaune {
+	color: #6A4D23;
+}
+
+#parc .span2,
+#parc .span1 {
+	margin-top: 10px;
+}
+
+#parc .first {
+	margin-bottom: 5px;
 }
 
 footer {
