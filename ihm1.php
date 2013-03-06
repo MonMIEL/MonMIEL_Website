@@ -92,44 +92,46 @@
             <!--Label-->
             <div id="labelScenario" class="labelIhm1">Indiquer la quantité de la consommation annuelle en 2050</div>
 
-            <!--NavBar-->
-            <div class="navbar nav-tabs" style="width:700px">
-                <div class="navbar-inner">
-                    <a class="brand">Type de scénario</a>
-                    <ul class="nav">
-                        <li class="active"><a href="#tab1" data-toggle="tab">RTE</a></li>
-                        <li><a href="#tab2" data-toggle="tab">Autre</a></li>
-                    </ul>
+            <div class="bloc">
+                <!--NavBar-->
+                <div class="navbar nav-tabs" style="width:700px">
+                    <div class="navbar-inner">
+                        <a class="brand">Type de scénario</a>
+                        <ul class="nav">
+                            <li class="active"><a href="#tab1" data-toggle="tab">RTE</a></li>
+                            <li><a href="#tab2" data-toggle="tab">Autre</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <!--Graphs-->
-            <div class="tab-content">
-                <div class="tab-pane active" id="tab1">
-                    <table>
-                        <tr>
-                            <td><div id="chart_Scenario" class="chart" style="height:300px;"></div></td>
-                            <td><div id="tab_chart_Scenario">
-                                <table class="table table-bordered">
-                                    <tr class="success">
-                                        <th>Année</th>
-                                        <th>Quantité</th>
-                                    </tr>
-                                    <tr>
-                                        <td id="tab_chart_Scenario.id"></td>
-                                        <td id="tab_chart_Scenario.qu"></td>
-                                    </tr>
-                                </table>
-                                <div id="etatScenario"></div>
-                                <button id="buttonValiderScenario" onclick="validerScenario()" disabled="disabled">Valider</button>
-                            </div></td>
-                        </tr>
-                    </table>
+                <!--Graphs-->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        <table>
+                            <tr>
+                                <td><div id="chart_Scenario" class="chart" style="height:300px;"></div></td>
+                                <td><div id="tab_chart_Scenario">
+                                    <table class="table table-bordered">
+                                        <tr class="success">
+                                            <th>Année</th>
+                                            <th>Quantité</th>
+                                        </tr>
+                                        <tr>
+                                            <td id="tab_chart_Scenario.id"></td>
+                                            <td id="tab_chart_Scenario.qu"></td>
+                                        </tr>
+                                    </table>
+                                    <div id="etatScenario"></div>
+                                    <button id="buttonValiderScenario" onclick="validerScenario()" disabled="disabled">Valider</button>
+                                </div></td>
+                            </tr>
+                        </table>
 
-                </div>
-                <div class="tab-pane" id="tab2">
-                    <!--<div id="chart_3" class="chart" style="width:100%; height:300px;"></div>-->
-                    <div>Contenu en rédaction</div>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        <!--<div id="chart_3" class="chart" style="width:100%; height:300px;"></div>-->
+                        <div>Contenu en rédaction</div>
+                    </div>
                 </div>
             </div>
         </div>

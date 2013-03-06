@@ -8,8 +8,12 @@
  * Copyright 2012, Script Tutorials
  * http://www.script-tutorials.com/
  */
-var anneeRef;
-var consommation2050;
+var anneeRef;         //année de référence choisie par l'utilisateur dans la partie Horizon
+var consommation2050; //consommation pour l'année 2050 choisie par l'utilisateur dans la partie Scenario
+
+var validHorizon=0; //=1 si la partie Horizon est validée, =0 sinon
+var validScenario=0;//=1 si la partie Scenario est validée, =0 sinon
+var validMonMix=0;  //=1 si la partie MonMixElectrique est validée, =0 sinon
 
 function majChartAvecAnneeRef(chart, series) {
     for (var i = 0; i < series.length; i++) {
@@ -36,16 +40,16 @@ function validerHorizon(){
         //MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
         majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
         var label =document.getElementById('labelHorizon');
-        label.innerHTML='<div style="text-align:center; color:green">Année '+anneeRef+' est prise en compte <i class="icon-thumbs-up"></i></div>';
+        label.innerHTML='<div style="text-align:center; color:green">Année '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
 
-        //Reset other elements
-            //cacher le bouton Suivant du contenu "Scenario"
-        document.getElementById("buttonValiderScenario").setAttribute("disabled","disabled");
-            //cacher le contenu "MonMIxELectrique"
-        document.getElementById('monmix').style.display = "none";
+        validHorizon=1;
     }else{
-        var label =document.getElementById('labelAnneeRef');
-        label.innerHTML="<div style=\"color:red\">"+"Valeur "+anneeRef+" n'est pas supportée</div></br>Indiquer l'année de Référence entre 2011 et 2012";
+        var label =document.getElementById('labelHorizon');
+        label.innerHTML='<div style="color:red">'+'Valeur ['+anneeRef+'] n\'est pas supportée <i class="icon-remove"></i></div>' +
+            '<div>(la valeur de l\'année de référence doit être comprise entre 2011 et 2012)</div>';
+
+        document.getElementById('titleHorizon').style.cssText = "color:red";
+        validHorizon=0;
     }
 }
 
@@ -58,8 +62,8 @@ function validerScenario(){
 
     // MaJ de lable
     var label =document.getElementById('labelScenario');
-    label.innerHTML='<div style="text-align:center; color:green">La quantité de la consommation en 2050 est de '+consommation2050+' <i class="icon-thumbs-up"></i></div>';
-
+    label.innerHTML='<div style="text-align:center; color:green">La quantité de la consommation en 2050 est de '+consommation2050+' <i class="icon-ok"></i></div>';
+    validScenario = 1;
 }
 
 function chartScenarioHandlerOver() {
