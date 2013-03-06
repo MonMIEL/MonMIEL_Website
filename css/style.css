@@ -24,7 +24,9 @@ header {
 	filter:alpha(opacity=50); 
 	border:0;
 }
-
+.aliane {
+	text-align:center;
+}
 section {
 	margin: 10px auto 0 auto;
 	width: 940px;

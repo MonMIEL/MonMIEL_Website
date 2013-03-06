@@ -104,6 +104,7 @@
 		<?php include("menu.php"); ?>
 
 		<section>
+			<div class="aliane"><img src="img/aliane2.png"/></div>
 			<div id="consommation">
 				<h1>Consommation</h1>
 				 <div id="chart_conso" class="chart"></div>
