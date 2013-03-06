@@ -236,7 +236,7 @@
 			<div id="calcul">
 				<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 				<div class="bouton">
-					<a href=""><span class="but-icon"></span>Calculer le mix énergétique</a>
+					<a href="rendu2.php"><span class="but-icon"></span>Calculer le mix énergétique</a>
 				</div>
 			</div>
 			
