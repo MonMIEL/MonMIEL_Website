@@ -71,9 +71,11 @@
         <div id="Scenario" style="display:none;">
             <!--Titre-->
             <h1>Etape 2 : Scénario</h1>
+
             <!--Label-->
             <label for="anneeRef">Indiquer la quantité de la production</label>
-            <!--Scenario-->
+
+            <!--NavBar-->
             <div class="navbar nav-tabs">
                 <div class="navbar-inner">
                     <a class="brand">Type de scénario</a>
@@ -83,18 +85,36 @@
                     </ul>
                 </div>
             </div>
+
+            <!--Graphs-->
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
-                    <div class="row">
-                        <div id="chart_Scenario" class="chart span5" style="height:300px;"></div>
-                        <div class="span2">TestSpan2</div>
-                    </div>
+                    <table>
+                        <tr>
+                            <td><div id="chart_Scenario" class="chart" style="height:300px;"></div></td>
+                            <td><div id="tab_chart_Scenario">
+                                <table>
+                                    <tr>
+                                        <td>Année</td>
+                                        <td>Quantité</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="tab_chart_Scenario.id"></td>
+                                        <td id="tab_chart_Scenario.qu"></td>
+                                    </tr>
+                                </table>
+                                <div id="etatScenario"></div>
+                                <button id="buttonValiderScenario" onclick="validerScenario()" disabled="disabled">Valider</button>
+                            </div></td>
+                        </tr>
+                    </table>
+
                 </div>
                 <div class="tab-pane" id="tab2">
-                    <div id="chart_3" class="chart" style="width:100%; height:300px;"></div>
+                    <!--<div id="chart_3" class="chart" style="width:100%; height:300px;"></div>-->
+                    <div>Contenu en rédaction</div>
                 </div>
             </div>
-            <button id="buttonValiderScenario" onclick="validerScenario()" disabled="disabled">Valider</button>
         </div>
 
         <!-- MonMix section -->

@@ -9,6 +9,15 @@
  * http://www.script-tutorials.com/
  */
 var anneeRef;
+
+function majChartAvecAnneeRef(chart, series) {
+    for (var i = 0; i < series.length; i++) {
+        chart_Scenario.series[i].data[0].name = "Consommation de "+anneeRef;
+        chart_Scenario.series[i].data[0].x = parseInt(anneeRef);
+        chart_Scenario.render();
+    }
+}
+
 function validerHorizon(){
     //Récupération des données entrées
     anneeRef=document.getElementById("anneeRef").value;
@@ -21,9 +30,7 @@ function validerHorizon(){
         //console.log(chart_Scenario.series[0].data[0].name);
 
         //MaJ du nom du premier point par rapport à la donnée anneeRef
-        chart_Scenario.series[0].data[0].name = "Consommation de "+anneeRef;
-        chart_Scenario.series[0].data[0].x = parseInt(anneeRef);
-        chart_Scenario.render();
+        majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
         var label =document.getElementById('labelAnneeRef');
         label.innerHTML="<div style=\"color:#98fb98\">"+"Année "+anneeRef+" est prise en compte !</div></br>Indiquer l'année de Référence entre 2011 et 2012";
 
@@ -43,11 +50,25 @@ function validerScenario(){
     document.getElementById('monmix').style.display = "block";
 }
 
-function chart_Scenario_handler() {
-    console.log(this);
-    console.log('Category: '+ this.category +', value: '+ this.y + 'Series: ' +  this.series.name + ' ID: ' + this.config[2]);
+function chartScenarioHandlerOver() {
+    //console.log(this);
 
+    //MaJ du tableau de la quantité choisie en Gwh
+    document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
+    document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
+}
+
+function chartScenarioHandlerClick() {
+    //console.log(this);
+
+    //Permettre le click sur le bouton "suivant"
     document.getElementById("buttonValiderScenario").removeAttribute("disabled");
+
+    //MaJ du tableau de la quantité choisie en Gwh
+    document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
+    document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
+    document.getElementById("etatScenario").innerHTML = '<div style="color:green">VALIDE</div>';
+
 }
 
 // Change Chart type function
@@ -136,25 +157,54 @@ $(document).ready(function() {
             }
         },
         series: [{
-                name: 'Quantité',
+                name: 'Quatité 1',
                 data: [{
                     name: anneeRef, //Change au moment du choix de l'année de Référence
                     color: '#00FF00',
                     'id': 'point1',
                     x: 2010, //Change au moment du choix de l'année de Référence
-                    y: 100
+                    y: 500,
+                    events:{
+                        click: null,
+                        mouseOver: null
+                    }
                 }, {//Prévention de la consommation énergétique
-                    name: 'Consommation en 2050',
+                    name: 'Consommation en 2050 (CLIQUER pour choisir)',
                     color: '#FF00FF',
                     'id': 'point2',
                     x: 2050,
                     y: 1000
                 }]
-        }],
+            },
+            {
+                name: 'Quantité 2',
+                data: [{
+                    name: anneeRef, //Change au moment du choix de l'année de Référence
+                    color: '#00FF00',
+                    'id': 'point1',
+                    x: 2010, //Change au moment du choix de l'année de Référence
+                    y: 500,
+                    events:{
+                        click: null,
+                        mouseOver: null
+                    }
+                }, {//Prévention de la consommation énergétique
+                    name: 'Consommation en 2050 (CLIQUER pour choisir)',
+                    color: '#FF00FF',
+                    'id': 'point2',
+                    x: 2050,
+                    y: 200
+                }]
+            }],
         plotOptions: {
             series: {
                 cursor: 'pointer',
-                point: {events: {click: chart_Scenario_handler}}
+                point: {
+                    events: {
+                        //mouseOver: chartScenarioHandlerOver,
+                        click: chartScenarioHandlerClick
+                    }
+                }
             }
         }
     });
