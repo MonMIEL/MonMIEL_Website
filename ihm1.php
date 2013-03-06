@@ -53,6 +53,10 @@
         <button class="switcher" id="areaspline">areaspline</button>
     </div> -->
     <section>
+	
+		<div class="ariane">
+			<img src="img/ariane1.png"/>
+		</div>
 
     <!-- Horizon section -->
         <div id="Horizon">

@@ -11,12 +11,6 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-        </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -35,20 +29,19 @@
 		
 		<? include("menu.php"); ?>
 
-
-
-<!-- Chart type switchers -->
-<div class="actions">
-    <button class="switcher" id="column">column</button>
-    <button class="switcher" id="area">area</button>
-    <button class="switcher" id="line">line</button>
-    <button class="switcher" id="spline">Spine</button>
-    <button class="switcher" id="areaspline">areaspline</button>
-</div>
-<section>
+		<!-- Chart type switchers -->
+		<div class="actions">
+			<button class="switcher" id="column">column</button>
+			<button class="switcher" id="area">area</button>
+			<button class="switcher" id="line">line</button>
+			<button class="switcher" id="spline">Spine</button>
+			<button class="switcher" id="areaspline">areaspline</button>
+		</div>
+		
+		<section>
 			<div id="Horizon">
 				<h1>Horizon</h1>
-				<label for="annee">Année sélectionn�e</label>
+				<label for="annee">Année sélectionnée</label>
 				<input id="annee" name="annee" type=text placeholder="exemple : 2012" required autofocus>
 			</div>
 
@@ -57,15 +50,17 @@
 			</div>
 				<!-- two different charts -->
 				<div id="chart_2" class="chart"></div>
-                <div id="chart_1" class="chart"></div>
+				<div id="chart_1" class="chart"></div>
 			<div id="monmix">
 				<h1>Mon MIx ELectrique</h1>
 			</div>
 
 			<div id="simuler">
-
+				<div class="bouton">
+					<a href="rendu1.php"><span class="but-icon"></span>Simuler</a>
+				</div>
 			</div>
-</section>
+		</section>
 
 		<? include("footer.php"); ?>
     </body>
