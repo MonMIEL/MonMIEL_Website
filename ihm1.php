@@ -52,11 +52,12 @@
     <!-- Horizon section -->
         <div id="Horizon">
             <h1>Etape 1 : Horizon</h1>
-            <label for="anneeRef">Indiquer l'année de Référence</label>
-            <input id="anneeRef" name="anneeRef" type="text" placeholder="exemple: 2012" autofocus>
             <ul class="pager">
-                <li><a href="#" onclick="showDivScenario(<?php echo $var_anneeRef; ?>)">Valider</a></li>
+                <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de Référence</label>
+                <li>Année : <input id="anneeRef" type="text" name="inputAnneeRef" min="2011" max="2012"></li>
+                <li><a onclick="showDivScenario()">Valider</a></li>
             </ul>
+
         </div>
 
         <!-- Scenario section -->
@@ -77,7 +78,7 @@
             </div>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
-                    <div id="chart_Scenario" class="chart" style="width:100%; height:300px;"></div>
+                    <div id="chart_Scenario" class="chart" style="height:300px;"></div>
                 </div>
                 <div class="tab-pane" id="tab2">
                     <div id="chart_3" class="chart" style="width:100%; height:300px;"></div>
