@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="daa2be13-8104-4d71-82fd-0b13b4a5114e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/ihm1.css" afterPath="$PROJECT_DIR$/css/ihm1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ihm1.php" afterPath="$PROJECT_DIR$/ihm1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ihm1.js" afterPath="$PROJECT_DIR$/js/ihm1.js" />
     </list>
     <ignored path="MonMIEL_Website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +60,7 @@
       <file leaf-file-name="ihm1.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/ihm1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="56" selection-start="6826" selection-end="6826" vertical-scroll-proportion="0.9479167">
+            <state line="191" column="48" selection-start="6382" selection-end="6382" vertical-scroll-proportion="-0.015625">
               <folding>
                 <marker date="1362577347000" expanded="true" signature="1141:1154" placeholder="..." />
                 <marker date="1362577347000" expanded="true" signature="1676:1685" placeholder="..." />
@@ -121,7 +118,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-1314" />
-    <option name="y" value="764" />
+    <option name="y" value="-4" />
     <option name="width" value="1315" />
     <option name="height" value="773" />
   </component>
@@ -213,7 +210,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1314" y="764" width="1315" height="773" extended-state="6" />
+    <frame x="-1314" y="-4" width="1315" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -410,7 +407,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ihm1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="56" selection-start="6826" selection-end="6826" vertical-scroll-proportion="0.9479167">
+        <state line="191" column="48" selection-start="6382" selection-end="6382" vertical-scroll-proportion="-0.015625">
           <folding>
             <marker date="1362577347000" expanded="true" signature="1141:1154" placeholder="..." />
             <marker date="1362577347000" expanded="true" signature="1676:1685" placeholder="..." />
