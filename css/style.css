@@ -69,13 +69,6 @@ section .bloc {
     font-weight: bold;
 }
 
-.row .progress {
-    border: 1px solid #000000;
-}
-
-.row.first {
-
-}
 .row {
 	text-align: center;
 	border-top: 1px solid #000000;
