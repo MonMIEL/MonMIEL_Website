@@ -27,7 +27,8 @@
 
 		<section>
 			<div class="ariane"><img src="img/aliane3.png"/></div>
-            <div class="row first">
+        <div id="rendue2">
+            <div class="row">
                 <div id="mixdemande" class="span6">
                     <h1>Mix demandé</h1>
                     <div id="chart_1" class="chart"></div>
@@ -37,6 +38,7 @@
                     <div id="chart_2" class="chart"></div>
                 </div>
             </div>
+        </div>
 		</section>
 
 		<?php include("footer.php"); ?>
