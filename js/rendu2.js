@@ -37,7 +37,8 @@ $(document).ready(function() {
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
-            height:350
+            height:350,
+            backgroundColor: 'rgba(255,255,255,0.5)'
         },
         title: {
             text: 'Mix Demandé'
@@ -85,7 +86,8 @@ $(document).ready(function() {
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
-            height: 350
+            height: 350,
+            backgroundColor: 'rgba(255,255,255,0.5)'
         },
         title: {
             text: 'Mix Calculé'
