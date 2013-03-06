@@ -32,7 +32,7 @@
 			</div>
 		
 			<div id="rendue2">
-				<div class="row">
+				<div class="row first">
 					<div id="mixdemande" class="span6">
 						<h1>Mix demandé</h1>
 						<div id="chart_1" class="chart"></div>
