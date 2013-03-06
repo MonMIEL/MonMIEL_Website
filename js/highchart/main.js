@@ -31,45 +31,76 @@ function ChangeChartType(chart, series, newType) {
 }
 
 // Two charts definition
-var chart1, chart2, chart3;
+var chart_Scenario, chart2, chart3;
 
 // Once DOM (document) is finished loading
 $(document).ready(function() {
 
     // First chart initialization
-    chart1 = new Highcharts.Chart({
-     chart: {
-        renderTo: 'chart_1',
-        type: 'column',
-        height: 350
-     },
-     title: {
-        text: 'Tools developers plans to use to make html5 games (in %)'
-     },
-     xAxis: {
-        categories: ['Processing.js', 'Impact.js', 'Other', 'Ease.js', 'Box2D.js', 'WebGL', 'DOM', 'CSS', 'Canvas', 'Javascript']
-     },
-     yAxis: {
-        title: {
-           text: 'Interviewed'
-        }
-     },
-     series: [{
-        name: 'Dev #1',
-        data: [5, 10, 20, 22, 25, 28, 30, 40, 80, 90]
-     }, {
-        name: 'Dev #2',
-        data: [15, 15, 18, 40, 30, 25, 60, 60, 80, 70]
-     }, {
-        name: 'Dev #3',
-        data: [1, 3, 6, 0, 50, 25, 50, 60, 30, 100]
-     }]
+    chart_Scenario = new Highcharts.Chart({
+        chart: {
+            renderTo: 'chart_Scenario',
+            type: 'line',
+            backgroundColor: '#FFFFFF',
+            style: {
+                fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
+                fontSize: '50px'
+            },
+            animation: false
+        },
+        credits: {
+            enabled: false
+        },
+        /*labels: {
+            items: [{
+                html: 'helloTest',
+                style:{
+                    left: '100px',
+                    top: '100px'
+                }
+            }],
+            style: null
+        },*/
+        /*title: {
+            text: 'Fruit Consumption'
+        },*/
+        xAxis: {
+            title: {
+                text: 'Année'
+            }
+            //categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Quantité de la consommation énergétique',
+                style: {
+                    color: '#6D869F',
+                    fontWeight: 'bold'
+                }
+            }
+        },
+        series: [
+            {
+            name: 'Quantité',
+            data: [{
+                name: 'Consommation en 2012',
+                color: '#00FF00',
+                x: 2012,
+                y: 100
+            }, {//Prévention de la consommation énergétique
+                name: 'Consommation en 2050',
+                color: '#FF00FF',
+                x: 2050,
+                y: 1000
+            }]
+        }]
+
     });
 
     // Switchers (of the Chart1 type) - onclick handler
     $('.switcher').click(function () {
         var newType = $(this).attr('id');
-        ChangeChartType(chart1, chart1.series, newType);
+        ChangeChartType(chart_Scenario, chart_Scenario.series, newType);
     });
 
 
@@ -117,9 +148,7 @@ $(document).ready(function() {
          }]
     });
 
-
-
-    chart2 = new Highcharts.Chart({
+    chart3 = new Highcharts.Chart({
         chart: {
             renderTo: 'chart_3',
             plotBackgroundColor: null,

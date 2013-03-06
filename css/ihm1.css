@@ -1,0 +1,21 @@
+/* Slider */
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: #1E93FF;
+    width: 200px;
+    height:6px;
+    border-radius:5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: #f6f6f6;
+    opacity: 0.7;
+    width: 12px;
+    height: 12px;
+    border-radius:10px;
+    border: solid black 1px;
+}
+
+#contenantChartScenario{
+}

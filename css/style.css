@@ -61,115 +61,66 @@ section .bloc {
 	padding: 5px;
 }
 
-.row {
+#parc .row {
 	text-align: center;
 	border-top: 1px solid #000000;
 	padding-top: 20px;
 	margin-left: 5px;
 }
 
-.row .progress {
+#parc .progress {
 	border: 1px solid #000000;
 }
 
-.row.first {
+#parc .row.first {
 	text-align: center;
 	border-top: 0;
 	padding-top: 15px;
 	font-weight: bold;
 }
 
-.row.first .span2.evol {
+#parc .row.first .span2.evol {
 	margin-left: 0px;
 	padding: 0;
 	width: 100px;
 }
 
-.row.first .span6 {
+#parc .row.first .span6 {
 	margin-top: 10px;
 }
 
-.row.autre .progress {
+#parc .row.autre .progress {
 	opacity: 0.5;
 	filter:alpha(opacity=50); 
 }
 
-.row.autre .span2,
-.row.autre .span1,
-.row.legende .span1,
-.row.legende .span2 {
+#parc .row.autre .span2,
+#parc .row.autre .span1,
+#parc .row.legende .span1,
+#parc .row.legende .span2 {
 	margin-top: 0px;
 }
 
-.legende-verte,
-.legende-jaune {
+#parc .legende-verte,
+#parc .legende-jaune {
 	font-weight: bold;
 }
 
-.row .legende-verte {
+#parc .legende-verte {
 	color: #356E35;
 }
 
-.row .legende-jaune {
+#parc .legende-jaune {
 	color: #6A4D23;
 }
 
-.row .span2,
-.row .span1 {
+#parc .span2,
+#parc .span1 {
 	margin-top: 10px;
 }
 
-.row .first {
+#parc .first {
 	margin-bottom: 5px;
-}
-
-section #calcul {
-	text-align: center;
-	margin-bottom: 15px;
-}
-
-section .bouton{
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	behavior: url(PIE.htc);
-	display:inline-block;
-	vertical-align:top;
-}
-
-.bouton{
-	font-weight:bold;
-}
-
-.bouton a{
-	background:url("../img/but_join.png") top repeat-x;
-	text-shadow:0px -1px 0px #0034a4;
-	border:1px solid #29629d;
-	display:block;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	padding:10px 10px 5px 7px;
-	color:white;
-	text-decoration:none;
-}
-
-.bouton a:hover{
-	background:url("../img/but_join_hover.png") top repeat-x;
-}
-
-.bouton a span.but-icon{
-	background:url("../img/icon_arrow.png") top no-repeat;
-}
-
-span.but-icon{
-	display:block;
-	margin-top: -3px;
-	height:24px;
-	width:24px;
-	float:left;
-	margin-right:8px;
-	margin-left: 5px;
 }
 
 footer {
