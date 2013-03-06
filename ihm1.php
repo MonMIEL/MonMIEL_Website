@@ -8,12 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
     <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/ihm1.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ihm1.css">
 
     <!-- add scripts -->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -55,11 +60,13 @@
     <!-- Horizon section -->
         <div id="Horizon">
             <h1>Etape 1 : Horizon</h1>
-            <ul class="pager">
+            <!--<ul class="pager">-->
+            <div>
                 <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de Référence</label>
-                <li>Année : <input id="anneeRef" type="text" name="inputAnneeRef" min="2011" max="2012"></li>
-                <li><a onclick="showDivScenario()">Valider</a></li>
-            </ul>
+                <li>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></li>
+                <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
+                <button id="buttonValiderHorizon" onclick="validerHorizon()">Valider</button>
+            </div>
 
         </div>
 
@@ -67,9 +74,11 @@
         <div id="Scenario" style="display:none;">
             <!--Titre-->
             <h1>Etape 2 : Scénario</h1>
+
             <!--Label-->
             <label for="anneeRef">Indiquer la quantité de la production</label>
-            <!--Scenario-->
+
+            <!--NavBar-->
             <div class="navbar nav-tabs">
                 <div class="navbar-inner">
                     <a class="brand">Type de scénario</a>
@@ -79,18 +88,40 @@
                     </ul>
                 </div>
             </div>
+
+            <!--Graphs-->
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
-                    <div id="chart_Scenario" class="chart" style="height:300px;"></div>
+                    <table>
+                        <tr>
+                            <td><div id="chart_Scenario" class="chart" style="height:300px;"></div></td>
+                            <td><div id="tab_chart_Scenario">
+                                <table>
+                                    <tr>
+                                        <td>Année</td>
+                                        <td>Quantité</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="tab_chart_Scenario.id"></td>
+                                        <td id="tab_chart_Scenario.qu"></td>
+                                    </tr>
+                                </table>
+                                <div id="etatScenario"></div>
+                                <button id="buttonValiderScenario" onclick="validerScenario()" disabled="disabled">Valider</button>
+                            </div></td>
+                        </tr>
+                    </table>
+
                 </div>
                 <div class="tab-pane" id="tab2">
-                    <div id="chart_3" class="chart" style="width:100%; height:300px;"></div>
+                    <!--<div id="chart_3" class="chart" style="width:100%; height:300px;"></div>-->
+                    <div>Contenu en rédaction</div>
                 </div>
             </div>
         </div>
 
         <!-- MonMix section -->
-        <div id="monmix">
+        <div id="monmix" style="display:none;">
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
             <h1>Mon MIx ELectrique</h1>
 			<div class="bloc" style="width:50%;">
