@@ -24,7 +24,7 @@ header {
 	filter:alpha(opacity=50); 
 	border:0;
 }
-.aliane {
+.ariane {
 	text-align:center;
 }
 section {
@@ -60,6 +60,14 @@ section .bloc {
 	background-color: rgba(255,255,255,0.5);
 	padding: 5px;
 }
+#contenu_mail .row {
+    text-align: center;
+    border-top: 1px solid #000000;
+    margin-left: 5px;
+    border-top: 0;
+    padding-top: 15px;
+    font-weight: bold;
+}
 
 .row {
 	text-align: center;
@@ -78,7 +86,28 @@ section .bloc {
 	padding-top: 15px;
 	font-weight: bold;
 }
+#rendue2 .row .span6 {
+    padding: 0;
+    width:430px
+}
 
+#contenu_mail .row .span6 {
+    padding: 0;
+    width:200px
+}
+
+#contenu_mail .row .droite {
+    text-align: right;
+}
+
+
+#contenu_mail .row .gauche {
+    text-align: left;
+}
+
+#message_saisie {
+    text-align: center;
+}
 .row.first .span2.evol {
 	margin-left: 0px;
 	padding: 0;
@@ -140,7 +169,25 @@ section .bouton{
 .bouton{
 	font-weight:bold;
 }
+#contenu_mail{
+    background-color: rgba(255,255,255,0.5);
+    /*border-radius*/
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-topleft:5px;
+    border-top-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    -moz-border-radius-topright:5px;
+    border-top-right-radius: 5px;
+    width : 500px;
+    margin-left: 220px;
+     height: 480px;
+}
 
+#contenu_mail #message_saisie #message{
+width:350px;
+
+}
 .bouton a{
 	background:url("../img/but_join.png") top repeat-x;
 	text-shadow:0px -1px 0px #0034a4;
@@ -155,13 +202,31 @@ section .bouton{
 }
 
 .bouton a:hover{
-	background:url("../img/but_join_hover.png") top repeat-x;
+	background:url("../img/but_join_hr.png") top repeat-x;
 }
 
 .bouton a span.but-icon{
 	background:url("../img/icon_arrow.png") top no-repeat;
 }
 
+#envoye input {
+    background:url("../img/but_join.png") top repeat-x;
+    text-shadow:0px -1px 0px #0034a4;
+    border:1px solid #29629d;
+    display:block;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding:10px 10px 5px 7px;
+    color:white;
+    text-decoration:none;
+    margin-left: 210px;
+}
+
+#envoye input:hover{
+    background:url("../img/but_join_hover.png") top repeat-x;
+
+}
 span.but-icon{
 	display:block;
 	margin-top: -3px;

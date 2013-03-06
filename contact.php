@@ -129,8 +129,8 @@ if (!empty($alert))
 
         <form action="contact.php" method="post">
             <div class="row">
-                Civilité :
-                <select id="civilite" name="civilite">
+               <div class="span6 droite"> Civilité :</div>
+                <div class="span6 gauche"> <select id="civilite" name="civilite">
                     <option
                             value="mr"
                         <?php
@@ -165,34 +165,46 @@ if (!empty($alert))
                         Mademoiselle
                     </option>
                 </select>
+                   </div>
              </div>
             <div class="row">
-               Nom/Prénom :
-                <input type="text" id="nom" name="nom"
+                <div class="span6 droite" > Nom/Prénom :</div>
+                <div class="span6 gauche">
+                    <input type="text" id="nom" name="nom"
                        value="<?php echo (isset($_POST['nom'])) ? $nom : '' ?>"
                         />
+                </div>
             </div>
             <div class="row">
-               E-mail :
-                <input type="text" id="email" name="email"
+                <div class="span6 droite" > E-mail : </div>
+                    <div class="span6 gauche">
+                        <input type="text" id="email" name="email"
                        value="<?php echo (isset($_POST['email'])) ? $expediteur : '' ?>"
                         />
-
+                    </div>
             </div>
            <div class="row">
 
-                Sujet :
-                <input type="text" id="sujet" name="sujet"
+               <div class="span6 droite">  Sujet : </div>
+                   <div class="span6 gauche"> <input type="text" id="sujet" name="sujet"
                        value="<?php echo (isset($_POST['sujet'])) ? $sujet : '' ?>"
                         />
-
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" cols="40" rows="4">
+                   </div>
+           </div>
+            <div id="message_saisie">
+                <label for="message"><b>Message :</b></label>
+                <textarea id="message" name="message" cols="100" rows="8">
                     <?php echo (isset($_POST['message'])) ? $message : '' ?>
                 </textarea>
-           </div>
-                <input type="submit" name="envoye" value="Envoyer" />
+            </div>
+
+            <div id="envoye">
+                    <input  type="submit" name="envoye" value="Envoyer" />
+            </div>
+
         </form>
+
+
 
     </div>
 </section>

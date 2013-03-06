@@ -64,7 +64,9 @@
         <button class="switcher" id="areaspline">areaspline</button>
     </div> -->
     <section>
-        <div class="aliane"><img src="img/aliane1.png"/></div>
+		<div class="ariane">
+			<img src="img/ariane1.png"/>
+		</div>
 
     <!-- Horizon section -->
         <div id="horizon">
@@ -194,7 +196,9 @@
         </div>
 
         <div id="simuler">
-
+			<div class="bouton">
+				<a href="rendu1.php"><span class="but-icon"></span>Simuler</a>
+			</div>
         </div>
     </section>
 
