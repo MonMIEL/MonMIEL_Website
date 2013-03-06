@@ -53,11 +53,13 @@
     <!-- Horizon section -->
         <div id="Horizon">
             <h1>Etape 1 : Horizon</h1>
-            <ul class="pager">
+            <!--<ul class="pager">-->
+            <div>
                 <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de Référence</label>
-                <li>Année : <input id="anneeRef" type="text" name="inputAnneeRef" min="2011" max="2012"></li>
-                <li><a onclick="showDivScenario()">Valider</a></li>
-            </ul>
+                <li>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></li>
+                <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
+                <button id="buttonValiderHorizon" onclick="validerHorizon()">Valider</button>
+            </div>
 
         </div>
 
@@ -66,7 +68,6 @@
             <!--Titre-->
             <h1>Etape 2 : Scénario</h1>
             <!--Label-->
-            <label for="anneeRef">Indiquer la quantité de la production</label>
             <!--Scenario-->
             <div class="navbar nav-tabs">
                 <div class="navbar-inner">
@@ -79,17 +80,21 @@
             </div>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
-                    <div id="chart_Scenario" class="chart" style="height:300px;"></div>
+                    <div class="row">
+                        <div id="chart_Scenario" class="chart span5" style="height:300px;"></div>
+                        <div class="span2">TestSpan2</div>
+                    </div>
                 </div>
                 <div class="tab-pane" id="tab2">
                     <div id="chart_3" class="chart" style="width:100%; height:300px;"></div>
                 </div>
             </div>
+            <button id="buttonValiderScenario" onclick="validerScenario()" disabled="disabled">Valider</button>
         </div>
 
         <!-- MonMix section -->
-        <div id="monmix">
-            <h1>Mon MIx ELectrique</h1>
+        <div id="monmix" style="display:none;">
+            <h1>Etape 3 : Mon MIx ELectrique</h1>
 			<div class="row">
 				<div class="span1">
 						Nucléaire

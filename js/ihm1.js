@@ -9,7 +9,7 @@
  * http://www.script-tutorials.com/
  */
 var anneeRef;
-function showDivScenario(){
+function validerHorizon(){
     //Récupération des données entrées
     anneeRef=document.getElementById("anneeRef").value;
 
@@ -24,10 +24,30 @@ function showDivScenario(){
         chart_Scenario.series[0].data[0].name = "Consommation de "+anneeRef;
         chart_Scenario.series[0].data[0].x = parseInt(anneeRef);
         chart_Scenario.render();
+        var label =document.getElementById('labelAnneeRef');
+        label.innerHTML="<div style=\"color:#98fb98\">"+"Année "+anneeRef+" est prise en compte !</div></br>Indiquer l'année de Référence entre 2011 et 2012";
+
+        //Reset other elements
+            //cacher le bouton Suivant du contenu "Scenario"
+        document.getElementById("buttonValiderScenario").setAttribute("disabled","disabled");
+            //cacher le contenu "MonMIxELectrique"
+        document.getElementById('monmix').style.display = "none";
     }else{
         var label =document.getElementById('labelAnneeRef');
         label.innerHTML="<div style=\"color:red\">"+"Valeur "+anneeRef+" n'est pas supportée</div></br>Indiquer l'année de Référence entre 2011 et 2012";
     }
+}
+
+function validerScenario(){
+    //Affichage du contenu suivant
+    document.getElementById('monmix').style.display = "block";
+}
+
+function chart_Scenario_handler() {
+    console.log(this);
+    console.log('Category: '+ this.category +', value: '+ this.y + 'Series: ' +  this.series.name + ' ID: ' + this.config[2]);
+
+    document.getElementById("buttonValiderScenario").removeAttribute("disabled");
 }
 
 // Change Chart type function
@@ -60,7 +80,7 @@ $(document).ready(function() {
     chart_Scenario = new Highcharts.Chart({
         chart: {
             renderTo: 'chart_Scenario',
-            width: 940,
+            width: 700,
             type: 'line',
             backgroundColor: '#FFFFFF',
             style: {
@@ -82,20 +102,30 @@ $(document).ready(function() {
          }],
          style: null
          },*/
-        /*title: {
-         text: 'Fruit Consumption'
-         },*/
+        title: {
+            text: 'Indiquer la quantité de la production annuelle en 2050',
+            align: 'center',
+            style: {
+                color: '#3E576F',
+                fontSize: '16px'
+            }
+        },
         xAxis: {
             title: {
-                text: 'Année'
+                text: 'Année',
+                style: {
+                    color: '#3E576F',
+                    fontWeight: 'bold',
+                    align: 'right'
+                }
             }
             //categories: ['Apples', 'Bananas', 'Oranges']
         },
         yAxis: {
             title: {
-                text: 'Quantité de la consommation énergétique',
+                text: 'Quantité (GWh)',
                 style: {
-                    color: '#6D869F',
+                    color: '#3E576F',
                     fontWeight: 'bold'
                 }
             }
@@ -105,22 +135,28 @@ $(document).ready(function() {
                 alert ('The chart was just redrawn');
             }
         },
-        series: [
-            {
+        series: [{
                 name: 'Quantité',
                 data: [{
-                    name: anneeRef,
+                    name: anneeRef, //Change au moment du choix de l'année de Référence
                     color: '#00FF00',
-                    x: 2010,
+                    'id': 'point1',
+                    x: 2010, //Change au moment du choix de l'année de Référence
                     y: 100
                 }, {//Prévention de la consommation énergétique
                     name: 'Consommation en 2050',
                     color: '#FF00FF',
+                    'id': 'point2',
                     x: 2050,
                     y: 1000
                 }]
-            }]
-
+        }],
+        plotOptions: {
+            series: {
+                cursor: 'pointer',
+                point: {events: {click: chart_Scenario_handler}}
+            }
+        }
     });
 
     // Switchers (of the Chart1 type) - onclick handler
