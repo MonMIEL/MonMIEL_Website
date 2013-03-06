@@ -100,8 +100,18 @@ if (isset($_POST['envoye']))
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MonMIEL</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <title></title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 </head>
 <body>
 
@@ -114,12 +124,12 @@ if (!empty($alert))
     <?php include("header.php"); ?>
 
     <?php include("menu.php"); ?>
-
-    <div id="contenu">
+<section>
+    <div id="contenu_mail">
 
         <form action="contact.php" method="post">
-            <p>
-                <label for="civilite">Civilité :</label>
+            <div class="row">
+                Civilité :
                 <select id="civilite" name="civilite">
                     <option
                             value="mr"
@@ -155,38 +165,37 @@ if (!empty($alert))
                         Mademoiselle
                     </option>
                 </select>
-            </p>
-            <p>
-                <label for="nom">Nom/Prénom :</label>
+             </div>
+            <div class="row">
+               Nom/Prénom :
                 <input type="text" id="nom" name="nom"
                        value="<?php echo (isset($_POST['nom'])) ? $nom : '' ?>"
                         />
-            </p>
-            <p>
-                <label for="email">E-mail :</label>
+            </div>
+            <div class="row">
+               E-mail :
                 <input type="text" id="email" name="email"
                        value="<?php echo (isset($_POST['email'])) ? $expediteur : '' ?>"
                         />
-            </p>
-            <p>
-                <label for="sujet">Sujet :</label>
+
+            </div>
+           <div class="row">
+
+                Sujet :
                 <input type="text" id="sujet" name="sujet"
                        value="<?php echo (isset($_POST['sujet'])) ? $sujet : '' ?>"
                         />
-            </p>
-            <p>
+
                 <label for="message">Message :</label>
                 <textarea id="message" name="message" cols="40" rows="4">
                     <?php echo (isset($_POST['message'])) ? $message : '' ?>
                 </textarea>
-            </p>
-            <p>
+           </div>
                 <input type="submit" name="envoye" value="Envoyer" />
-            </p>
         </form>
 
     </div>
-
+</section>
     <?php include("footer.php"); ?>
 </body>
 </html>
