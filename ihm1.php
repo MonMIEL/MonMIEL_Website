@@ -59,22 +59,25 @@
 		</div>
 
     <!-- Horizon section -->
-        <div id="Horizon">
-            <h1>Etape 1 : Horizon</h1>
+        <div id="horizon">
+            <h1>Etape 1 - Horizon</h1>
             <!--<ul class="pager">-->
-            <div>
-                <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de Référence</label>
-                <li>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></li>
+            <div class="bloc">
+                <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de référence</label>
+                <div>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></div>
                 <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
-                <button id="buttonValiderHorizon" onclick="validerHorizon()">Valider</button>
+				<div class="bouton">
+					<a onclick="validerHorizon()"><span class="but-icon"></span>Valider</a>
+				</div>
             </div>
 
         </div>
 
         <!-- Scenario section -->
         <div id="Scenario" style="display:none;">
+			<img class="separateur" src="img/separateur.jpg" alt="separateur" />
             <!--Titre-->
-            <h1>Etape 2 : Scénario</h1>
+            <h1>Etape 2 - Scénario</h1>
 
             <!--Label-->
             <label for="anneeRef">Indiquer la quantité de la production</label>
@@ -124,7 +127,7 @@
         <!-- MonMix section -->
         <div id="monmix" style="display:none;">
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
-            <h1>Mon MIx ELectrique</h1>
+            <h1>Etape 3 - Mon MIx ELectrique</h1>
 			<div class="bloc" style="width:50%;">
 				<div class="row first">
 					<div class="span3">Energie</div>
