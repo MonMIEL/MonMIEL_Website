@@ -10,7 +10,7 @@
  */
 var anneeRef;         //année de référence choisie par l'utilisateur dans la partie Horizon
 var anneeCible;         //année de référence choisie par l'utilisateur dans la partie Horizon
-var consommation2050; //consommation pour l'année 2050 choisie par l'utilisateur dans la partie Scenario
+var consommation2050 = 700; //consommation pour l'année 2050 choisie par l'utilisateur dans la partie Scenario
 
 var validHorizonRef=0; //=1 si la partie Horizon est validée, =0 sinon
 var validHorizonCible=0; //=1 si la partie Horizon est validée, =0 sinon
@@ -19,9 +19,9 @@ var validMonMix=0;  //=1 si la partie MonMixElectrique est validée, =0 sinon
 
 function majChartAvecAnneeRef(chart, series) {
     for (var i = 0; i < series.length; i++) {
-        chart_Scenario.series[i].data[0].name = "Consommation de "+anneeRef;
+        chart_Scenario.series[i].data[0].name = "Année : "+anneeRef;
         chart_Scenario.series[i].data[0].x = parseInt(anneeRef);
-        chart_Scenario.series[i].data[1].name = "Consommation de "+anneeCible;
+        chart_Scenario.series[i].data[1].name = "Année : "+anneeCible;
         chart_Scenario.series[i].data[1].x = parseInt(anneeCible);
         chart_Scenario.render();
     }
@@ -173,7 +173,7 @@ $(document).ready(function() {
          style: null
          },*/
         title: {
-            text: 'Consommation énergétique',
+            text: 'Consommation intérieure brute annuelle',
             style: {
                 color: '#3E576F',
                 fontSize: '16px'
@@ -211,23 +211,23 @@ $(document).ready(function() {
             }
         },
         series: [{
-                name: 'Quatité 1',
+                name: 'Consommation',
                 data: [{
                     name: anneeRef, //Change au moment du choix de l'année de Référence
                     color: '#00FF00',
                     'id': 'point1',
                     x: 2010, //Change au moment du choix de l'année de Référence
-                    y: 500,
+                    y: 300,
                     events:{
                         click: null,
                         mouseOver: null
                     }
                 }, {
-                    name: 'Consommation en 2050 (CLIQUER pour choisir)',
+                    name: 'Consommation en 2050)',
                     color: '#FF00FF',
                     'id': 'point2',
                     x: 2050,
-                    y: 1000
+                    y: consommation2050
                 }]
             }],
         plotOptions: {
