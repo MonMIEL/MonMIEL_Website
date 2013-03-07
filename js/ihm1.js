@@ -88,7 +88,7 @@ function testerTwh() {
 		majChartAvecConso2050(chart_Scenario, chart_Scenario.series);
 		
 		//MaJ du tableau de la quantité choisie en Gwh
-		document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
+		document.getElementById("tab_chart_Scenario.id").innerHTML = anneeCible;
 		document.getElementById("tab_chart_Scenario.qu").innerHTML = consommation2050;
 		
 		chart_Scenario.series[0].show();

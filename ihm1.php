@@ -125,6 +125,7 @@
 						
 						<div class="navbar-form pull-right">
 							<input id="valeurTwh" type="text" class="span2">
+							<span>TWh</span>
 							<a id="boutonTwh" onclick="testerTwh()" class="btn" rel="popover" data-content="La valeur doit être comprise entre 300 et 700">Tester</a>
 						</div>
                     </div>
