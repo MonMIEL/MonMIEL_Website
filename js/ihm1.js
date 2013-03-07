@@ -9,9 +9,11 @@
  * http://www.script-tutorials.com/
  */
 var anneeRef;         //année de référence choisie par l'utilisateur dans la partie Horizon
+var anneeCible;         //année de référence choisie par l'utilisateur dans la partie Horizon
 var consommation2050; //consommation pour l'année 2050 choisie par l'utilisateur dans la partie Scenario
 
-var validHorizon=0; //=1 si la partie Horizon est validée, =0 sinon
+var validHorizonRef=0; //=1 si la partie Horizon est validée, =0 sinon
+var validHorizonCible=0; //=1 si la partie Horizon est validée, =0 sinon
 var validScenario=0;//=1 si la partie Scenario est validée, =0 sinon
 var validMonMix=0;  //=1 si la partie MonMixElectrique est validée, =0 sinon
 
@@ -23,34 +25,46 @@ function majChartAvecAnneeRef(chart, series) {
     }
 }
 
-function validerHorizon(){
+function validerHorizonRef(){
     //Récupération des données entrées
     anneeRef=document.getElementById("anneeRef").value;
 
-    if(parseInt(anneeRef)>=2011 && parseInt(anneeRef)<=2012){
-        //Affichage du contenu suivant
-        document.getElementById('scenario').style.display = "block";
+	//MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
+	majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
+	
+	var label =document.getElementById('labelHorizonRef');
+	label.innerHTML='<div style="text-align:center; color:green">Année de référence '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
 
-        //alert(anneeRef);
-        //console.log(chart_Scenario.series[0].data[0].name);
+	validHorizonRef=1;
+	
+	if (validHorizonCible == 1) {
+		//MaJ de titleHorizon
+		document.getElementById("titleHorizon").style.cssText ="color:green";
+		
+		//Affichage du contenu suivant
+		document.getElementById('scenario').style.display = "block";
+	}
+}
 
-        //MaJ de titleHorizon
-        document.getElementById("titleHorizon").style.cssText ="color:green";
+function validerHorizonCible(){
+    //Récupération des données entrées
+    anneeCible=document.getElementById("anneeCible").value;
 
-        //MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
-        majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
-        var label =document.getElementById('labelHorizon');
-        label.innerHTML='<div style="text-align:center; color:green">Année '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
+	//MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
+	majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
+	
+	var label =document.getElementById('labelHorizonCible');
+	label.innerHTML='<div style="text-align:center; color:green">Année cible '+anneeCible+' est prise en compte <i class="icon-ok"></i></div>';
 
-        validHorizon=1;
-    }else{
-        var label =document.getElementById('labelHorizon');
-        label.innerHTML='<div style="color:red">'+'Valeur ['+anneeRef+'] n\'est pas supportée <i class="icon-remove"></i></div>' +
-            '<div>(la valeur de l\'année de référence doit être comprise entre 2011 et 2012)</div>';
-
-        document.getElementById('titleHorizon').style.cssText = "color:red";
-        validHorizon=0;
-    }
+	validHorizonCible=1;
+	
+	if (validHorizonRef == 1) {
+		//MaJ de titleHorizon
+		document.getElementById("titleHorizon").style.cssText ="color:green";
+		
+		//Affichage du contenu suivant
+		document.getElementById('scenario').style.display = "block";
+	}
 }
 
 function validerScenario(){
@@ -197,26 +211,6 @@ $(document).ready(function() {
                     'id': 'point2',
                     x: 2050,
                     y: 1000
-                }]
-            },
-            {
-                name: 'Quantité 2',
-                data: [{
-                    name: anneeRef, //Change au moment du choix de l'année de Référence
-                    color: '#00FF00',
-                    'id': 'point1',
-                    x: 2010, //Change au moment du choix de l'année de Référence
-                    y: 500,
-                    events:{
-                        click: null,
-                        mouseOver: null
-                    }
-                }, {//Prévention de la consommation énergétique
-                    name: 'Consommation en 2050 (CLIQUER pour choisir)',
-                    color: '#FF00FF',
-                    'id': 'point2',
-                    x: 2050,
-                    y: 200
                 }]
             }],
         plotOptions: {

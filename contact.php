@@ -129,8 +129,8 @@ if (!empty($alert))
 
         <form action="contact.php" method="post">
             <div class="row">
-               <div class="span6 droite"> Civilité :</div>
-                <div class="span6 gauche"> <select id="civilite" name="civilite">
+               <div class="span6 gauche"> Civilité :</div>
+                <div class="span6 droite"> <select id="civilite" name="civilite">
                     <option
                             value="mr"
                         <?php
@@ -168,16 +168,16 @@ if (!empty($alert))
                    </div>
              </div>
             <div class="row">
-                <div class="span6 droite" > Nom/Prénom :</div>
-                <div class="span6 gauche">
+                <div class="span6 gauche" > Nom/Prénom :</div>
+                <div class="span6 droite">
                     <input type="text" id="nom" name="nom"
                        value="<?php echo (isset($_POST['nom'])) ? $nom : '' ?>"
                         />
                 </div>
             </div>
             <div class="row">
-                <div class="span6 droite" > E-mail : </div>
-                    <div class="span6 gauche">
+                <div class="span6 gauche" > E-mail : </div>
+                    <div class="span6 droite">
                         <input type="text" id="email" name="email"
                        value="<?php echo (isset($_POST['email'])) ? $expediteur : '' ?>"
                         />
@@ -185,8 +185,8 @@ if (!empty($alert))
             </div>
            <div class="row">
 
-               <div class="span6 droite">  Sujet : </div>
-                   <div class="span6 gauche"> <input type="text" id="sujet" name="sujet"
+               <div class="span6 gauche">  Sujet : </div>
+                   <div class="span6 droite"> <input type="text" id="sujet" name="sujet"
                        value="<?php echo (isset($_POST['sujet'])) ? $sujet : '' ?>"
                         />
                    </div>
