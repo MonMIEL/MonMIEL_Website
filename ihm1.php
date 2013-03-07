@@ -113,18 +113,21 @@
             <!--Titre-->
             <h1 id="titleScenario">Etape 2 - Scénario</h1>
 
-            <!--Label-->
-            <div id="labelScenario" class="labelIhm1">Indiquer la quantité de la consommation annuelle en 2050</div>
-
             <div class="bloc">
                 <!--NavBar-->
-                <div class="navbar nav-tabs" style="width:700px">
+                <div class="navbar nav-tabs">
                     <div class="navbar-inner">
                         <a class="brand">Type de scénario</a>
                         <ul class="nav">
                             <li class="active"><a href="#tab1" data-toggle="tab">Personnel</a></li>
                         </ul>
+						
+						<div class="navbar-form pull-right">
+							<input id="valeurGwh" type="text" class="span2">
+							<button onclick="testerGwh()" class="btn">Tester</button>
+						</div>
                     </div>
+
                 </div>
 
                 <!--Graphs-->
@@ -152,11 +155,10 @@
 								</td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
 				<div class="bouton">
-					<a onclick="validerHorizon()"><span class="but-icon"></span>Valider</a>
+					<a onclick="validerScenario()"><span class="but-icon"></span>Valider</a>
 				</div>
             </div>
         </div>

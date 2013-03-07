@@ -22,24 +22,28 @@
     <?php include("menu.php"); ?>
 <section>
     <div id="contenu_lien">
-        <h4>Partenaires</h4>
-        <div class="row first" style="font-weight: normal">
-            <div class ="span6 droite">Réseau de Transport d'Electricité : </div>
-            <div class ="span6 gauche"><a href="http://www.rte-france.com/fr/"><img src="img/rte.png" style="height: 45px;"/></a></div></br></br>
-        </div>
-        <div class="row first" style="font-weight: normal">
-            <div class ="span6 droite">UJF : </div>
-            <div class ="span6 gauche"><a href="http://www.ujf-grenoble.fr/"><img src="img/logo-ujf-gs.gif" style="height: 45px;"/></a></div></br></br>
-        </div>
-        <div class="row first" style="font-weight: normal">
-          <div class ="span6 droite">MIAGE : </div>
-          <div class ="span6 gauche"><a href="http://ufrima.imag.fr/spip.php?rubrique12"><img src="img/miage.png" style="height: 45px;"/></a></div></br></br>
-        </div>
-        <h4>Autre simulateur</h4>
-        <div class="row first" style="font-weight: normal">
-           <div class ="span6 droite">Révolution fiscale :  </div>
-           <div class ="span6 gauche"><a href="http://www.revolution-fiscale.fr/"><img src="img/revolution.png" style="height: 30px;"/></a> </div></br></br>
-        </div>
+        <h1>Partenaires</h1>
+		<div class="bloc">
+			<div class="row first" style="font-weight: normal">
+				<div class ="span6 gauche">Réseau de Transport d'Electricité : </div>
+				<div class ="span6 droite"><a href="http://www.rte-france.com/fr/"><img src="img/rte.png" style="height: 45px;"/></a></div></br></br>
+			</div>
+			<div class="row first" style="font-weight: normal">
+				<div class ="span6 gauche">UJF : </div>
+				<div class ="span6 droite"><a href="http://www.ujf-grenoble.fr/"><img src="img/logo-ujf-gs.gif" style="height: 45px;"/></a></div></br></br>
+			</div>
+			<div class="row first" style="font-weight: normal">
+			  <div class ="span6 gauche">MIAGE : </div>
+			  <div class ="span6 droite"><a href="http://ufrima.imag.fr/spip.php?rubrique12"><img src="img/miage.png" style="height: 45px;"/></a></div></br></br>
+			</div>
+		</div>
+        <h1>Autre simulateur</h1>
+		<div class="bloc">
+			<div class="row first" style="font-weight: normal">
+			   <div class ="span6 gauche">Révolution fiscale :  </div>
+			   <div class ="span6 droite"><a href="http://www.revolution-fiscale.fr/"><img src="img/revolution.png" style="height: 30px;"/></a> </div></br></br>
+			</div>
+		</div>
     </div>
 </section>
     <?php include("footer.php"); ?>

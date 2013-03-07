@@ -21,6 +21,15 @@ function majChartAvecAnneeRef(chart, series) {
     for (var i = 0; i < series.length; i++) {
         chart_Scenario.series[i].data[0].name = "Consommation de "+anneeRef;
         chart_Scenario.series[i].data[0].x = parseInt(anneeRef);
+        chart_Scenario.series[i].data[1].name = "Consommation de "+anneeCible;
+        chart_Scenario.series[i].data[1].x = parseInt(anneeCible);
+        chart_Scenario.render();
+    }
+}
+
+function majChartAvecConso2050(chart, series) {
+    for (var i = 0; i < series.length; i++) {
+        chart_Scenario.series[i].data[1].y = parseInt(consommation2050);
         chart_Scenario.render();
     }
 }
@@ -33,7 +42,7 @@ function validerHorizonRef(){
 	majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
 	
 	var label =document.getElementById('labelHorizonRef');
-	label.innerHTML='<div style="text-align:center; color:green">Année de référence '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
+	label.innerHTML='<div style="text-align:center; color:green">L\'année de référence '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
 
 	validHorizonRef=1;
 	
@@ -54,7 +63,7 @@ function validerHorizonCible(){
 	majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
 	
 	var label =document.getElementById('labelHorizonCible');
-	label.innerHTML='<div style="text-align:center; color:green">Année cible '+anneeCible+' est prise en compte <i class="icon-ok"></i></div>';
+	label.innerHTML='<div style="text-align:center; color:green">L\'année cible '+anneeCible+' est prise en compte <i class="icon-ok"></i></div>';
 
 	validHorizonCible=1;
 	
@@ -65,6 +74,14 @@ function validerHorizonCible(){
 		//Affichage du contenu suivant
 		document.getElementById('scenario').style.display = "block";
 	}
+}
+
+function testerGwh() {
+	consommation2050 = document.getElementById("valeurGwh").value;
+
+	//MaJ de la consommation dans le graph chart_Scenario
+	majChartAvecConso2050(chart_Scenario, chart_Scenario.series);
+	
 }
 
 function validerScenario(){
@@ -80,28 +97,28 @@ function validerScenario(){
     validScenario = 1;
 }
 
-function chartScenarioHandlerOver() {
-    //console.log(this);
+// function chartScenarioHandlerOver() {
+    // //console.log(this);
 
-    //MaJ du tableau de la quantité choisie en Gwh
-    document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
-    document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
+    // //MaJ du tableau de la quantité choisie en Gwh
+    // document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
+    // document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
 
-}
+// }
 
-function chartScenarioHandlerClick() {
-    //console.log(this);
+// function chartScenarioHandlerClick() {
+    // //console.log(this);
 
-    //Permettre le click sur le bouton "suivant"
-    document.getElementById("buttonValiderScenario").removeAttribute("disabled");
+    // //Permettre le click sur le bouton "suivant"
+    // document.getElementById("buttonValiderScenario").removeAttribute("disabled");
 
-    //MaJ du tableau de la quantité choisie en Gwh
-    document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
-    document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
-    document.getElementById("etatScenario").innerHTML = '<div style="color:green">VALIDE</div>';
-    consommation2050 = this.y;
+    // //MaJ du tableau de la quantité choisie en Gwh
+    // document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
+    // document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
+    // document.getElementById("etatScenario").innerHTML = '<div style="color:green">VALIDE</div>';
+    // consommation2050 = this.y;
 
-}
+// }
 
 // Change Chart type function
 function ChangeChartType(chart, series, newType) {
@@ -219,7 +236,7 @@ $(document).ready(function() {
                 point: {
                     events: {
                         //mouseOver: chartScenarioHandlerOver,
-                        click: chartScenarioHandlerClick
+                        // click: chartScenarioHandlerClick
                     }
                 }
             }

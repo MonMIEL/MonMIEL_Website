@@ -97,28 +97,35 @@ section .bloc {
     padding: 0;
     width:430px;
 }
+
+#contenu_lien .bloc {
+	padding-bottom: 20px;
+}
+
+
 #contenu_mail .row .span6 {
     padding: 0;
     width:200px
 }
 
-#contenu_mail .row .droite {
+#contenu_mail .row .droite,
+#horizon .row .droite,
+#contenu_lien .row .droite {
     text-align: left;
 }
 
 
 #contenu_mail .row .gauche,
-#horizon .row .gauche {
+#horizon .row .gauche,
+#contenu_lien .row .gauche {
 	margin-top: 5px;
-    text-align: right;
-}
-#contenu_lien .row .droite {
     text-align: right;
 }
 
 #contenu_lien .row .gauche {
-    text-align: left;
+	margin-top: 20px;
 }
+
 #message_saisie {
     text-align: center;
 }
@@ -166,7 +173,8 @@ section .bloc {
 	margin-bottom: 5px;
 }
 
-section #calcul {
+#calcul,
+#simuler {
 	text-align: center;
 	margin-bottom: 15px;
 }
@@ -305,8 +313,4 @@ footer {
 
 #contenu_lien{
     margin: 50px 0px 50px 0px;
-}
-
-#contenu_lien  {
-    text-align: center;
 }
