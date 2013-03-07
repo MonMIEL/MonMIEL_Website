@@ -27,6 +27,7 @@
     <script src="js/highchart/highcharts.js"></script>
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
+	<script src="js/html5slider.js"></script>
 	
 	<!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">

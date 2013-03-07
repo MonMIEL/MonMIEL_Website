@@ -6,16 +6,16 @@
 	</div>
 	<div class="span4">
 		<h4>Partenaires</h4>
-		<img src="img/rte.png" style="height: 45px;"/></br></br>
-		<img src="img/logo-ujf-gs.gif" style="height: 45px;"/>
-		<img src="img/miage.png" style="height: 45px;"/>
+        <a href="http://www.rte-france.com/fr/"><img src="img/rte.png" style="height: 45px;"/></a></br></br>
+        <a href="http://www.ujf-grenoble.fr/"><img src="img/logo-ujf-gs.gif" style="height: 45px;"/></a>
+        <a href="http://ufrima.imag.fr/spip.php?rubrique12"><img src="img/miage.png" style="height: 45px;"/></a>
 	</div>
 	<div class="span4">
 		<h4>Plan du site</h4>
-		<a href="#">Accueil</a></br>
-		<a href="#">Problématique</a></br>
-		<a href="#">Simulez votre mix</a></br>
-		<a href="#">Liens utiles</a></br>
-		<a href="#">Contact</a></br>
+		<a href="index.php">Accueil</a></br>
+		<a href="problematique.php">Problématique</a></br>
+		<a href="ihm1.php">Simulez votre mix</a></br>
+		<a href="liens.php">Liens utiles</a></br>
+		<a href="contact.php">Contact</a></br>
 	</div>
 </footer>
