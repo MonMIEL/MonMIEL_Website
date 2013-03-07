@@ -103,12 +103,14 @@ section .bloc {
 }
 
 #contenu_mail .row .droite {
-    text-align: right;
+    text-align: left;
 }
 
 
-#contenu_mail .row .gauche {
-    text-align: left;
+#contenu_mail .row .gauche,
+#horizon .row .gauche {
+	margin-top: 5px;
+    text-align: right;
 }
 #contenu_lien .row .droite {
     text-align: right;
@@ -238,8 +240,39 @@ width:350px;
 	background:url("../img/icon_arrow.png") top no-repeat;
 }
 
-#horizon .bouton {
-	text-align: center;
+#horizon .bouton,
+#scenario .bouton {
+	width: 100%;
+}
+
+#horizon .bouton a,
+#scenario .bouton a {
+	float: right;
+}
+
+#horizon .bloc {
+	padding: 20px;
+}
+
+#horizon .bloc.last {
+	margin-top: 10px;
+}
+
+#horizon .row {
+	border: 0;
+}
+
+#scenario .bloc {
+	padding: 20px;
+}
+
+#horizon .row .span6 {
+    padding: 0;
+    width:400px;
+}
+
+#horizon .row .droite {
+	text-align: left;
 }
 
 #envoye input {

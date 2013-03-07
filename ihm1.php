@@ -70,14 +70,38 @@
 
     <!-- Horizon section -->
         <div id="horizon">
-            <h1 id="titleHorizon">Etape 1 : Horizon<i class="icon-ok"></i></h1>
+            <h1 id="titleHorizon">Etape 1 - Horizon</h1>
             <!--<ul class="pager">-->
             <div class="bloc">
-                <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de référence</label>
-                <div>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></div>
+                <div class="row">
+					<div class="span6 gauche">Année de référence :</div>
+					<div class="span6 droite">
+						<select id="anneeRef">
+							<option>2011</option>
+							<option>2012</option>
+						</select>
+					</div>
+				</div>
+				<p id="labelHorizonRef"></p>
                 <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
 				<div class="bouton">
-					<a onclick="validerHorizon()"><span class="but-icon"></span>Valider</a>
+					<a onclick="validerHorizonRef()"><span class="but-icon"></span>Valider</a>
+				</div>
+            </div>
+			
+			<div class="bloc last">
+                <div class="row">
+					<div class="span6 gauche">Année cible :</div>
+					<div class="span6 droite">
+						<select id="anneeCible">
+							<option>2050</option>
+						</select>
+					</div>
+				</div>
+				<p id="labelHorizonCible"></p>
+                <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
+				<div class="bouton">
+					<a onclick="validerHorizonCible()"><span class="but-icon"></span>Valider</a>
 				</div>
             </div>
 
@@ -87,7 +111,7 @@
         <div id="scenario" style="display:none;">
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
             <!--Titre-->
-            <h1 id="titleScenario">Etape 2 : Scénario</h1>
+            <h1 id="titleScenario">Etape 2 - Scénario</h1>
 
             <!--Label-->
             <div id="labelScenario" class="labelIhm1">Indiquer la quantité de la consommation annuelle en 2050</div>
@@ -98,8 +122,7 @@
                     <div class="navbar-inner">
                         <a class="brand">Type de scénario</a>
                         <ul class="nav">
-                            <li class="active"><a href="#tab1" data-toggle="tab">RTE</a></li>
-                            <li><a href="#tab2" data-toggle="tab">Autre</a></li>
+                            <li class="active"><a href="#tab1" data-toggle="tab">Personnel</a></li>
                         </ul>
                     </div>
                 </div>
@@ -109,30 +132,32 @@
                     <div class="tab-pane active" id="tab1">
                         <table>
                             <tr>
-                                <td><div id="chart_Scenario" class="chart" style="height:300px;"></div></td>
-                                <td><div id="tab_chart_Scenario">
-                                    <table class="table table-bordered">
-                                        <tr class="success">
-                                            <th>Année</th>
-                                            <th>Quantité</th>
-                                        </tr>
-                                        <tr>
-                                            <td id="tab_chart_Scenario.id"></td>
-                                            <td id="tab_chart_Scenario.qu"></td>
-                                        </tr>
-                                    </table>
-                                    <div id="etatScenario"></div>
-                                    <button id="buttonValiderScenario" onclick="validerScenario()" disabled="disabled">Valider</button>
-                                </div></td>
+                                <td>
+									<div id="chart_Scenario" class="chart" style="height:300px;"></div>
+								</td>
+                                <td>
+									<div id="tab_chart_Scenario">
+										<table class="table table-bordered">
+											<tr class="success">
+												<th>Année</th>
+												<th>Quantité</th>
+											</tr>
+											<tr>
+												<td id="tab_chart_Scenario.id"></td>
+												<td id="tab_chart_Scenario.qu"></td>
+											</tr>
+										</table>
+										<div id="etatScenario"></div>
+									</div>
+								</td>
                             </tr>
                         </table>
 
                     </div>
-                    <div class="tab-pane" id="tab2">
-                        <!--<div id="chart_3" class="chart" style="width:100%; height:300px;"></div>-->
-                        <div>Contenu en rédaction</div>
-                    </div>
                 </div>
+				<div class="bouton">
+					<a onclick="validerHorizon()"><span class="but-icon"></span>Valider</a>
+				</div>
             </div>
         </div>
 
@@ -140,7 +165,7 @@
         <div id="monmix" style="display:none;">
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
-            <h1 id="titleMonMix">Mon MIx ELectrique</h1>
+            <h1 id="titleMonMix">Etape 3 - Mon MIx ELectrique</h1>
 			<div class="bloc" style="width:50%;">
 				<div class="row first">
 					<div class="span3">Energie</div>
@@ -194,6 +219,7 @@
         </div>
 
         <div id="simuler">
+			<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<div class="bouton">
 				<a href="rendu1.php"><span class="but-icon"></span>Simuler</a>
 			</div>
