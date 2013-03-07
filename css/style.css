@@ -203,7 +203,7 @@ section .bouton{
     border-top-right-radius: 5px;
     width : 500px;
     margin-left: 220px;
-     height: 480px;
+    padding-bottom: 1px;
 }
 #contenu_problematique h1{
   margin-left : 50px;
@@ -283,7 +283,10 @@ width:350px;
 #horizon .row .droite {
 	text-align: left;
 }
-
+ #envoye {
+     margin-top: 10px;
+ }
+ 
 #envoye input {
     background:url("../img/but_join.png") top repeat-x;
     text-shadow:0px -1px 0px #0034a4;
