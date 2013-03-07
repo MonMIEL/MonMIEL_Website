@@ -1,13 +1,3 @@
-/**
- *
- * Active Charts using Highcharts demonstration
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright 2012, Script Tutorials
- * http://www.script-tutorials.com/
- */
 var anneeRef;         //année de référence choisie par l'utilisateur dans la partie Horizon
 var anneeCible;         //année de référence choisie par l'utilisateur dans la partie Horizon
 var consommation2050 = 700; //consommation pour l'année 2050 choisie par l'utilisateur dans la partie Scenario
