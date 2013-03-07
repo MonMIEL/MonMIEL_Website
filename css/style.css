@@ -198,7 +198,7 @@ section .bouton{
      height: 480px;
 }
 #contenu_problematique h1{
-    text-align: center;
+  margin-left : 50px;
 }
 #contenu_problematique p{
     background-color: rgba(255,255,255,0.5);
@@ -212,6 +212,7 @@ section .bouton{
     border-top-right-radius: 5px;
     margin: 10px 50px 10px 50px;
     height: 480px;
+    padding: 10px 10px 10px 10px;
 
 }
 #contenu_mail #message_saisie #message{
