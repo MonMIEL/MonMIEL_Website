@@ -86,23 +86,44 @@ section .bloc {
 	padding-top: 15px;
 	font-weight: bold;
 }
+
+
 #rendue2 .row .span6 {
     padding: 0;
-    width:430px
+    width:430px;
 }
+
+#contenu_lien .row .span6{
+    padding: 0;
+    width:430px;
+}
+
+#contenu_lien .bloc {
+	padding-bottom: 20px;
+}
+
 
 #contenu_mail .row .span6 {
     padding: 0;
     width:200px
 }
 
-#contenu_mail .row .droite {
-    text-align: right;
+#contenu_mail .row .droite,
+#horizon .row .droite,
+#contenu_lien .row .droite {
+    text-align: left;
 }
 
 
-#contenu_mail .row .gauche {
-    text-align: left;
+#contenu_mail .row .gauche,
+#horizon .row .gauche,
+#contenu_lien .row .gauche {
+	margin-top: 5px;
+    text-align: right;
+}
+
+#contenu_lien .row .gauche {
+	margin-top: 20px;
 }
 
 #message_saisie {
@@ -152,7 +173,8 @@ section .bloc {
 	margin-bottom: 5px;
 }
 
-section #calcul {
+#calcul,
+#simuler {
 	text-align: center;
 	margin-bottom: 15px;
 }
@@ -183,7 +205,24 @@ section .bouton{
     margin-left: 220px;
      height: 480px;
 }
+#contenu_problematique h1{
+  margin-left : 50px;
+}
+#contenu_problematique p{
+    background-color: rgba(255,255,255,0.5);
+    /*border-radius*/
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -moz-border-radius-topleft:5px;
+    border-top-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    -moz-border-radius-topright:5px;
+    border-top-right-radius: 5px;
+    margin: 10px 50px 10px 50px;
+    height: 480px;
+    padding: 10px 10px 10px 10px;
 
+}
 #contenu_mail #message_saisie #message{
 width:350px;
 
@@ -210,8 +249,39 @@ width:350px;
 	background:url("../img/icon_arrow.png") top no-repeat;
 }
 
-#horizon .bouton {
-	text-align: center;
+#horizon .bouton,
+#scenario .bouton {
+	width: 100%;
+}
+
+#horizon .bouton a,
+#scenario .bouton a {
+	float: right;
+}
+
+#horizon .bloc {
+	padding: 20px;
+}
+
+#horizon .bloc.last {
+	margin-top: 10px;
+}
+
+#horizon .row {
+	border: 0;
+}
+
+#scenario .bloc {
+	padding: 20px;
+}
+
+#horizon .row .span6 {
+    padding: 0;
+    width:400px;
+}
+
+#horizon .row .droite {
+	text-align: left;
 }
 
 #envoye input {
@@ -229,7 +299,7 @@ width:350px;
 }
 
 #envoye input:hover{
-    background:url("../img/but_join_hover.png") top repeat-x;
+    background:url("../img/but_join_hr.png") top repeat-x;
 
 }
 span.but-icon{
@@ -255,5 +325,9 @@ footer {
 	width:500px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 10px;
+	padding-top: 10px;;
+}
+
+#contenu_lien{
+    margin: 50px 0px 50px 0px;
 }
