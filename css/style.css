@@ -86,11 +86,17 @@ section .bloc {
 	padding-top: 15px;
 	font-weight: bold;
 }
+
+
 #rendue2 .row .span6 {
     padding: 0;
-    width:430px
+    width:430px;
 }
 
+#contenu_lien .row .span6{
+    padding: 0;
+    width:430px;
+}
 #contenu_mail .row .span6 {
     padding: 0;
     width:200px
@@ -104,7 +110,13 @@ section .bloc {
 #contenu_mail .row .gauche {
     text-align: left;
 }
+#contenu_lien .row .droite {
+    text-align: right;
+}
 
+#contenu_lien .row .gauche {
+    text-align: left;
+}
 #message_saisie {
     text-align: center;
 }
@@ -250,5 +262,13 @@ footer {
 	width:500px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 10px;
+	padding-top: 10px;;
+}
+
+#contenu_lien{
+    margin: 50px 0px 50px 0px;
+}
+
+#contenu_lien  {
+    text-align: center;
 }
