@@ -8,7 +8,12 @@
  * Copyright 2012, Script Tutorials
  * http://www.script-tutorials.com/
  */
-var anneeRef;
+var anneeRef;         //année de référence choisie par l'utilisateur dans la partie Horizon
+var consommation2050; //consommation pour l'année 2050 choisie par l'utilisateur dans la partie Scenario
+
+var validHorizon=0; //=1 si la partie Horizon est validée, =0 sinon
+var validScenario=0;//=1 si la partie Scenario est validée, =0 sinon
+var validMonMix=0;  //=1 si la partie MonMixElectrique est validée, =0 sinon
 
 function majChartAvecAnneeRef(chart, series) {
     for (var i = 0; i < series.length; i++) {
@@ -24,30 +29,41 @@ function validerHorizon(){
 
     if(parseInt(anneeRef)>=2011 && parseInt(anneeRef)<=2012){
         //Affichage du contenu suivant
-        document.getElementById('Scenario').style.display = "block";
+        document.getElementById('scenario').style.display = "block";
 
         //alert(anneeRef);
         //console.log(chart_Scenario.series[0].data[0].name);
 
-        //MaJ du nom du premier point par rapport à la donnée anneeRef
-        majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
-        var label =document.getElementById('labelAnneeRef');
-        label.innerHTML="<div style=\"color:#98fb98\">"+"Année "+anneeRef+" est prise en compte !</div></br>Indiquer l'année de Référence entre 2011 et 2012";
+        //MaJ de titleHorizon
+        document.getElementById("titleHorizon").style.cssText ="color:green";
 
-        //Reset other elements
-            //cacher le bouton Suivant du contenu "Scenario"
-        document.getElementById("buttonValiderScenario").setAttribute("disabled","disabled");
-            //cacher le contenu "MonMIxELectrique"
-        document.getElementById('monmix').style.display = "none";
+        //MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
+        majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
+        var label =document.getElementById('labelHorizon');
+        label.innerHTML='<div style="text-align:center; color:green">Année '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
+
+        validHorizon=1;
     }else{
-        var label =document.getElementById('labelAnneeRef');
-        label.innerHTML="<div style=\"color:red\">"+"Valeur "+anneeRef+" n'est pas supportée</div></br>Indiquer l'année de Référence entre 2011 et 2012";
+        var label =document.getElementById('labelHorizon');
+        label.innerHTML='<div style="color:red">'+'Valeur ['+anneeRef+'] n\'est pas supportée <i class="icon-remove"></i></div>' +
+            '<div>(la valeur de l\'année de référence doit être comprise entre 2011 et 2012)</div>';
+
+        document.getElementById('titleHorizon').style.cssText = "color:red";
+        validHorizon=0;
     }
 }
 
 function validerScenario(){
     //Affichage du contenu suivant
     document.getElementById('monmix').style.display = "block";
+
+    //MaJ de titleHorizon
+    document.getElementById("titleScenario").style.cssText ="color:green";
+
+    // MaJ de lable
+    var label =document.getElementById('labelScenario');
+    label.innerHTML='<div style="text-align:center; color:green">La quantité de la consommation en 2050 est de '+consommation2050+' <i class="icon-ok"></i></div>';
+    validScenario = 1;
 }
 
 function chartScenarioHandlerOver() {
@@ -56,6 +72,7 @@ function chartScenarioHandlerOver() {
     //MaJ du tableau de la quantité choisie en Gwh
     document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
     document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
+
 }
 
 function chartScenarioHandlerClick() {
@@ -68,6 +85,7 @@ function chartScenarioHandlerClick() {
     document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
     document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
     document.getElementById("etatScenario").innerHTML = '<div style="color:green">VALIDE</div>';
+    consommation2050 = this.y;
 
 }
 
@@ -103,7 +121,7 @@ $(document).ready(function() {
             renderTo: 'chart_Scenario',
             width: 700,
             type: 'line',
-            backgroundColor: '#FFFFFF',
+            backgroundColor: 'rgba(255,255,255,0.5)',
             style: {
                 fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
                 fontSize: '50px'
@@ -124,13 +142,18 @@ $(document).ready(function() {
          style: null
          },*/
         title: {
-            text: 'Indiquer la quantité de la production annuelle en 2050',
-            align: 'center',
+            text: 'Consommation énergétique',
             style: {
                 color: '#3E576F',
                 fontSize: '16px'
             }
         },
+        /*subtitle: {
+            text: 'Indiquer la quantité de la consommation annuelle en 2050',
+            style: {
+                color: '#3E576F'
+            }
+        },*/
         xAxis: {
             title: {
                 text: 'Année',
@@ -168,7 +191,7 @@ $(document).ready(function() {
                         click: null,
                         mouseOver: null
                     }
-                }, {//Prévention de la consommation énergétique
+                }, {
                     name: 'Consommation en 2050 (CLIQUER pour choisir)',
                     color: '#FF00FF',
                     'id': 'point2',

@@ -215,10 +215,15 @@ width:350px;
 
 .bouton a:hover{
 	background:url("../img/but_join_hr.png") top repeat-x;
+	cursor: pointer;
 }
 
 .bouton a span.but-icon{
 	background:url("../img/icon_arrow.png") top no-repeat;
+}
+
+#horizon .bouton {
+	text-align: center;
 }
 
 #envoye input {

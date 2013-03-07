@@ -30,15 +30,26 @@
 	
 	<!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">
+	var ve= 14000;
 		function updateTextInput(id,val) {
 			document.getElementById(id).value=val; 
+			document.getElementById(id+"_gwh").value=(val/100)*ve; 
 		}
 	</script>
 	<!-- script d'affichage du contenu du slider -->
+	
 </head>
 <body>
     <?php include("header.php"); ?>
     <?php include("menu.php"); ?>
+    <!--<form class="form-inline">
+        <input type="text" class="input-small" placeholder="Email">
+        <input type="password" class="input-small" placeholder="Password">
+        <label class="checkbox">
+            <input type="checkbox"> Remember me
+        </label>
+        <button type="submit" class="btn">Sign in</button>
+    </form>-->
 
     <?php
         $var_anneeRef = 2011;
@@ -53,107 +64,112 @@
         <button class="switcher" id="areaspline">areaspline</button>
     </div> -->
     <section>
-	
 		<div class="ariane">
 			<img src="img/ariane1.png"/>
 		</div>
 
     <!-- Horizon section -->
-        <div id="Horizon">
-            <h1>Etape 1 : Horizon</h1>
+        <div id="horizon">
+            <h1 id="titleHorizon">Etape 1 : Horizon<i class="icon-ok"></i></h1>
             <!--<ul class="pager">-->
-            <div>
-                <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de Référence</label>
-                <li>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></li>
+            <div class="bloc">
+                <label id="labelAnneeRef" for="anneeRef">Indiquer l'année de référence</label>
+                <div>Année : <input id="anneeRef" type="text" name="inputAnneeRef" value="2011"></div>
                 <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
-                <button id="buttonValiderHorizon" onclick="validerHorizon()">Valider</button>
+				<div class="bouton">
+					<a onclick="validerHorizon()"><span class="but-icon"></span>Valider</a>
+				</div>
             </div>
 
         </div>
 
         <!-- Scenario section -->
-        <div id="Scenario" style="display:none;">
+        <div id="scenario" style="display:none;">
+            <img class="separateur" src="img/separateur.jpg" alt="separateur" />
             <!--Titre-->
-            <h1>Etape 2 : Scénario</h1>
+            <h1 id="titleScenario">Etape 2 : Scénario</h1>
 
             <!--Label-->
-            <label for="anneeRef">Indiquer la quantité de la production</label>
+            <div id="labelScenario" class="labelIhm1">Indiquer la quantité de la consommation annuelle en 2050</div>
 
-            <!--NavBar-->
-            <div class="navbar nav-tabs">
-                <div class="navbar-inner">
-                    <a class="brand">Type de scénario</a>
-                    <ul class="nav">
-                        <li class="active"><a href="#tab1" data-toggle="tab">RTE</a></li>
-                        <li><a href="#tab2" data-toggle="tab">Autre</a></li>
-                    </ul>
+            <div class="bloc">
+                <!--NavBar-->
+                <div class="navbar nav-tabs" style="width:700px">
+                    <div class="navbar-inner">
+                        <a class="brand">Type de scénario</a>
+                        <ul class="nav">
+                            <li class="active"><a href="#tab1" data-toggle="tab">RTE</a></li>
+                            <li><a href="#tab2" data-toggle="tab">Autre</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <!--Graphs-->
-            <div class="tab-content">
-                <div class="tab-pane active" id="tab1">
-                    <table>
-                        <tr>
-                            <td><div id="chart_Scenario" class="chart" style="height:300px;"></div></td>
-                            <td><div id="tab_chart_Scenario">
-                                <table>
-                                    <tr>
-                                        <td>Année</td>
-                                        <td>Quantité</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="tab_chart_Scenario.id"></td>
-                                        <td id="tab_chart_Scenario.qu"></td>
-                                    </tr>
-                                </table>
-                                <div id="etatScenario"></div>
-                                <button id="buttonValiderScenario" onclick="validerScenario()" disabled="disabled">Valider</button>
-                            </div></td>
-                        </tr>
-                    </table>
+                <!--Graphs-->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        <table>
+                            <tr>
+                                <td><div id="chart_Scenario" class="chart" style="height:300px;"></div></td>
+                                <td><div id="tab_chart_Scenario">
+                                    <table class="table table-bordered">
+                                        <tr class="success">
+                                            <th>Année</th>
+                                            <th>Quantité</th>
+                                        </tr>
+                                        <tr>
+                                            <td id="tab_chart_Scenario.id"></td>
+                                            <td id="tab_chart_Scenario.qu"></td>
+                                        </tr>
+                                    </table>
+                                    <div id="etatScenario"></div>
+                                    <button id="buttonValiderScenario" onclick="validerScenario()" disabled="disabled">Valider</button>
+                                </div></td>
+                            </tr>
+                        </table>
 
-                </div>
-                <div class="tab-pane" id="tab2">
-                    <!--<div id="chart_3" class="chart" style="width:100%; height:300px;"></div>-->
-                    <div>Contenu en rédaction</div>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        <!--<div id="chart_3" class="chart" style="width:100%; height:300px;"></div>-->
+                        <div>Contenu en rédaction</div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- MonMix section -->
         <div id="monmix" style="display:none;">
+            <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
-            <h1>Mon MIx ELectrique</h1>
+            <h1 id="titleMonMix">Mon MIx ELectrique</h1>
 			<div class="bloc" style="width:50%;">
 				<div class="row first">
 					<div class="span3">Energie</div>
-					<div class="span1">%</div>
-					<div class="span1">GWh</div>
+					<div class="span1" style="margin-top:0;">%</div>
+					<div class="span1" style="margin-top:0;">GWh</div>
 				</div>
 
 				<div class="row">					
 					<div class="span3">Nucléaire<input type="range" value="25" min="0" max="100" name="nucleaire" onchange="updateTextInput('nuc',this.value);"></div>
 					<div class="span1"><input type="text" id="nuc" value="25" style="width:30px; background:none;">%</div>
-					<div class="span1"><?php $variable = '200'; ?>200</div>
+					<div class="span1"><input type="text" id="nuc_gwh" style="width:50px; background:none;"></div>
 				</div>
 				
 				<div class="row">					
 					<div class="span3">Photovoltaïque<input type="range" value="8" min="0" max="100" name="nucleaire" onchange="updateTextInput('pho',this.value);"></div>
 					<div class="span1"><input type="text" id="pho" value="8" style="width:30px; background:none;">%</div>
-					<div class="span1"><?php $variable = '200'; ?>200</div>
+					<div class="span1"><input type="text" id="pho_gwh" style="width:50px; background:none;"></div>
 				</div>
 
 				<div class="row">					
 					<div class="span3">Eolien<input type="range" value="17" min="0" max="100" name="nucleaire" onchange="updateTextInput('eol',this.value);"></div>
 					<div class="span1"><input type="text" id="eol" value="17" style="width:30px; background:none;">%</div>
-					<div class="span1"><?php $variable = '200'; ?>200</div>
+					<div class="span1"><input type="text" id="eol_gwh" style="width:50px; background:none;"></div>
 				</div>
 
 				<div class="row">					
 					<div class="span3">Hydraulique<input type="range" value="13" min="0" max="100" name="nucleaire" onchange="updateTextInput('hyd',this.value);"></div>
 					<div class="span1"><input type="text" id="hyd" value="13" style="width:30px; background:none;">%</div>
-					<div class="span1"><?php $variable = '200'; ?>200</div>
+					<div class="span1"><input type="text" id="hyd_gwh" style="width:50px; background:none;"></div>
 				</div>
 
 				<div class="row">					
@@ -165,13 +181,13 @@
 				<div class="row">					
 					<div class="span3">STEP<input type="range" value="" min="0" max="100" name="nucleaire" disabled  onchange="updateTextInput('ste',this.value);" style="background-color:#94A0AD;"></div>
 					<div class="span1"><input type="text" id="ste" value="" style="width:30px; background:none;">%</div>
-					<div class="span1"><?php $variable = '200'; ?>200</div>
+					<div class="span1"><input type="text" id="ste_gwh" style="width:50px; background:none;"></div>
 				</div>
 
 				<div class="row">					
 					<div class="span3">Import<input type="range" value="" min="0" max="100" name="nucleaire" disabled onchange="updateTextInput('imp',this.value);" style="background-color:#94A0AD;"></div>
 					<div class="span1"><input type="text" id="imp" value="" style="width:30px; background:none;">%</div>
-					<div class="span1"><?php $variable = '200'; ?>200</div>
+					<div class="span1"><input type="text" id="imp_gwh" style="width:50px; background:none;"></div>
 				</div>
 				
 			</div>
