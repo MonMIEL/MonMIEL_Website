@@ -143,7 +143,7 @@
 										<table class="table table-bordered">
 											<tr class="success">
 												<th>Année</th>
-												<th>Quantité</th>
+												<th>Consommation</th>
 											</tr>
 											<tr>
 												<td id="tab_chart_Scenario.id"></td>

@@ -82,10 +82,16 @@ function testerTwh() {
 	if (tempTwh > 700 || tempTwh < 300) {
 		$('#boutonTwh').popover();
 	} else {
-		consommation2050 = document.getElementById("valeurTwh").value;
+		consommation2050 = tempTwh;
 
 		//MaJ de la consommation dans le graph chart_Scenario
 		majChartAvecConso2050(chart_Scenario, chart_Scenario.series);
+		
+		//MaJ du tableau de la quantité choisie en Gwh
+		document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
+		document.getElementById("tab_chart_Scenario.qu").innerHTML = consommation2050;
+		
+		chart_Scenario.series[0].show();
 	}
 }
 
@@ -156,13 +162,13 @@ $(document).ready(function() {
         chart: {
             renderTo: 'chart_Scenario',
             width: 700,
-            type: 'line',
+            type: 'area',
             backgroundColor: 'rgba(255,255,255,0.5)',
             style: {
                 fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
                 fontSize: '50px'
             },
-            animation: false
+            animation: true
         },
         credits: {
             enabled: false
@@ -184,6 +190,7 @@ $(document).ready(function() {
                 fontSize: '16px'
             }
         },
+		colors:['#2d6fb2'],
         /*subtitle: {
             text: 'Indiquer la quantité de la consommation annuelle en 2050',
             style: {
@@ -216,6 +223,7 @@ $(document).ready(function() {
             }
         },
         series: [{
+				visible: false,
                 name: 'Consommation',
                 data: [{
                     name: anneeRef, //Change au moment du choix de l'année de Référence
