@@ -123,8 +123,8 @@
                         </ul>
 						
 						<div class="navbar-form pull-right">
-							<input id="valeurGwh" type="text" class="span2">
-							<button onclick="testerGwh()" class="btn">Tester</button>
+							<input id="valeurTwh" type="text" class="span2">
+							<a id="boutonTwh" onclick="testerTwh()" class="btn" rel="popover" data-content="La valeur doit être comprise entre 300 et 700">Tester</a>
 						</div>
                     </div>
 

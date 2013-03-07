@@ -76,12 +76,17 @@ function validerHorizonCible(){
 	}
 }
 
-function testerGwh() {
-	consommation2050 = document.getElementById("valeurGwh").value;
+function testerTwh() {
+	var tempTwh = document.getElementById("valeurTwh").value;
 
-	//MaJ de la consommation dans le graph chart_Scenario
-	majChartAvecConso2050(chart_Scenario, chart_Scenario.series);
-	
+	if (tempTwh > 700 || tempTwh < 300) {
+		$('#boutonTwh').popover();
+	} else {
+		consommation2050 = document.getElementById("valeurTwh").value;
+
+		//MaJ de la consommation dans le graph chart_Scenario
+		majChartAvecConso2050(chart_Scenario, chart_Scenario.series);
+	}
 }
 
 function validerScenario(){
@@ -198,7 +203,7 @@ $(document).ready(function() {
         },
         yAxis: {
             title: {
-                text: 'Quantité (GWh)',
+                text: 'Quantité (TWh)',
                 style: {
                     color: '#3E576F',
                     fontWeight: 'bold'
