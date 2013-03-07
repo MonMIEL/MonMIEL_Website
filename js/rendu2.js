@@ -6,24 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 // Change Chart type function
-function ChangeChartType(chart, series, newType) {
-    newType = newType.toLowerCase();
-    for (var i = 0; i < series.length; i++) {
-        var srs = series[0];
-        try {
-            srs.chart.addSeries({
-                    type: newType,
-                    stack: srs.stack,
-                    yaxis: srs.yaxis,
-                    name: srs.name,
-                    color: srs.color,
-                    data: srs.options.data
-                },
-                false);
-            series[0].remove();
-        } catch (e) {
-        }
-    }
+
+function chartselect( chart, index){
+    chart.series[0].data[index].select(true);
 }
 
 var chart1, chart2;
@@ -75,12 +60,27 @@ $(document).ready(function() {
             type: 'pie',
             name: 'Dev #1',
             data: [
-                ['nucléaire', 50],
-                ['Photovoltaïque', 10],
-                ['Eolien', 5],
-                ['Hydraulique', 5],
-                ['Centrales à flammes', 30],
-                ['STEP', 0]
+                {name :'nucléaire',y: 50, events:{
+                    click : function(){chart2.series[0].data[this.x].select(true); }
+                }},
+                {name :'Photovoltaïque',y: 10, events:{
+                    click : function(){chart2.series[0].data[this.x].select(true); }
+                }},
+                {name :'Eolien',y: 5, events:{
+                    click : function(){chart2.series[0].data[this.x].select(true); }
+                }},
+                {name :'Hydraulique',y: 5, events:{
+                    click : function(){chart2.series[0].data[this.x].select(true); }
+                }},
+                {name :'Centrales à flammes',y: 30, events:{
+                    click : function(){chart2.series[0].data[this.x].select(true); }
+                }},
+                {name :'STEP',y: 0, events:{
+                    click : function(){chart2.series[0].data[this.x].select(true); }
+                }},
+                {name :'IMPORT',y: 0, events:{
+                    click : function(){chart2.series[0].data[this.x].select(true); }
+                }}
             ]
         }]
     });
@@ -116,6 +116,7 @@ $(document).ready(function() {
                         return this.percentage +' %';
                     }
                 },
+
                 showInLegend: true
             }
         },
@@ -124,12 +125,27 @@ $(document).ready(function() {
             type: 'pie',
             name: 'calculé',
             data: [
-                {name : 'nucléaire',y:  35, z: '-15'},
-                {name : 'Photovoltaïque',y: 15,z:'+5'},
-                {name : 'Eolien',y: 15,z:'+10'},
-                {name : 'Hydraulique',y: 5,z:'0'},
-                {name : 'Centrales à flammes',y: 30,z:'0'},
-                {name : 'STEP',y: 0,z:'0'}
+                {name : 'nucléaire',y:  35, z: '-15', events:{
+                    click : function(){chart1.series[0].data[this.x].select(true); }
+                }},
+                {name : 'Photovoltaïque',y: 15,z:'+5', events:{
+                    click : function(){chart1.series[0].data[this.x].select(true); }
+                }},
+                {name : 'Eolien',y: 15,z:'+10', events:{
+                    click : function(){chart1.series[0].data[this.x].select(true); }
+                }},
+                {name : 'Hydraulique',y: 5,z:'0', events:{
+                    click : function(){chart1.series[0].data[this.x].select(true); }
+                }},
+                {name : 'Centrales à flammes',y: 30,z:'0', events:{
+                    click : function(){chart1.series[0].data[this.x].select(true); }
+                }},
+                {name : 'STEP',y: 0,z:'0', events:{
+                    click : function(){chart1.series[0].data[this.x].select(true); }
+                }},
+                {name : 'IMPORT',y: 0,z:'0', events:{
+                    click : function(){chart1.series[0].data[this.x].select(true); }
+                }}
             ]
         }]
     });
