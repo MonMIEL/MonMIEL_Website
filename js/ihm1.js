@@ -89,17 +89,31 @@ function testerTwh() {
 		chart_Scenario.series[0].show();
 	}
 }
-
+var passe = false;
 function validerScenario(){
     //Affichage du contenu suivant
     document.getElementById('monmix').style.display = "block";
-     form_widget_amount_slider('slider_target1',document.forms[0].textfield1,200,0,100,"updateTextInput('nuc');","normal",30);
-    form_widget_amount_slider('slider_target2',document.forms[0].textfield2,200,0,100,"updateTextInput('pho');","normal",10);
-    form_widget_amount_slider('slider_target3',document.forms[0].textfield3,200,0,100,"updateTextInput('eol');","normal",20);
-    form_widget_amount_slider('slider_target4',document.forms[0].textfield4,200,0,100,"updateTextInput('hyd');","normal",20);
-    form_widget_amount_slider('slider_target5',document.forms[0].textfield5,200,0,100,"updateTextInput('cen');","auto",20);
-    form_widget_amount_slider('slider_target6',document.forms[0].textfield6,200,0,100,"","disable",100);
-    form_widget_amount_slider('slider_target7',document.forms[0].textfield7,200,0,100,"","disable",100);
+    if(!passe){
+         form_widget_amount_slider('slider_target1',document.forms[0].textfield1,200,0,100,"updateTextInput('nuc');","normal",30);
+        form_widget_amount_slider('slider_target2',document.forms[0].textfield2,200,0,100,"updateTextInput('pho');","normal",10);
+        form_widget_amount_slider('slider_target3',document.forms[0].textfield3,200,0,100,"updateTextInput('eol');","normal",20);
+        form_widget_amount_slider('slider_target4',document.forms[0].textfield4,200,0,100,"updateTextInput('hyd');","auto",20);
+        form_widget_amount_slider('slider_target5',document.forms[0].textfield5,200,0,100,"updateTextInput('cen');","auto",20);
+        form_widget_amount_slider('slider_target6',document.forms[0].textfield6,200,0,100,"","disable",100);
+        form_widget_amount_slider('slider_target7',document.forms[0].textfield7,200,0,100,"","disable",100);
+    passe=true;
+    }
+    var val = document.getElementById("nuc_txtfield").value;
+    document.getElementById("nuc_gwh").value=(val/100)*consommation2050;
+    val = document.getElementById("pho_txtfield").value;
+    document.getElementById("pho_gwh").value=(val/100)*consommation2050;
+    val = document.getElementById("eol_txtfield").value;
+    document.getElementById("eol_gwh").value=(val/100)*consommation2050;
+    val = document.getElementById("hyd_txtfield").value;
+    document.getElementById("hyd_gwh").value=(val/100)*consommation2050;
+    val = document.getElementById("cen_txtfield").value;
+    document.getElementById("cen_gwh").value=(val/100)*consommation2050;
+
 
     //MaJ de titleHorizon
     document.getElementById("titleScenario").style.cssText ="color:green";

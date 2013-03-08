@@ -32,11 +32,10 @@
 
     <!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">
-	var ve= 14000;
 		function updateTextInput(id) {
             val = document.getElementById(id+"_txtfield").value;
 			document.getElementById(id).value=val; 
-			document.getElementById(id+"_gwh").value=(val/100)*ve; 
+			document.getElementById(id+"_gwh").value=(val/100)*consommation2050;
 		}
 	</script>
 	<!-- script d'affichage du contenu du slider -->
