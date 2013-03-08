@@ -1,13 +1,3 @@
-/**
- *
- * Active Charts using Highcharts demonstration
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright 2012, Script Tutorials
- * http://www.script-tutorials.com/
- */
 var anneeRef;         //année de référence choisie par l'utilisateur dans la partie Horizon
 var anneeCible;         //année de référence choisie par l'utilisateur dans la partie Horizon
 var consommation2050 = 700; //consommation pour l'année 2050 choisie par l'utilisateur dans la partie Scenario
@@ -26,7 +16,6 @@ function majChartAvecAnneeRef(chart, series) {
         chart_Scenario.render();
     }
 }
-
 function majChartAvecConso2050(chart, series) {
     for (var i = 0; i < series.length; i++) {
         chart_Scenario.series[i].data[1].y = parseInt(consommation2050);
@@ -34,19 +23,21 @@ function majChartAvecConso2050(chart, series) {
     }
 }
 
+/*--------------------------------------------------------------------------*/
+
 function validerHorizonRef(){
-    //Récupération des données entrées
-    anneeRef=document.getElementById("anneeRef").value;
+        //Récupération des données entrées
+        anneeRef=document.getElementById("anneeRef").value;
 
-	//MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
-	majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
-	
-	var label =document.getElementById('labelHorizonRef');
-	label.innerHTML='<div style="text-align:center; color:green">L\'année de référence '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
+        //MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
+        majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
 
-	validHorizonRef=1;
-	
-	if (validHorizonCible == 1) {
+        var label =document.getElementById('labelHorizonRef');
+        label.innerHTML='<div style="text-align:center; color:green">L\'année de référence '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
+
+        validHorizonRef=1;
+
+        if (validHorizonCible == 1) {
 		//MaJ de titleHorizon
 		document.getElementById("titleHorizon").style.cssText ="color:green";
 		
@@ -76,17 +67,39 @@ function validerHorizonCible(){
 	}
 }
 
-function testerGwh() {
-	consommation2050 = document.getElementById("valeurGwh").value;
+function validerIhm1(){
+    createXhrRequest(anneeRef, anneeCible, consommation2050, 100, 200, 300);
+}
 
-	//MaJ de la consommation dans le graph chart_Scenario
-	majChartAvecConso2050(chart_Scenario, chart_Scenario.series);
-	
+function testerTwh() {
+	var tempTwh = document.getElementById("valeurTwh").value;
+
+	if (tempTwh > 700 || tempTwh < 300) {
+		$('#boutonTwh').popover();
+	} else {
+		consommation2050 = tempTwh;
+
+		//MaJ de la consommation dans le graph chart_Scenario
+		majChartAvecConso2050(chart_Scenario, chart_Scenario.series);
+		
+		//MaJ du tableau de la quantité choisie en Gwh
+		document.getElementById("tab_chart_Scenario.id").innerHTML = anneeCible;
+		document.getElementById("tab_chart_Scenario.qu").innerHTML = consommation2050;
+		
+		chart_Scenario.series[0].show();
+	}
 }
 
 function validerScenario(){
     //Affichage du contenu suivant
     document.getElementById('monmix').style.display = "block";
+     form_widget_amount_slider('slider_target1',document.forms[0].textfield1,200,0,100,"updateTextInput('nuc');","normal",30);
+    form_widget_amount_slider('slider_target2',document.forms[0].textfield2,200,0,100,"updateTextInput('pho');","normal",10);
+    form_widget_amount_slider('slider_target3',document.forms[0].textfield3,200,0,100,"updateTextInput('eol');","normal",20);
+    form_widget_amount_slider('slider_target4',document.forms[0].textfield4,200,0,100,"updateTextInput('hyd');","normal",20);
+    form_widget_amount_slider('slider_target5',document.forms[0].textfield5,200,0,100,"updateTextInput('cen');","auto",20);
+    form_widget_amount_slider('slider_target6',document.forms[0].textfield6,200,0,100,"","disable",100);
+    form_widget_amount_slider('slider_target7',document.forms[0].textfield7,200,0,100,"","disable",100);
 
     //MaJ de titleHorizon
     document.getElementById("titleScenario").style.cssText ="color:green";
@@ -151,13 +164,13 @@ $(document).ready(function() {
         chart: {
             renderTo: 'chart_Scenario',
             width: 700,
-            type: 'line',
+            type: 'area',
             backgroundColor: 'rgba(255,255,255,0.5)',
             style: {
                 fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
                 fontSize: '50px'
             },
-            animation: false
+            animation: true
         },
         credits: {
             enabled: false
@@ -179,6 +192,7 @@ $(document).ready(function() {
                 fontSize: '16px'
             }
         },
+		colors:['#2d6fb2'],
         /*subtitle: {
             text: 'Indiquer la quantité de la consommation annuelle en 2050',
             style: {
@@ -198,7 +212,7 @@ $(document).ready(function() {
         },
         yAxis: {
             title: {
-                text: 'Quantité (GWh)',
+                text: 'Quantité (TWh)',
                 style: {
                     color: '#3E576F',
                     fontWeight: 'bold'
@@ -211,6 +225,7 @@ $(document).ready(function() {
             }
         },
         series: [{
+				visible: false,
                 name: 'Consommation',
                 data: [{
                     name: anneeRef, //Change au moment du choix de l'année de Référence
