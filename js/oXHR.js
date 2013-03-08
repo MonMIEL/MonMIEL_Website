@@ -32,7 +32,7 @@ function createXhrRequestIhm1(anneeRef, anneeCible, consommation2050, eNucTwh, e
 * La valeur de retour est cet objet
 * */
 function getXMLHttpRequest() {
-    var xhr = null;
+    /*var xhr = null;
 
     if (window.XMLHttpRequest || window.ActiveXObject) {
         if (window.ActiveXObject) {
@@ -49,7 +49,21 @@ function getXMLHttpRequest() {
         return null;
     }
 
-    return xhr;
+    return xhr;*/
+    var xdr = null;
+
+    if (window.XDomainRequest) {
+        xdr = new XDomainRequest();
+    } else if (window.XMLHttpRequest) {
+        xdr = new XMLHttpRequest();
+    } else {
+        alert("Votre navigateur ne gère pas l'AJAX cross-domain !");
+    }
+    xdr.onload = function() {
+        alert(xdr.responseText);
+    }
+
+    return xdr;
 }
 
 /*Fonction Request qui envoie des données au serveur
@@ -60,32 +74,34 @@ function request(callback) {
     /*if (xhr && xhr.readyState != 0) {
         xhr.abort(); // On annule la requête en cours !
     }*/
+    xhr = getXMLHttpRequest();
     if (xhr && xhr.readyState != 0) {
         alert("Attendez que la requête ait abouti avant de continuer");
         return;
     }
 
-    var xhr = getXMLHttpRequest();
-
     xhr.onreadystatechange = function() {
 
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
             callback(xhr.responseText);
+            /*
+            var json = JSON.parse(xmlhttp.responseText);
+            console.log(json);
+             */
             document.getElementById("loaderIhm1").style.display = "none";
         } else if (xhr.readyState < 4) {
             document.getElementById("loaderIhm1").style.display = "inline";
         }
     };
 
-    xhr.open("GET", lien, true);
+    xhr.open("GET", lien);
     //xhr.send("IdEditor=" + value);
-    xhr.send(null);
+    xhr.send();
 }
 
 function readData(sData) {
     // On peut maintenant traiter les données sans encombrer l'objet XHR.
     alert("OK");
-
 }
 
 /*function callback(oJson) {
@@ -99,6 +115,5 @@ function readData(sData) {
             tree += "\t" + oSoftwares[sItem][i] + "\n";
         }
     }
-
     alert(tree);
 }*/
