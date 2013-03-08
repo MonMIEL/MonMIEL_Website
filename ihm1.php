@@ -27,8 +27,10 @@
     <script src="js/highchart/highcharts.js"></script>
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
+    <script src="js/oXHR.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
-	<!-- script d'affichage du contenu du slider -->
+
+    <!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">
 	var ve= 14000;
 		function updateTextInput(id) {
@@ -124,8 +126,9 @@
                         </ul>
 						
 						<div class="navbar-form pull-right">
-							<input id="valeurGwh" type="text" class="span2">
-							<button onclick="testerGwh()" class="btn">Tester</button>
+							<input id="valeurTwh" type="text" class="span2">
+							<span>TWh</span>
+							<a id="boutonTwh" onclick="testerTwh()" class="btn" rel="popover" data-content="La valeur doit être comprise entre 300 et 700">Tester</a>
 						</div>
                     </div>
 
@@ -144,7 +147,7 @@
 										<table class="table table-bordered">
 											<tr class="success">
 												<th>Année</th>
-												<th>Quantité</th>
+												<th>Consommation</th>
 											</tr>
 											<tr>
 												<td id="tab_chart_Scenario.id"></td>
@@ -247,6 +250,14 @@
 				</div>
 				
 			</div>
+        </div>
+
+        <div id="testSimuler">
+            <img class="separateur" src="img/separateur.jpg" alt="separateur" />
+            <div class="bouton">
+                <a><span class="but-icon" onclick="createXhrRequestIhm1()"></span>Simuler Test Envoi Requete sur serveur</a>
+            </div>
+            <h1 id="loaderIhm1" style="display:none">LOAD wait!</h1>
         </div>
         </form>
         <div id="simuler">

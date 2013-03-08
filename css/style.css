@@ -370,3 +370,27 @@ footer {
 #contenu_lien{
     margin: 50px 0px 50px 0px;
 }
+
+.navbar-form span{
+	margin-top: 5px;
+	display: inline-table;
+}
+
+#tab_chart_Scenario th {
+	background: #2d6fb2;
+	color: white;
+	font-weight: bold;
+}
+
+#tab_chart_Scenario {
+	margin-left: 4px;
+}
+
+#tab_chart_Scenario td {
+	border:1px solid grey;
+	text-align: center;
+}
+
+#tab_chart_Scenario tr {
+	height: 50px;
+}
