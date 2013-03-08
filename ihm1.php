@@ -27,6 +27,7 @@
     <script src="js/highchart/highcharts.js"></script>
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
+    <script src="js/oXHR.js"></script>
 	<script src="js/html5slider.js"></script>
 	
 	<!-- script d'affichage du contenu du slider -->
@@ -220,6 +221,14 @@
 				</div>
 				
 			</div>
+        </div>
+
+        <div id="testSimuler">
+            <img class="separateur" src="img/separateur.jpg" alt="separateur" />
+            <div class="bouton">
+                <a><span class="but-icon" onclick="createXhrRequestIhm1()"></span>Simuler Test Envoi Requete sur serveur</a>
+            </div>
+            <h1 id="loaderIhm1" style="display:none">LOAD wait!</h1>
         </div>
 
         <div id="simuler">

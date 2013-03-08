@@ -16,13 +16,14 @@ function majChartAvecAnneeRef(chart, series) {
         chart_Scenario.render();
     }
 }
-
 function majChartAvecConso2050(chart, series) {
     for (var i = 0; i < series.length; i++) {
         chart_Scenario.series[i].data[1].y = parseInt(consommation2050);
         chart_Scenario.render();
     }
 }
+
+/*--------------------------------------------------------------------------*/
 
 function validerHorizonRef(){
     //Récupération des données entrées
@@ -64,6 +65,10 @@ function validerHorizonCible(){
 		//Affichage du contenu suivant
 		document.getElementById('scenario').style.display = "block";
 	}
+}
+
+function validerIhm1(){
+    createXhrRequest(anneeRef, anneeCible, consommation2050, 100, 200, 300);
 }
 
 function testerTwh() {
