@@ -1,4 +1,4 @@
-<?php
+ <?php
 /* Si le formulaire est envoyé alors on fait les traitements */
 if (isset($_POST['envoye']))
 {
