@@ -18,30 +18,67 @@
         <script src="js/bootstrap.js"></script>
     </head>
     <body>
-		
+    <div class="navbar-wrapper">
 		<?php include("header.php"); ?>
-		
-		<?php include("menu.php"); ?>
-		
-		<section>
-			<div id="Horizon">
-				<h1>Horizon</h1>
-				<label for="annee">Année sélectionnée</label>
-				<input id="annee" name="annee" type=text placeholder="exemple : 2012" required autofocus/>
-			</div>
 
-			<div id="Scenario">
-				<h1>Scénario</h1>
-			</div>
-				<!-- two different charts -->
-				<div id="chart_2" class="chart"></div>
-				<div id="chart_1" class="chart"></div>
-			<div id="monmix">
-				<h1>Mon MIx ELectrique</h1>
-			</div>
+		<?php include("menu.php"); ?>
+
+
+
+		<section>
+          <!--  Carousel -->
+
+                <div id="this-carousel-id" class="carousel slide">
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <img src="img/energy1.jpg" alt="">
+                            <div class="container">
+                                <div class="carousel-caption">
+
+                                   <a class="btn btn-large btn-primary" href="problematique.php">Problematique</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="item">
+                            <img src="img/energy2.jpg" alt="">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                   <a class="btn btn-large btn-primary" href="ihm1.php">Simuler votre mix</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="item">
+                            <img src="img/energy4.jpg" alt="">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                  <a class="btn btn-large btn-primary" href="contact.php">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div><!-- .carousel-inner -->
+
+                    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+                </div><!-- .carousel -->
+                <!-- end carousel -->
+
+
 
 		</section>
 
 		<?php include("footer.php"); ?>
+
+
+
+        <div class="navbar-wrapper">
     </body>
 </html>

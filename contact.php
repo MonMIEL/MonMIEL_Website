@@ -1,4 +1,4 @@
-<?php
+ <?php
 /* Si le formulaire est envoyé alors on fait les traitements */
 if (isset($_POST['envoye']))
 {
@@ -30,7 +30,7 @@ if (isset($_POST['envoye']))
 
     /* Si le formulaire n'est pas posté de notre site on renvoie
     * vers la page d'accueil */
-    if($_SERVER['HTTP_REFERER'] != 'http://localhost/')
+    if($_SERVER['HTTP_REFERER'] != 'http://localhost/contact.php')
     { 
         header('Location: http://localhost/');
     }
@@ -115,12 +115,7 @@ if (isset($_POST['envoye']))
 </head>
 <body>
 
-<?php
-if (!empty($alert))
-{
-    echo '<p style="color:red">'.$alert.'</p>';
-}
-?>
+
     <?php include("header.php"); ?>
 
     <?php include("menu.php"); ?>
@@ -129,6 +124,12 @@ if (!empty($alert))
 
         <form action="contact.php" method="post">
             <div class="row">
+                <?php
+                if (!empty($alert))
+                {
+                    echo '<p style="color:red">'.$alert.'</p>';
+                }
+                ?>
                <div class="span6 gauche"> Civilité :</div>
                 <div class="span6 droite"> <select id="civilite" name="civilite">
                     <option

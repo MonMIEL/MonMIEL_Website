@@ -203,7 +203,7 @@ section .bouton{
     border-top-right-radius: 5px;
     width : 500px;
     margin-left: 220px;
-     height: 480px;
+    padding-bottom: 1px;
 }
 #contenu_problematique h1{
   margin-left : 50px;
@@ -283,6 +283,9 @@ width:350px;
 #horizon .row .droite {
 	text-align: left;
 }
+ #envoye {
+     margin-top: 10px;
+ }
 
 #envoye input {
     background:url("../img/but_join.png") top repeat-x;
@@ -297,6 +300,42 @@ width:350px;
     text-decoration:none;
     margin-left: 210px;
 }
+.form_widget_amount_slider{
+    border-top:1px solid #9d9c99;
+    border-left:1px solid #9d9c99;
+    border-bottom:1px solid #eee;
+    border-right:1px solid #eee;
+    background-color:#f0ede0;
+    height:3px;
+    position:absolute;
+    bottom:0px;
+
+}
+
+.form_widget_amount_slider_blue{
+    border-top:1px solid #9d9c99;
+    border-left:1px solid #9d9c99;
+    border-bottom:1px solid #eee;
+    border-right:1px solid #eee;
+    background-color:blue;
+    height:3px;
+    position:absolute;
+    bottom:0px;
+
+}
+
+.form_widget_amount_slider_red{
+    border-top:1px solid #9d9c99;
+    border-left:1px solid #9d9c99;
+    border-bottom:1px solid #eee;
+    border-right:1px solid #eee;
+    background-color:red;
+    height:3px;
+    position:absolute;
+    bottom:0px;
+
+}
+
 
 #envoye input:hover{
     background:url("../img/but_join_hr.png") top repeat-x;

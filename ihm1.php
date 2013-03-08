@@ -28,12 +28,13 @@
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
     <script src="js/oXHR.js"></script>
-	<script src="js/html5slider.js"></script>
-	
-	<!-- script d'affichage du contenu du slider -->
+    <script src="js/dhtmlgoodies_slider.js"></script>
+
+    <!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">
 	var ve= 14000;
-		function updateTextInput(id,val) {
+		function updateTextInput(id) {
+            val = document.getElementById(id+"_txtfield").value;
 			document.getElementById(id).value=val; 
 			document.getElementById(id+"_gwh").value=(val/100)*ve; 
 		}
@@ -165,9 +166,9 @@
 				</div>
             </div>
         </div>
-
+        <form>
         <!-- MonMix section -->
-        <div id="monmix" style="display:none;">
+        <div id="monmix" style="display:none">
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
             <h1 id="titleMonMix">Etape 3 - Mon MIx ELectrique</h1>
@@ -179,44 +180,72 @@
 				</div>
 
 				<div class="row">					
-					<div class="span3">Nucléaire<input type="range" value="25" min="0" max="100" name="nucleaire" onchange="updateTextInput('nuc',this.value);"></div>
-					<div class="span1"><input type="text" id="nuc" value="25" style="width:30px; background:none;">%</div>
+					<div class="span3">Nucléaire
+                        <table><tr>
+                            <td id="slider_target1"></td>
+                            <td><input type="text" id="nuc_txtfield" name="textfield1" size="3" value="30" onchange="updateTextInput('nuc');" style="display:none"/></td>
+                        </tr></table></div>
+					<div class="span1"><input type="text" id="nuc" value="30" style="width:30px; background:none;">%</div>
 					<div class="span1"><input type="text" id="nuc_gwh" style="width:50px; background:none;"></div>
 				</div>
 				
 				<div class="row">					
-					<div class="span3">Photovoltaïque<input type="range" value="8" min="0" max="100" name="nucleaire" onchange="updateTextInput('pho',this.value);"></div>
-					<div class="span1"><input type="text" id="pho" value="8" style="width:30px; background:none;">%</div>
+					<div class="span3">Photovoltaïque
+                        <table><tr>
+                        <td id="slider_target2"></td>
+                        <td><input type="text" id="pho_txtfield" name="textfield2" size="3" value="10" onchange="updateTextInput('pho');" style="display:none"/></td>
+                    </tr></table></div>
+					<div class="span1"><input type="text" id="pho" value="10" style="width:30px; background:none;">%</div>
 					<div class="span1"><input type="text" id="pho_gwh" style="width:50px; background:none;"></div>
 				</div>
 
 				<div class="row">					
-					<div class="span3">Eolien<input type="range" value="17" min="0" max="100" name="nucleaire" onchange="updateTextInput('eol',this.value);"></div>
-					<div class="span1"><input type="text" id="eol" value="17" style="width:30px; background:none;">%</div>
+					<div class="span3">Eolien
+                        <table><tr>
+                            <td id="slider_target3"></td>
+                            <td><input type="text" id="eol_txtfield" name="textfield3" size="3" value="20" onchange="updateTextInput('eol');" style="display:none"/></td>
+                        </tr></table></div>
+					<div class="span1"><input type="text" id="eol" value="20" style="width:30px; background:none;">%</div>
 					<div class="span1"><input type="text" id="eol_gwh" style="width:50px; background:none;"></div>
 				</div>
 
 				<div class="row">					
-					<div class="span3">Hydraulique<input type="range" value="13" min="0" max="100" name="nucleaire" onchange="updateTextInput('hyd',this.value);"></div>
-					<div class="span1"><input type="text" id="hyd" value="13" style="width:30px; background:none;">%</div>
+					<div class="span3">Hydraulique
+                        <table><tr>
+                            <td id="slider_target4"></td>
+                            <td><input type="text" id="hyd_txtfield" name="textfield4" size="3" value="20" onchange="updateTextInput('hyd');" style="display:none"/></td>
+                        </tr></table></div>
+					<div class="span1"><input type="text" id="hyd" value="20" style="width:30px; background:none;">%</div>
 					<div class="span1"><input type="text" id="hyd_gwh" style="width:50px; background:none;"></div>
 				</div>
 
 				<div class="row">					
-					<div class="span3">Centrales à flammes<input type="range" value="37" min="0" max="100" name="nucleaire" onchange="updateTextInput('cen',this.value);"></div>
-					<div class="span1"><input type="text" id="cen" value="37" style="width:30px; background:none;">%</div>
-					<div class="span1"><?php $variable = '200'; ?>200</div>
+					<div class="span3" title="les centrales à flammes servent de compléments">Centrales à flammes
+                        <table><tr>
+                            <td id="slider_target5"></td>
+                            <td><input type="text" id="cen_txtfield" name="textfield5" size="3" value="20" onchange="" style="display:none"/></td>
+                        </tr></table></div>
+					<div class="span1"><input type="text" id="cen" value="20" style="width:30px; background:none;">%</div>
+					<div class="span1"><input type="text" id="cen_gwh" style="width:50px; background:none;"></div>
 				</div>
 
 				<div class="row">					
-					<div class="span3">STEP<input type="range" value="" min="0" max="100" name="nucleaire" disabled  onchange="updateTextInput('ste',this.value);" style="background-color:#94A0AD;"></div>
-					<div class="span1"><input type="text" id="ste" value="" style="width:30px; background:none;">%</div>
+					<div class="span3" title="pas implémenté">STEP
+                        <table><tr>
+                            <td id="slider_target6"></td>
+                            <td><input type="text" id="ste_txtfield" name="textfield6" size="3" value="50" onchange="" style="display:none"/></td>
+                        </tr></table></div>
+					<div class="span1"><input type="text" id="ste" value="50" style="width:30px; background:none;">%</div>
 					<div class="span1"><input type="text" id="ste_gwh" style="width:50px; background:none;"></div>
 				</div>
 
 				<div class="row">					
-					<div class="span3">Import<input type="range" value="" min="0" max="100" name="nucleaire" disabled onchange="updateTextInput('imp',this.value);" style="background-color:#94A0AD;"></div>
-					<div class="span1"><input type="text" id="imp" value="" style="width:30px; background:none;">%</div>
+					<div class="span3" title="pas implémenté">Import
+                        <table><tr>
+                            <td id="slider_target7"></td>
+                            <td><input type="text" id="imp_txtfield" name="textfield7" size="3" value="50" onchange="" style="display:none"/></td>
+                        </tr></table></div>
+					<div class="span1"><input type="text" id="imp" value="50" style="width:30px; background:none;">%</div>
 					<div class="span1"><input type="text" id="imp_gwh" style="width:50px; background:none;"></div>
 				</div>
 				
@@ -230,7 +259,7 @@
             </div>
             <h1 id="loaderIhm1" style="display:none">LOAD wait!</h1>
         </div>
-
+        </form>
         <div id="simuler">
 			<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<div class="bouton">
@@ -240,6 +269,7 @@
     </section>
 
     <?php include("footer.php"); ?>
+
 </body>
 
 </html>
