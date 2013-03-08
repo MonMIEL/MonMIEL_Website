@@ -35,18 +35,18 @@ function majChartAvecConso2050(chart, series) {
 }
 
 function validerHorizonRef(){
-    //Récupération des données entrées
-    anneeRef=document.getElementById("anneeRef").value;
+        //Récupération des données entrées
+        anneeRef=document.getElementById("anneeRef").value;
 
-	//MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
-	majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
-	
-	var label =document.getElementById('labelHorizonRef');
-	label.innerHTML='<div style="text-align:center; color:green">L\'année de référence '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
+        //MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
+        majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
 
-	validHorizonRef=1;
-	
-	if (validHorizonCible == 1) {
+        var label =document.getElementById('labelHorizonRef');
+        label.innerHTML='<div style="text-align:center; color:green">L\'année de référence '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
+
+        validHorizonRef=1;
+
+        if (validHorizonCible == 1) {
 		//MaJ de titleHorizon
 		document.getElementById("titleHorizon").style.cssText ="color:green";
 		
@@ -87,6 +87,13 @@ function testerGwh() {
 function validerScenario(){
     //Affichage du contenu suivant
     document.getElementById('monmix').style.display = "block";
+     form_widget_amount_slider('slider_target1',document.forms[0].textfield1,200,0,100,"updateTextInput('nuc');","normal",30);
+    form_widget_amount_slider('slider_target2',document.forms[0].textfield2,200,0,100,"updateTextInput('pho');","normal",10);
+    form_widget_amount_slider('slider_target3',document.forms[0].textfield3,200,0,100,"updateTextInput('eol');","normal",20);
+    form_widget_amount_slider('slider_target4',document.forms[0].textfield4,200,0,100,"updateTextInput('hyd');","normal",20);
+    form_widget_amount_slider('slider_target5',document.forms[0].textfield5,200,0,100,"updateTextInput('cen');","auto",20);
+    form_widget_amount_slider('slider_target6',document.forms[0].textfield6,200,0,100,"","disable",100);
+    form_widget_amount_slider('slider_target7',document.forms[0].textfield7,200,0,100,"","disable",100);
 
     //MaJ de titleHorizon
     document.getElementById("titleScenario").style.cssText ="color:green";
