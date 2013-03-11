@@ -43,7 +43,7 @@
 
 
                         <div class="item">
-                            <img src="img/simulez1.png" alt="">
+                            <img src="img/simulez.PNG" alt="">
                             <div class="container">
                                 <div class="carousel-caption">
                                    <a class="btn btn-large btn-primary" href="ihm1.php">Simulez votre mix</a>
