@@ -35,7 +35,7 @@
 		function updateTextInput(id) {
             val = document.getElementById(id+"_txtfield").value;
 			document.getElementById(id).value=val; 
-			document.getElementById(id+"_gwh").value=(val/100)*consommation2050;
+			document.getElementById(id+"_gwh").value=Math.floor((val/100)*consommation2050);
 		}
 	</script>
 	<!-- script d'affichage du contenu du slider -->
@@ -125,7 +125,7 @@
                         </ul>
 						
 						<div class="navbar-form pull-right">
-							<input id="valeurTwh" type="text" class="span2">
+							<input id="valeurTwh" type="text" class="span2" >
 							<span>TWh</span>
 							<a id="boutonTwh" onclick="testerTwh()" class="btn" rel="popover" data-content="La valeur doit être comprise entre 300 et 700">Tester</a>
 						</div>
@@ -160,7 +160,7 @@
                         </table>
                     </div>
                 </div>
-				<div class="bouton">
+				<div id="bouton_scenario" class="bouton" style="display:none">
 					<a onclick="validerScenario()"><span class="but-icon"></span>Valider</a>
 				</div>
             </div>
@@ -171,7 +171,7 @@
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
             <h1 id="titleMonMix">Etape 3 - Mon MIx ELectrique</h1>
-			<div class="bloc" style="width:50%;">
+			<div class="bloc" style="width:48%;">
 				<div class="row first">
 					<div class="span3">Energie</div>
 					<div class="span1" style="margin-top:0;">%</div>
@@ -249,6 +249,9 @@
 				</div>
 				
 			</div>
+            <div id="camembert" style="width:48%;">
+                <div id="chart_cam" class="chart"></div>
+            </div>
         </div>
 
         <div id="testSimuler">
@@ -259,7 +262,7 @@
             <h1 id="loaderIhm1" style="display:none">LOAD wait!</h1>
         </div>
         </form>
-        <div id="simuler">
+        <div id="simuler" style="display:none">
 			<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<div class="bouton">
 				<a href="rendu1.php"><span class="but-icon"></span>Simuler</a>

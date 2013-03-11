@@ -59,7 +59,19 @@ section .bloc {
 	border: 1px solid #94A0AD;
 	background-color: rgba(255,255,255,0.5);
 	padding: 5px;
+    float:right;
 }
+
+section #camembert {
+    margin-top:100px;
+    /*border-radius*/
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    border: 1px solid #94A0AD;
+
+}
+
 #contenu_mail .row {
     text-align: center;
     border-top: 1px solid #000000;
@@ -312,12 +324,11 @@ width:350px;
 
 }
 
-.form_widget_amount_slider_blue{
+.form_widget_amount_slider_normal{
     border-top:1px solid #9d9c99;
     border-left:1px solid #9d9c99;
     border-bottom:1px solid #eee;
     border-right:1px solid #eee;
-    background-color:blue;
     height:3px;
     position:absolute;
     bottom:0px;

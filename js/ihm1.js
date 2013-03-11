@@ -87,13 +87,68 @@ function testerTwh() {
 		document.getElementById("tab_chart_Scenario.qu").innerHTML = consommation2050;
 		
 		chart_Scenario.series[0].show();
+        document.getElementById("bouton_scenario").style.display="";
 	}
 }
 var passe = false;
+var chart_cam;
 function validerScenario(){
-    //Affichage du contenu suivant
     document.getElementById('monmix').style.display = "block";
+    //mise en place du camembert
+    Highcharts.setOptions({
+        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263',      '#6AF9C4']
+    });
+    //Affichage du contenu suivant
     if(!passe){
+    // First chart initialization
+    chart_cam = new Highcharts.Chart({
+        chart: {
+            renderTo: 'chart_cam',
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            height:350,
+            backgroundColor: 'rgba(255,255,255,0.5)'
+        },
+        title: {
+            text: 'Repartition'
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage}%</b> - ',
+            percentageDecimals: 1
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    color: 'black',
+                    connectorColor: '#000000',
+
+                    formatter: function() {
+                        return  Math.floor(this.percentage) +' %';
+                    }
+                },
+                allowPointSelect: true,
+                cursor: 'pointer',
+                showInLegend: true
+
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Dev #1',
+            data: [
+                ['nucléaire', 50 ],
+                ['Photovoltaïque', 10],
+                ['Eolien', 5],
+                ['Hydraulique', 5],
+                ['Centrales à flammes', 30],
+                ['STEP', 0],
+                ['IMPORT', 0]
+            ]
+        }]
+    });
+
          form_widget_amount_slider('slider_target1',document.forms[0].textfield1,200,0,100,"updateTextInput('nuc');","normal",30);
         form_widget_amount_slider('slider_target2',document.forms[0].textfield2,200,0,100,"updateTextInput('pho');","normal",10);
         form_widget_amount_slider('slider_target3',document.forms[0].textfield3,200,0,100,"updateTextInput('eol');","normal",20);
@@ -115,15 +170,36 @@ function validerScenario(){
     val = document.getElementById("cen_txtfield").value;
     document.getElementById("cen_gwh").value=(val/100)*consommation2050;
 
-
-
+    updateCamembert();
     //MaJ de titleHorizon
     document.getElementById("titleScenario").style.cssText ="color:green";
-
+    document.getElementById("simuler").style.display="";
     // MaJ de lable
-    var label =document.getElementById('labelScenario');
-    label.innerHTML='<div style="text-align:center; color:green">La quantité de la consommation en 2050 est de '+consommation2050+' <i class="icon-ok"></i></div>';
-    validScenario = 1;
+   // var label =document.getElementById('labelScenario');
+    //label.innerHTML='<div style="text-align:center; color:green">La quantité de la consommation en 2050 est de '+consommation2050+' <i class="icon-ok"></i></div>';
+    //validScenario = 1;
+
+
+
+}
+
+function updateCamembert(){
+    var nuc = Math.round(parseInt(document.getElementById("nuc_txtfield").value));
+    var pho =  Math.round(parseInt(document.getElementById("pho_txtfield").value));
+    var hyd = Math.round( parseInt(document.getElementById("hyd_txtfield").value));
+    var cen =  Math.round(parseInt(document.getElementById("cen_txtfield").value));
+    var eol =  Math.round(parseInt(document.getElementById("eol_txtfield").value));
+
+    var data  =[
+        ['nucléaire', nuc ],
+        ['Photovoltaïque', pho],
+        ['Eolien', eol],
+        ['Hydraulique', hyd],
+        ['Centrales à flammes', cen],
+        ['STEP', 0],
+        ['IMPORT', 0]
+    ];
+    chart_cam.series[0].setData(data);
 }
 
 // function chartScenarioHandlerOver() {
@@ -219,7 +295,7 @@ $(document).ready(function() {
             title: {
                 text: 'Année',
                 style: {
-                    color: '#3E576F',
+                        color: '#3E576F',
                     fontWeight: 'bold',
                     align: 'right'
                 }

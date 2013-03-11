@@ -143,6 +143,8 @@ function startMoveSlider(e)
 	if(sliderObjectArray[currentSliderIndex]['onchangeAction']){
 		eval(sliderObjectArray[currentSliderIndex]['onchangeAction']);
 	}
+
+
 }
 
 function initialiserValeur(id,val){
@@ -230,6 +232,8 @@ function initialiserValeur(id,val){
 function stopMoveSlider()
 {
 	slideInProgress = false;
+
+    updateCamembert();
 }
 
 var sliderPreloadedImages = new Array();
@@ -268,8 +272,10 @@ function form_widget_amount_slider(targetElId,formTarget,width,min,max,onchangeA
     var obj2=document.createElement('DIV');
     if(type=='disable')
         obj2.className = 'form_widget_amount_slider_red';
-    else
-         obj2.className = 'form_widget_amount_slider_blue';
+    else{
+         obj2.className = 'form_widget_amount_slider_normal';
+        obj2.style.backgroundColor=chart_cam.series[0].data[slider_counter-1].color;
+    }
     obj2.style.width = width*valueinitial/100 + 'px';
     obj2.id = 'slider_blue' + slider_counter;
     obj2.style.position = 'absolute';
