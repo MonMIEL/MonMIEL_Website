@@ -161,7 +161,7 @@
                         </table>
                     </div>
                 </div>
-				<div class="bouton">
+				<div class="bouton" id="boutonValiderScenario">
 					<a onclick="validerScenario()"><span class="but-icon"></span>Valider</a>
 				</div>
             </div>
