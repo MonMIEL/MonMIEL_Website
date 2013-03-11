@@ -186,7 +186,8 @@ section #camembert {
 }
 
 #calcul,
-#simuler {
+#simuler,
+#testSimuler {
 	text-align: center;
 	margin-bottom: 15px;
 }
@@ -216,6 +217,7 @@ section .bouton{
     width : 500px;
     margin-left: 220px;
     padding-bottom: 1px;
+	margin-bottom: 15px;
 }
 #contenu_problematique h1{
   margin-left : 50px;
@@ -231,7 +233,7 @@ section .bouton{
     -moz-border-radius-topright:5px;
     border-top-right-radius: 5px;
     margin: 10px 50px 10px 50px;
-    height: 480px;
+    /* height: 480px; */
     padding: 10px 10px 10px 10px;
 
 }
@@ -404,4 +406,8 @@ footer {
 
 #tab_chart_Scenario tr {
 	height: 50px;
+}
+
+#h1-contact {
+	margin-left: 220px;
 }
