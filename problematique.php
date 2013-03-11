@@ -23,7 +23,7 @@
 <section>
     <div id="contenu_problematique">
         <h1>Problématique</h1>
-        <p> Oh yeaahh baby i like it ♥♥♥♥</p>
+        <p> </p>
     </div>
 </section>
     <?php include("footer.php"); ?>

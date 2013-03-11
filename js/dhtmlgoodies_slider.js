@@ -145,6 +145,11 @@ function startMoveSlider(e)
 	}
 }
 
+function initialiserValeur(val){
+   // document.getElementById('slider_blue4').style.width= sliderObjectArray[4]['width']*(50/consommation2050)+'px';
+   //  document.getElementById('slider_handle4').style.left= sliderObjectArray[4]['width']*(50/consommation2050)+'px';
+}
+
 function stopMoveSlider()
 {
 	slideInProgress = false;
