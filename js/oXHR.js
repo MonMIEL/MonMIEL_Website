@@ -3,89 +3,52 @@
 /* ---------------------------------------------------------------------------------- */
 
 var lien;
-var xhr = null;
 
 /*Récupération des données de l'utilisateur
  * Création du lien vers le serveur
  * Appel à la fonction de l'appel au serveur
  * */
 function createXhrRequestIhm1(anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh){
-    var sVarConsommation2050 = encodeURIComponent(consommation2050);
-    var sVarAnneRef = encodeURIComponent(anneeRef);
-    var sVarAnneCible = encodeURIComponent(anneeCible);
-    var sVarNucTwh = encodeURIComponent(eNucTwh);
-    var sVarPhotoTwh = encodeURIComponent(ePhotoTwh);
-    var sVarEolTwh = encodeURIComponent(eEolTwh);
-    /* lien = "api.monmiel.fr/V1/" +
-     sVarConsommation2050 +
-     ".json?anneeRef="+sVarAnneRef +
-     "&anneCible="+sVarAnneCible +
-     "&nucleaire="+sVarNucTwh +
-     "&photo="+sVarPhotoTwh +
-     "&eol="+sVarEolTwh;*/
-    lien="http://localhost:8888/api/v1/700.json";
-    console.log("Lien : " + lien);
-    request(readData);
+
+    var url = 'json_test.php';
+   // $.getJSON(url, function() {console.log("LALA")});
+
+    $.ajax({
+        url:url,
+        method:"GET",
+        success:function (data){
+            console.log("DATA ok");
+            console.log(data);
+        },
+        error:function (xhr, status, error){
+            alert("Erreur de chargement du fichier '"+url+"' : "+xhr.responseText+" ("+status+" - "+error+")");
+        },
+        dataType:'json'
+    });
+
 }
 
 /*Création de l'objet XMLHttpRequest
 * La valeur de retour est cet objet
 * */
-function getXMLHttpRequest() {
-    var xhr = null;
+function createCORSRequest(method, url) {
 
-    if (window.XMLHttpRequest || window.ActiveXObject) {
-        if (window.ActiveXObject) {
-            try {
-                xhr = new ActiveXObject("Msxml2.XMLHTTP");
-            } catch(e) {
-                xhr = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-        } else {
-            xhr = new XMLHttpRequest();
-        }
-    } else {
-        alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
-        return null;
-    }
-
-    return xhr;
 }
 
 /*Fonction Request qui envoie des données au serveur
 *
 * */
 function request(callback) {
-    /*Annulation de la requete*/
-    /*if (xhr && xhr.readyState != 0) {
-        xhr.abort(); // On annule la requête en cours !
-    }*/
-    if (xhr && xhr.readyState != 0) {
-        alert("Attendez que la requête ait abouti avant de continuer");
-        return;
-    }
 
-    var xhr = getXMLHttpRequest();
-
-    xhr.onreadystatechange = function() {
-
-        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            callback(xhr.responseText);
-            document.getElementById("loaderIhm1").style.display = "none";
-        } else if (xhr.readyState < 4) {
-            document.getElementById("loaderIhm1").style.display = "inline";
-        }
-    };
-
-    xhr.open("GET", lien, true);
-    //xhr.send("IdEditor=" + value);
-    xhr.send(null);
 }
 
-function readData(sData) {
+function readData(sData, bool) {
     // On peut maintenant traiter les données sans encombrer l'objet XHR.
-    alert("OK");
-
+    if (bool==true){
+        alert("OK");
+    }else{
+        alert("NOK");
+    }
 }
 
 /*function callback(oJson) {
@@ -99,6 +62,5 @@ function readData(sData) {
             tree += "\t" + oSoftwares[sItem][i] + "\n";
         }
     }
-
     alert(tree);
 }*/
