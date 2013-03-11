@@ -221,7 +221,7 @@ section .bouton{
     -moz-border-radius-topright:5px;
     border-top-right-radius: 5px;
     margin: 10px 50px 10px 50px;
-    height: 480px;
+    /* height: 480px; */
     padding: 10px 10px 10px 10px;
 
 }
