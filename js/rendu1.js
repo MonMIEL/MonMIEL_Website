@@ -25,6 +25,10 @@ var chart1, chart2,chart;
 
 function miseEnPlaceHighChart(){
 
+	Highcharts.setOptions({
+        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263']
+    });
+	
     chart = new Highcharts.Chart({
         chart: {
             renderTo: 'chart_conso',

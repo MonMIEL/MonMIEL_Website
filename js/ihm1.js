@@ -96,7 +96,7 @@ function validerScenario(){
     document.getElementById('monmix').style.display = "block";
     //mise en place du camembert
     Highcharts.setOptions({
-        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263',      '#6AF9C4']
+        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263']
     });
     //Affichage du contenu suivant
     if(!passe){

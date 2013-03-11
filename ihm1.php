@@ -171,83 +171,93 @@
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
             <h1 id="titleMonMix">Etape 3 - Mon MIx ELectrique</h1>
-			<div class="bloc" style="width:48%;">
-				<div class="row first">
-					<div class="span3">Energie</div>
-					<div class="span1" style="margin-top:0;">%</div>
-					<div class="span1" style="margin-top:0;">GWh</div>
-				</div>
+			<div id="monmix-right" style="width:48%;">
+				<h2>Vos paramètres</h2>
+				<div class="bloc">
+					<div class="row first">
+						<div class="span3">Energie</div>
+						<div class="span1" style="margin-top:0;">%</div>
+						<div class="span1" style="margin-top:0;">GWh</div>
+					</div>
 
-				<div class="row">					
-					<div class="span3">Nucléaire
-                        <table><tr>
-                            <td id="slider_target1"></td>
-                            <td><input type="text" id="nuc_txtfield" name="textfield1" size="3" value="30" onchange="updateTextInput('nuc');" style="display:none"/></td>
-                        </tr></table></div>
-					<div class="span1"><input type="text" id="nuc" value="30" style="width:30px; background:none;">%</div>
-					<div class="span1"><input type="text" id="nuc_gwh" style="width:50px; background:none;"></div>
-				</div>
-				
-				<div class="row">					
-					<div class="span3">Photovoltaïque
-                        <table><tr>
-                        <td id="slider_target2"></td>
-                        <td><input type="text" id="pho_txtfield" name="textfield2" size="3" value="10" onchange="updateTextInput('pho');" style="display:none"/></td>
-                    </tr></table></div>
-					<div class="span1"><input type="text" id="pho" value="10" style="width:30px; background:none;">%</div>
-					<div class="span1"><input type="text" id="pho_gwh" style="width:50px; background:none;"></div>
-				</div>
+					<div class="row">					
+						<div class="span3">Nucléaire
+							<table><tr>
+								<td id="slider_target1"></td>
+								<td><input type="text" id="nuc_txtfield" name="textfield1" size="3" value="30" onchange="updateTextInput('nuc');" style="display:none"/></td>
+							</tr></table></div>
+						<div class="span1"><input type="text" id="nuc" value="30" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="nuc_gwh" style="width:50px; background:none;"></div>
+					</div>
+					
+					<div class="row">					
+						<div class="span3">Photovoltaïque
+							<table><tr>
+							<td id="slider_target2"></td>
+							<td><input type="text" id="pho_txtfield" name="textfield2" size="3" value="10" onchange="updateTextInput('pho');" style="display:none"/></td>
+						</tr></table></div>
+						<div class="span1"><input type="text" id="pho" value="10" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="pho_gwh" style="width:50px; background:none;"></div>
+					</div>
 
-				<div class="row">					
-					<div class="span3">Eolien
-                        <table><tr>
-                            <td id="slider_target3"></td>
-                            <td><input type="text" id="eol_txtfield" name="textfield3" size="3" value="20" onchange="updateTextInput('eol');" style="display:none"/></td>
-                        </tr></table></div>
-					<div class="span1"><input type="text" id="eol" value="20" style="width:30px; background:none;">%</div>
-					<div class="span1"><input type="text" id="eol_gwh" style="width:50px; background:none;"></div>
+					<div class="row">					
+						<div class="span3">Eolien
+							<table><tr>
+								<td id="slider_target3"></td>
+								<td><input type="text" id="eol_txtfield" name="textfield3" size="3" value="20" onchange="updateTextInput('eol');" style="display:none"/></td>
+							</tr></table></div>
+						<div class="span1"><input type="text" id="eol" value="20" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="eol_gwh" style="width:50px; background:none;"></div>
+					</div>
 				</div>
+				<h2>Paramètres indépendants</h2>
+				<div class="bloc">
+					<div class="row first">
+						<div class="span3">Energie</div>
+						<div class="span1" style="margin-top:0;">%</div>
+						<div class="span1" style="margin-top:0;">GWh</div>
+					</div>
+					<div class="row">						
+						<div class="span3">Hydraulique
+							<table><tr>
+								<td id="slider_target4"></td>
+								<td><input type="text" id="hyd_txtfield" name="textfield4" size="3" value="20" onchange="updateTextInput('hyd');" style="display:none"/></td>
+							</tr></table></div>
+						<div class="span1"><input type="text" id="hyd" value="20" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="hyd_gwh" style="width:50px; background:none;"></div>
+					</div>
 
-				<div class="row">					
-					<div class="span3">Hydraulique
-                        <table><tr>
-                            <td id="slider_target4"></td>
-                            <td><input type="text" id="hyd_txtfield" name="textfield4" size="3" value="20" onchange="updateTextInput('hyd');" style="display:none"/></td>
-                        </tr></table></div>
-					<div class="span1"><input type="text" id="hyd" value="20" style="width:30px; background:none;">%</div>
-					<div class="span1"><input type="text" id="hyd_gwh" style="width:50px; background:none;"></div>
-				</div>
+					<div class="row">					
+						<div class="span3" title="les centrales à flammes servent de compléments">Centrales à flammes
+							<table><tr>
+								<td id="slider_target5"></td>
+								<td><input type="text" id="cen_txtfield" name="textfield5" size="3" value="20" onchange="" style="display:none"/></td>
+							</tr></table></div>
+						<div class="span1"><input type="text" id="cen" value="20" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="cen_gwh" style="width:50px; background:none;"></div>
+					</div>
 
-				<div class="row">					
-					<div class="span3" title="les centrales à flammes servent de compléments">Centrales à flammes
-                        <table><tr>
-                            <td id="slider_target5"></td>
-                            <td><input type="text" id="cen_txtfield" name="textfield5" size="3" value="20" onchange="" style="display:none"/></td>
-                        </tr></table></div>
-					<div class="span1"><input type="text" id="cen" value="20" style="width:30px; background:none;">%</div>
-					<div class="span1"><input type="text" id="cen_gwh" style="width:50px; background:none;"></div>
-				</div>
+					<div class="row">					
+						<div class="span3" title="pas implémenté">STEP
+							<table><tr>
+								<td id="slider_target6"></td>
+								<td><input type="text" id="ste_txtfield" name="textfield6" size="3" value="50" onchange="" style="display:none"/></td>
+							</tr></table></div>
+						<div class="span1"><input type="text" id="ste" value="50" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="ste_gwh" style="width:50px; background:none;"></div>
+					</div>
 
-				<div class="row">					
-					<div class="span3" title="pas implémenté">STEP
-                        <table><tr>
-                            <td id="slider_target6"></td>
-                            <td><input type="text" id="ste_txtfield" name="textfield6" size="3" value="50" onchange="" style="display:none"/></td>
-                        </tr></table></div>
-					<div class="span1"><input type="text" id="ste" value="50" style="width:30px; background:none;">%</div>
-					<div class="span1"><input type="text" id="ste_gwh" style="width:50px; background:none;"></div>
+					<div class="row">					
+						<div class="span3" title="pas implémenté">Import
+							<table><tr>
+								<td id="slider_target7"></td>
+								<td><input type="text" id="imp_txtfield" name="textfield7" size="3" value="50" onchange="" style="display:none"/></td>
+							</tr></table></div>
+						<div class="span1"><input type="text" id="imp" value="50" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="imp_gwh" style="width:50px; background:none;"></div>
+					</div>
+					
 				</div>
-
-				<div class="row">					
-					<div class="span3" title="pas implémenté">Import
-                        <table><tr>
-                            <td id="slider_target7"></td>
-                            <td><input type="text" id="imp_txtfield" name="textfield7" size="3" value="50" onchange="" style="display:none"/></td>
-                        </tr></table></div>
-					<div class="span1"><input type="text" id="imp" value="50" style="width:30px; background:none;">%</div>
-					<div class="span1"><input type="text" id="imp_gwh" style="width:50px; background:none;"></div>
-				</div>
-				
 			</div>
             <div id="camembert" style="width:48%;">
                 <div id="chart_cam" class="chart"></div>
