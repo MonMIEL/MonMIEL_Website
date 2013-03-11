@@ -174,7 +174,8 @@ section .bloc {
 }
 
 #calcul,
-#simuler {
+#simuler,
+#testSimuler {
 	text-align: center;
 	margin-bottom: 15px;
 }
@@ -204,6 +205,7 @@ section .bouton{
     width : 500px;
     margin-left: 220px;
     padding-bottom: 1px;
+	margin-bottom: 15px;
 }
 #contenu_problematique h1{
   margin-left : 50px;
@@ -393,4 +395,8 @@ footer {
 
 #tab_chart_Scenario tr {
 	height: 50px;
+}
+
+#h1-contact {
+	margin-left: 220px;
 }
