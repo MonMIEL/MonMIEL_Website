@@ -32,7 +32,7 @@
                     <div class="carousel-inner">
 
                         <div class="item active">
-                            <img src="img/energy1.jpg" alt="">
+                            <img src="img/teste.PNG" alt="">
                             <div class="container">
                                 <div class="carousel-caption">
 
@@ -43,17 +43,17 @@
 
 
                         <div class="item">
-                            <img src="img/energy2.jpg" alt="">
+                            <img src="img/simulez1.png" alt="">
                             <div class="container">
                                 <div class="carousel-caption">
-                                   <a class="btn btn-large btn-primary" href="ihm1.php">Simuler votre mix</a>
+                                   <a class="btn btn-large btn-primary" href="ihm1.php">Simulez votre mix</a>
                                 </div>
                             </div>
                         </div>
 
 
                         <div class="item">
-                            <img src="img/energy4.jpg" alt="">
+                            <img src="img/contact_us.gif" alt="">
                             <div class="container">
                                 <div class="carousel-caption">
                                   <a class="btn btn-large btn-primary" href="contact.php">Contact</a>
@@ -62,6 +62,14 @@
                         </div>
 
 
+                        <div class="item">
+                            <img src="img/liens2.jpg" alt="">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <a class="btn btn-large btn-primary" href="liens.php">Liens utils</a>
+                                </div>
+                            </div>
+                        </div>
 
 
                     </div><!-- .carousel-inner -->
