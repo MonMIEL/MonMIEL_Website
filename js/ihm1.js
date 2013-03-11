@@ -67,10 +67,6 @@ function validerHorizonCible(){
 	}
 }
 
-function validerIhm1(){
-    createXhrRequest(anneeRef, anneeCible, consommation2050, 100, 200, 300);
-}
-
 function testerTwh() {
 	var tempTwh = document.getElementById("valeurTwh").value;
 

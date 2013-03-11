@@ -8,17 +8,42 @@ var lien;
  * Création du lien vers le serveur
  * Appel à la fonction de l'appel au serveur
  * */
-function createXhrRequestIhm1(anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh){
+function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh){
+    console.log("---------------------------------------------");
+    console.log("Construction du lien avec des données :")
+    var sVarConsommation2050 = encodeURIComponent(consommation2050);
+    console.log("consommation2050 : "+sVarConsommation2050);
+    var sVarAnneRef = encodeURIComponent(anneeRef);
+    console.log("anneeRef : "+sVarAnneRef);
+    var sVarAnneCible = encodeURIComponent(anneeCible);
+    console.log("anneeCible : "+sVarAnneCible);
+    var sVarNucTwh = encodeURIComponent(eNucTwh);
+    console.log("eNucTwh : "+sVarNucTwh);
+    var sVarPhotoTwh = encodeURIComponent(ePhotoTwh);
+    console.log("ePhotoTwh : "+sVarPhotoTwh);
+    var sVarEolTwh = encodeURIComponent(eEolTwh);
+    console.log("eEolTwh : "+sVarEolTwh);
+    /* lien = "http://localhost:8888/app_dev.php/api/v1/700.json?"+
+     "anneeRef="+sVarAnneRef +
+     "&anneCible="+sVarAnneCible +
+     "&nucleaire="+sVarNucTwh +
+     "&photo="+sVarPhotoTwh +
+     "&eol="+sVarEolTwh;*/
+    var url = "http://localhost:8888/app_dev.php/api/v1/700.json";
+    console.log("URL : " + url);
+    console.log("---------------------------------------------");
 
-    var url = 'json_test.php';
    // $.getJSON(url, function() {console.log("LALA")});
+
+    var dataJSON = null;
 
     $.ajax({
         url:url,
         method:"GET",
         success:function (data){
-            console.log("DATA ok");
-            console.log(data);
+            dataJSON=data;
+            console.log("DATA-ok");
+            console.log(dataJSON);
         },
         error:function (xhr, status, error){
             alert("Erreur de chargement du fichier '"+url+"' : "+xhr.responseText+" ("+status+" - "+error+")");
@@ -26,19 +51,14 @@ function createXhrRequestIhm1(anneeRef, anneeCible, consommation2050, eNucTwh, e
         dataType:'json'
     });
 
+    return dataJSON;
+
 }
 
 /*Création de l'objet XMLHttpRequest
 * La valeur de retour est cet objet
 * */
 function createCORSRequest(method, url) {
-
-}
-
-/*Fonction Request qui envoie des données au serveur
-*
-* */
-function request(callback) {
 
 }
 
@@ -50,17 +70,3 @@ function readData(sData, bool) {
         alert("NOK");
     }
 }
-
-/*function callback(oJson) {
-    var tree = "", nbItems;
-
-    for (sItem in oJson) {
-        tree += sItem + "\n";
-        nbItems = oJson[sItem].length;
-
-        for (var i=0; i<nbItems; i++) {
-            tree += "\t" + oSoftwares[sItem][i] + "\n";
-        }
-    }
-    alert(tree);
-}*/
