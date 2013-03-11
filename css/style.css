@@ -60,6 +60,17 @@ section .bloc {
 	background-color: rgba(255,255,255,0.5);
 	padding: 5px;
 }
+
+section #camembert {
+    margin-top:200px;
+    /*border-radius*/
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    border: 1px solid #94A0AD;
+
+}
+
 #contenu_mail .row {
     text-align: center;
     border-top: 1px solid #000000;
@@ -174,7 +185,8 @@ section .bloc {
 }
 
 #calcul,
-#simuler {
+#simuler,
+#testSimuler {
 	text-align: center;
 	margin-bottom: 15px;
 }
@@ -204,6 +216,7 @@ section .bouton{
     width : 500px;
     margin-left: 220px;
     padding-bottom: 1px;
+	margin-bottom: 15px;
 }
 #contenu_problematique h1{
   margin-left : 50px;
@@ -219,7 +232,7 @@ section .bouton{
     -moz-border-radius-topright:5px;
     border-top-right-radius: 5px;
     margin: 10px 50px 10px 50px;
-    height: 480px;
+    /* height: 480px; */
     padding: 10px 10px 10px 10px;
 
 }
@@ -312,12 +325,11 @@ width:350px;
 
 }
 
-.form_widget_amount_slider_blue{
+.form_widget_amount_slider_normal{
     border-top:1px solid #9d9c99;
     border-left:1px solid #9d9c99;
     border-bottom:1px solid #eee;
     border-right:1px solid #eee;
-    background-color:blue;
     height:3px;
     position:absolute;
     bottom:0px;
@@ -393,4 +405,16 @@ footer {
 
 #tab_chart_Scenario tr {
 	height: 50px;
+}
+
+#h1-contact {
+	margin-left: 220px;
+}
+
+#monmix-right {
+	float: right;
+}
+
+#monmix-right h2 {
+	margin-top: 10px;
 }

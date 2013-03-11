@@ -18,85 +18,8 @@
         <script src="js/bootstrap.js"></script>
 		
 		<script src="js/highchart/highcharts.js"></script>
-		<script type="text/javascript">
+		<script src="js/rendu1.js" ></script>
 
-			$(document).ready(function() {
-				var chart;
-				$(document).ready(function() {
-					chart = new Highcharts.Chart({
-						chart: {
-							renderTo: 'chart_conso',
-							type: 'area',
-							backgroundColor: 'rgba(255,255,255,0.5)'
-						},
-						title: {
-							text: 'Consommation'
-						},
-						subtitle: {
-							text: 'Année de reférence : 2050'
-						},
-						xAxis: {
-							categories: ['Janvier', 'Mars', 'Mai', 'Juillet', 'Septembre', 'Novembre', 'Decembre'],
-							tickmarkPlacement: 'on',
-							title: {
-								enabled: false
-							}
-						},
-						yAxis: {
-							title: {
-								text: 'Gw '
-							},
-							labels: {
-								formatter: function() {
-									return this.value / 1000;
-								}
-							}
-						},
-						tooltip: {
-							formatter: function() {
-								return ''+
-									this.x +': '+ Highcharts.numberFormat(this.y, 0, ',') +' GW';
-							}
-						},
-						plotOptions: {
-							area: {
-								stacking: 'normal',
-								lineColor: '#666666',
-								lineWidth: 1,
-								marker: {
-									lineWidth: 1,
-									lineColor: '#666666'
-								}
-							}
-						},
-						series: [{
-							name: 'Nucléaire',
-							data: [502, 635, 809, 947, 1402, 3634, 5268]
-						}, {
-							name: 'Photovoltaique',
-							data: [106, 107, 111, 133, 221, 767, 1766]
-						}, {
-							name: 'Eolien',
-							data: [163, 203, 276, 408, 547, 729, 628]
-						}, {
-							name: 'Hydraulique',
-							data: [18, 31, 54, 156, 339, 818, 1201]
-						}, {
-							name: 'Centrales à flammes',
-							data: [2, 2, 2, 6, 13, 30, 46]
-						}, {
-							name: 'STEP',
-							data: [0, 0, 0, 0, 0, 0, 0]
-						}, {
-							name: 'Import',
-							data: [0, 0, 0, 0, 0, 0, 0]
-						}]
-					});
-				});
-				
-			});
-
-		</script>
     </head>
     <body>
 		<?php include("header.php"); ?>
@@ -104,18 +27,13 @@
 		<?php include("menu.php"); ?>
 
 		<section>
-			<div class="ariane">
+			<div id="ariane" class="ariane">
 				<img src="img/ariane2.png"/>
 			</div>
-			
-			<div id="consommation">
-				<h1>Consommation</h1>
-				 <div id="chart_conso" class="chart"></div>
-			</div>
+
 			
 
 			<div id="parc">
-				<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 				<h1>Parc calculé</h1>
 				<div class="bloc">
 					<div class="row first">
@@ -239,10 +157,29 @@
 			<div id="calcul">
 				<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 				<div class="bouton">
-					<a href="rendu2.php"><span class="but-icon"></span>Calculer le mix énergétique</a>
+					<a onclick="passerEnergetique()"><span class="but-icon"></span>Calculer le mix énergétique</a>
 				</div>
 			</div>
-			
+
+            <div id="rendue2" style="display:none">
+
+
+                <div id="consommation">
+                    <h1>Consommation</h1>
+                    <div id="chart_conso" class="chart"></div>
+                </div>
+
+                <div class="row first">
+                    <div id="mixdemande" class="span6">
+                        <h1>Mix demandé</h1>
+                        <div id="chart_1" class="chart"></div>
+                    </div>
+                    <div id="mixcalcule" class="span6">
+                        <h1>Mix Calculé</h1>
+                        <div id="chart_2" class="chart"></div>
+                    </div>
+                </div>
+            </div>
 		</section>
 
 		<?php include("footer.php"); ?>

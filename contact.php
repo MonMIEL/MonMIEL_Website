@@ -119,96 +119,97 @@ if (isset($_POST['envoye']))
     <?php include("header.php"); ?>
 
     <?php include("menu.php"); ?>
-<section>
-    <div id="contenu_mail">
+	<section>
+		<h1 id="h1-contact">Contact</h1>
+		<div id="contenu_mail">
+			
+			<form action="contact.php" method="post">
+				<div class="row">
+					<?php
+					if (!empty($alert))
+					{
+						echo '<p style="color:red">'.$alert.'</p>';
+					}
+					?>
+				   <div class="span6 gauche"> Civilité :</div>
+					<div class="span6 droite"> <select id="civilite" name="civilite">
+						<option
+								value="mr"
+							<?php
+							if (!isset($_POST['civilite']) || $_POST['civilite'] == 'mr')
+							{
+								echo ' selected="selected"';
+							}
+							?>
+								>
+							Monsieur
+						</option>
+						<option
+								value="mme"
+							<?php
+							if (isset($_POST['civilite']) && $_POST['civilite'] == 'mme')
+							{
+								echo ' selected="selected"';
+							}
+							?>
+								>
+							Madame
+						</option>
+						<option
+								value="mlle"
+							<?php
+							if (isset($_POST['civilite']) && $_POST['civilite'] == 'mlle')
+							{
+								echo ' selected="selected"';
+							}
+							?>
+								>
+							Mademoiselle
+						</option>
+					</select>
+					   </div>
+				 </div>
+				<div class="row">
+					<div class="span6 gauche" > Nom/Prénom :</div>
+					<div class="span6 droite">
+						<input type="text" id="nom" name="nom"
+						   value="<?php echo (isset($_POST['nom'])) ? $nom : '' ?>"
+							/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span6 gauche" > E-mail : </div>
+						<div class="span6 droite">
+							<input type="text" id="email" name="email"
+						   value="<?php echo (isset($_POST['email'])) ? $expediteur : '' ?>"
+							/>
+						</div>
+				</div>
+			   <div class="row">
 
-        <form action="contact.php" method="post">
-            <div class="row">
-                <?php
-                if (!empty($alert))
-                {
-                    echo '<p style="color:red">'.$alert.'</p>';
-                }
-                ?>
-               <div class="span6 gauche"> Civilité :</div>
-                <div class="span6 droite"> <select id="civilite" name="civilite">
-                    <option
-                            value="mr"
-                        <?php
-                        if (!isset($_POST['civilite']) || $_POST['civilite'] == 'mr')
-                        {
-                            echo ' selected="selected"';
-                        }
-                        ?>
-                            >
-                        Monsieur
-                    </option>
-                    <option
-                            value="mme"
-                        <?php
-                        if (isset($_POST['civilite']) && $_POST['civilite'] == 'mme')
-                        {
-                            echo ' selected="selected"';
-                        }
-                        ?>
-                            >
-                        Madame
-                    </option>
-                    <option
-                            value="mlle"
-                        <?php
-                        if (isset($_POST['civilite']) && $_POST['civilite'] == 'mlle')
-                        {
-                            echo ' selected="selected"';
-                        }
-                        ?>
-                            >
-                        Mademoiselle
-                    </option>
-                </select>
-                   </div>
-             </div>
-            <div class="row">
-                <div class="span6 gauche" > Nom/Prénom :</div>
-                <div class="span6 droite">
-                    <input type="text" id="nom" name="nom"
-                       value="<?php echo (isset($_POST['nom'])) ? $nom : '' ?>"
-                        />
-                </div>
-            </div>
-            <div class="row">
-                <div class="span6 gauche" > E-mail : </div>
-                    <div class="span6 droite">
-                        <input type="text" id="email" name="email"
-                       value="<?php echo (isset($_POST['email'])) ? $expediteur : '' ?>"
-                        />
-                    </div>
-            </div>
-           <div class="row">
+				   <div class="span6 gauche">  Sujet : </div>
+					   <div class="span6 droite"> <input type="text" id="sujet" name="sujet"
+						   value="<?php echo (isset($_POST['sujet'])) ? $sujet : '' ?>"
+							/>
+					   </div>
+			   </div>
+				<div id="message_saisie">
+					<label for="message"><b>Message :</b></label>
+					<textarea id="message" name="message" cols="100" rows="8">
+						<?php echo (isset($_POST['message'])) ? $message : '' ?>
+					</textarea>
+				</div>
 
-               <div class="span6 gauche">  Sujet : </div>
-                   <div class="span6 droite"> <input type="text" id="sujet" name="sujet"
-                       value="<?php echo (isset($_POST['sujet'])) ? $sujet : '' ?>"
-                        />
-                   </div>
-           </div>
-            <div id="message_saisie">
-                <label for="message"><b>Message :</b></label>
-                <textarea id="message" name="message" cols="100" rows="8">
-                    <?php echo (isset($_POST['message'])) ? $message : '' ?>
-                </textarea>
-            </div>
+				<div id="envoye">
+						<input  type="submit" name="envoye" value="Envoyer" />
+				</div>
 
-            <div id="envoye">
-                    <input  type="submit" name="envoye" value="Envoyer" />
-            </div>
-
-        </form>
+			</form>
 
 
 
-    </div>
-</section>
+		</div>
+	</section>
     <?php include("footer.php"); ?>
 </body>
 </html>
