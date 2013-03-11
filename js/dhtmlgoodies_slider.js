@@ -105,7 +105,7 @@ function startMoveSlider(e)
 	if(!slideInProgress)return;
     var val;
     if(currentSliderIndex==1){
-        total = +parseInt(document.getElementById("eol_txtfield").value) +parseInt(document.getElementById("pho_txtfield").value)+parseInt(document.getElementById("hyd_txtfield").value);
+        total = parseInt(document.getElementById("eol_txtfield").value) +parseInt(document.getElementById("pho_txtfield").value)+parseInt(document.getElementById("hyd_txtfield").value);
         }
     else if (currentSliderIndex==2){
         total = parseInt(document.getElementById("nuc_txtfield").value)+parseInt(document.getElementById("eol_txtfield").value) +parseInt(document.getElementById("hyd_txtfield").value);
@@ -145,9 +145,86 @@ function startMoveSlider(e)
 	}
 }
 
-function initialiserValeur(val){
-   // document.getElementById('slider_blue4').style.width= sliderObjectArray[4]['width']*(50/consommation2050)+'px';
-   //  document.getElementById('slider_handle4').style.left= sliderObjectArray[4]['width']*(50/consommation2050)+'px';
+function initialiserValeur(id,val){
+    var diff=parseInt(document.getElementById("hyd_txtfield").value)-(val*100);
+    document.getElementById('slider_blue'+id).style.width= sliderObjectArray[id]['width']*val+'px';
+     document.getElementById('slider_handle'+id).style.left= sliderObjectArray[id]['width']*val+'px';
+    adjustFormValue(id);
+    if(sliderObjectArray[id]['onchangeAction']){
+        eval(sliderObjectArray[id]['onchangeAction']);
+    }
+    document.getElementById("hyd_gwh").value=50;
+    var total=parseInt(document.getElementById("eol_txtfield").value) +parseInt(document.getElementById("pho_txtfield").value)+parseInt(document.getElementById("nuc_txtfield").value);
+    var central=parseInt(document.getElementById("cen_txtfield").value);
+    var hyd=val*100;
+    if(hyd+total+central<100){
+        //diff est négatif
+        document.getElementById('slider_handle5').style.left = sliderObjectArray[5]['width']*(100-hyd-total)/100 + 'px';
+        document.getElementById('slider_blue5').style.width= sliderObjectArray[5]['width']*(100-hyd-total)/100 +'px';
+        adjustFormValue(5);
+        if(sliderObjectArray[5]['onchangeAction']){
+            eval(sliderObjectArray[5]['onchangeAction']);
+        }
+
+
+    }else {
+
+        if(100-hyd-total>0){
+            document.getElementById('slider_handle5').style.left = sliderObjectArray[5]['width']*(100-hyd-total)/100 + 'px';
+            document.getElementById('slider_blue5').style.width= sliderObjectArray[5]['width']*(100-hyd-total)/100 +'px';
+            adjustFormValue(5);
+            if(sliderObjectArray[5]['onchangeAction']){
+                eval(sliderObjectArray[5]['onchangeAction']);
+            }
+        }
+        else {
+            document.getElementById('slider_handle5').style.left = '0px';
+            document.getElementById('slider_blue5').style.width='0px';
+            adjustFormValue(5);
+            if(sliderObjectArray[5]['onchangeAction']){
+                eval(sliderObjectArray[5]['onchangeAction']);
+            }
+            var nucleaire=parseInt(document.getElementById("nuc_txtfield").value);
+            if (100-hyd-total+nucleaire>0){
+                document.getElementById('slider_handle1').style.left = sliderObjectArray[1]['width']*(100-hyd-total+nucleaire)/100 + 'px';
+                document.getElementById('slider_blue1').style.width= sliderObjectArray[1]['width']*(100-hyd-total+nucleaire)/100 +'px';
+                adjustFormValue(1);
+                if(sliderObjectArray[1]['onchangeAction']){
+                    eval(sliderObjectArray[1]['onchangeAction']);
+                }
+            } else{
+                    document.getElementById('slider_handle1').style.left = '0px';
+                    document.getElementById('slider_blue1').style.width='0px';
+                    adjustFormValue(1);
+                    if(sliderObjectArray[1]['onchangeAction']){
+                        eval(sliderObjectArray[1]['onchangeAction']);
+                    }
+                    var photo=parseInt(document.getElementById("pho_txtfield").value);
+                    if (100-hyd-total+nucleaire+photo>0){
+                        document.getElementById('slider_handle2').style.left = sliderObjectArray[2]['width']*(100-hyd-total+nucleaire+photo)/100 + 'px';
+                        document.getElementById('slider_blue2').style.width= sliderObjectArray[2]['width']*(100-hyd-total+nucleaire+photo)/100 +'px';
+                        adjustFormValue(2);
+                        if(sliderObjectArray[2]['onchangeAction']){
+                            eval(sliderObjectArray[2]['onchangeAction']);
+                        }
+                    } else{
+                        document.getElementById('slider_handle2').style.left = '0px';
+                        document.getElementById('slider_blue2').style.width='0px';
+                        adjustFormValue(2);
+                        if(sliderObjectArray[2]['onchangeAction']){
+                            eval(sliderObjectArray[2]['onchangeAction']);
+                        }
+                        document.getElementById('slider_handle3').style.left = sliderObjectArray[2]['width']*(100-hyd)/100 + 'px';
+                        document.getElementById('slider_blue3').style.width= sliderObjectArray[2]['width']*(100-hyd)/100 +'px';
+                        adjustFormValue(3);
+                        if(sliderObjectArray[3]['onchangeAction']){
+                            eval(sliderObjectArray[3]['onchangeAction']);
+                        }
+                    }
+            }
+        }
+    }
+
 }
 
 function stopMoveSlider()

@@ -105,7 +105,7 @@ function validerScenario(){
     }
 
     document.getElementById("hyd_gwh").value=50;
-    initialiserValeur(5,50/consommation2050);
+    initialiserValeur(4,50/consommation2050);
     var val = document.getElementById("nuc_txtfield").value;
     document.getElementById("nuc_gwh").value=(val/100)*consommation2050;
     val = document.getElementById("pho_txtfield").value;
