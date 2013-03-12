@@ -18,6 +18,8 @@
         <script src="js/bootstrap.js"></script>
 		
 		<script src="js/highchart/highcharts.js"></script>
+        <script src="js/highchart/exporting.js"></script>
+
 		<script src="js/rendu1.js" ></script>
         <script src="js/calculJsonMonMIEL.js" ></script>
         <script src="js/oXHR.js"></script>
@@ -199,6 +201,7 @@
                 <div id="consommation">
                     <h1>Consommation</h1>
                     <div id="chart_conso" class="chart"></div>
+                    <a id="buttonExportChartConso" onclick="exporterChartConso()">Exporter Chart Conso</a>
                 </div>
 
                 <div class="row first">

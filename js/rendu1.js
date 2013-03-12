@@ -14,6 +14,7 @@ var chart1, chart2,chart;
 function chartselect( chart, index){
     chart.series[0].data[index].select(true);
 }
+
 var passer=false;
 function passerEnergetique(){
     document.getElementById('ariane').innerHTML="<img src='img/ariane3.png' />";
@@ -30,9 +31,17 @@ function passerParc(){
     document.getElementById("parc").style.display="";
     document.getElementById("rendue2").style.display="none";
     document.getElementById("bouttonMix").innerHTML=" <a onclick='passerEnergetique()'><span class='but-icon'></span>Mix énergétique</a>"
-
-
 }
+
+// the button handler
+function exporterChartConso() {
+    chart.exportChart(null, {
+        chart: {
+            backgroundColor: '#FFFFFF'
+        }
+    });
+}
+
 function miseEnPlaceHighChart(){
 
 	Highcharts.setOptions({
@@ -46,6 +55,9 @@ function miseEnPlaceHighChart(){
             backgroundColor: 'rgba(255,255,255,0.5)',
             animation: false,
             zoomType: 'x'
+        },
+        credits : {
+            enabled : false
         },
         title: {
             text: 'Consommation'
@@ -80,8 +92,9 @@ function miseEnPlaceHighChart(){
         tooltip: {
             formatter: function() {
                 return ''+
-                    'Date : ' + Highcharts.dateFormat("%B %e, %Y", this.x) +'<br/>'+ '<b>Consommation : </b>'+Highcharts.numberFormat(this.y, 0)+' GWh';
-            }
+                    '<b>Date </b>: ' + Highcharts.dateFormat("%B %e, %Y", this.x) +'<br/>'+ '<b>Consommation : </b>'+Highcharts.numberFormat(this.y, 0)+' GWh';
+            },
+            crosshairs: true
         },
         plotOptions: {
             area: {
@@ -146,7 +159,6 @@ function miseEnPlaceHighChart(){
             data: [0, 0, 0, 0, 0, 0, 0]
         }*/]
     });
-
 
     Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
         return {
