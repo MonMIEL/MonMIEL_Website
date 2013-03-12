@@ -14,16 +14,25 @@ var chart1, chart2,chart;
 function chartselect( chart, index){
     chart.series[0].data[index].select(true);
 }
-
+var passer=false;
 function passerEnergetique(){
     document.getElementById('ariane').innerHTML="<img src='img/ariane3.png' />";
     document.getElementById("rendue2").style.display="";
     document.getElementById("parc").style.display="none";
-    document.getElementById("calcul").style.display="none";
-
+    document.getElementById("bouttonMix").innerHTML="<a onclick='passerParc()'><span class='but-icon' style=\"background: url('../img/icon_arrow2.png')\"></span>Parc et consommation</a>"
+    if(!passer){
     miseEnPlaceHighChart();
+    passer=true;
+    }
 }
+function passerParc(){
+    document.getElementById('ariane').innerHTML="<img src='img/ariane2.png' />";
+    document.getElementById("parc").style.display="";
+    document.getElementById("rendue2").style.display="none";
+    document.getElementById("bouttonMix").innerHTML=" <a onclick='passerEnergetique()'><span class='but-icon'></span>Mix énergétique</a>"
 
+
+}
 function miseEnPlaceHighChart(){
 
 	Highcharts.setOptions({

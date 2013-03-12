@@ -191,12 +191,7 @@
 				</div>
 			</div>
 
-			<div id="calcul" style="display:none">
-				<img class="separateur" src="img/separateur.jpg" alt="separateur" />
-				<div class="bouton">
-					<a onclick="passerEnergetique()"><span class="but-icon"></span>Calculer le mix énergétique</a>
-				</div>
-			</div>
+
 
             <div id="rendue2" style="display:none">
 
@@ -215,6 +210,13 @@
                         <h1>Mix Calculé</h1>
                         <div id="chart_2" class="chart"></div>
                     </div>
+                </div>
+            </div>
+
+            <div id="calcul" style="display:none">
+                <img class="separateur" src="img/separateur.jpg" alt="separateur" />
+                <div id ="bouttonMix" class="bouton">
+                    <a onclick="passerEnergetique()"><span class="but-icon"></span>Mix énergétique</a>
                 </div>
             </div>
 		</section>
