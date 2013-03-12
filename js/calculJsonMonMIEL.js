@@ -1,7 +1,8 @@
 var dataJSON = null;
 
 function calculerMonMIEL(){
-    dataJSON = manipulerCalculMonMIEL(
+    // 
+    manipulerCalculMonMIEL(
     //Ordre : anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh
         anneeRef,
         anneeCible,
@@ -10,7 +11,11 @@ function calculerMonMIEL(){
         pho_gwh,
         eol_gwh);
 
-    if(dataJSON==null){
-        console.log("informations JSON ne sont pas corrects");
-    }
 };
+
+function postActionsJSON(){
+    document.getElementById("parc").style.display = "";
+
+    console.log(dataJSON);
+
+}

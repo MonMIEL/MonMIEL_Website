@@ -35,43 +35,21 @@ function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh,
 
    // $.getJSON(url, function() {console.log("LALA")});
 
-    var dataJSON = null;
-
     document.getElementById("loadCalculMonMIEL").innerHTML = "LOADING..";
     $.ajax({
         url:url,
         method:"GET",
         success:function (data){
             dataJSON=data;
-            console.log("DATA-ok");
-            console.log(dataJSON);
+            console.log("DATA-reçu");
+            postActionsJSON();
         },
         error:function (xhr, status, error){
-            alert("Erreur de chargement du fichier '"+url+"' : "+xhr.responseText+" ("+status+" - "+error+")");
+            window.location = "ihm1.php?error=erreurChargementRendu1";
         },
         complete:function(){
             document.getElementById("loadCalculMonMIEL").style.display = "none";
-            document.getElementById("parc").style.display = "";
         },
         dataType:'json'
     });
-
-    return dataJSON;
-
-}
-
-/*Création de l'objet XMLHttpRequest
-* La valeur de retour est cet objet
-* */
-function createCORSRequest(method, url) {
-
-}
-
-function readData(sData, bool) {
-    // On peut maintenant traiter les données sans encombrer l'objet XHR.
-    if (bool==true){
-        alert("OK");
-    }else{
-        alert("NOK");
-    }
 }
