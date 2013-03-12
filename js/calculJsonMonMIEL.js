@@ -75,6 +75,21 @@ function postActionsJSON(){
     console.log("Parc Photo(%) : ["+perParcTargetPhoto+"]["+perParcFinalPhoto+"]");
     console.log("-----------------------------------------------------------------");
 
+    document.getElementById("barParcTargetNuke").style.width = perParcTargetNuke+"%";
+    document.getElementById("barParcFinalNuke").style.width = perParcFinalNuke+"%";
+
+    document.getElementById("barParcTargetPhoto").style.width = perParcTargetPhoto+"%";
+    document.getElementById("barParcFinalPhoto").style.width = perParcFinalPhoto+"%";
+
+    document.getElementById("barParcTargetEol").style.width = perParcTargetEol+"%";
+    document.getElementById("barParcFinalEol").style.width = perParcFinalEol+"%";
+
+    document.getElementById("barParcTargetHydrau").style.width = perParcTargetHydrau+"%";
+    document.getElementById("barParcFinalHydrau").style.width = perParcFinalHydrau+"%";
+
+    document.getElementById("barParcTargetFlame").style.width = perParcTargetFlame+"%";
+    document.getElementById("barParcFinalFlame").style.width = perParcFinalFlame+"%";
+
     document.getElementById("parc").style.display = "";
 	document.getElementById("calcul").style.display = "";
 	

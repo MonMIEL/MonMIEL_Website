@@ -100,10 +100,10 @@
 						<div class="span2">Photovoltaïque</div>
 						<div class="span6">
 							<div class="first progress progress-success progress-striped active">
-							  <div class="bar" style="width: 50%;"></div>
+							  <div id="barParcTargetPhoto" class="bar" style="width: 50%;"></div>
 							</div>
 							<div class="progress progress-warning progress-striped active">
-							  <div class="bar" style="width: 65%;"></div>
+							  <div id="barParcFinalPhoto" class="bar" style="width: 65%;"></div>
 							</div>
 						</div>
 						<div class="span1">50</div>
@@ -114,10 +114,10 @@
 						<div class="span2">Eolien</div>
 						<div class="span6">
 							<div class="first progress progress-success progress-striped active">
-							  <div class="bar" style="width: 80%;"></div>
+							  <div id="barParcTargetEol" class="bar" style="width: 80%;"></div>
 							</div>
 							<div class="progress progress-warning progress-striped active">
-							  <div class="bar" style="width: 20%;"></div>
+							  <div id="barParcFinalEol" class="bar" style="width: 20%;"></div>
 							</div>
 						</div>
 						<div class="span1">80</div>
@@ -128,10 +128,10 @@
 						<div class="span2">Hydraulique</div>
 						<div class="span6">
 							<div class="first progress progress-success progress-striped active">
-							  <div class="bar" style="width: 70%;"></div>
+							  <div id="barParcTargetHydrau" class="bar" style="width: 70%;"></div>
 							</div>
 							<div class="progress progress-warning progress-striped active">
-							  <div class="bar" style="width: 70%;"></div>
+							  <div id="barParcFinalHydrau" class="bar" style="width: 70%;"></div>
 							</div>
 						</div>
 						<div class="span1">70</div>
@@ -142,10 +142,10 @@
 						<div class="span2">Centrales à flammes</div>
 						<div class="span6">
 							<div class="first progress progress-success progress-striped active">
-							  <div class="bar" style="width: 35%;"></div>
+							  <div id="barParcTargetFlame" class="bar" style="width: 35%;"></div>
 							</div>
 							<div class="progress progress-warning progress-striped active">
-							  <div class="bar" style="width: 55%;"></div>
+							  <div id="barParcFinalFlame" class="bar" style="width: 55%;"></div>
 							</div>
 						</div>
 						<div class="span1">35</div>
