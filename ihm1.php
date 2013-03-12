@@ -77,12 +77,19 @@
             <!--<ul class="pager">-->
             <div class="bloc">
                 <div class="row">
+					
 					<div class="span6 gauche">Année de référence :</div>
 					<div class="span6 droite">
 						<select id="anneeRef">
 							<option>2011</option>
 							<option>2012</option>
 						</select>
+						<!-- info bulle -->
+						<a href="#" class="bulle">
+							<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
+							<span class="bulle-content">On choisit ici une année de référence, qu'on prendra pour le calcul de notre scénario.</span>
+						</a>
+						<!-- info bulle -->
 					</div>
 				</div>
 				<p id="labelHorizonRef"></p>
@@ -99,6 +106,12 @@
 						<select id="anneeCible">
 							<option>2050</option>
 						</select>
+						<!-- info bulle -->
+						<a href="#" class="bulle">
+							<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
+							<span class="bulle-content">L'année lors de laquelle on désire connaitre la consommation plus tard.</span>
+						</a>
+						<!-- info bulle -->						
 					</div>
 				</div>
 				<p id="labelHorizonCible"></p>
@@ -112,10 +125,18 @@
 
         <!-- Scenario section -->
         <div id="scenario" style="display:none;">
-            <img class="separateur" src="img/separateur.jpg" alt="separateur" />
-            <!--Titre-->
-            <h1 id="titleScenario">Etape 2 - Scénario</h1>
+            <img class="separateur" src="img/separateur.jpg" alt="separateur" />	
 
+            <!--Titre-->
+            <h1 id="titleScenario">
+				Etape 2 - Scénario
+			<!-- info bulle -->
+			<a href="#" class="bulle">
+				<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
+				<span class="bulle-content" style="font-size:14px; font-style:normal; margin-left:10px; margin-top:-45px; width:33%; height:60px; line-height:15pt;">Simulez l'évolution de la consommation depuis l'année de référence jusqu'à l'année desirée, saisir la consommation et visualiser sur le graphe son évolution.</span>
+			</a>
+			<!-- info bulle -->
+			</h1>
             <div class="bloc">
                 <!--NavBar-->
                 <div class="navbar nav-tabs">
@@ -173,7 +194,15 @@
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
             <h1 id="titleMonMix">Etape 3 - Mon MIx ELectrique</h1>
 			<div id="monmix-right" style="width:48%;">
-				<h2>Vos paramètres</h2>
+				<h2>
+					Vos paramètres
+					<!-- info bulle -->
+					<a href="#" class="bulle">
+						<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
+						<span class="bulle-content" style="font-size:14px; text-decoration:none; font-style:normal; margin-left:-760px; margin-top:25px; width:28%; height:100px; line-height:15pt;">Il existe 2 types d'énergies :</br>1. Les énergies réglables: Nucléaire, Photovoltaïque & Eolien</br>2. Les energies non réglables : Hydraulique, Centrales à flammes, STEP & import.</span>
+					</a>
+					<!-- info bulle -->					
+				</h2>
 				<div class="bloc">
 					<div class="row first">
 						<div class="span3">Energie</div>
