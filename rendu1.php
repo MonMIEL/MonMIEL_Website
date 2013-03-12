@@ -41,9 +41,17 @@
                 console.log("nuc_gwh : "+nuc_gwh);
                 console.log("pho_gwh : "+pho_gwh);
                 console.log("eol_gwh : "+eol_gwh);
+                if(typeof(anneeRef)=="undefined" ||
+                        typeof(anneeCible)=="undefined" ||
+                        typeof(consommation2050)=="undefined" ||
+                        typeof(nuc_gwh)=="undefined" ||
+                        typeof(pho_gwh)=="undefined" ||
+                        typeof(eol_gwh)=="undefined"){
+                    alert();
+                    window.location = "ihm1.php?error=manqueDonnee";
+                }
                 calculerMonMIEL();
             }
-
         </script>
     </head>
     <body onload="init()">

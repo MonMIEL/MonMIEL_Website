@@ -1,3 +1,5 @@
+var dataJSON = null;
+
 function calculerMonMIEL(){
     dataJSON = manipulerCalculMonMIEL(
     //Ordre : anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh
