@@ -37,6 +37,44 @@ function calculerMonMIEL(){
 };
 
 function postActionsJSON(){
+    var totalParcPower =
+        dataJSON.finalParcPower.nuclear +
+        dataJSON.finalParcPower.flame+
+        dataJSON.finalParcPower.wind+
+        dataJSON.finalParcPower.hydraulic+
+        dataJSON.finalParcPower.photovoltaic
+        /*+
+        dataJSON.targetParcPower.import+
+        dataJSON.targetParcPower.step*/
+        ;
+    console.log("Total Parc(Gw) : "+totalParcPower);
+
+    var perParcTargetNuke       = dataJSON.targetParcPower.nuclear *100 / totalParcPower;
+    var perParcFinalNuke        = dataJSON.finalParcPower.nuclear  *100 / totalParcPower;
+        console.log("Parc Nuke(Gw) : ["+dataJSON.targetParcPower.nuclear+"]["+dataJSON.finalParcPower.nuclear+"]");
+        console.log("Parc Nuke(%) : ["+perParcTargetNuke+"]["+perParcFinalNuke+"]");
+
+    var perParcTargetFlame      = dataJSON.targetParcPower.flame   *100 / totalParcPower;
+    var perParcFinalFlame       = dataJSON.finalParcPower.flame    *100 / totalParcPower;
+    console.log("Parc Flammes(Gw) : ["+dataJSON.targetParcPower.flame+"]["+dataJSON.finalParcPower.flame+"]");
+        console.log("Parc Flammes(%) : ["+perParcTargetFlame+"]["+perParcFinalFlame+"]");
+
+    var perParcTargetEol        = dataJSON.targetParcPower.wind    *100 / totalParcPower;
+    var perParcFinalEol         = dataJSON.finalParcPower.wind     *100 / totalParcPower;
+    console.log("Parc Eol(Gw) : ["+dataJSON.targetParcPower.wind+"]["+dataJSON.finalParcPower.wind+"]");
+    console.log("Parc Eol(%) : ["+perParcTargetEol+"]["+perParcFinalEol+"]");
+
+    var perParcTargetHydrau     = dataJSON.targetParcPower.hydraulic *100   / totalParcPower;
+    var perParcFinalHydrau      = dataJSON.finalParcPower.hydraulic  *100   / totalParcPower;
+    console.log("Parc Hydro(Gw) : ["+dataJSON.targetParcPower.hydraulic+"]["+dataJSON.finalParcPower.hydraulic+"]");
+    console.log("Parc Hydro(%) : ["+perParcTargetHydrau+"]["+perParcFinalHydrau+"]");
+
+    var perParcTargetPhoto      = dataJSON.targetParcPower.photovoltaic *100 / totalParcPower;
+    var perParcFinalPhoto       = dataJSON.finalParcPower.photovoltaic  *100 / totalParcPower;
+    console.log("Parc Photo(Gw) : ["+dataJSON.targetParcPower.photovoltaic+"]["+dataJSON.finalParcPower.photovoltaic+"]");
+    console.log("Parc Photo(%) : ["+perParcTargetPhoto+"]["+perParcFinalPhoto+"]");
+    console.log("-----------------------------------------------------------------");
+
     document.getElementById("parc").style.display = "";
 	document.getElementById("calcul").style.display = "";
 	

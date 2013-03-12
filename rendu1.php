@@ -86,10 +86,10 @@
 						<div class="span2">Nucléaire</div>
 						<div class="span6">
 							<div class="first progress progress-success progress-striped active">
-							  <div class="bar" style="width: 50%;"></div>
+							  <div id="barParcTargetNuke" class="bar" style="width: 50%;"></div>
 							</div>
 							<div class="progress progress-warning progress-striped active">
-							  <div class="bar" style="width: 65%;"></div>
+							  <div id="barParcFinalNuke" class="bar" style="width: 65%;"></div>
 							</div>
 						</div>
 						<div class="span1">50</div>
@@ -178,7 +178,7 @@
 						<div class="span2">Légende</div>
 						<div class="span1"></div>
 						<div class="span4 legende-verte">
-							2013
+							2011
 							<div class="progress progress-success progress-striped active">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
