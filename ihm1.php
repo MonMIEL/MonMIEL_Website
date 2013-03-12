@@ -82,6 +82,16 @@
 
     <!-- Horizon section -->
         <div id="horizon">
+
+            <?php if(isset($_GET['error'])) {
+            echo "<div id='erreur' class='bloc'>";
+            if($_GET['error']=="erreurChargementRendu1")
+                echo "Erreur lors du chargement du calculateur";
+            else if ($_GET['error']=="manqueDonnee")
+                echo "Merci de renseigner les informations avant de simuler";
+            echo "</div>";
+            }?>
+
             <h1 id="titleHorizon">Etape 1 - Horizon</h1>
             <!--<ul class="pager">-->
             <div class="bloc">

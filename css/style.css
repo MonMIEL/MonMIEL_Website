@@ -61,6 +61,11 @@ section .bloc {
 	padding: 5px;
 }
 
+section #erreur{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
 section #camembert {
     margin-top:200px;
     /*border-radius*/
