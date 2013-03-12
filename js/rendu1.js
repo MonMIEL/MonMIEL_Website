@@ -60,7 +60,7 @@ function miseEnPlaceHighChart(){
             enabled : false
         },
         title: {
-            text: 'Consommation'
+            text: 'Puissance du parc'
         },
         subtitle: {
             text: 'Année de reférence : 2050'
@@ -80,11 +80,11 @@ function miseEnPlaceHighChart(){
         },
         yAxis: {
             title: {
-                text: 'Consommation énergétique (Gwh) '
+                text: 'Puissance (Gw) '
             },
             labels: {
                 formatter: function() {
-                    return this.value;
+                    return this.value / 1000;
                 }
             },
             min: 0
@@ -92,7 +92,7 @@ function miseEnPlaceHighChart(){
         tooltip: {
             formatter: function() {
                 return ''+
-                    '<b>Date </b>: ' + Highcharts.dateFormat("%B %e, %Y", this.x) +'<br/>'+ '<b>Consommation : </b>'+Highcharts.numberFormat(this.y, 0)+' GWh';
+                    '<b>Date </b>: ' + Highcharts.dateFormat("%B %e, %Y", this.x) +'<br/>'+ '<b>Puissance : </b>'+Highcharts.numberFormat(this.y, 0)+' GW';
             },
             crosshairs: true
         },
@@ -119,35 +119,35 @@ function miseEnPlaceHighChart(){
             }
         },
         series: [{
-            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointInterval: 24 * 60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Centrales à flammes',
-            data: dataJSON.flamme,
+            data: dataJSON.series.flamme,
             //data : [20000, 40000],
             color: colorFlammes
         }, {
-            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Photovoltaique',
-            data: dataJSON.photovoltaique,
+            data: dataJSON.series.photovoltaique,
             color: colorPhoto
         }, {
-            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Eolien',
-            data: dataJSON.eolien,
+            data: dataJSON.series.eolien,
             color: colorEol
         }, {
-            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Hydraulique',
-            data: dataJSON.hydraulique,
+            data: dataJSON.series.hydraulique,
             color: colorHydrau
         }, {
-            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Nucléaire',
-            data: dataJSON.nucleaire,
+            data: dataJSON.series.nucleaire,
             color: colorNuke
         }/*, {
             name: 'STEP',
