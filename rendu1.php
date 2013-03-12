@@ -19,13 +19,39 @@
 		
 		<script src="js/highchart/highcharts.js"></script>
 		<script src="js/rendu1.js" ></script>
+        <script src="js/calculJsonMonMIEL.js" ></script>
+        <script src="js/oXHR.js"></script>
+        <script>
+            var anneeRef;
+            var anneeCible;
+            var consommation2050;
+            var nuc_gwh;
+            var pho_gwh;
+            var eol_gwh;
+            function init(){
+                anneeRef = <?php echo $_GET["anneeRef"] ?>;
+                anneeCible = <?php echo $_GET["anneeCible"] ?>;
+                consommation2050 = <?php echo $_GET["consommation2050"] ?>;
+                nuc_gwh = <?php echo $_GET["nuc_gwh"] ?>;
+                pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
+                eol_gwh = <?php echo $_GET["eol_gwh"] ?>;
+                console.log("anneeRef : "+anneeRef);
+                console.log("anneeCible : "+anneeCible);
+                console.log("consommation2050 : "+consommation2050);
+                console.log("nuc_gwh : "+nuc_gwh);
+                console.log("pho_gwh : "+pho_gwh);
+                console.log("eol_gwh : "+eol_gwh);
+                calculerMonMIEL();
+            }
 
+        </script>
     </head>
-    <body>
+    <body onload="init()">
 		<?php include("header.php"); ?>
 		
 		<?php include("menu.php"); ?>
 
+        <p id="loadCalculMonMIEL"></p>
 		<section>
 			<div id="ariane" class="ariane">
 				<img src="img/ariane2.png"/>

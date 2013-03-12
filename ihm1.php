@@ -27,8 +27,6 @@
     <script src="js/highchart/highcharts.js"></script>
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
-    <script src="js/oXHR.js"></script>
-    <script src="js/calculJsonMonMIEL.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
 
     <!-- script d'affichage du contenu du slider -->
@@ -38,6 +36,17 @@
 			document.getElementById(id).value=val; 
 			document.getElementById(id+"_gwh").value=Math.floor((val/100)*consommation2050);
 		}
+
+        function gorendu(){
+            var html = "rendu1.php?"+
+                    "anneeRef="+anneeRef +
+                    "&anneeCible="+anneeCible +
+                    "&consommation2050="+consommation2050+
+                    "&nuc_gwh="+ document.getElementById("nuc_gwh").value+
+                    "&pho_gwh="+ document.getElementById("pho_gwh").value +
+                    "&eol_gwh="+ document.getElementById("eol_gwh").value;
+            window.location = html;
+        }
 	</script>
 	<!-- script d'affichage du contenu du slider -->
 	
@@ -270,13 +279,13 @@
             <div class="bouton">
                 <a><span class="but-icon" onclick="realiserCalculMonMIEL()"></span>Simuler MonMIEL</a>
             </div>
-            <p id="loadCalculMonMIEL"></p>
         </div>
         </form>
+
         <div id="simuler" style="display:none">
 			<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<div class="bouton">
-				<a href="rendu1.php"><span class="but-icon"></span>Simuler</a>
+				<a onclick="gorendu()" href="#"><span class="but-icon"></span>Simuler</a>
 			</div>
         </div>
     </section>
