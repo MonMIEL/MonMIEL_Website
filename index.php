@@ -32,7 +32,7 @@
                     <div class="carousel-inner">
 
                         <div class="item active">
-                            <img src="img/teste.PNG" alt="">
+                            <img src="img/pro1.PNG" alt="">
                             <div class="container">
                                 <div class="carousel-caption">
 
@@ -43,10 +43,10 @@
 
 
                         <div class="item">
-                            <img src="img/simulez.PNG" alt="">
+                            <img src="img/simulez3.PNG" alt="">
                             <div class="container">
                                 <div class="carousel-caption">
-                                   <a class="btn btn-large btn-primary" href="ihm1.php">Simulez votre mix</a>
+                                   <a class="btn btn-large btn-primary" href="ihm1.php">Simulez</a>
                                 </div>
                             </div>
                         </div>
