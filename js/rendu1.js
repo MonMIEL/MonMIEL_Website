@@ -1,10 +1,4 @@
-/**
- * Created with JetBrains PhpStorm.
- * User: Vincent-Port
- * Date: 06/03/13
- * Time: 08:56
- * To change this template use File | Settings | File Templates.
- */
+
 // Change Chart type function
 
 function chartselect( chart, index){

@@ -28,6 +28,7 @@
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
     <script src="js/oXHR.js"></script>
+    <script src="js/calculJsonMonMIEL.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
 
     <!-- script d'affichage du contenu du slider -->
@@ -215,7 +216,7 @@
 					<div class="row first">
 						<div class="span3">Energie</div>
 						<div class="span1" style="margin-top:0;">%</div>
-						<div class="span1" style="margin-top:0;">GWh</div>
+						<div class="span1" style="margin-top:0;">TWh</div>
 					</div>
 					<div class="row">						
 						<div class="span3">Hydraulique
@@ -267,9 +268,9 @@
         <div id="testSimuler">
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
             <div class="bouton">
-                <a><span class="but-icon" onclick="createXhrRequestIhm1()"></span>Simuler Test Envoi Requete sur serveur</a>
+                <a><span class="but-icon" onclick="realiserCalculMonMIEL()"></span>Simuler MonMIEL</a>
             </div>
-            <h1 id="loaderIhm1" style="display:none">LOAD wait!</h1>
+            <p id="loadCalculMonMIEL"></p>
         </div>
         </form>
         <div id="simuler" style="display:none">
