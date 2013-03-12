@@ -59,7 +59,7 @@
 
 			
 
-			<div id="parc">
+			<div id="parc" style="display:none">
 				<h1>Parc calculé</h1>
 				<div class="bloc">
 					<div class="row first">

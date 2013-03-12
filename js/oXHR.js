@@ -50,7 +50,8 @@ function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh,
             alert("Erreur de chargement du fichier '"+url+"' : "+xhr.responseText+" ("+status+" - "+error+")");
         },
         complete:function(){
-            document.getElementById("loadCalculMonMIEL").innerHTML = "fin du calcul";
+            document.getElementById("loadCalculMonMIEL").style.display = "none";
+            document.getElementById("parc").style.display = "";
         },
         dataType:'json'
     });
