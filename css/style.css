@@ -424,6 +424,38 @@ footer {
 	margin-top: 10px;
 }
 
+.bulle{
+     color:#ccc;
+     text-shadow:0 -1px 0 black;                
+}
+
+.bulle:hover,.bulle:focus{
+    box-shadow:0 1px 0 rgba(255,255,255,.4);
+}
+
+.bulle .bulle-content{
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 30px 0px 0px 0px;
+	font-family: 'Electrolize', sans-serif;
+	color:#7109AA;
+	position:absolute;
+	margin-top:-10px;
+	margin-left:-700px;
+	width:200px;
+	height:60px;
+	padding:15px;
+	border-radius:10px;
+	box-shadow:0 0 2px rgba(0,0,0,.5);
+	transform:scale(0) rotate(-40deg);
+	transition:all 1s;
+	opacity:0;
+}
+
+.bulle:hover .bulle-content, .bulle:focus .bulle-content{
+    transform:scale(1) rotate(0);
+	opacity:1;     
+}
+
 #loadCalculMonMIEL {
 	height: 100px;
 	margin-top: 80px;

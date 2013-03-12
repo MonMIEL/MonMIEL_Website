@@ -47,7 +47,16 @@ function miseEnPlaceHighChart(){
 	Highcharts.setOptions({
         colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263']
     });
-	
+
+    Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
+        return {
+            radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
+            stops: [
+                [0, color],
+                [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+            ]
+        };
+    });
     chart = new Highcharts.Chart({
         chart: {
             renderTo: 'chart_conso',
@@ -122,33 +131,33 @@ function miseEnPlaceHighChart(){
             pointInterval: 24 * 60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Centrales à flammes',
-            data: dataJSON.series.flamme,
+            data: dataJSON.series.flamme
             //data : [20000, 40000],
-            color: colorFlammes
+          //  color: colorFlammes
         }, {
             pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Photovoltaique',
-            data: dataJSON.series.photovoltaique,
-            color: colorPhoto
+            data: dataJSON.series.photovoltaique
+         //   color: colorPhoto
         }, {
             pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Eolien',
-            data: dataJSON.series.eolien,
-            color: colorEol
+            data: dataJSON.series.eolien
+          //  color: colorEol
         }, {
             pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Hydraulique',
-            data: dataJSON.series.hydraulique,
-            color: colorHydrau
+            data: dataJSON.series.hydraulique
+           // color: colorHydrau
         }, {
             pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Nucléaire',
-            data: dataJSON.series.nucleaire,
-            color: colorNuke
+            data: dataJSON.series.nucleaire
+         //   color: colorNuke
         }/*, {
             name: 'STEP',
             color: colorSTEP,
@@ -160,15 +169,8 @@ function miseEnPlaceHighChart(){
         }*/]
     });
 
-    Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
-        return {
-            radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
-            stops: [
-                [0, color],
-                [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
-            ]
-        };
-    });
+
+
     // First chart initialization
     chart1 = new Highcharts.Chart({
         chart: {
@@ -206,25 +208,27 @@ function miseEnPlaceHighChart(){
             type: 'pie',
             name: 'Dev #1',
             data: [
-                {name :'nucléaire', color:colorNuke, y: 50, events:{
+                {name :'Centrales à flammes', y: 30, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'Photovoltaïque',color:colorPhoto,y: 10, events:{
+
+                {name :'Photovoltaïque',y: 10, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'Eolien',color:colorEol,y: 5, events:{
+                {name :'Eolien',y: 5, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'Hydraulique',color:colorHydrau,y: 5, events:{
+                {name :'Hydraulique',y: 5, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'Centrales à flammes',color:colorFlammes, y: 30, events:{
+                {name :'nucléaire', y: 50, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
-                }}/*,
-                {name :'STEP',color:colorSTEP, y: 0, events:{
+                }}
+/*,
+                {name :'STEP', y: 0, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'IMPORT', color:colorIMPORT, y: 0, events:{
+                {name :'IMPORT', y: 0, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }}*/
             ]
@@ -271,25 +275,26 @@ function miseEnPlaceHighChart(){
             type: 'pie',
             name: 'calculé',
             data: [
-                {name : 'nucléaire',color:colorNuke,y:  35, z: '-15', events:{
+                {name : 'Centrales à flammes',y: 30,z:'0', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Photovoltaïque',color:colorPhoto,y: 15,z:'+5', events:{
+                {name : 'Photovoltaïque',y: 15,z:'+5', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Eolien',color:colorEol,y: 15,z:'+10', events:{
+                {name : 'Eolien',y: 15,z:'+10', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Hydraulique',color:colorHydrau, y: 5,z:'0', events:{
+                {name : 'Hydraulique', y: 5,z:'0', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Centrales à flammes',color:colorFlammes,y: 30,z:'0', events:{
+
+                {name : 'nucléaire',y:  35, z: '-15', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }}/*,
-                {name : 'STEP', color:colorSTEP, y: 0,z:'0', events:{
+                {name : 'STEP', y: 0,z:'0', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'IMPORT', color:colorIMPORT, y: 0,z:'0', events:{
+                {name : 'IMPORT', y: 0,z:'0', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }}*/
             ]
