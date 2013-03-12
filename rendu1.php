@@ -37,7 +37,7 @@
                 nuc_gwh = <?php echo $_GET["nuc_gwh"] ?>;
                 pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
                 eol_gwh = <?php echo $_GET["eol_gwh"] ?>;
-                nbPoints = 50;
+                nbPoints = <?php echo $_GET["nbPoints"] ?>;
                 console.log("anneeRef : "+anneeRef);
                 console.log("anneeCible : "+anneeCible);
                 console.log("consommation2050 : "+consommation2050);

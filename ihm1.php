@@ -44,7 +44,8 @@
                     "&consommation2050="+consommation2050+
                     "&nuc_gwh="+ document.getElementById("nuc_gwh").value+
                     "&pho_gwh="+ document.getElementById("pho_gwh").value +
-                    "&eol_gwh="+ document.getElementById("eol_gwh").value;
+                    "&eol_gwh="+ document.getElementById("eol_gwh").value +
+                    "&nbPoints=100";
             window.location = html;
         }
 	</script>
