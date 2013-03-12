@@ -284,13 +284,6 @@
                 <div id="chart_cam" class="chart"></div>
             </div>
         </div>
-
-        <div id="testSimuler">
-            <img class="separateur" src="img/separateur.jpg" alt="separateur" />
-            <div class="bouton">
-                <a><span class="but-icon" onclick="realiserCalculMonMIEL()"></span>Simuler MonMIEL</a>
-            </div>
-        </div>
         </form>
 
         <div id="simuler" style="display:none">
