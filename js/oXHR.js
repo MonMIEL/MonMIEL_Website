@@ -26,14 +26,13 @@ function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh,
     /* lien = "http://localhost:8888/app_dev.php/api/v1/700.json?"+
      "anneeRef="+sVarAnneRef +
      "&anneCible="+sVarAnneCible +
+     "&consommation2050="+sVarConsommation2050+
      "&nucleaire="+sVarNucTwh +
      "&photo="+sVarPhotoTwh +
      "&eol="+sVarEolTwh;*/
     var url = "http://localhost:8888/app_dev.php/api/v1/700.json";
         console.log("URL : " + url);
         console.log("---------------------------------------------");
-
-   // $.getJSON(url, function() {console.log("LALA")});
 
     document.getElementById("loadCalculMonMIEL").innerHTML = "LOADING..";
     $.ajax({

@@ -1,10 +1,12 @@
 
 // Change Chart type function
 
+
+var chart1, chart2,chart;
+
 function chartselect( chart, index){
     chart.series[0].data[index].select(true);
 }
-
 
 function passerEnergetique(){
     document.getElementById('ariane').innerHTML="<img src='img/ariane3.png' />";
@@ -14,8 +16,6 @@ function passerEnergetique(){
 
     miseEnPlaceHighChart();
 }
-
-var chart1, chart2,chart;
 
 function miseEnPlaceHighChart(){
 
@@ -71,19 +71,19 @@ function miseEnPlaceHighChart(){
         },
         series: [{
             name: 'Nucléaire',
-            data: [502, 635, 809, 947, 1402, 3634, 5268]
+            data: dataJSON.nucleaire
         }, {
             name: 'Photovoltaique',
-            data: [106, 107, 111, 133, 221, 767, 1766]
+            data: dataJSON.photovoltaique
         }, {
             name: 'Eolien',
-            data: [163, 203, 276, 408, 547, 729, 628]
+            data: dataJSON.eolien
         }, {
             name: 'Hydraulique',
-            data: [18, 31, 54, 156, 339, 818, 1201]
+            data: dataJSON.hydraulique
         }, {
             name: 'Centrales à flammes',
-            data: [2, 2, 2, 6, 13, 30, 46]
+            data: dataJSON.flamme
         }, {
             name: 'STEP',
             data: [0, 0, 0, 0, 0, 0, 0]
