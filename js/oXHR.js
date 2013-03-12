@@ -32,8 +32,8 @@ function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh,
      "&photo="+sVarPhotoTwh +
      "&eol="+sVarEolTwh;*/
     var url = "http://localhost:8888/app_dev.php/api/v1/700.json?"+
-     "targetConso="+sVarConsommation2050+
-     "&nuke="+sVarNucTwh +
+     //"targetConso="+sVarConsommation2050+
+     "nuke="+sVarNucTwh +
      "&photo="+sVarPhotoTwh +
      "&eol="+sVarEolTwh +
      "&point="+sVarNBPoints;
