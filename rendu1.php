@@ -21,6 +21,7 @@
 		<script src="js/rendu1.js" ></script>
         <script src="js/calculJsonMonMIEL.js" ></script>
         <script src="js/oXHR.js"></script>
+		<script src="js/spin.js"></script>
         <script>
             var anneeRef;
             var anneeCible;
@@ -52,6 +53,7 @@
                 }
                 calculerMonMIEL();
             }
+			
         </script>
     </head>
     <body onload="init()">
@@ -59,13 +61,12 @@
 		
 		<?php include("menu.php"); ?>
 
-        <p id="loadCalculMonMIEL"></p>
 		<section>
 			<div id="ariane" class="ariane">
 				<img src="img/ariane2.png"/>
 			</div>
 
-			
+			<div id="loadCalculMonMIEL"></div>
 
 			<div id="parc" style="display:none">
 				<h1>Parc calculé</h1>
@@ -188,7 +189,7 @@
 				</div>
 			</div>
 
-			<div id="calcul">
+			<div id="calcul" style="display:none">
 				<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 				<div class="bouton">
 					<a onclick="passerEnergetique()"><span class="but-icon"></span>Calculer le mix énergétique</a>

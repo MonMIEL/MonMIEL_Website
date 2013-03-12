@@ -15,7 +15,8 @@ function calculerMonMIEL(){
 
 function postActionsJSON(){
     document.getElementById("parc").style.display = "";
-
+	document.getElementById("calcul").style.display = "";
+	
     console.log(dataJSON);
 
 }
