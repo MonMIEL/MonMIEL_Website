@@ -270,6 +270,7 @@
             <div class="bouton">
                 <a><span class="but-icon" onclick="realiserCalculMonMIEL()"></span>Simuler MonMIEL</a>
             </div>
+            <p id="loadCalculMonMIEL"></p>
         </div>
         </form>
         <div id="simuler" style="display:none">
