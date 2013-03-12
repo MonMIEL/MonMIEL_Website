@@ -27,7 +27,9 @@ function miseEnPlaceHighChart(){
         chart: {
             renderTo: 'chart_conso',
             type: 'area',
-            backgroundColor: 'rgba(255,255,255,0.5)'
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            animation: false,
+            zoomType: 'x'
         },
         title: {
             text: 'Consommation'
@@ -36,8 +38,8 @@ function miseEnPlaceHighChart(){
             text: 'Année de reférence : 2050'
         },
         xAxis: {
-            categories: ['Janvier', 'Mars', 'Mai', 'Juillet', 'Septembre', 'Novembre', 'Decembre'],
-            tickmarkPlacement: 'on',
+            tickmarkPlacement: 'off',
+            maxZoom : 10,
             title: {
                 enabled: false
             }
@@ -57,40 +59,59 @@ function miseEnPlaceHighChart(){
                 return ''+
                     this.x +': '+ Highcharts.numberFormat(this.y, 0, ',') +' GW';
             }
-        },
-        plotOptions: {
+        },plotOptions: {
             area: {
                 stacking: 'normal',
-                lineColor: '#666666',
+
                 lineWidth: 1,
                 marker: {
-                    lineWidth: 1,
-                    lineColor: '#666666'
-                }
+                    enabled: false,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            radius: 5
+                        }
+                    }
+                },
+                shadow: false,
+                states: {
+                    hover: {
+                        lineWidth: 1,
+                        lineColor: '#666666'
+                    }
+                },
+                threshold: null
             }
         },
         series: [{
-            name: 'Nucléaire',
-            data: dataJSON.nucleaire
+            //pointInterval: 24 * 3600 * 1000,
+            //pointStart: Date.UTC(anneeRef, 0, 01),
+            name: 'Centrales à flammes',
+            data: dataJSON.flamme,
+            color: '#E10000'
         }, {
             name: 'Photovoltaique',
-            data: dataJSON.photovoltaique
+            data: dataJSON.photovoltaique,
+            color: '#EAE73E'
         }, {
             name: 'Eolien',
-            data: dataJSON.eolien
+            data: dataJSON.eolien,
+            color: 'white'
         }, {
             name: 'Hydraulique',
-            data: dataJSON.hydraulique
+            data: dataJSON.hydraulique,
+            color: '#008188'
         }, {
-            name: 'Centrales à flammes',
-            data: dataJSON.flamme
-        }, {
+            name: 'Nucléaire',
+            data: dataJSON.nucleaire,
+            color: '#450051'
+        }/*, {
             name: 'STEP',
             data: [0, 0, 0, 0, 0, 0, 0]
         }, {
             name: 'Import',
             data: [0, 0, 0, 0, 0, 0, 0]
-        }]
+        }*/]
     });
 
 

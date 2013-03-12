@@ -8,7 +8,7 @@ var lien;
  * Création du lien vers le serveur
  * Appel à la fonction de l'appel au serveur
  * */
-function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh){
+function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh, nbPoints){
         console.log("---------------------------------------------");
         console.log("Construction du lien avec des données :")
     var sVarConsommation2050 = encodeURIComponent(consommation2050);
@@ -23,6 +23,7 @@ function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh,
         console.log("ePhotoTwh : "+sVarPhotoTwh);
     var sVarEolTwh = encodeURIComponent(eEolTwh);
         console.log("eEolTwh : "+sVarEolTwh);
+    var sVarNBPoints = encodeURIComponent(nbPoints);
     /* lien = "http://localhost:8888/app_dev.php/api/v1/700.json?"+
      "anneeRef="+sVarAnneRef +
      "&anneCible="+sVarAnneCible +
@@ -30,11 +31,15 @@ function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh,
      "&nucleaire="+sVarNucTwh +
      "&photo="+sVarPhotoTwh +
      "&eol="+sVarEolTwh;*/
-    var url = "http://localhost:8888/app_dev.php/api/v1/700.json";
+    var url = "http://localhost:8888/app_dev.php/api/v1/700.json?"+
+     "targetConso="+sVarConsommation2050+
+     "&nuke="+sVarNucTwh +
+     "&photo="+sVarPhotoTwh +
+     "&eol="+sVarEolTwh +
+     "&point="+sVarNBPoints;
         console.log("URL : " + url);
         console.log("---------------------------------------------");
 
-    document.getElementById("loadCalculMonMIEL").innerHTML = "LOADING..";
     $.ajax({
         url:url,
         method:"GET",

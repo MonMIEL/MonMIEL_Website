@@ -21,6 +21,7 @@
 		<script src="js/rendu1.js" ></script>
         <script src="js/calculJsonMonMIEL.js" ></script>
         <script src="js/oXHR.js"></script>
+		<script src="js/spin.js"></script>
         <script>
             var anneeRef;
             var anneeCible;
@@ -28,6 +29,7 @@
             var nuc_gwh;
             var pho_gwh;
             var eol_gwh;
+            var nbPoints;
             function init(){
                 anneeRef = <?php echo $_GET["anneeRef"] ?>;
                 anneeCible = <?php echo $_GET["anneeCible"] ?>;
@@ -35,6 +37,7 @@
                 nuc_gwh = <?php echo $_GET["nuc_gwh"] ?>;
                 pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
                 eol_gwh = <?php echo $_GET["eol_gwh"] ?>;
+                nbPoints = 50;
                 console.log("anneeRef : "+anneeRef);
                 console.log("anneeCible : "+anneeCible);
                 console.log("consommation2050 : "+consommation2050);
@@ -52,6 +55,7 @@
                 }
                 calculerMonMIEL();
             }
+			
         </script>
     </head>
     <body onload="init()">
@@ -59,13 +63,12 @@
 		
 		<?php include("menu.php"); ?>
 
-        <p id="loadCalculMonMIEL"></p>
 		<section>
 			<div id="ariane" class="ariane">
 				<img src="img/ariane2.png"/>
 			</div>
 
-			
+			<div id="loadCalculMonMIEL"></div>
 
 			<div id="parc" style="display:none">
 				<h1>Parc calculé</h1>
@@ -188,7 +191,7 @@
 				</div>
 			</div>
 
-			<div id="calcul">
+			<div id="calcul" style="display:none">
 				<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 				<div class="bouton">
 					<a onclick="passerEnergetique()"><span class="but-icon"></span>Calculer le mix énergétique</a>
