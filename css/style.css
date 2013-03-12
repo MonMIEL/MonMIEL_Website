@@ -61,6 +61,11 @@ section .bloc {
 	padding: 5px;
 }
 
+section #erreur{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
 section #camembert {
     margin-top:200px;
     /*border-radius*/
@@ -417,4 +422,10 @@ footer {
 
 #monmix-right h2 {
 	margin-top: 10px;
+}
+
+#loadCalculMonMIEL {
+	height: 100px;
+	margin-top: 80px;
+	margin-bottom: 80px;
 }

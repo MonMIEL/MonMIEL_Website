@@ -1,22 +1,38 @@
 
 // Change Chart type function
 
+var colorNuke = '#450051';
+var colorPhoto = '#EAE73E';
+var colorEol = 'white';
+var colorHydrau = '#008188';
+var colorFlammes = '#E10000';
+var colorSTEP = 'black';
+var colorIMPORT = 'black';
+
+var chart1, chart2,chart;
+
 function chartselect( chart, index){
     chart.series[0].data[index].select(true);
 }
-
-
+var passer=false;
 function passerEnergetique(){
     document.getElementById('ariane').innerHTML="<img src='img/ariane3.png' />";
     document.getElementById("rendue2").style.display="";
     document.getElementById("parc").style.display="none";
-    document.getElementById("calcul").style.display="none";
-
+    document.getElementById("bouttonMix").innerHTML="<a onclick='passerParc()'><span class='but-icon' style=\"background: url('../img/icon_arrow2.png')\"></span>Parc et consommation</a>"
+    if(!passer){
     miseEnPlaceHighChart();
+    passer=true;
+    }
 }
+function passerParc(){
+    document.getElementById('ariane').innerHTML="<img src='img/ariane2.png' />";
+    document.getElementById("parc").style.display="";
+    document.getElementById("rendue2").style.display="none";
+    document.getElementById("bouttonMix").innerHTML=" <a onclick='passerEnergetique()'><span class='but-icon'></span>Mix énergétique</a>"
 
-var chart1, chart2,chart;
 
+}
 function miseEnPlaceHighChart(){
 
 	Highcharts.setOptions({
@@ -27,7 +43,9 @@ function miseEnPlaceHighChart(){
         chart: {
             renderTo: 'chart_conso',
             type: 'area',
-            backgroundColor: 'rgba(255,255,255,0.5)'
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            animation: false,
+            zoomType: 'x'
         },
         title: {
             text: 'Consommation'
@@ -36,61 +54,97 @@ function miseEnPlaceHighChart(){
             text: 'Année de reférence : 2050'
         },
         xAxis: {
-            categories: ['Janvier', 'Mars', 'Mai', 'Juillet', 'Septembre', 'Novembre', 'Decembre'],
-            tickmarkPlacement: 'on',
+            type: 'datetime',
+            //maxZoom : 10,
             title: {
                 enabled: false
+            },
+            labels : {
+                formatter : function(){
+                    return Highcharts.dateFormat("%B %e, %Y", this.value);
+                },
+                staggerLines: 2
             }
         },
         yAxis: {
             title: {
-                text: 'Gw '
+                text: 'Consommation énergétique (Gwh) '
             },
             labels: {
                 formatter: function() {
-                    return this.value / 1000;
+                    return this.value;
                 }
-            }
+            },
+            min: 0
         },
         tooltip: {
             formatter: function() {
                 return ''+
-                    this.x +': '+ Highcharts.numberFormat(this.y, 0, ',') +' GW';
+                    'Date : ' + Highcharts.dateFormat("%B %e, %Y", this.x) +'<br/>'+ '<b>Consommation : </b>'+Highcharts.numberFormat(this.y, 0)+' GWh';
             }
         },
         plotOptions: {
             area: {
                 stacking: 'normal',
-                lineColor: '#666666',
                 lineWidth: 1,
                 marker: {
-                    lineWidth: 1,
-                    lineColor: '#666666'
-                }
+                    enabled: false,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            radius: 5
+                        }
+                    }
+                },
+                shadow: false,
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                },
+                threshold: null
             }
         },
         series: [{
-            name: 'Nucléaire',
-            data: [502, 635, 809, 947, 1402, 3634, 5268]
-        }, {
-            name: 'Photovoltaique',
-            data: [106, 107, 111, 133, 221, 767, 1766]
-        }, {
-            name: 'Eolien',
-            data: [163, 203, 276, 408, 547, 729, 628]
-        }, {
-            name: 'Hydraulique',
-            data: [18, 31, 54, 156, 339, 818, 1201]
-        }, {
+            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Centrales à flammes',
-            data: [2, 2, 2, 6, 13, 30, 46]
+            data: dataJSON.flamme,
+            //data : [20000, 40000],
+            color: colorFlammes
         }, {
+            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointStart: Date.UTC(anneeCible, 0, 01),
+            name: 'Photovoltaique',
+            data: dataJSON.photovoltaique,
+            color: colorPhoto
+        }, {
+            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointStart: Date.UTC(anneeCible, 0, 01),
+            name: 'Eolien',
+            data: dataJSON.eolien,
+            color: colorEol
+        }, {
+            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointStart: Date.UTC(anneeCible, 0, 01),
+            name: 'Hydraulique',
+            data: dataJSON.hydraulique,
+            color: colorHydrau
+        }, {
+            pointInterval: 24*60 * 60 * 1000 * 365 / 98,
+            pointStart: Date.UTC(anneeCible, 0, 01),
+            name: 'Nucléaire',
+            data: dataJSON.nucleaire,
+            color: colorNuke
+        }/*, {
             name: 'STEP',
+            color: colorSTEP,
             data: [0, 0, 0, 0, 0, 0, 0]
         }, {
             name: 'Import',
+            color: colorIMPORT,
             data: [0, 0, 0, 0, 0, 0, 0]
-        }]
+        }*/]
     });
 
 
@@ -140,27 +194,27 @@ function miseEnPlaceHighChart(){
             type: 'pie',
             name: 'Dev #1',
             data: [
-                {name :'nucléaire',y: 50, events:{
+                {name :'nucléaire', color:colorNuke, y: 50, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'Photovoltaïque',y: 10, events:{
+                {name :'Photovoltaïque',color:colorPhoto,y: 10, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'Eolien',y: 5, events:{
+                {name :'Eolien',color:colorEol,y: 5, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'Hydraulique',y: 5, events:{
+                {name :'Hydraulique',color:colorHydrau,y: 5, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'Centrales à flammes',y: 30, events:{
+                {name :'Centrales à flammes',color:colorFlammes, y: 30, events:{
+                    click : function(){chart2.series[0].data[this.x].select(true); }
+                }}/*,
+                {name :'STEP',color:colorSTEP, y: 0, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
                 }},
-                {name :'STEP',y: 0, events:{
+                {name :'IMPORT', color:colorIMPORT, y: 0, events:{
                     click : function(){chart2.series[0].data[this.x].select(true); }
-                }},
-                {name :'IMPORT',y: 0, events:{
-                    click : function(){chart2.series[0].data[this.x].select(true); }
-                }}
+                }}*/
             ]
         }]
     });
@@ -205,27 +259,27 @@ function miseEnPlaceHighChart(){
             type: 'pie',
             name: 'calculé',
             data: [
-                {name : 'nucléaire',y:  35, z: '-15', events:{
+                {name : 'nucléaire',color:colorNuke,y:  35, z: '-15', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Photovoltaïque',y: 15,z:'+5', events:{
+                {name : 'Photovoltaïque',color:colorPhoto,y: 15,z:'+5', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Eolien',y: 15,z:'+10', events:{
+                {name : 'Eolien',color:colorEol,y: 15,z:'+10', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Hydraulique',y: 5,z:'0', events:{
+                {name : 'Hydraulique',color:colorHydrau, y: 5,z:'0', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Centrales à flammes',y: 30,z:'0', events:{
+                {name : 'Centrales à flammes',color:colorFlammes,y: 30,z:'0', events:{
+                    click : function(){chart1.series[0].data[this.x].select(true); }
+                }}/*,
+                {name : 'STEP', color:colorSTEP, y: 0,z:'0', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'STEP',y: 0,z:'0', events:{
+                {name : 'IMPORT', color:colorIMPORT, y: 0,z:'0', events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
-                }},
-                {name : 'IMPORT',y: 0,z:'0', events:{
-                    click : function(){chart1.series[0].data[this.x].select(true); }
-                }}
+                }}*/
             ]
         }]
     });
