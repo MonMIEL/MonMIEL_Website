@@ -27,8 +27,6 @@
     <script src="js/highchart/highcharts.js"></script>
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
-    <script src="js/oXHR.js"></script>
-    <script src="js/calculJsonMonMIEL.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
 
     <!-- script d'affichage du contenu du slider -->
@@ -38,6 +36,18 @@
 			document.getElementById(id).value=val; 
 			document.getElementById(id+"_gwh").value=Math.floor((val/100)*consommation2050);
 		}
+
+        function gorendu(){
+            var html = "rendu1.php?"+
+                    "anneeRef="+anneeRef +
+                    "&anneeCible="+anneeCible +
+                    "&consommation2050="+consommation2050+
+                    "&nuc_gwh="+ document.getElementById("nuc_gwh").value+
+                    "&pho_gwh="+ document.getElementById("pho_gwh").value +
+                    "&eol_gwh="+ document.getElementById("eol_gwh").value +
+                    "&nbPoints=100";
+            window.location = html;
+        }
 	</script>
 	<!-- script d'affichage du contenu du slider -->
 	
@@ -73,6 +83,16 @@
 
     <!-- Horizon section -->
         <div id="horizon">
+
+            <?php if(isset($_GET['error'])) {
+            echo "<div id='erreur' class='bloc'>";
+            if($_GET['error']=="erreurChargementRendu1")
+                echo "Erreur lors du chargement du calculateur";
+            else if ($_GET['error']=="manqueDonnee")
+                echo "Merci de renseigner les informations avant de simuler";
+            echo "</div>";
+            }?>
+
             <h1 id="titleHorizon">Etape 1 - Horizon</h1>
             <!--<ul class="pager">-->
             <div class="bloc">
@@ -293,19 +313,12 @@
                 <div id="chart_cam" class="chart"></div>
             </div>
         </div>
-
-        <div id="testSimuler">
-            <img class="separateur" src="img/separateur.jpg" alt="separateur" />
-            <div class="bouton">
-                <a><span class="but-icon" onclick="realiserCalculMonMIEL()"></span>Simuler MonMIEL</a>
-            </div>
-            <p id="loadCalculMonMIEL"></p>
-        </div>
         </form>
+
         <div id="simuler" style="display:none">
 			<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<div class="bouton">
-				<a href="rendu1.php"><span class="but-icon"></span>Simuler</a>
+				<a onclick="gorendu()" href="#"><span class="but-icon"></span>Simuler</a>
 			</div>
         </div>
     </section>

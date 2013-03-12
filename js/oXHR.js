@@ -8,7 +8,7 @@ var lien;
  * Création du lien vers le serveur
  * Appel à la fonction de l'appel au serveur
  * */
-function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh){
+function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh, nbPoints){
         console.log("---------------------------------------------");
         console.log("Construction du lien avec des données :")
     var sVarConsommation2050 = encodeURIComponent(consommation2050);
@@ -23,54 +23,37 @@ function manipulerCalculMonMIEL(anneeRef, anneeCible, consommation2050, eNucTwh,
         console.log("ePhotoTwh : "+sVarPhotoTwh);
     var sVarEolTwh = encodeURIComponent(eEolTwh);
         console.log("eEolTwh : "+sVarEolTwh);
+    var sVarNBPoints = encodeURIComponent(nbPoints);
     /* lien = "http://localhost:8888/app_dev.php/api/v1/700.json?"+
      "anneeRef="+sVarAnneRef +
      "&anneCible="+sVarAnneCible +
+     "&consommation2050="+sVarConsommation2050+
      "&nucleaire="+sVarNucTwh +
      "&photo="+sVarPhotoTwh +
      "&eol="+sVarEolTwh;*/
-    var url = "http://localhost:8888/app_dev.php/api/v1/700.json";
+    var url = "http://localhost:8888/app_dev.php/api/v1/700.json?"+
+     //"targetConso="+sVarConsommation2050+
+     "nuke="+sVarNucTwh +
+     "&photo="+sVarPhotoTwh +
+     "&eol="+sVarEolTwh +
+     "&point="+sVarNBPoints;
         console.log("URL : " + url);
         console.log("---------------------------------------------");
 
-   // $.getJSON(url, function() {console.log("LALA")});
-
-    var dataJSON = null;
-
-    document.getElementById("loadCalculMonMIEL").innerHTML = "LOADING..";
     $.ajax({
         url:url,
         method:"GET",
         success:function (data){
             dataJSON=data;
-            console.log("DATA-ok");
-            console.log(dataJSON);
+            console.log("DATA-reçu");
+            postActionsJSON();
         },
         error:function (xhr, status, error){
-            alert("Erreur de chargement du fichier '"+url+"' : "+xhr.responseText+" ("+status+" - "+error+")");
+            window.location = "ihm1.php?error=erreurChargementRendu1";
         },
         complete:function(){
-            document.getElementById("loadCalculMonMIEL").innerHTML = "fin du calcul";
+            document.getElementById("loadCalculMonMIEL").style.display = "none";
         },
         dataType:'json'
     });
-
-    return dataJSON;
-
-}
-
-/*Création de l'objet XMLHttpRequest
-* La valeur de retour est cet objet
-* */
-function createCORSRequest(method, url) {
-
-}
-
-function readData(sData, bool) {
-    // On peut maintenant traiter les données sans encombrer l'objet XHR.
-    if (bool==true){
-        alert("OK");
-    }else{
-        alert("NOK");
-    }
 }

@@ -18,10 +18,49 @@
         <script src="js/bootstrap.js"></script>
 		
 		<script src="js/highchart/highcharts.js"></script>
-		<script src="js/rendu1.js" ></script>
+        <script src="js/highchart/exporting.js"></script>
 
+		<script src="js/rendu1.js" ></script>
+        <script src="js/calculJsonMonMIEL.js" ></script>
+        <script src="js/oXHR.js"></script>
+		<script src="js/spin.js"></script>
+        <script>
+            var anneeRef;
+            var anneeCible;
+            var consommation2050;
+            var nuc_gwh;
+            var pho_gwh;
+            var eol_gwh;
+            var nbPoints;
+            function init(){
+                anneeRef = <?php echo $_GET["anneeRef"] ?>;
+                anneeCible = <?php echo $_GET["anneeCible"] ?>;
+                consommation2050 = <?php echo $_GET["consommation2050"] ?>;
+                nuc_gwh = <?php echo $_GET["nuc_gwh"] ?>;
+                pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
+                eol_gwh = <?php echo $_GET["eol_gwh"] ?>;
+                nbPoints = <?php echo $_GET["nbPoints"] ?>;
+                console.log("anneeRef : "+anneeRef);
+                console.log("anneeCible : "+anneeCible);
+                console.log("consommation2050 : "+consommation2050);
+                console.log("nuc_gwh : "+nuc_gwh);
+                console.log("pho_gwh : "+pho_gwh);
+                console.log("eol_gwh : "+eol_gwh);
+                if(typeof(anneeRef)=="undefined" ||
+                        typeof(anneeCible)=="undefined" ||
+                        typeof(consommation2050)=="undefined" ||
+                        typeof(nuc_gwh)=="undefined" ||
+                        typeof(pho_gwh)=="undefined" ||
+                        typeof(eol_gwh)=="undefined"){
+                    alert();
+                    window.location = "ihm1.php?error=manqueDonnee";
+                }
+                calculerMonMIEL();
+            }
+			
+        </script>
     </head>
-    <body>
+    <body onload="init()">
 		<?php include("header.php"); ?>
 		
 		<?php include("menu.php"); ?>
@@ -31,9 +70,9 @@
 				<img src="img/ariane2.png"/>
 			</div>
 
-			
+			<div id="loadCalculMonMIEL"></div>
 
-			<div id="parc">
+			<div id="parc" style="display:none">
 				<h1>Parc calculé</h1>
 				<div class="bloc">
 					<div class="row first">
@@ -154,12 +193,7 @@
 				</div>
 			</div>
 
-			<div id="calcul">
-				<img class="separateur" src="img/separateur.jpg" alt="separateur" />
-				<div class="bouton">
-					<a onclick="passerEnergetique()"><span class="but-icon"></span>Calculer le mix énergétique</a>
-				</div>
-			</div>
+
 
             <div id="rendue2" style="display:none">
 
@@ -167,6 +201,7 @@
                 <div id="consommation">
                     <h1>Consommation</h1>
                     <div id="chart_conso" class="chart"></div>
+                    <a id="buttonExportChartConso" onclick="exporterChartConso()">Exporter Chart Conso</a>
                 </div>
 
                 <div class="row first">
@@ -178,6 +213,13 @@
                         <h1>Mix Calculé</h1>
                         <div id="chart_2" class="chart"></div>
                     </div>
+                </div>
+            </div>
+
+            <div id="calcul" style="display:none">
+                <img class="separateur" src="img/separateur.jpg" alt="separateur" />
+                <div id ="bouttonMix" class="bouton">
+                    <a onclick="passerEnergetique()"><span class="but-icon"></span>Mix énergétique</a>
                 </div>
             </div>
 		</section>
