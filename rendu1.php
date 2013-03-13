@@ -165,11 +165,13 @@
 					<div class="row">
 						<div class="span2">STEP</div>
 						<div class="span6">
-							<div class="first progress progress-success progress-striped active">
-							  <div id="barParcTargetStep" class="bar" style="width: 35%;"></div>
+							<div id="barParcTargetStep" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
-							<div class="progress progress-warning progress-striped active">
-							  <div id="barParcFinalStep" class="bar" style="width: 55%;"></div>
+							<div id="barParcFinalStep" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetStep" class="span1"></div>
@@ -179,11 +181,13 @@
 					<div class="row">
 						<div class="span2">Import</div>
 						<div class="span6">
-							<div class="first progress progress-success progress-striped active">
-							  <div id="barParcTargetImport" class="bar" style="width: 35%;"></div>
+							<div id="barParcTargetImport" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
-							<div class="progress progress-warning progress-striped active">
-							  <div id="barParcFinalImport" class="bar" style="width: 55%;"></div>
+							<div id="barParcFinalImport" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetImport" class="span1"></div>
