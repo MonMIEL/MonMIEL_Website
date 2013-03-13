@@ -33,8 +33,8 @@
             var eol_gwh;
             var nbPoints;
             function init(){
-                anneeRef = <?php echo $_GET["anneeRef"] ?>;
-                anneeCible = <?php echo $_GET["anneeCible"] ?>;
+                anneeRef = 2011;
+                anneeCible = 2050;
                 consommation2050 = <?php echo $_GET["consommation2050"] ?>;
                 nuc_gwh = <?php echo $_GET["nuc_gwh"] ?>;
                 pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
