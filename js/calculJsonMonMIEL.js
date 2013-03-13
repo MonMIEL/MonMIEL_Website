@@ -3,6 +3,7 @@ var dataJSON = null;
 var valeur="MW";
 /*---------------Total-du-parc-final--------------------*/
 var totalParcPower;
+var totalParcTargetPower;
 /*------------------------Id-du-parc--------------------*/
 var parcTargetNuke;
 var parcFinalNuke;
@@ -74,6 +75,13 @@ function initialiserVariablesParc(){
          dataJSON.targetParcPower.import+
          dataJSON.targetParcPower.step*/
     ;
+    totalParcTargetPower =
+        dataJSON.targetParcPower.nuclear +
+            dataJSON.targetParcPower.flame+
+            dataJSON.targetParcPower.wind+
+            dataJSON.targetParcPower.hydraulic+
+            dataJSON.targetParcPower.photovoltaic
+        ;
     console.log("Total Parc(Gw) : "+totalParcPower);
 
     parcTargetNuke = dataJSON.targetParcPower.nuclear;
@@ -88,31 +96,31 @@ function initialiserVariablesParc(){
     parcFinalPhoto = dataJSON.finalParcPower.photovoltaic;
 
     //Calcul du parc Nuke
-    perParcTargetNuke       = parcTargetNuke *100 / totalParcPower;
+    perParcTargetNuke       = parcTargetNuke *100 / totalParcTargetPower;
     perParcFinalNuke        = parcFinalNuke  *100 / totalParcPower;
         console.log("Parc Nuke(Mw) : ["+parcTargetNuke+"]["+parcFinalNuke+"]");
         console.log("Parc Nuke(%) : ["+perParcTargetNuke+"]["+perParcFinalNuke+"]");
 
     //Calcul du parc Flame
-    perParcTargetFlame      = parcTargetFlame   *100 / totalParcPower;
+    perParcTargetFlame      = parcTargetFlame   *100 / totalParcTargetPower;
     perParcFinalFlame       = parcFinalFlame    *100 / totalParcPower;
         console.log("Parc Flammes(Mw) : ["+parcTargetFlame+"]["+parcFinalFlame+"]");
         console.log("Parc Flammes(%) : ["+perParcTargetFlame+"]["+perParcFinalFlame+"]");
 
     //Calcul du parc Eolien
-    perParcTargetEol        = parcTargetEol    *100 / totalParcPower;
+    perParcTargetEol        = parcTargetEol    *100 / totalParcTargetPower;
     perParcFinalEol         = parcFinalEol     *100 / totalParcPower;
     console.log("Parc Eol(Mw) : ["+parcTargetEol+"]["+parcFinalEol+"]");
     console.log("Parc Eol(%) : ["+perParcTargetEol+"]["+perParcFinalEol+"]");
 
     //Calcul du parc Hydraulique
-    perParcTargetHydrau     = parcTargetHydrau *100   / totalParcPower;
+    perParcTargetHydrau     = parcTargetHydrau *100   / totalParcTargetPower;
     perParcFinalHydrau      = parcFinalHydrau  *100   / totalParcPower;
     console.log("Parc Hydro(Mw) : ["+parcTargetHydrau+"]["+parcFinalHydrau+"]");
     console.log("Parc Hydro(%) : ["+perParcTargetHydrau+"]["+perParcFinalHydrau+"]");
 
     //Calcul du parc Photovoltaique
-    perParcTargetPhoto      = parcTargetPhoto *100 / totalParcPower;
+    perParcTargetPhoto      = parcTargetPhoto *100 / totalParcTargetPower;
     perParcFinalPhoto       = parcFinalPhoto  *100 / totalParcPower;
     console.log("Parc Photo(Mw) : ["+parcTargetPhoto+"]["+parcFinalPhoto+"]");
     console.log("Parc Photo(%) : ["+perParcTargetPhoto+"]["+perParcFinalPhoto+"]");
@@ -123,28 +131,46 @@ function majBarresParcCalcule(){
     //MaJ des barres de l'IHM du Parc calculé
     $("#barParcTargetNuke .bar").css("width",""+perParcTargetNuke+"%");
     $("#barParcFinalNuke .bar").css("width",""+perParcFinalNuke+"%");
-    $("#barParcTargetNuke").attr("title",""+parcTargetNuke+" "+valeur+" sur "+totalParcPower+" "+valeur);
-    $("#barParcFinalNuke").attr("title",""+parcFinalNuke+" "+valeur+" sur "+totalParcPower+" "+valeur);
+    $("#barParcTargetNuke").attr("title","Ciblé : "+parcTargetNuke.toFixed(0)+" "+valeur+" sur "+totalParcTargetPower.toFixed(0)+" "+valeur);
+    $("#barParcFinalNuke").attr("title","Calculé : "+parcFinalNuke.toFixed(0)+" "+valeur+" sur "+totalParcPower.toFixed(0)+" "+valeur);
 
     $("#barParcTargetPhoto .bar").css("width",""+perParcTargetPhoto+"%");
     $("#barParcFinalPhoto .bar").css("width",""+perParcFinalPhoto+"%");
-    $("#barParcTargetPhoto").attr("title",""+parcTargetPhoto+" "+valeur+" sur "+totalParcPower+" "+valeur);
-    $("#barParcFinalPhoto").attr("title",""+parcFinalPhoto+" "+valeur+" sur "+totalParcPower+" "+valeur);
+    $("#barParcTargetPhoto").attr("title","Ciblé : "+parcTargetPhoto.toFixed(0)+" "+valeur+" sur "+totalParcTargetPower.toFixed(0)+" "+valeur);
+    $("#barParcFinalPhoto").attr("title","Calculé : "+parcFinalPhoto.toFixed(0)+" "+valeur+" sur "+totalParcPower.toFixed(0)+" "+valeur);
 
     $("#barParcTargetEol .bar").css("width",""+perParcTargetEol+"%");
     $("#barParcFinalEol .bar").css("width",""+perParcFinalEol+"%");
-    $("#barParcTargetEol").attr("title",""+parcTargetEol+" "+valeur+" sur "+totalParcPower+" "+valeur);
-    $("#barParcFinalEol").attr("title",""+parcFinalEol+" "+valeur+" sur "+totalParcPower+" "+valeur);
+    $("#barParcTargetEol").attr("title","Ciblé : "+parcTargetEol.toFixed(0)+" "+valeur+" sur "+totalParcTargetPower.toFixed(0)+" "+valeur);
+    $("#barParcFinalEol").attr("title","Calculé : "+parcFinalEol.toFixed(0)+" "+valeur+" sur "+totalParcPower.toFixed(0)+" "+valeur);
 
     $("#barParcTargetHydrau .bar").css("width",""+perParcTargetHydrau+"%");
     $("#barParcFinalHydrau .bar").css("width",""+perParcFinalHydrau+"%");
-    $("#barParcTargetHydrau").attr("title",""+parcTargetHydrau+" "+valeur+" sur "+totalParcPower+" "+valeur);
-    $("#barParcFinalHydrau").attr("title",""+parcFinalHydrau+" "+valeur+" sur "+totalParcPower+" "+valeur);
+    $("#barParcTargetHydrau").attr("title","Ciblé : "+parcTargetHydrau.toFixed(0)+" "+valeur+" sur "+totalParcTargetPower.toFixed(0)+" "+valeur);
+    $("#barParcFinalHydrau").attr("title","Calculé : "+parcFinalHydrau.toFixed(0)+" "+valeur+" sur "+totalParcPower.toFixed(0)+" "+valeur);
 
     $("#barParcTargetFlame .bar").css("width",""+perParcTargetFlame+"%");
     $("#barParcFinalFlame .bar").css("width",""+perParcFinalFlame+"%");
-    $("#barParcTargetFlame").attr("title",""+parcTargetFlame+" "+valeur+" sur "+totalParcPower+" "+valeur);
-    $("#barParcFinalFlame").attr("title",""+parcFinalFlame+" "+valeur+" sur "+totalParcPower+" "+valeur);
+    $("#barParcTargetFlame").attr("title","Ciblé : "+parcTargetFlame.toFixed(0)+" "+valeur+" sur "+totalParcTargetPower.toFixed(0)+" "+valeur);
+    $("#barParcFinalFlame").attr("title","Calculé : "+parcFinalFlame.toFixed(0)+" "+valeur+" sur "+totalParcPower.toFixed(0)+" "+valeur);
+}
+
+function majPourcentageDansBarres(){
+//MaJ des barres de l'IHM du Parc calculé
+    $("#barParcTargetNuke .value").append(perParcTargetNuke.toFixed(1)+"%");
+    $("#barParcFinalNuke .value").append(perParcFinalNuke.toFixed(1)+"%");
+
+    $("#barParcTargetPhoto .value").append(perParcTargetPhoto.toFixed(1)+"%");
+    $("#barParcFinalPhoto .value").append(perParcFinalPhoto.toFixed(1)+"%");
+
+    $("#barParcTargetEol .value").append(perParcTargetEol.toFixed(1)+"%");
+    $("#barParcFinalEol .value").append(perParcFinalEol.toFixed(1)+"%");
+
+    $("#barParcTargetHydrau .value").append(perParcTargetHydrau.toFixed(1)+"%");
+    $("#barParcFinalHydrau .value").append(perParcFinalHydrau.toFixed(1)+"%");
+
+    $("#barParcTargetFlame .value").append(perParcTargetFlame.toFixed(1)+"%");
+    $("#barParcFinalFlame .value").append(perParcFinalFlame.toFixed(1)+"%");
 }
 
 function majChiffresParcCalcule(){
@@ -206,11 +232,14 @@ function majChiffresParcCalcule(){
 
 }
 
+
 function postActionsJSON(){
 
     initialiserVariablesParc();
 
     majBarresParcCalcule();
+
+    majPourcentageDansBarres();
 
     majChiffresParcCalcule();
 
