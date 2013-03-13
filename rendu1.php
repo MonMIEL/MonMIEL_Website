@@ -77,19 +77,21 @@
 				<div class="bloc">
 					<div class="row first">
 						<div class="span2">Type parc</div>
-						<div class="span6">Puissance du parc en GW</div>
-						<div class="span1">Parc ciblé</div>
-						<div class="span1">Parc calculé</div>
-						<div class="span2 evol">Evolution de la puissance</div>
+						<div class="span6">Puissance du parc en MW</div>
+						<div class="span1">Parc ciblé (MW)</div>
+						<div class="span1">Parc calculé (MW)</div>
+						<div class="span2 evol">Evolution de la puissance (MW)</div>
 					</div>
 					<div class="row">
 						<div class="span2">Nucléaire</div>
 						<div class="span6">
 							<div id="barParcTargetNuke" class="first progress progress-success progress-striped active">
-							  <div class="bar" title="dsfsdfsdfsdfsdfdfsd"></div>
+							    <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalNuke" class="progress progress-warning progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
 						<div id="idParcTargetNuke" class="span1"></div>
@@ -100,10 +102,12 @@
 						<div class="span2">Photovoltaïque</div>
 						<div class="span6">
 							<div id="barParcTargetPhoto" class="first progress progress-success progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalPhoto" class="progress progress-warning progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetPhoto" class="span1"></div>
@@ -114,10 +118,11 @@
 						<div class="span2">Eolien</div>
 						<div class="span6">
 							<div id="barParcTargetEol" class="first progress progress-success progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalEol" class="progress progress-warning progress-striped active">
-							  20%
+                                <span class="value"></span>
                                 <div class="bar"></div>
 							</div>
 						</div>
@@ -129,10 +134,12 @@
 						<div class="span2">Hydraulique</div>
 						<div class="span6">
 							<div id="barParcTargetHydrau" class="first progress progress-success progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalHydrau" class="progress progress-warning progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetHydrau" class="span1"></div>
@@ -143,37 +150,49 @@
 						<div class="span2">Centrales à flammes</div>
 						<div class="span6">
 							<div id="barParcTargetFlame" class="first progress progress-success progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalFlame" class="progress progress-warning progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetFlame" class="span1"></div>
                         <div id="idParcFinalFlame" class="span1"></div>
                         <div id="idDiffParcFlame" class="span1"></div>
 					</div>
-					<div class="row autre">
+					<div class="row">
 						<div class="span2">STEP</div>
 						<div class="span6">
-							<div class="progress progress-danger progress-striped">
-							  <div class="bar" style="width:100%;"></div>
+							<div id="barParcTargetStep" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
+							</div>
+							<div id="barParcFinalStep" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
+                        <div id="idParcTargetStep" class="span1"></div>
+                        <div id="idParcFinalStep" class="span1"></div>
+                        <div id="idDiffParcStep" class="span1"></div>
 					</div>
-					<div class="row autre">
+					<div class="row">
 						<div class="span2">Import</div>
 						<div class="span6">
-							<div class="progress progress-danger progress-striped">
-							  <div class="bar" style="width:100%;"></div>
+							<div id="barParcTargetImport" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
+							</div>
+							<div id="barParcFinalImport" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
+                        <div id="idParcTargetImport" class="span1"></div>
+                        <div id="idParcFinalImport" class="span1"></div>
+                        <div id="idDiffParcImport" class="span1"></div>
 					</div>
 					<div class="row">
 						<div class="span2">Légende</div>
