@@ -39,9 +39,7 @@
 
         function gorendu(){
             var html = "rendu1.php?"+
-                    "anneeRef="+anneeRef +
-                    "&anneeCible="+anneeCible +
-                    "&consommation2050="+consommation2050+
+                    "consommation2050="+consommation2050+
                     "&nuc_gwh="+ document.getElementById("nuc_gwh").value+
                     "&pho_gwh="+ document.getElementById("pho_gwh").value +
                     "&eol_gwh="+ document.getElementById("eol_gwh").value +
@@ -64,10 +62,7 @@
         <button type="submit" class="btn">Sign in</button>
     </form>-->
 
-    <?php
-        $var_anneeRef = 2011;
-        // $$var_anneeRef contient la valeur numérique de l'année de référence entrée par l'utilisateur
-    ?>
+
     <!-- Chart type switchers -->
     <!-- <div class="actions">
         <button class="switcher" id="column">column</button>
@@ -82,7 +77,7 @@
 		</div>
 
     <!-- Horizon section -->
-        <div id="horizon">
+        <!--<div id="horizon">
 
             <?php if(isset($_GET['error'])) {
             echo "<div id='erreur' class='bloc'>";
@@ -95,7 +90,7 @@
 
             <h1 id="titleHorizon">Etape 1 - Horizon</h1>
             <!--<ul class="pager">-->
-            <div class="bloc">
+            <!--<div class="bloc">
                 <div class="row">
 					
 					<div class="span6 gauche">Année de référence :</div>
@@ -105,16 +100,16 @@
 							<option>2012</option>
 						</select>
 						<!-- info bulle -->
-						<a href="#" class="bulle">
+				<!--		<a href="#" class="bulle">
 							<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
 							<span class="bulle-content">On choisit ici une année de référence, qu'on prendra pour le calcul de notre scénario.</span>
 						</a>
 						<!-- info bulle -->
-					</div>
+					<!--</div>
 				</div>
 				<p id="labelHorizonRef"></p>
                 <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
-				<div class="bouton">
+				<!--<div class="bouton">
 					<a onclick="validerHorizonRef()"><span class="but-icon"></span>Valider</a>
 				</div>
             </div>
@@ -127,16 +122,16 @@
 							<option>2050</option>
 						</select>
 						<!-- info bulle -->
-						<a href="#" class="bulle">
+					<!--	<a href="#" class="bulle">
 							<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
 							<span class="bulle-content">L'année lors de laquelle on désire connaitre la consommation plus tard.</span>
 						</a>
 						<!-- info bulle -->						
-					</div>
+				<!--	</div>
 				</div>
 				<p id="labelHorizonCible"></p>
                 <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
-				<div class="bouton">
+				<!--<div class="bouton">
 					<a onclick="validerHorizonCible()"><span class="but-icon"></span>Valider</a>
 				</div>
             </div>
@@ -144,12 +139,12 @@
         </div>
 
         <!-- Scenario section -->
-        <div id="scenario" style="display:none;">
+        <div id="scenario">
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />	
 
             <!--Titre-->
             <h1 id="titleScenario">
-				Etape 2 - Scénario
+				Etape 1 - Scénario
 			<!-- info bulle -->
 			<a href="#" class="bulle">
 				<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
@@ -212,7 +207,7 @@
         <div id="monmix" style="display:none">
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
-            <h1 id="titleMonMix">Etape 3 - Mon MIx ELectrique</h1>
+            <h1 id="titleMonMix">Etape 2 - Mon MIx ELectrique</h1>
 			<div id="monmix-right" style="width:48%;">
 				<h2>
 					Vos paramètres

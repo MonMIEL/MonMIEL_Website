@@ -33,8 +33,8 @@
             var eol_gwh;
             var nbPoints;
             function init(){
-                anneeRef = <?php echo $_GET["anneeRef"] ?>;
-                anneeCible = <?php echo $_GET["anneeCible"] ?>;
+                anneeRef = 2011;
+                anneeCible = 2050;
                 consommation2050 = <?php echo $_GET["consommation2050"] ?>;
                 nuc_gwh = <?php echo $_GET["nuc_gwh"] ?>;
                 pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
@@ -77,19 +77,21 @@
 				<div class="bloc">
 					<div class="row first">
 						<div class="span2">Type parc</div>
-						<div class="span6">Puissance du parc en GW</div>
-						<div class="span1">Parc ciblé</div>
-						<div class="span1">Parc calculé</div>
-						<div class="span2 evol">Evolution de la puissance</div>
+						<div class="span6">Puissance du parc en MW</div>
+						<div class="span1">Parc ciblé (MW)</div>
+						<div class="span1">Parc calculé (MW)</div>
+						<div class="span2 evol">Evolution de la puissance (MW)</div>
 					</div>
 					<div class="row">
 						<div class="span2">Nucléaire</div>
 						<div class="span6">
-							<div class="first progress progress-success progress-striped active">
-							  <div id="barParcTargetNuke" class="bar" style="width: 50%;"></div>
+							<div id="barParcTargetNuke" class="first progress progress-success progress-striped active">
+							    <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
-							<div class="progress progress-warning progress-striped active">
-							  <div id="barParcFinalNuke" class="bar" style="width: 65%;"></div>
+							<div id="barParcFinalNuke" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
 						<div id="idParcTargetNuke" class="span1"></div>
@@ -99,11 +101,13 @@
 					<div class="row">
 						<div class="span2">Photovoltaïque</div>
 						<div class="span6">
-							<div class="first progress progress-success progress-striped active">
-							  <div id="barParcTargetPhoto" class="bar" style="width: 50%;"></div>
+							<div id="barParcTargetPhoto" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
-							<div class="progress progress-warning progress-striped active">
-							  <div id="barParcFinalPhoto" class="bar" style="width: 65%;"></div>
+							<div id="barParcFinalPhoto" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetPhoto" class="span1"></div>
@@ -113,11 +117,13 @@
 					<div class="row">
 						<div class="span2">Eolien</div>
 						<div class="span6">
-							<div class="first progress progress-success progress-striped active">
-							  <div id="barParcTargetEol" class="bar" style="width: 80%;"></div>
+							<div id="barParcTargetEol" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
-							<div class="progress progress-warning progress-striped active">
-							  <div id="barParcFinalEol" class="bar" style="width: 20%;"></div>
+							<div id="barParcFinalEol" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetEol" class="span1"></div>
@@ -127,11 +133,13 @@
 					<div class="row">
 						<div class="span2">Hydraulique</div>
 						<div class="span6">
-							<div class="first progress progress-success progress-striped active">
-							  <div id="barParcTargetHydrau" class="bar" style="width: 70%;"></div>
+							<div id="barParcTargetHydrau" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
-							<div class="progress progress-warning progress-striped active">
-							  <div id="barParcFinalHydrau" class="bar" style="width: 70%;"></div>
+							<div id="barParcFinalHydrau" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetHydrau" class="span1"></div>
@@ -141,11 +149,13 @@
 					<div class="row">
 						<div class="span2">Centrales à flammes</div>
 						<div class="span6">
-							<div class="first progress progress-success progress-striped active">
-							  <div id="barParcTargetFlame" class="bar" style="width: 35%;"></div>
+							<div id="barParcTargetFlame" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
-							<div class="progress progress-warning progress-striped active">
-							  <div id="barParcFinalFlame" class="bar" style="width: 55%;"></div>
+							<div id="barParcFinalFlame" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetFlame" class="span1"></div>
