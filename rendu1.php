@@ -152,27 +152,33 @@
                         <div id="idParcFinalFlame" class="span1"></div>
                         <div id="idDiffParcFlame" class="span1"></div>
 					</div>
-					<div class="row autre">
+					<div class="row">
 						<div class="span2">STEP</div>
 						<div class="span6">
-							<div class="progress progress-danger progress-striped">
-							  <div class="bar" style="width:100%;"></div>
+							<div class="first progress progress-success progress-striped active">
+							  <div id="barParcTargetStep" class="bar" style="width: 35%;"></div>
+							</div>
+							<div class="progress progress-warning progress-striped active">
+							  <div id="barParcFinalStep" class="bar" style="width: 55%;"></div>
 							</div>
 						</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
+                        <div id="idParcTargetStep" class="span1"></div>
+                        <div id="idParcFinalStep" class="span1"></div>
+                        <div id="idDiffParcStep" class="span1"></div>
 					</div>
-					<div class="row autre">
+					<div class="row">
 						<div class="span2">Import</div>
 						<div class="span6">
-							<div class="progress progress-danger progress-striped">
-							  <div class="bar" style="width:100%;"></div>
+							<div class="first progress progress-success progress-striped active">
+							  <div id="barParcTargetImport" class="bar" style="width: 35%;"></div>
+							</div>
+							<div class="progress progress-warning progress-striped active">
+							  <div id="barParcFinalImport" class="bar" style="width: 55%;"></div>
 							</div>
 						</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
+                        <div id="idParcTargetImport" class="span1"></div>
+                        <div id="idParcFinalImport" class="span1"></div>
+                        <div id="idDiffParcImport" class="span1"></div>
 					</div>
 					<div class="row">
 						<div class="span2">Légende</div>
