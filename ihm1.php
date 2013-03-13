@@ -140,7 +140,6 @@
 
         <!-- Scenario section -->
         <div id="scenario">
-            <img class="separateur" src="img/separateur.jpg" alt="separateur" />	
 
             <!--Titre-->
             <h1 id="titleScenario">
@@ -158,7 +157,7 @@
                     <div class="navbar-inner">
                         <a class="brand">Type de scénario</a>
                         <ul class="nav">
-                            <li class="active"><a href="#tab1" data-toggle="tab">Personnel</a></li>
+                            <li class="active"><a href="#tab1" data-toggle="tab">RTE</a></li>
                         </ul>
 						
 						<div class="navbar-form pull-right">
