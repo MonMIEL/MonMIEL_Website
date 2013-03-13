@@ -286,7 +286,7 @@ function majChiffresParcCalcule(){
     $("#idParcTargetImport").attr("title","Valeur exacte : "+parcTargetImport+" "+valeur);
     $("#idParcFinalImport").attr("title","Valeur exacte : "+parcFinalImport+" "+valeur);
 	
-	("#idParcTargetStep").append(parcTargetStep.toFixed(0));
+	$("#idParcTargetStep").append(parcTargetStep.toFixed(0));
     $("#idParcFinalStep").append(parcFinalStep.toFixed(0));
     $("#idParcTargetStep").attr("title","Valeur exacte : "+parcTargetStep+" "+valeur);
     $("#idParcFinalStep").attr("title","Valeur exacte : "+parcFinalStep+" "+valeur);
