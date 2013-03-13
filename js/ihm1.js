@@ -25,7 +25,7 @@ function majChartAvecConso2050(chart, series) {
 
 /*--------------------------------------------------------------------------*/
 
-function validerHorizonRef(){
+/* function validerHorizonRef(){
         //Récupération des données entrées
         anneeRef=document.getElementById("anneeRef").value;
 
@@ -44,7 +44,7 @@ function validerHorizonRef(){
 		//Affichage du contenu suivant
 		document.getElementById('scenario').style.display = "block";
 	}
-}
+} */
 
 function validerHorizonCible(){
     //Récupération des données entrées
