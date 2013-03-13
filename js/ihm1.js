@@ -92,7 +92,17 @@ function validerScenario(){
     document.getElementById('monmix').style.display = "block";
     //mise en place du camembert
     Highcharts.setOptions({
-        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263']
+        colors: ['#166877', '#FF530D', '#E8C57A', '#1BAA8F', '#E81C0C', '#FF9655', '#FFF263']
+    });
+
+    Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
+        return {
+            radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
+            stops: [
+                [0, color],
+                [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+            ]
+        };
     });
     //Affichage du contenu suivant
     if(!passe){

@@ -281,7 +281,7 @@ function form_widget_amount_slider(targetElId,formTarget,width,min,max,onchangeA
         obj2.className = 'form_widget_amount_slider_red';
     else{
          obj2.className = 'form_widget_amount_slider_normal';
-        obj2.style.backgroundColor=chart_cam.series[0].data[slider_counter-1].color;
+        obj2.style.backgroundColor=chart_cam.series[0].data[slider_counter-1].color.stops[0][1] ;
     }
     obj2.style.width = width*valueinitial/100 + 'px';
     obj2.id = 'slider_blue' + slider_counter;
