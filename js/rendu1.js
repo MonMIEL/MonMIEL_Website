@@ -277,20 +277,20 @@ function miseEnPlaceHighChart(){
             type: 'pie',
             name: 'calculé',
             data: [
-                {name : 'Centrales à flammes',y: perMixFinalFlame,z:'0', events:{
+                {name : 'Centrales à flammes',y: perMixFinalFlame,z:diffPerMixFlame, events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Photovoltaïque',y: perMixFinalPhoto,z:'+5', events:{
+                {name : 'Photovoltaïque',y: perMixFinalPhoto,z:diffPerMixPhoto, events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Eolien',y: perMixFinalEol,z:'+10', events:{
+                {name : 'Eolien',y: perMixFinalEol,z:diffPerMixEol, events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
-                {name : 'Hydraulique', y: perMixFinalHydrau,z:'0', events:{
+                {name : 'Hydraulique', y: perMixFinalHydrau,z:diffPerMixHydrau, events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }},
 
-                {name : 'nucléaire',y:  perMixFinalNuke, z: '-15', events:{
+                {name : 'nucléaire',y:  perMixFinalNuke, z: diffPerMixNuke, events:{
                     click : function(){chart1.series[0].data[this.x].select(true); }
                 }}/*,
                 {name : 'STEP', y: 0,z:'0', events:{

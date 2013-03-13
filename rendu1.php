@@ -162,29 +162,37 @@
                         <div id="idParcFinalFlame" class="span1"></div>
                         <div id="idDiffParcFlame" class="span1"></div>
 					</div>
-					<div class="row autre">
+					<div class="row">
 						<div class="span2">STEP</div>
 						<div class="span6">
-							<div class="progress progress-danger progress-striped">
-                                <span class="value">100%</span>
-                                <div class="bar" style="width:100%;"></div>
+							<div id="barParcTargetStep" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
+							</div>
+							<div id="barParcFinalStep" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
+                        <div id="idParcTargetStep" class="span1"></div>
+                        <div id="idParcFinalStep" class="span1"></div>
+                        <div id="idDiffParcStep" class="span1"></div>
 					</div>
-					<div class="row autre">
+					<div class="row">
 						<div class="span2">Import</div>
 						<div class="span6">
-							<div class="progress progress-danger progress-striped">
-                                <span class="value">100%</span>
-                                <div class="bar" style="width:100%;"></div>
+							<div id="barParcTargetImport" class="first progress progress-success progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
+							</div>
+							<div id="barParcFinalImport" class="progress progress-warning progress-striped active">
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
-						<div class="span1">0</div>
+                        <div id="idParcTargetImport" class="span1"></div>
+                        <div id="idParcFinalImport" class="span1"></div>
+                        <div id="idDiffParcImport" class="span1"></div>
 					</div>
 					<div class="row">
 						<div class="span2">Légende</div>

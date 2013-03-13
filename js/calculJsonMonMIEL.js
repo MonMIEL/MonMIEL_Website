@@ -15,6 +15,10 @@ var parcTargetHydrau;
 var parcFinalHydrau;
 var parcTargetPhoto;
 var parcFinalPhoto;
+var parcTargetStep;
+var parcFinalStep;
+var parcTargetImport;
+var parcFinalImport;
 /*---------------Pourcentage-du-parc--------------------*/
 var perParcTargetNuke;
 var perParcFinalNuke;
@@ -26,6 +30,10 @@ var perParcTargetHydrau;
 var perParcFinalHydrau;
 var perParcTargetPhoto;
 var perParcFinalPhoto;
+var perParcTargetStep;
+var perParcFinalStep;
+var perParcTargetImport;
+var perParcFinalImport;
 
 /*---------------Total MonMix Target--------------------*/
 var totalMixTarget;
@@ -53,6 +61,13 @@ var perMixTargetHydrau;
 var perMixFinalHydrau;
 var perMixTargetPhoto;
 var perMixFinalPhoto;
+/*------------------------Diff PercMix--------------------*/
+var diffPerMixNuke;
+var diffPerMixFlame;
+var diffPerMixEol;
+var diffPerMixHydrau;
+var diffPerMixPhoto;
+
 
 function calculerMonMIEL(){
 
@@ -135,6 +150,28 @@ function initialiserVariablesMix(){
     perMixFinalHydrau   = (mixFinalHydrau    * 100 / totalMixFinal);
     perMixTargetPhoto   = (mixTargetPhoto    * 100 / totalMixTarget);
     perMixFinalPhoto    = (mixFinalPhoto     * 100 / totalMixFinal);
+
+    var op="";
+        diffPerMixNuke = perMixFinalNuke.toFixed(1) - perMixTargetNuke.toFixed(1);
+        op=""; if(diffPerMixNuke>0) op="+";
+    diffPerMixNuke=op+diffPerMixNuke;
+
+        diffPerMixFlame = perMixFinalFlame.toFixed(1) - perMixTargetFlame.toFixed(1);
+        op=""; if(diffPerMixFlame>0) op="+";
+    diffPerMixFlame=op+diffPerMixFlame;
+
+        diffPerMixEol = perMixFinalEol.toFixed(1) - perMixTargetEol.toFixed(1);
+        op=""; if(diffPerMixEol>0) op="+";
+    diffPerMixEol=op+diffPerMixEol;
+
+        diffPerMixHydrau = perMixFinalHydrau.toFixed(1) - perMixTargetHydrau.toFixed(1);
+        op=""; if(diffPerMixHydrau>0) op="+";
+    diffPerMixHydrau=op+diffPerMixHydrau;
+
+        diffPerMixPhoto = perMixFinalPhoto.toFixed(1) - perMixTargetPhoto.toFixed(1);
+        op=""; if(diffPerMixPhoto>0) op="+";
+    diffPerMixPhoto=op+diffPerMixPhoto;
+
     console.log(" perMixTargetNuke : "+perMixTargetNuke);
     console.log(" perMixTargetFlame : "+perMixTargetFlame);
     console.log(" perMixTargetEol : "+perMixTargetEol);
@@ -145,6 +182,12 @@ function initialiserVariablesMix(){
     console.log(" perMixFinalEol : "+perMixFinalEol);
     console.log(" perMixFinalHydrau : "+perMixFinalHydrau);
     console.log(" perMixFinalPhoto : "+perMixFinalPhoto);
+
+    console.log(" diffPerMixNuke : "+diffPerMixNuke);
+    console.log(" diffPerMixFlame : "+diffPerMixFlame);
+    console.log(" diffPerMixEol : "+diffPerMixEol);
+    console.log(" diffPerMixHydrau : "+diffPerMixHydrau);
+    console.log(" diffPerMixPhoto : "+diffPerMixPhoto);
 }
 
 function initialiserVariablesParc(){
@@ -154,17 +197,18 @@ function initialiserVariablesParc(){
             dataJSON.finalParcPower.flame+
             dataJSON.finalParcPower.wind+
             dataJSON.finalParcPower.hydraulic+
-            dataJSON.finalParcPower.photovoltaic
-        /*+
-         dataJSON.targetParcPower.import+
-         dataJSON.targetParcPower.step*/
+            dataJSON.finalParcPower.photovoltaic+
+			dataJSON.finalParcPower.import+
+			dataJSON.finalParcPower.step
     ;
     totalParcTargetPower =
         dataJSON.targetParcPower.nuclear +
             dataJSON.targetParcPower.flame+
             dataJSON.targetParcPower.wind+
             dataJSON.targetParcPower.hydraulic+
-            dataJSON.targetParcPower.photovoltaic
+            dataJSON.targetParcPower.photovoltaic+
+			dataJSON.targetParcPower.import+
+			dataJSON.targetParcPower.step
         ;
     console.log("Total Parc(Gw) : "+totalParcPower);
 
@@ -178,6 +222,10 @@ function initialiserVariablesParc(){
     parcFinalHydrau = dataJSON.finalParcPower.hydraulic;
     parcTargetPhoto = dataJSON.targetParcPower.photovoltaic;
     parcFinalPhoto = dataJSON.finalParcPower.photovoltaic;
+	parcTargetImport = dataJSON.targetParcPower.import;
+    parcFinalImport = dataJSON.finalParcPower.import;
+	parcTargetStep = dataJSON.targetParcPower.step;
+    parcFinalStep = dataJSON.finalParcPower.step;
 
     //Calcul du parc Nuke
     perParcTargetNuke       = parcTargetNuke *100 / totalParcTargetPower;
@@ -208,6 +256,18 @@ function initialiserVariablesParc(){
     perParcFinalPhoto       = parcFinalPhoto  *100 / totalParcPower;
     console.log("Parc Photo(Mw) : ["+parcTargetPhoto+"]["+parcFinalPhoto+"]");
     console.log("Parc Photo(%) : ["+perParcTargetPhoto+"]["+perParcFinalPhoto+"]");
+	
+	//Calcul du parc Import
+    perParcTargetImport      = parcTargetImport *100 / totalParcTargetPower;
+    perParcFinalImport       = parcFinalImport  *100 / totalParcPower;
+    console.log("Parc Import(Mw) : ["+parcTargetImport+"]["+parcFinalImport+"]");
+    console.log("Parc Import(%) : ["+perParcTargetImport+"]["+perParcFinalImport+"]");
+	
+	//Calcul du parc STEP
+    perParcTargetStep      = parcTargetStep *100 / totalParcTargetPower;
+    perParcFinalStep       = parcFinalStep  *100 / totalParcPower;
+    console.log("Parc STEP(Mw) : ["+parcTargetStep+"]["+parcFinalStep+"]");
+    console.log("Parc STEP(%) : ["+perParcTargetStep+"]["+perParcFinalStep+"]");
     console.log("-----------------------------------------------------------------");
 }
 
@@ -237,6 +297,16 @@ function majBarresParcCalcule(){
     $("#barParcFinalFlame .bar").css("width",""+perParcFinalFlame+"%");
     $("#barParcTargetFlame").attr("title","Ciblé : "+parcTargetFlame.toFixed(0)+" "+valeur+" sur "+totalParcTargetPower.toFixed(0)+" "+valeur);
     $("#barParcFinalFlame").attr("title","Calculé : "+parcFinalFlame.toFixed(0)+" "+valeur+" sur "+totalParcPower.toFixed(0)+" "+valeur);
+	
+	$("#barParcTargetImport .bar").css("width",""+perParcTargetImport+"%");
+    $("#barParcFinalImport .bar").css("width",""+perParcFinalImport+"%");
+    $("#barParcTargetImport").attr("title","Ciblé : "+parcTargetImport.toFixed(0)+" "+valeur+" sur "+totalParcTargetPower.toFixed(0)+" "+valeur);
+    $("#barParcFinalImport").attr("title","Calculé : "+parcFinalImport.toFixed(0)+" "+valeur+" sur "+totalParcPower.toFixed(0)+" "+valeur);
+	
+	$("#barParcTargetStep .bar").css("width",""+perParcTargetStep+"%");
+    $("#barParcFinalStep .bar").css("width",""+perParcFinalStep+"%");
+    $("#barParcTargetStep").attr("title","Ciblé : "+parcTargetStep.toFixed(0)+" "+valeur+" sur "+totalParcTargetPower.toFixed(0)+" "+valeur);
+    $("#barParcFinalStep").attr("title","Calculé : "+parcFinalStep.toFixed(0)+" "+valeur+" sur "+totalParcPower.toFixed(0)+" "+valeur);
 }
 
 function majPourcentageDansBarres(){
@@ -255,6 +325,12 @@ function majPourcentageDansBarres(){
 
     $("#barParcTargetFlame .value").append(perParcTargetFlame.toFixed(1)+"%");
     $("#barParcFinalFlame .value").append(perParcFinalFlame.toFixed(1)+"%");
+	
+	$("#barParcTargetImport .value").append(perParcTargetImport.toFixed(1)+"%");
+    $("#barParcFinalImport .value").append(perParcFinalImport.toFixed(1)+"%");
+	
+	$("#barParcTargetStep .value").append(perParcTargetStep.toFixed(1)+"%");
+    $("#barParcFinalStep .value").append(perParcFinalStep.toFixed(1)+"%");
 }
 
 function majChiffresParcCalcule(){
@@ -265,28 +341,38 @@ function majChiffresParcCalcule(){
     var op;
     var diffParcNuke = parcFinalNuke - parcTargetNuke;
     op=""; if(diffParcNuke>0) op="+";
-    $("#idDiffParcNuke").append(diffParcNuke.toFixed(0));
+    $("#idDiffParcNuke").append(op+diffParcNuke.toFixed(0));
     $("#idDiffParcNuke").attr("title","Valeur exacte : "+diffParcNuke+" "+valeur);
 
     var diffParcPhoto = parcFinalPhoto - parcTargetPhoto;
     op=""; if(diffParcPhoto>0) op="+";
-    $("#idDiffParcPhoto").append(diffParcPhoto.toFixed(0));
+    $("#idDiffParcPhoto").append(op+diffParcPhoto.toFixed(0));
     $("#idDiffParcPhoto").attr("title","Valeur exacte : "+diffParcPhoto+" "+valeur);
 
     var diffParcEol = parcFinalEol - parcTargetEol;
     op=""; if(diffParcEol>0) op="+";
-    $("#idDiffParcEol").append(diffParcEol.toFixed(0));
+    $("#idDiffParcEol").append(op+diffParcEol.toFixed(0));
     $("#idDiffParcEol").attr("title","Valeur exacte : "+diffParcEol+" "+valeur);
 
     var diffParcHydrau = parcFinalHydrau - parcTargetHydrau;
     op=""; if(diffParcHydrau>0) op="+";
-    $("#idDiffParcHydrau").append(diffParcHydrau.toFixed(0));
+    $("#idDiffParcHydrau").append(op+diffParcHydrau.toFixed(0));
     $("#idDiffParcHydrau").attr("title","Valeur exacte : "+diffParcHydrau+" "+valeur);
 
     var diffParcFlame = parcFinalFlame - parcTargetFlame;
     op=""; if(diffParcFlame>0) op="+";
-    $("#idDiffParcFlame").append(diffParcFlame.toFixed(0));
+    $("#idDiffParcFlame").append(op+diffParcFlame.toFixed(0));
     $("#idDiffParcFlame").attr("title","Valeur exacte : "+diffParcFlame+" "+valeur);
+	
+	var diffParcImport = parcFinalImport - parcTargetImport;
+    op=""; if(diffParcImport>0) op="+";
+    $("#idDiffParcImport").append(op+diffParcImport.toFixed(0));
+    $("#idDiffParcImport").attr("title","Valeur exacte : "+diffParcImport+" "+valeur);
+	
+	var diffParcStep = parcFinalStep - parcTargetStep;
+    op=""; if(diffParcStep>0) op="+";
+    $("#idDiffParcStep").append(op+diffParcStep.toFixed(0));
+    $("#idDiffParcStep").attr("title","Valeur exacte : "+diffParcStep+" "+valeur);
 
 
     $("#idParcTargetNuke").append(parcTargetNuke.toFixed(0));
@@ -313,6 +399,16 @@ function majChiffresParcCalcule(){
     $("#idParcFinalFlame").append(parcFinalFlame.toFixed(0));
     $("#idParcTargetFlame").attr("title","Valeur exacte : "+parcTargetFlame+" "+valeur);
     $("#idParcFinalFlame").attr("title","Valeur exacte : "+parcFinalFlame+" "+valeur);
+	
+	$("#idParcTargetImport").append(parcTargetImport.toFixed(0));
+    $("#idParcFinalImport").append(parcFinalImport.toFixed(0));
+    $("#idParcTargetImport").attr("title","Valeur exacte : "+parcTargetImport+" "+valeur);
+    $("#idParcFinalImport").attr("title","Valeur exacte : "+parcFinalImport+" "+valeur);
+	
+	$("#idParcTargetStep").append(parcTargetStep.toFixed(0));
+    $("#idParcFinalStep").append(parcFinalStep.toFixed(0));
+    $("#idParcTargetStep").attr("title","Valeur exacte : "+parcTargetStep+" "+valeur);
+    $("#idParcFinalStep").attr("title","Valeur exacte : "+parcFinalStep+" "+valeur);
 
 }
 

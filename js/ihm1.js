@@ -252,6 +252,13 @@ function ChangeChartType(chart, series, newType) {
     }
 }
 
+function affecterConsommation(X,Y){
+    consommation2050=Y;
+    document.getElementById('tab_chart_Scenario.qu').innerHTML=Y;
+    document.getElementById('tab_chart_Scenario.id').innerHTML=X;
+    document.getElementById('bouton_scenario').style.display="";
+}
+
 // Two charts definition
 var chart_Scenario, chart2, chart3;
 // Once DOM (document) is finished loading
@@ -315,7 +322,10 @@ $(document).ready(function() {
                     color: '#3E576F',
                     fontWeight: 'bold'
                 }
-            }
+            },
+            min:450,
+            max:510
+
         },
         events: {
             redraw: function() {
@@ -323,26 +333,226 @@ $(document).ready(function() {
             }
         },
         series: [{
-				visible: false,
-                name: 'Consommation',
+				visible: true,
+                name: 'Haut',
                 data: [{
-                    name: anneeRef, //Change au moment du choix de l'année de Référence
+                    name: 'haut:2011', //Change au moment du choix de l'année de Référence
                     color: '#00FF00',
                     'id': 'point1',
-                    x: 2010, //Change au moment du choix de l'année de Référence
-                    y: 300,
+                    x: 2011, //Change au moment du choix de l'année de Référence
+                    y: 485,
                     events:{
-                        click: null,
+                        click:  function(event) {
+                            affecterConsommation(this.x,this.y)},
                         mouseOver: null
                     }
                 }, {
-                    name: 'Consommation en 2050)',
+                    name: 'haut:2014',
                     color: '#FF00FF',
                     'id': 'point2',
-                    x: 2050,
-                    y: consommation2050
+                    x: 2014,
+                    y: 493.8,
+                    events : {
+                        click:  function(event) {
+                            affecterConsommation(this.x,this.y)}
+                    }
+                }, {
+                    name: 'haut:2015',
+                    color: '#FF00FF',
+                    'id': 'point3',
+                    x: 2015,
+                    y: 499.7,
+                    events : {
+                        click:  function(event) {
+                            affecterConsommation(this.x,this.y)}
+                    }
+                }, {
+                    name: 'haut:2016',
+                    color: '#FF00FF',
+                    'id': 'point4',
+                    x: 2016,
+                    y: 505.1,
+                    events : {
+                        click:  function(event) {
+                            affecterConsommation(this.x,this.y)}
+                    }
+                }, {
+                    name: 'haut:2017',
+                    color: '#FF00FF',
+                    'id': 'point5',
+                    x: 2017,
+                    y: 509.7,
+                    events : {
+                        click:  function(event) {
+                            affecterConsommation(this.x,this.y)}
+                    }
                 }]
-            }],
+            },{
+            visible: true,
+            name: 'Référence',
+            data: [{
+                name: 'Référence:2011', //Change au moment du choix de l'année de Référence
+                color: '#00FF00',
+                'id': 'point1',
+                x: 2011, //Change au moment du choix de l'année de Référence
+                y: 485,
+                events:{
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)},
+                    mouseOver: null
+                }
+            }, {
+                name: 'Référence:2014',
+                color: '#FF00FF',
+                'id': 'point2',
+                x: 2014,
+                y: 486.5,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }, {
+                name: 'Référence:2015',
+                color: '#FF00FF',
+                'id': 'point3',
+                x: 2015,
+                y: 490.9,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }, {
+                name: 'Référence:2016',
+                color: '#FF00FF',
+                'id': 'point4',
+                x: 2016,
+                y: 494.1,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }, {
+                name: 'Référence:2017',
+                color: '#FF00FF',
+                'id': 'point5',
+                x: 2017,
+                y: 497.4,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }]
+        },{
+            visible: true,
+            name: 'MDE renforcée',
+            data: [{
+                name: 'MDE renforcée:2011', //Change au moment du choix de l'année de Référence
+                color: '#00FF00',
+                'id': 'point1',
+                x: 2011, //Change au moment du choix de l'année de Référence
+                y: 485,
+                events:{
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)},
+                    mouseOver: null
+                }
+            }, {
+                name: 'MDE renforcée:2014',
+                color: '#FF00FF',
+                'id': 'point2',
+                x: 2014,
+                y: 478.9,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }, {
+                name: 'MDE renforcée:2015',
+                color: '#FF00FF',
+                'id': 'point3',
+                x: 2015,
+                y: 480.9,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }, {
+                name: 'MDE renforcée:2016',
+                color: '#FF00FF',
+                'id': 'point4',
+                x: 2016,
+                y: 482.4,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }, {
+                name: 'MDE renforcée:2017',
+                color: '#FF00FF',
+                'id': 'point5',
+                x: 2017,
+                y: 483.7,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }]
+        },{
+            visible: true,
+            name: 'Bas',
+            data: [{
+                name: 'Bas:2011', //Change au moment du choix de l'année de Référence
+                color: '#00FF00',
+                'id': 'point1',
+                x: 2011, //Change au moment du choix de l'année de Référence
+                y: 485.0,
+                events:{
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)},
+                    mouseOver: null
+                }
+            }, {
+                name: 'Bas:2014',
+                color: '#FF00FF',
+                'id': 'point2',
+                x: 2014,
+                y: 471.4,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }, {
+                name: 'Bas:2015',
+                color: '#FF00FF',
+                'id': 'point3',
+                x: 2015,
+                y: 471.7,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }, {
+                name: 'Bas:2016',
+                color: '#FF00FF',
+                'id': 'point4',
+                x: 2016,
+                y: 470.8,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }, {
+                name: 'Bas:2017',
+                color: '#FF00FF',
+                'id': 'point5',
+                x: 2017,
+                y: 470.8,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }]
+        }],
         plotOptions: {
             series: {
                 cursor: 'pointer',
