@@ -144,7 +144,7 @@
 
             <!--Titre-->
             <h1 id="titleScenario">
-				Etape 2 - Scénario
+				Etape 1 - Scénario
 			<!-- info bulle -->
 			<a href="#" class="bulle">
 				<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
@@ -207,7 +207,7 @@
         <div id="monmix" style="display:none">
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
-            <h1 id="titleMonMix">Etape 3 - Mon MIx ELectrique</h1>
+            <h1 id="titleMonMix">Etape 2 - Mon MIx ELectrique</h1>
 			<div id="monmix-right" style="width:48%;">
 				<h2>
 					Vos paramètres
