@@ -120,31 +120,60 @@ function initialiserVariablesParc(){
 
 function majBarresParcCalcule(){
     //MaJ des barres de l'IHM du Parc calculé
-    document.getElementById("barParcTargetNuke").style.width = perParcTargetNuke+"%";
-    document.getElementById("barParcFinalNuke").style.width = perParcFinalNuke+"%";
+    $("#barParcTargetNuke .bar").css("width",""+perParcTargetNuke+"%");
+    $("#barParcFinalNuke .bar").css("width",""+perParcFinalNuke+"%");
 
-    document.getElementById("barParcTargetPhoto").style.width = perParcTargetPhoto+"%";
-    document.getElementById("barParcFinalPhoto").style.width = perParcFinalPhoto+"%";
 
-    document.getElementById("barParcTargetEol").style.width = perParcTargetEol+"%";
-    document.getElementById("barParcFinalEol").style.width = perParcFinalEol+"%";
+    $("#barParcTargetPhoto .bar").css("width",""+perParcTargetPhoto+"%");
+    $("#barParcFinalPhoto .bar").css("width",""+perParcFinalPhoto+"%");
 
-    document.getElementById("barParcTargetHydrau").style.width = perParcTargetHydrau+"%";
-    document.getElementById("barParcFinalHydrau").style.width = perParcFinalHydrau+"%";
+    $("#barParcTargetEol .bar").css("width",""+perParcTargetEol+"%");
+    $("#barParcFinalEol .bar").css("width",""+perParcFinalEol+"%");
 
-    document.getElementById("barParcTargetFlame").style.width = perParcTargetFlame+"%";
-    document.getElementById("barParcFinalFlame").style.width = perParcFinalFlame+"%";
+    $("#barParcTargetHydrau .bar").css("width",""+perParcTargetHydrau+"%");
+    $("#barParcFinalHydrau .bar").css("width",""+perParcFinalHydrau+"%");
+
+    $("#barParcTargetFlame .bar").css("width",""+perParcTargetFlame+"%");
+    $("#barParcFinalFlame .bar").css("width",""+perParcFinalFlame+"%");
 }
 
 function majChiffresParcCalcule(){
-//
-//    document.getElementById("idParcTargetNuke").innerHTML = perParcTargetNuke+"%";
-//    idParcTargetNuke
-//    idParcFinalNuke
-//    idDiffParcNuke
-//    <div id="idParcTargetNuke" class="span1"></div>
-//    <div id="idParcFinalNuke" class="span1"></div>
-//        <div id="idDiffParcNuke" class="span1"></div>
+
+    $("#idParcTargetNuke").append(parcTargetNuke.toFixed(0));
+    $("#idParcFinalNuke").append(parcFinalNuke.toFixed(0));
+
+    $("#idParcTargetPhoto").append(parcTargetPhoto.toFixed(0));
+    $("#idParcFinalPhoto").append(parcFinalPhoto.toFixed(0));
+
+    $("#idParcTargetEol").append(parcTargetEol.toFixed(0));
+    $("#idParcFinalEol").append(parcFinalEol.toFixed(0));
+
+    $("#idParcTargetHydrau").append(parcTargetHydrau.toFixed(0));
+    $("#idParcFinalHydrau").append(parcFinalHydrau.toFixed(0));
+
+    $("#idParcTargetFlame").append(parcTargetFlame.toFixed(0));
+    $("#idParcFinalFlame").append(parcFinalFlame.toFixed(0));
+
+    var op;
+    var diffParcNuke = parcFinalNuke - parcTargetNuke;
+    op=""; if(diffParcNuke>0) op="+";
+    document.getElementById("idDiffParcNuke").innerHTML = op + diffParcNuke.toFixed(0);
+
+    var diffParcPhoto = parcFinalPhoto - parcTargetPhoto;
+    op=""; if(diffParcPhoto>0) op="+";
+    document.getElementById("idDiffParcPhoto").innerHTML = op + diffParcPhoto.toFixed(0);
+
+    var diffParcEol = parcFinalEol - parcTargetEol;
+    op=""; if(diffParcEol>0) op="+";
+    document.getElementById("idDiffParcEol").innerHTML = op + diffParcEol.toFixed(0);
+
+    var diffParcHydrau = parcFinalHydrau - parcTargetHydrau;
+    op=""; if(diffParcHydrau>0) op="+";
+    document.getElementById("idDiffParcHydrau").innerHTML = op + diffParcHydrau.toFixed(0);
+
+    var diffParcFlame = parcFinalFlame - parcTargetFlame;
+    op=""; if(diffParcFlame>0) op="+";
+    document.getElementById("idDiffParcFlame").innerHTML = op + diffParcFlame.toFixed(0);
 }
 
 function postActionsJSON(){
