@@ -83,7 +83,7 @@ function adjustFormValue(theIndex)
 	var handleImg = document.getElementById('slider_handle' + theIndex);
 	var ratio = sliderObjectArray[theIndex]['width'] / (sliderObjectArray[theIndex]['max']-sliderObjectArray[theIndex]['min']);
 	var currentPos = handleImg.style.left.replace('px','');
-	sliderObjectArray[theIndex]['formTarget'].value = Math.round(currentPos / ratio) + sliderObjectArray[theIndex]['min'];
+	sliderObjectArray[theIndex]['formTarget'].value = ((currentPos / ratio)+ sliderObjectArray[theIndex]['min']).toFixed(1);
 
 }
 
@@ -103,22 +103,29 @@ function startMoveSlider(e)
 {
     if(document.all)e = event;
 	if(!slideInProgress)return;
-    var val;
+    var min, max;
     if(currentSliderIndex==1){
         total = parseInt(document.getElementById("eol_txtfield").value) +parseInt(document.getElementById("pho_txtfield").value)+parseInt(document.getElementById("hyd_txtfield").value);
-        }
+        min=0;
+        max=90;
+    }
     else if (currentSliderIndex==2){
         total = parseInt(document.getElementById("nuc_txtfield").value)+parseInt(document.getElementById("eol_txtfield").value) +parseInt(document.getElementById("hyd_txtfield").value);
-        }
+        min=0.5;
+        max=25;
+    }
     else if (currentSliderIndex==3){
         total = parseInt(document.getElementById("nuc_txtfield").value) +parseInt(document.getElementById("pho_txtfield").value)+parseInt(document.getElementById("hyd_txtfield").value);
+        min=2.5;
+        max=50;
         }
+
     else if (currentSliderIndex==4){
         total = parseInt(document.getElementById("nuc_txtfield").value)+parseInt(document.getElementById("eol_txtfield").value) +parseInt(document.getElementById("pho_txtfield").value);
     }
     var leftPos = handle_start_x/1 + e.clientX/1 - event_start_x;
-	if(leftPos<0)leftPos = 0;
-	if(leftPos/1>sliderObjectArray[currentSliderIndex]['width'])leftPos = sliderObjectArray[currentSliderIndex]['width'];
+	if(leftPos<sliderObjectArray[currentSliderIndex]['width']*min/100)leftPos = sliderObjectArray[currentSliderIndex]['width']*min/100;
+	if(leftPos/1>sliderObjectArray[currentSliderIndex]['width']*max/100)leftPos = sliderObjectArray[currentSliderIndex]['width']*max/100;
     var val =leftPos/sliderObjectArray[currentSliderIndex]['width']*100;
     if((total+val)>100){
         leftPos =sliderObjectArray[currentSliderIndex]['width']*(-total+100)/100 ;
