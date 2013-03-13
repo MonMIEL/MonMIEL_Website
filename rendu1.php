@@ -77,19 +77,21 @@
 				<div class="bloc">
 					<div class="row first">
 						<div class="span2">Type parc</div>
-						<div class="span6">Puissance du parc en GW</div>
-						<div class="span1">Parc ciblé</div>
-						<div class="span1">Parc calculé</div>
-						<div class="span2 evol">Evolution de la puissance</div>
+						<div class="span6">Puissance du parc en MW</div>
+						<div class="span1">Parc ciblé (MW)</div>
+						<div class="span1">Parc calculé (MW)</div>
+						<div class="span2 evol">Evolution de la puissance (MW)</div>
 					</div>
 					<div class="row">
 						<div class="span2">Nucléaire</div>
 						<div class="span6">
 							<div id="barParcTargetNuke" class="first progress progress-success progress-striped active">
-							  <div class="bar" title="dsfsdfsdfsdfsdfdfsd"></div>
+							    <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalNuke" class="progress progress-warning progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
 						<div id="idParcTargetNuke" class="span1"></div>
@@ -100,10 +102,12 @@
 						<div class="span2">Photovoltaïque</div>
 						<div class="span6">
 							<div id="barParcTargetPhoto" class="first progress progress-success progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalPhoto" class="progress progress-warning progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetPhoto" class="span1"></div>
@@ -114,10 +118,11 @@
 						<div class="span2">Eolien</div>
 						<div class="span6">
 							<div id="barParcTargetEol" class="first progress progress-success progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalEol" class="progress progress-warning progress-striped active">
-							  20%
+                                <span class="value"></span>
                                 <div class="bar"></div>
 							</div>
 						</div>
@@ -129,10 +134,12 @@
 						<div class="span2">Hydraulique</div>
 						<div class="span6">
 							<div id="barParcTargetHydrau" class="first progress progress-success progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalHydrau" class="progress progress-warning progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetHydrau" class="span1"></div>
@@ -143,10 +150,12 @@
 						<div class="span2">Centrales à flammes</div>
 						<div class="span6">
 							<div id="barParcTargetFlame" class="first progress progress-success progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 							<div id="barParcFinalFlame" class="progress progress-warning progress-striped active">
-							  <div class="bar"></div>
+                                <span class="value"></span>
+                                <div class="bar"></div>
 							</div>
 						</div>
                         <div id="idParcTargetFlame" class="span1"></div>
@@ -157,7 +166,8 @@
 						<div class="span2">STEP</div>
 						<div class="span6">
 							<div class="progress progress-danger progress-striped">
-							  <div class="bar" style="width:100%;"></div>
+                                <span class="value">100%</span>
+                                <div class="bar" style="width:100%;"></div>
 							</div>
 						</div>
 						<div class="span1">0</div>
@@ -168,7 +178,8 @@
 						<div class="span2">Import</div>
 						<div class="span6">
 							<div class="progress progress-danger progress-striped">
-							  <div class="bar" style="width:100%;"></div>
+                                <span class="value">100%</span>
+                                <div class="bar" style="width:100%;"></div>
 							</div>
 						</div>
 						<div class="span1">0</div>
