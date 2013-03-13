@@ -27,6 +27,33 @@ var perParcFinalHydrau;
 var perParcTargetPhoto;
 var perParcFinalPhoto;
 
+/*---------------Total MonMix Target--------------------*/
+var totalMixTarget;
+/*---------------Total MonMix Final--------------------*/
+var totalMixFinal;
+/*------------------------Id-Mix--------------------*/
+var mixTargetNuke;
+var mixFinalNuke;
+var mixTargetFlame;
+var mixFinalFlame;
+var mixTargetEol;
+var mixFinalEol;
+var mixTargetHydrau;
+var mixFinalHydrau;
+var mixTargetPhoto;
+var mixFinalPhoto;
+/*------------------------Percentage-Mix--------------------*/
+var perMixTargetNuke;
+var perMixFinalNuke;
+var perMixTargetFlame;
+var perMixFinalFlame;
+var perMixTargetEol;
+var perMixFinalEol;
+var perMixTargetHydrau;
+var perMixFinalHydrau;
+var perMixTargetPhoto;
+var perMixFinalPhoto;
+
 function calculerMonMIEL(){
 
     // Chargement
@@ -62,6 +89,63 @@ function calculerMonMIEL(){
             eol_gwh,
             nbPoints);
 };
+
+function initialiserVariablesMix(){
+    /*Données sont recues en MWh -> on les transforment en Twh */
+    mixTargetNuke = dataJSON.targetConso.nuclear        / 100000;
+    mixFinalNuke = dataJSON.finalConso.nuclear          / 100000;
+    mixTargetFlame = dataJSON.targetConso.flame         / 100000;
+    mixFinalFlame = dataJSON.finalConso.flame           / 100000;
+    mixTargetEol = dataJSON.targetConso.wind            / 100000;
+    mixFinalEol = dataJSON.finalConso.wind              / 100000;
+    mixTargetHydrau = dataJSON.targetConso.hydraulic    / 100000;
+    mixFinalHydrau = dataJSON.finalConso.hydraulic      / 100000;
+    mixTargetPhoto = dataJSON.targetConso.photovoltaic  / 100000;
+    mixFinalPhoto = dataJSON.finalConso.photovoltaic    / 100000;
+    console.log(" mixTargetNuke : "+mixTargetNuke);
+    console.log(" mixTargetFlame : "+mixTargetFlame);
+    console.log(" mixTargetEol : "+mixTargetEol);
+    console.log(" mixTargetHydrau : "+mixTargetHydrau);
+    console.log(" mixTargetPhoto : "+mixTargetPhoto);
+    console.log(" mixFinalNuke : "+mixFinalNuke);
+    console.log(" mixFinalFlame : "+mixFinalFlame);
+    console.log(" mixFinalEol : "+mixFinalEol);
+    console.log(" mixFinalHydrau : "+mixFinalHydrau);
+    console.log(" mixFinalPhoto : "+mixFinalPhoto);
+    totalMixTarget =
+        mixTargetNuke +
+        mixTargetFlame +
+        mixTargetEol +
+        mixTargetHydrau +
+        mixTargetPhoto;
+    totalMixFinal =
+        mixFinalNuke +
+        mixFinalFlame +
+        mixFinalEol +
+        mixFinalHydrau +
+        mixFinalPhoto;
+
+    perMixTargetNuke    = (mixTargetNuke     * 100 / totalMixTarget);
+    perMixFinalNuke     = (mixFinalNuke      * 100 / totalMixFinal);
+    perMixTargetFlame   = (mixTargetFlame    * 100 / totalMixTarget);
+    perMixFinalFlame    = (mixFinalFlame     * 100 / totalMixFinal);
+    perMixTargetEol     = (mixTargetEol      * 100 / totalMixTarget);
+    perMixFinalEol      = (mixFinalEol       * 100 / totalMixFinal);
+    perMixTargetHydrau  = (mixTargetHydrau   * 100 / totalMixTarget);
+    perMixFinalHydrau   = (mixFinalHydrau    * 100 / totalMixFinal);
+    perMixTargetPhoto   = (mixTargetPhoto    * 100 / totalMixTarget);
+    perMixFinalPhoto    = (mixFinalPhoto     * 100 / totalMixFinal);
+    console.log(" perMixTargetNuke : "+perMixTargetNuke);
+    console.log(" perMixTargetFlame : "+perMixTargetFlame);
+    console.log(" perMixTargetEol : "+perMixTargetEol);
+    console.log(" perMixTargetHydrau : "+perMixTargetHydrau);
+    console.log(" perMixTargetPhoto : "+perMixTargetPhoto);
+    console.log(" perMixFinalNuke : "+perMixFinalNuke);
+    console.log(" perMixFinalFlame : "+perMixFinalFlame);
+    console.log(" perMixFinalEol : "+perMixFinalEol);
+    console.log(" perMixFinalHydrau : "+perMixFinalHydrau);
+    console.log(" perMixFinalPhoto : "+perMixFinalPhoto);
+}
 
 function initialiserVariablesParc(){
     //Calcul du total du parc final
@@ -235,16 +319,17 @@ function majChiffresParcCalcule(){
 
 function postActionsJSON(){
 
+    /*Parc*/
     initialiserVariablesParc();
-
     majBarresParcCalcule();
-
     majPourcentageDansBarres();
-
     majChiffresParcCalcule();
 
     document.getElementById("parc").style.display = "";
 	document.getElementById("calcul").style.display = "";
-	
+
+    /*Mix*/
+    initialiserVariablesMix();
+
     console.log(dataJSON);
 }

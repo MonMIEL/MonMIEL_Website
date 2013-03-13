@@ -140,8 +140,6 @@
 
         <!-- Scenario section -->
         <div id="scenario">
-            <img class="separateur" src="img/separateur.jpg" alt="separateur" />	
-
             <!--Titre-->
             <h1 id="titleScenario">
 				Etape 1 - Scénario
