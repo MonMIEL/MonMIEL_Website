@@ -78,8 +78,8 @@
 					<div class="row first">
 						<div class="span2">Type parc</div>
 						<div class="span6">Puissance du parc en GW</div>
-						<div class="span1">Parc actuel</div>
 						<div class="span1">Parc ciblé</div>
+						<div class="span1">Parc calculé</div>
 						<div class="span2 evol">Evolution de la puissance</div>
 					</div>
 					<div class="row">
@@ -92,9 +92,9 @@
 							  <div id="barParcFinalNuke" class="bar" style="width: 65%;"></div>
 							</div>
 						</div>
-						<div class="span1">50</div>
-						<div class="span1">65</div>
-						<div class="span1">+15</div>
+						<div id="idParcTargetNuke" class="span1"></div>
+						<div id="idParcFinalNuke" class="span1"></div>
+						<div id="idDiffParcNuke" class="span1"></div>
 					</div>
 					<div class="row">
 						<div class="span2">Photovoltaïque</div>
@@ -106,9 +106,9 @@
 							  <div id="barParcFinalPhoto" class="bar" style="width: 65%;"></div>
 							</div>
 						</div>
-						<div class="span1">50</div>
-						<div class="span1">65</div>
-						<div class="span1">+15</div>
+                        <div id="idParcTargetPhoto" class="span1"></div>
+                        <div id="idParcFinalPhoto" class="span1"></div>
+                        <div id="idDiffParcPhoto" class="span1"></div>
 					</div>
 					<div class="row">
 						<div class="span2">Eolien</div>
@@ -120,9 +120,9 @@
 							  <div id="barParcFinalEol" class="bar" style="width: 20%;"></div>
 							</div>
 						</div>
-						<div class="span1">80</div>
-						<div class="span1">20</div>
-						<div class="span1">-60</div>
+                        <div id="idParcTargetEol" class="span1"></div>
+                        <div id="idParcFinalEol" class="span1"></div>
+                        <div id="idDiffParcEol" class="span1"></div>
 					</div>
 					<div class="row">
 						<div class="span2">Hydraulique</div>
@@ -134,9 +134,9 @@
 							  <div id="barParcFinalHydrau" class="bar" style="width: 70%;"></div>
 							</div>
 						</div>
-						<div class="span1">70</div>
-						<div class="span1">70</div>
-						<div class="span1">0</div>
+                        <div id="idParcTargetHydrau" class="span1"></div>
+                        <div id="idParcFinalHydrau" class="span1"></div>
+                        <div id="idDiffParcHydrau" class="span1"></div>
 					</div>
 					<div class="row">
 						<div class="span2">Centrales à flammes</div>
@@ -148,9 +148,9 @@
 							  <div id="barParcFinalFlame" class="bar" style="width: 55%;"></div>
 							</div>
 						</div>
-						<div class="span1">35</div>
-						<div class="span1">55</div>
-						<div class="span1">+20</div>
+                        <div id="idParcTargetFlame" class="span1"></div>
+                        <div id="idParcFinalFlame" class="span1"></div>
+                        <div id="idDiffParcFlame" class="span1"></div>
 					</div>
 					<div class="row autre">
 						<div class="span2">STEP</div>
@@ -178,13 +178,13 @@
 						<div class="span2">Légende</div>
 						<div class="span1"></div>
 						<div class="span4 legende-verte">
-							2011
+                            <?php echo $_GET["anneeRef"] ?>
 							<div class="progress progress-success progress-striped active">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
 						</div>
 						<div class="span4 legende-jaune">
-							2050
+                            <?php echo $_GET["anneeCible"] ?>
 							<div class="progress progress-warning progress-striped active">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
