@@ -28,6 +28,8 @@
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
+	<script type="text/javascript" src="js/jquery.1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qtip-1.0.0.min.js"></script>
 
     <!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">
