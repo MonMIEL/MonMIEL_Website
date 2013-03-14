@@ -73,11 +73,11 @@
 			<div id="loadCalculMonMIEL"></div>
 
 			<div id="parc" style="display:none">
-				<h1>Parc calculé</h1>
+				<h1>Résultat : Parc calculé</h1>
 				<div class="bloc">
 					<div class="row first">
 						<div class="span2">Type parc</div>
-						<div class="span6">Puissance du parc en MW</div>
+						<div class="span6">Répartition de la puissance du parc en MW</div>
 						<div class="span1">Parc ciblé (MW)</div>
 						<div class="span1">Parc calculé (MW)</div>
 						<div class="span2 evol">Evolution de la puissance (MW)</div>
@@ -198,13 +198,13 @@
 						<div class="span2">Légende</div>
 						<div class="span1"></div>
 						<div class="span4 legende-verte">
-                            <?php echo $_GET["anneeRef"] ?>
+                            Puissance énergétique du parc ciblé
 							<div class="progress progress-success progress-striped active">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
 						</div>
 						<div class="span4 legende-jaune">
-                            <?php echo $_GET["anneeCible"] ?>
+                            Puissance énergétique du parc calculé
 							<div class="progress progress-warning progress-striped active">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
@@ -219,9 +219,8 @@
 
 
                 <div id="consommation">
-                    <h1>Consommation</h1>
+                    <h1>Résultat : Consommation</h1>
                     <div id="chart_conso" class="chart"></div>
-                    <a id="buttonExportChartConso" onclick="exporterChartConso()">Exporter Chart Conso</a>
                 </div>
 
                 <div class="row first">
