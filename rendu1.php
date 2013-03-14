@@ -72,7 +72,7 @@
 
 			<div id="loadCalculMonMIEL"></div>
 
-			<div id="parc" style="display:none">
+			<div id="parc">
 
 				<h1>Résultat - Parc calculé</h1>
 
