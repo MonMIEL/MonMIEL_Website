@@ -104,6 +104,11 @@ section #camembert {
 	font-weight: bold;
 }
 
+.row.first .span1,
+.row.first .evol {
+	margin-top: 0px;
+}
+
 
 #rendue2 .row .span6 {
     padding: 0;
@@ -373,7 +378,8 @@ footer {
 	margin: 0 auto;
 	width: 960px;
 	height: 160px;
-	background: url("../img/footer4.PNG") ;
+
+	background: url("../img/footer5.png") ;
     /*repeat-x #FAFAFA;*/
 	color: #0f0f0f;
 	padding: 10px 0 10px 0;
