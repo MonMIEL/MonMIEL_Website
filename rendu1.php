@@ -25,8 +25,6 @@
         <script src="js/oXHR.js"></script>
 		<script src="js/spin.js"></script>
         <script>
-            var anneeRef;
-            var anneeCible;
             var nuc_gwh;
             var pho_gwh;
             var eol_gwh;
@@ -38,8 +36,6 @@
                 pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
                 eol_gwh = <?php echo $_GET["eol_gwh"] ?>;
                 nbPoints = <?php echo $_GET["nbPoints"] ?>;
-                console.log("anneeRef : "+anneeRef);
-                console.log("anneeCible : "+anneeCible);
                 console.log("nuc_gwh : "+nuc_gwh);
                 console.log("pho_gwh : "+pho_gwh);
                 console.log("eol_gwh : "+eol_gwh);
