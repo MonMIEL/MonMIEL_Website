@@ -73,7 +73,9 @@
 			<div id="loadCalculMonMIEL"></div>
 
 			<div id="parc" style="display:none">
-				<h1>Résultat : Parc calculé</h1>
+
+				<h1>Résultat - Parc calculé</h1>
+
 				<div class="bloc">
 					<div class="row first">
 						<div class="span2">Type parc</div>
@@ -199,13 +201,13 @@
 						<div class="span1"></div>
 						<div class="span4 legende-verte">
                             Puissance énergétique du parc ciblé
-							<div class="progress progress-success progress-striped active">
+							<div id="idLegendeRef" class="progress progress-success progress-striped active">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
 						</div>
 						<div class="span4 legende-jaune">
                             Puissance énergétique du parc calculé
-							<div class="progress progress-warning progress-striped active">
+							<div id="idLegendeCible" class="progress progress-warning progress-striped active">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
 						</div>

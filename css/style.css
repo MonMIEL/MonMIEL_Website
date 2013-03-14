@@ -68,6 +68,7 @@ section #erreur{
 }
 section #camembert {
     margin-top:200px;
+    margin-bottom: 200px;
     /*border-radius*/
     -webkit-border-radius:10px;
     -moz-border-radius:10px;
@@ -415,7 +416,15 @@ footer {
 #h1-contact {
 	margin-left: 220px;
 }
+#etatScenario {
 
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    border: 1px solid #94A0AD;
+    background-color: rgba(255,255,255,0.5);
+    padding: 5px;
+}
 #monmix-right {
 	float: right;
 }
