@@ -307,7 +307,7 @@
         </div>
         </form>
 
-        <div id="simuler">
+        <div id="simuler" style="display:none">
 			<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<div class="bouton">
 				<a onclick="gorendu()" href="#"><span class="but-icon"></span>Simuler</a>
