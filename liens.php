@@ -34,7 +34,7 @@
 			</div>
 			<div class="row first" style="font-weight: normal">
 			  <div class ="span6 gauche">MIAGE : </div>
-			  <div class ="span6 droite"><a href="http://ufrima.imag.fr/spip.php?rubrique12"><img src="img/miage.png" style="height: 45px;"/></a></div></br></br>
+			  <div class ="span6 droite"><a href="http://ufrima.imag.fr/spip.php?rubrique12"><img src="img/Image.png" style="height: 45px;"/></a></div></br></br>
 			</div>
 		</div>
         <h1>Autre simulateur</h1>
