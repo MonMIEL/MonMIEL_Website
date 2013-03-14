@@ -159,7 +159,7 @@
                         <ul class="nav">
                             <li class="active"><a href="#tab1" data-toggle="tab" onclick="changementOnglet('RTE')">RTE</a></li>
                             <li class=""><a href="#tab2" data-toggle="tab" onclick="changementOnglet('Personnel')">Personnel</a></li>
-
+                            <li class=""><a href="#tab3" data-toggle="tab" onclick="changementOnglet('UFE')">UFE</a></li>
                         </ul>
                     </div>
 

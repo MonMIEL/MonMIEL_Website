@@ -80,10 +80,15 @@ function changementOnglet(ongletClick){
         document.getElementById('bouton_scenario').style.display="";
         ongletActif=ongletClick;
         passerChartPersonnel();
-    }
-    if(ongletClick=='RTE'){
+    }    else if(ongletClick=='RTE'){
         ongletActif=ongletClick;
         passerChartRte();
+        document.getElementById('tab_chart_Scenario.qu').innerHTML="";
+        document.getElementById('tab_chart_Scenario.id').innerHTML="";
+        document.getElementById('bouton_scenario').style.display="none";
+    }else if (ongletClick=='UFE'){
+        ongletActif=ongletClick;
+        passerChartUfe();
         document.getElementById('tab_chart_Scenario.qu').innerHTML="";
         document.getElementById('tab_chart_Scenario.id').innerHTML="";
         document.getElementById('bouton_scenario').style.display="none";
@@ -162,6 +167,163 @@ function testerTwh() {
 var passe = false;
 var chart_cam;
 
+function passerChartUfe(){
+    anneeCible="";
+    consommation2050="";
+    document.getElementById('etatScenario').style.display="none";
+    chart_Scenario = new Highcharts.Chart({
+        chart: {
+            renderTo: 'chart_Scenario',
+            width: 700,
+            type: 'area',
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            style: {
+                fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
+                fontSize: '50px'
+            },
+            animation: true
+        },
+        credits: {
+            enabled: false
+        },
+        /*labels: {
+         items: [{
+         html: 'helloTest',
+         style:{
+         left: '100px',
+         top: '100px'
+         }
+         }],
+         style: null
+         },*/
+        title: {
+            text: 'Consommation intérieure brute annuelle',
+            style: {
+                color: '#3E576F',
+                fontSize: '16px'
+            }
+        },
+        colors:['#2d6fb2'],
+        subtitle: {
+            text: 'Veuillez sélectionner un des profils/points du schéma',
+            style: {
+                color: '#3E576F'
+            }
+        },
+        xAxis: {
+            title: {
+                text: 'Année',
+                style: {
+                    color: '#3E576F',
+                    fontWeight: 'bold',
+                    align: 'right'
+                }
+            }
+            //categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Quantité (TWh)',
+                style: {
+                    color: '#3E576F',
+                    fontWeight: 'bold'
+                }
+            },
+            min:450,
+            max:640
+
+        },
+        events: {
+            redraw: function() {
+                alert ('The chart was just redrawn');
+            }
+        },
+        series: [{
+            visible: true,
+            name: 'Croissance PIB 2.5%',
+            data: [{
+                name: '2011', //Change au moment du choix de l'année de Référence
+                color: '#00FF00',
+                'id': 'point1',
+                x: 2011, //Change au moment du choix de l'année de Référence
+                y: 485,
+                events:{
+                    click:  null,
+                    mouseOver: null
+                }
+            }, {
+                name: '2030',
+                color: '#FF00FF',
+                'id': 'point2',
+                x: 2030,
+                y: 625,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }]
+        },{
+            visible: true,
+            name: 'Croissance PIB 1.5%',
+            data: [{
+                name: '2011', //Change au moment du choix de l'année de Référence
+                color: '#00FF00',
+                'id': 'point1',
+                x: 2011, //Change au moment du choix de l'année de Référence
+                y: 485,
+                events:{
+                    click:  null,
+                    mouseOver: null
+                }
+            }, {
+                name: '2030',
+                color: '#FF00FF',
+                'id': 'point2',
+                x: 2030,
+                y: 570,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }]
+        },{
+            visible: true,
+            name: 'Croissance PIB 1%',
+            data: [{
+                name: '2011', //Change au moment du choix de l'année de Référence
+                color: '#00FF00',
+                'id': 'point1',
+                x: 2011, //Change au moment du choix de l'année de Référence
+                y: 485,
+                events:{
+                    click: null,
+                    mouseOver: null
+                }
+            }, {
+                name: '2030',
+                color: '#FF00FF',
+                'id': 'point2',
+                x: 2030,
+                y: 550,
+                events : {
+                    click:  function(event) {
+                        affecterConsommation(this.x,this.y)}
+                }
+            }]
+        }],
+        plotOptions: {
+            series: {
+                cursor: 'pointer',
+                point: {
+                    events: {
+                        //mouseOver: chartScenarioHandlerOver,
+                        // click: chartScenarioHandlerClick
+                    }
+                }
+            }
+        }
+    });
+}
 function passerChartPersonnel(){
 
     chart_Scenario = new Highcharts.Chart({
@@ -350,8 +512,7 @@ function passerChartRte(){
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
                 events:{
-                    click:  function(event) {
-                        affecterConsommation(this.x,this.y)},
+                    click: null,
                     mouseOver: null
                 }
             }, {
@@ -405,8 +566,7 @@ function passerChartRte(){
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
                 events:{
-                    click:  function(event) {
-                        affecterConsommation(this.x,this.y)},
+                    click: null,
                     mouseOver: null
                 }
             }, {
@@ -460,8 +620,7 @@ function passerChartRte(){
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
                 events:{
-                    click:  function(event) {
-                        affecterConsommation(this.x,this.y)},
+                    click:  null,
                     mouseOver: null
                 }
             }, {
@@ -515,8 +674,7 @@ function passerChartRte(){
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485.0,
                 events:{
-                    click:  function(event) {
-                        affecterConsommation(this.x,this.y)},
+                    click:  null,
                     mouseOver: null
                 }
             }, {
