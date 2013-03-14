@@ -99,7 +99,8 @@ function calculerMonMIEL(){
             nuc_gwh,
             pho_gwh,
             eol_gwh,
-            nbPoints);
+            nbPoints,
+            consommation2050);
 };
 
 function initialiserVariablesMix(){
@@ -411,9 +412,9 @@ function majChiffresParcCalcule(){
 
 
 function majLegende(){
-	
-	$("#idLegendeRef .bar").append(totalParcPower.toFixed(0)+"MW");
-    $("#idLegendeCible .bar").append(totalParcTargetPower.toFixed(0)+"MW");
+    totalParcPower
+	$("#idLegendeRef .bar").append(totalParcTargetPower.toFixed(0)+"MW");
+    $("#idLegendeCible .bar").append(totalParcPower.toFixed(0)+"MW");
 
 }
 

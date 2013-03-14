@@ -131,6 +131,13 @@ function miseEnPlaceHighChart(){
             }
         },
         series: [{
+            type:'line',
+            pointInterval: 24*60 * 60 * 1000,
+            pointStart: Date.UTC(anneeCible, 0, 01),
+            name: 'Total de consommation',
+            data: dataJSON.series.total,
+            color: 'black'
+        },{
             pointInterval: 24 * 60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Centrales à flammes',
@@ -160,7 +167,7 @@ function miseEnPlaceHighChart(){
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Nucléaire',
             data: dataJSON.series.nucleaire
-         //   color: colorNuke
+            //   color: colorNuke
         }/*, {
             name: 'STEP',
             color: colorSTEP,
@@ -191,7 +198,7 @@ function miseEnPlaceHighChart(){
             text: 'Mix électrique en TWh'
         },
         tooltip: {
-            pointFormat: '<b>{point.percentage}%</b> - ',
+            pointFormat: '<b>{point.percentage}%</b>',
             percentageDecimals: 1
         },
         plotOptions: {
@@ -213,11 +220,11 @@ function miseEnPlaceHighChart(){
             type: 'pie',
             name: 'Dev #1',
             data: [
-                {name :'Centrales à flammes',   y: perMixTargetFlame,   events:{click : afficherPieChart2}},
-                {name :'Photovoltaïque',        y: perMixTargetPhoto ,  events:{click : afficherPieChart2}},
-                {name :'Eolien',                y: perMixTargetEol,     events:{click : afficherPieChart2}},
-                {name :'Hydraulique',           y: perMixTargetHydrau,  events:{click : afficherPieChart2}},
-                {name :'Nucléaire',             y: perMixTargetNuke,    events:{click : afficherPieChart2}}
+                {name :'Centrales à flammes',   y: perMixTargetFlame,   events:{click : afficherPieChart2},visible:(perMixTargetFlame.toFixed(1)!=0.0)},
+                {name :'Photovoltaïque',        y: perMixTargetPhoto ,  events:{click : afficherPieChart2},visible:(perMixTargetPhoto.toFixed(1)!=0.0)},
+                {name :'Eolien',                y: perMixTargetEol,     events:{click : afficherPieChart2},visible:(perMixTargetEol.toFixed(1)!=0.0)},
+                {name :'Hydraulique',           y: perMixTargetHydrau,  events:{click : afficherPieChart2},visible:(perMixTargetHydrau.toFixed(1)!=0.0)},
+                {name :'Nucléaire',             y: perMixTargetNuke,    events:{click : afficherPieChart2,visible:(perMixTargetNuke.toFixed(1)!=0.0)}}
 /*,
                 {name :'STEP', y: 0, events:{
                     select : function(){chart2.series[0].data[this.x].select(true); },
@@ -252,7 +259,7 @@ function miseEnPlaceHighChart(){
             enabled : false
         },
         tooltip: {
-            pointFormat: ' <b>{point.percentage}% ({point.z}%)</b>',
+            pointFormat: '<b>{point.percentage}% ({point.z}%)</b>',
             percentageDecimals: 1
         },
         plotOptions: {
@@ -276,11 +283,11 @@ function miseEnPlaceHighChart(){
             type: 'pie',
             name: 'calculé',
             data: [
-                {name : 'Centrales à flammes',  y: perMixFinalFlame,    z:diffPerMixFlame,  events:{click : afficherPieChart1}},
-                {name : 'Photovoltaïque',       y: perMixFinalPhoto,    z:diffPerMixPhoto,  events:{click : afficherPieChart1}},
-                {name : 'Eolien',               y: perMixFinalEol,      z:diffPerMixEol,    events:{click : afficherPieChart1}},
-                {name : 'Hydraulique',          y: perMixFinalHydrau,   z:diffPerMixHydrau, events:{click : afficherPieChart1}},
-                {name : 'Nucléaire',            y: perMixFinalNuke,     z:diffPerMixNuke,   events:{click : afficherPieChart1}}
+                {name : 'Centrales à flammes',  y: perMixFinalFlame,    z:diffPerMixFlame,  events:{click : afficherPieChart1},visible:perMixFinalFlame.toFixed(1)!=0.0},
+                {name : 'Photovoltaïque',       y: perMixFinalPhoto,    z:diffPerMixPhoto,  events:{click : afficherPieChart1},visible:perMixFinalPhoto.toFixed(1)!=0.0},
+                {name : 'Eolien',               y: perMixFinalEol,      z:diffPerMixEol,    events:{click : afficherPieChart1},visible:perMixFinalEol.toFixed(1)!=0.0},
+                {name : 'Hydraulique',          y: perMixFinalHydrau,   z:diffPerMixHydrau, events:{click : afficherPieChart1},visible:perMixFinalHydrau.toFixed(1)!=0.0},
+                {name : 'Nucléaire',            y: perMixFinalNuke,     z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalNuke.toFixed(1)!=0.0}
                /* {name : 'STEP', y: 0,z:'0', events:{
                     select : function(){chart1.series[0].data[this.x].select(true); },
                     unselect : function(){chart2.series[0].data[this.x].select(false);}

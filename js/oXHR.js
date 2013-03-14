@@ -8,7 +8,7 @@ var lien;
  * Création du lien vers le serveur
  * Appel à la fonction de l'appel au serveur
  * */
-function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints){
+function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints, consommation2050){
         console.log("---------------------------------------------");
         console.log("Construction du lien avec des données :")
     var sVarNucTwh = encodeURIComponent(eNucTwh);
@@ -19,12 +19,14 @@ function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints){
         console.log("eEolTwh : "+sVarEolTwh);
     var sVarNBPoints = encodeURIComponent(nbPoints);
 
-    var url = "http://localhost:8888/app_dev.php/api/v1/700.json?"+
+    var url = "http://localhost:8888/app_dev.php/api/v1/"+consommation2050+".json?"+
      "nuke="+sVarNucTwh +
      "&photo="+sVarPhotoTwh +
      "&eol="+sVarEolTwh +
-     "&point="+sVarNBPoints;
-        console.log("URL : " + url);
+     "&point="+sVarNBPoints +
+     "&hydro=50";
+    alert(url);
+    console.log("URL : " + url);
         console.log("---------------------------------------------");
 
     $.ajax({
@@ -33,13 +35,11 @@ function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints){
         success:function (data){
             dataJSON=data;
             console.log("DATA-reçu");
+            document.getElementById("loadCalculMonMIEL").style.display = "none";
             postActionsJSON();
         },
         error:function (xhr, status, error){
             window.location = "ihm1.php?error=erreurChargementRendu1";
-        },
-        complete:function(){
-            document.getElementById("loadCalculMonMIEL").style.display = "none";
         },
         dataType:'json'
     });

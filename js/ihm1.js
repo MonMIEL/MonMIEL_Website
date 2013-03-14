@@ -836,7 +836,7 @@ function validerScenario(){
 }
 
 function updateCamembert(){
-    var nuc = Math.round(parseInt(document.getElementById("nuc_ txtfield").value));
+    var nuc = Math.round(parseInt(document.getElementById("nuc_txtfield").value));
     var pho =  Math.round(parseInt(document.getElementById("pho_txtfield").value));
     var hyd = Math.round( parseInt(document.getElementById("hyd_txtfield").value));
     var cen =  Math.round(parseInt(document.getElementById("cen_txtfield").value));
