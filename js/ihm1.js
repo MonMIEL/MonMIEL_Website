@@ -305,13 +305,13 @@ function passerChartRte(){
                 fontSize: '16px'
             }
         },
-        colors:['#2d6fb2'],
-        /*subtitle: {
-         text: 'Indiquer la quantité de la consommation annuelle en 2050',
-         style: {
-         color: '#3E576F'
-         }
-         },*/
+		colors:['#2d6fb2'],
+        subtitle: {
+            text: 'Veuillez sélectionner un des profils/points du schéma',
+            style: {
+                color: '#3E576F'
+            }
+        },
         xAxis: {
             title: {
                 text: 'Année',
