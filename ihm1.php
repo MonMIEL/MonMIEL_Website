@@ -30,6 +30,9 @@
     <script src="js/dhtmlgoodies_slider.js"></script>
 	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+	<script type="text/javascript" src="js/infoBulle.js"></script>
+
+
 	
     <!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">
@@ -41,8 +44,7 @@
 
         function gorendu(){
             var html = "rendu1.php?"+
-                    "consommation2050="+consommation2050+
-                    "&nuc_gwh="+ document.getElementById("nuc_gwh").value+
+                    "nuc_gwh="+ document.getElementById("nuc_gwh").value+
                     "&pho_gwh="+ document.getElementById("pho_gwh").value +
                     "&eol_gwh="+ document.getElementById("eol_gwh").value +
                     "&nbPoints=100";
@@ -50,30 +52,6 @@
         }
 	</script>
 	<!-- script d'affichage du contenu du slider -->
-	
-	<!-- script de bulles d'information -->
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$("#bulle").qtip({
-					content:'Test bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulle',
-					position: {
-						corner:{
-							target:'topRight',
-							tooltip: 'bottomLeft'
-						}
-					},
-					style: {
-						name: 'cream',
-						padding:5,
-						tip: 'bottomLeft',
-						border: {
-							radius:5
-						}
-					}
-				});
-			});
-		</script>
-	<!-- script de bulles d'information -->
 	
 </head>
 <body>
@@ -86,7 +64,7 @@
 		</div>
 
     <!-- Horizon section -->
-        <!--<div id="horizon">
+        <div id="horizon">
 
             <?php if(isset($_GET['error'])) {
             echo "<div id='erreur' class='bloc'>";
@@ -96,8 +74,7 @@
                 echo "Merci de renseigner les informations avant de simuler";
             echo "</div>";
             }?>
-
-            <h1 id="titleHorizon">Etape 1 - Horizon</h1>
+        </div>
             <!--<ul class="pager">-->
             <!--<div class="bloc">
                 <div class="row">
@@ -155,7 +132,7 @@
 				Etape 1 - Scénario
 				
 			<!-- info bulle -->
-				<img src="img/bulle.png" id="bulle" style="height:25px; width:25px;" />
+				<img src="img/help.png" class="bulle" tooltip="Bulle" />
 			<!-- info bulle -->
 			
 			</h1>
@@ -167,7 +144,7 @@
                         <ul class="nav">
                             <li class="active"><a href="#tab1" data-toggle="tab" onclick="changementOnglet('RTE')">RTE</a></li>
                             <li class=""><a href="#tab2" data-toggle="tab" onclick="changementOnglet('Personnel')">Personnel</a></li>
-
+                            <li class=""><a href="#tab3" data-toggle="tab" onclick="changementOnglet('UFE')">UFE</a></li>
                         </ul>
                     </div>
 

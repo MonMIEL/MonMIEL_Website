@@ -42,6 +42,9 @@ function exporterChartConso() {
     });
 }
 
+var afficherPieChart1 = function(){ chart1.series[0].data[this.x].select(true);}; //utilisé dans Chart2
+var afficherPieChart2 = function(){ chart2.series[0].data[this.x].select(true);}; //utilisé dans Chart1
+
 function miseEnPlaceHighChart(){
 
 	Highcharts.setOptions({
@@ -185,7 +188,7 @@ function miseEnPlaceHighChart(){
             enabled : false
         },
         title: {
-            text: 'MIEL ciblé'
+            text: 'Mix électrique en TWh'
         },
         tooltip: {
             pointFormat: '<b>{point.percentage}%</b> - ',
@@ -204,35 +207,25 @@ function miseEnPlaceHighChart(){
                 allowPointSelect: true,
                 cursor: 'pointer',
                 showInLegend: true
-
             }
         },
         series: [{
             type: 'pie',
             name: 'Dev #1',
             data: [
-                {name :'Centrales à flammes', y: perMixTargetFlame, events:{
-                    click : function(){chart2.series[0].data[this.x].select(true); }
-                }},
-
-                {name :'Photovoltaïque',y: perMixTargetPhoto, events:{
-                    click : function(){chart2.series[0].data[this.x].select(true); }
-                }},
-                {name :'Eolien',y: perMixTargetEol, events:{
-                    click : function(){chart2.series[0].data[this.x].select(true); }
-                }},
-                {name :'Hydraulique',y: perMixTargetHydrau, events:{
-                    click : function(){chart2.series[0].data[this.x].select(true); }
-                }},
-                {name :'nucléaire', y: perMixTargetNuke, events:{
-                    click : function(){chart2.series[0].data[this.x].select(true); }
-                }}
+                {name :'Centrales à flammes',   y: perMixTargetFlame,   events:{click : afficherPieChart2}},
+                {name :'Photovoltaïque',        y: perMixTargetPhoto ,  events:{click : afficherPieChart2}},
+                {name :'Eolien',                y: perMixTargetEol,     events:{click : afficherPieChart2}},
+                {name :'Hydraulique',           y: perMixTargetHydrau,  events:{click : afficherPieChart2}},
+                {name :'Nucléaire',             y: perMixTargetNuke,    events:{click : afficherPieChart2}}
 /*,
                 {name :'STEP', y: 0, events:{
-                    click : function(){chart2.series[0].data[this.x].select(true); }
+                    select : function(){chart2.series[0].data[this.x].select(true); },
+                    unselect : function(){chart2.series[0].data[this.x].select(false);}
                 }},
                 {name :'IMPORT', y: 0, events:{
-                    click : function(){chart2.series[0].data[this.x].select(true); }
+                    select : function(){chart2.series[0].data[this.x].select(true); },
+                    unselect : function(){chart2.series[0].data[this.x].select(false);}
                 }}*/
             ]
         }]
@@ -253,7 +246,7 @@ function miseEnPlaceHighChart(){
             backgroundColor: 'rgba(255,255,255,0.5)'
         },
         title: {
-            text: 'MIEL calculé'
+            text: 'Mix électrique en TWh'
         },
         credits : {
             enabled : false
@@ -283,27 +276,18 @@ function miseEnPlaceHighChart(){
             type: 'pie',
             name: 'calculé',
             data: [
-                {name : 'Centrales à flammes',y: perMixFinalFlame,z:diffPerMixFlame, events:{
-                    click : function(){chart1.series[0].data[this.x].select(true); }
-                }},
-                {name : 'Photovoltaïque',y: perMixFinalPhoto,z:diffPerMixPhoto, events:{
-                    click : function(){chart1.series[0].data[this.x].select(true); }
-                }},
-                {name : 'Eolien',y: perMixFinalEol,z:diffPerMixEol, events:{
-                    click : function(){chart1.series[0].data[this.x].select(true); }
-                }},
-                {name : 'Hydraulique', y: perMixFinalHydrau,z:diffPerMixHydrau, events:{
-                    click : function(){chart1.series[0].data[this.x].select(true); }
-                }},
-
-                {name : 'nucléaire',y:  perMixFinalNuke, z: diffPerMixNuke, events:{
-                    click : function(){chart1.series[0].data[this.x].select(true); }
-                }}/*,
-                {name : 'STEP', y: 0,z:'0', events:{
-                    click : function(){chart1.series[0].data[this.x].select(true); }
+                {name : 'Centrales à flammes',  y: perMixFinalFlame,    z:diffPerMixFlame,  events:{click : afficherPieChart1}},
+                {name : 'Photovoltaïque',       y: perMixFinalPhoto,    z:diffPerMixPhoto,  events:{click : afficherPieChart1}},
+                {name : 'Eolien',               y: perMixFinalEol,      z:diffPerMixEol,    events:{click : afficherPieChart1}},
+                {name : 'Hydraulique',          y: perMixFinalHydrau,   z:diffPerMixHydrau, events:{click : afficherPieChart1}},
+                {name : 'Nucléaire',            y: perMixFinalNuke,     z:diffPerMixNuke,   events:{click : afficherPieChart1}}
+               /* {name : 'STEP', y: 0,z:'0', events:{
+                    select : function(){chart1.series[0].data[this.x].select(true); },
+                    unselect : function(){chart2.series[0].data[this.x].select(false);}
                 }},
                 {name : 'IMPORT', y: 0,z:'0', events:{
-                    click : function(){chart1.series[0].data[this.x].select(true); }
+                    select : function(){chart1.series[0].data[this.x].select(true); },
+                    unselect : function(){chart2.series[0].data[this.x].select(false);}
                 }}*/
             ]
         }]
