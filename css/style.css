@@ -371,11 +371,13 @@ span.but-icon{
 footer {
 	margin: 0 auto;
 	width: 960px;
-	height: 150px;
-	background: url("../img/footer.png") repeat-x #3D3D3D;
-	color: #FAFAFA;
+	height: 160px;
+	background: url("../img/footer4.PNG") ;
+    /*repeat-x #FAFAFA;*/
+	color: #0f0f0f;
 	padding: 10px 0 10px 0;
 }
+
 
 #breadcrumb{
 	width:500px;
