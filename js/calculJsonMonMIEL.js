@@ -152,32 +152,32 @@ function initialiserVariablesMix(){
     perMixFinalPhoto    = (mixFinalPhoto     * 100 / totalMixFinal);
 
     var op="";
-        diffPerMixNuke = perMixFinalNuke.toFixed(1) - perMixTargetNuke.toFixed(1);
+        diffPerMixNuke = perMixFinalNuke - perMixTargetNuke;
         op=""; if(diffPerMixNuke>0) op="+";
-    diffPerMixNuke=op+diffPerMixNuke;
+    diffPerMixNuke=op+diffPerMixNuke.toFixed(1);
 
         diffPerMixFlame = perMixFinalFlame.toFixed(1) - perMixTargetFlame.toFixed(1);
         op=""; if(diffPerMixFlame>0) op="+";
-    diffPerMixFlame=op+diffPerMixFlame;
+    diffPerMixFlame=op+diffPerMixFlame.toFixed(1);
 
         diffPerMixEol = perMixFinalEol.toFixed(1) - perMixTargetEol.toFixed(1);
         op=""; if(diffPerMixEol>0) op="+";
-    diffPerMixEol=op+diffPerMixEol;
+    diffPerMixEol=op+diffPerMixEol.toFixed(1);
 
         diffPerMixHydrau = perMixFinalHydrau.toFixed(1) - perMixTargetHydrau.toFixed(1);
         op=""; if(diffPerMixHydrau>0) op="+";
-    diffPerMixHydrau=op+diffPerMixHydrau;
+    diffPerMixHydrau=op+diffPerMixHydrau.toFixed(1);
 
         diffPerMixPhoto = perMixFinalPhoto.toFixed(1) - perMixTargetPhoto.toFixed(1);
         op=""; if(diffPerMixPhoto>0) op="+";
-    diffPerMixPhoto=op+diffPerMixPhoto;
+    diffPerMixPhoto=op+diffPerMixPhoto.toFixed(1);
 
-    console.log(" perMixTargetNuke : "+perMixTargetNuke);
+    console.log(" perMixTargetNuke : "+perMixTargetNuke.toFixed(1));
     console.log(" perMixTargetFlame : "+perMixTargetFlame);
     console.log(" perMixTargetEol : "+perMixTargetEol);
     console.log(" perMixTargetHydrau : "+perMixTargetHydrau);
     console.log(" perMixTargetPhoto : "+perMixTargetPhoto);
-    console.log(" perMixFinalNuke : "+perMixFinalNuke);
+    console.log(" perMixFinalNuke : "+perMixFinalNuke.toFixed(1));
     console.log(" perMixFinalFlame : "+perMixFinalFlame);
     console.log(" perMixFinalEol : "+perMixFinalEol);
     console.log(" perMixFinalHydrau : "+perMixFinalHydrau);

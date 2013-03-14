@@ -225,11 +225,11 @@
 
                 <div class="row first">
                     <div id="mixdemande" class="span6">
-                        <h1>Mix demandé</h1>
+                        <h1>MIEL ciblé</h1>
                         <div id="chart_1" class="chart"></div>
                     </div>
                     <div id="mixcalcule" class="span6">
-                        <h1>Mix Calculé</h1>
+                        <h1>MIEL Calculé</h1>
                         <div id="chart_2" class="chart"></div>
                     </div>
                 </div>
