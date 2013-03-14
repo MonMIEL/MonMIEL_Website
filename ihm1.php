@@ -28,7 +28,9 @@
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
-
+	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+	
     <!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">
 		function updateTextInput(id) {
@@ -49,28 +51,35 @@
 	</script>
 	<!-- script d'affichage du contenu du slider -->
 	
+	<!-- script de bulles d'information -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#bulle").qtip({
+					content:'Test bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulle',
+					position: {
+						corner:{
+							target:'topRight',
+							tooltip: 'bottomLeft'
+						}
+					},
+					style: {
+						name: 'cream',
+						padding:5,
+						tip: 'bottomLeft',
+						border: {
+							radius:5
+						}
+					}
+				});
+			});
+		</script>
+	<!-- script de bulles d'information -->
+	
 </head>
 <body>
     <?php include("header.php"); ?>
     <?php include("menu.php"); ?>
-    <!--<form class="form-inline">
-        <input type="text" class="input-small" placeholder="Email">
-        <input type="password" class="input-small" placeholder="Password">
-        <label class="checkbox">
-            <input type="checkbox"> Remember me
-        </label>
-        <button type="submit" class="btn">Sign in</button>
-    </form>-->
 
-
-    <!-- Chart type switchers -->
-    <!-- <div class="actions">
-        <button class="switcher" id="column">column</button>
-        <button class="switcher" id="area">area</button>
-        <button class="switcher" id="line">line</button>
-        <button class="switcher" id="spline">Spine</button>
-        <button class="switcher" id="areaspline">areaspline</button>
-    </div> -->
     <section>
 		<div class="ariane">
 			<img src="img/ariane1.png"/>
@@ -144,12 +153,11 @@
             <!--Titre-->
             <h1 id="titleScenario">
 				Etape 1 - Scénario
+				
 			<!-- info bulle -->
-			<a href="#" class="bulle">
-				<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
-				<span class="bulle-content" style="font-size:14px; font-style:normal; margin-left:10px; margin-top:-45px; width:33%; height:60px; line-height:15pt;">Simulez l'évolution de la consommation depuis l'année de référence jusqu'à l'année desirée, saisir la consommation et visualiser sur le graphe son évolution.</span>
-			</a>
+				<img src="img/bulle.png" id="bulle" style="height:25px; width:25px;" />
 			<!-- info bulle -->
+			
 			</h1>
             <div class="bloc">
                 <!--NavBar-->
@@ -157,14 +165,10 @@
                     <div class="navbar-inner">
                         <a class="brand">Type de scénario</a>
                         <ul class="nav">
-                            <li class="active"><a href="#tab1" data-toggle="tab">RTE</a></li>
+                            <li class="active"><a href="#tab1" data-toggle="tab" onclick="changementOnglet('RTE')">RTE</a></li>
+                            <li class=""><a href="#tab2" data-toggle="tab" onclick="changementOnglet('Personnel')">Personnel</a></li>
+
                         </ul>
-						
-						<div class="navbar-form pull-right">
-							<input id="valeurTwh" type="text" class="span2" >
-							<span>TWh</span>
-							<a id="boutonTwh" onclick="testerTwh()" class="btn" rel="popover" data-content="La valeur doit être comprise entre 300 et 700">Tester</a>
-						</div>
                     </div>
 
                 </div>
@@ -189,7 +193,7 @@
 												<td id="tab_chart_Scenario.qu"></td>
 											</tr>
 										</table>
-										<div id="etatScenario"></div>
+										<div id="etatScenario" style="display:none"></div>
 									</div>
 								</td>
                             </tr>
@@ -210,12 +214,7 @@
 			<div id="monmix-right" style="width:48%;">
 				<h2>
 					Vos paramètres
-					<!-- info bulle -->
-					<a href="#" class="bulle">
-						<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
-						<span class="bulle-content" style="font-size:14px; text-decoration:none; font-style:normal; margin-left:-760px; margin-top:25px; width:28%; height:100px; line-height:15pt;">Il existe 2 types d'énergies :</br>1. Les énergies réglables: Nucléaire, Photovoltaïque & Eolien</br>2. Les energies non réglables : Hydraulique, Centrales à flammes, STEP & import.</span>
-					</a>
-					<!-- info bulle -->					
+					<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>			
 				</h2>
 				<div class="bloc">
 					<div class="row first">
