@@ -128,6 +128,26 @@ function miseEnPlaceHighChart(){
                     }
                 },
                 threshold: null
+            },
+            area: {
+                stacking: 'normal',
+                lineWidth: 1,
+                marker: {
+                    enabled: false,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            radius: 5
+                        }
+                    }
+                },
+                shadow: false,
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                },
+                threshold: null
             }
         },
         series: [{
@@ -135,8 +155,7 @@ function miseEnPlaceHighChart(){
             pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Total de consommation',
-            data: dataJSON.series.total,
-            color: 'black'
+            data: dataJSON.series.total
         },{
             pointInterval: 24 * 60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),

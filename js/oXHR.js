@@ -25,7 +25,6 @@ function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints, consommat
      "&eol="+sVarEolTwh +
      "&point="+sVarNBPoints +
      "&hydro=50";
-    alert(url);
     console.log("URL : " + url);
         console.log("---------------------------------------------");
 
