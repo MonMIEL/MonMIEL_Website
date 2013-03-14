@@ -73,12 +73,9 @@
 			<div id="loadCalculMonMIEL"></div>
 
 			<div id="parc" style="display:none">
-<<<<<<< HEAD
-				<h1>Parc calculé</h1>
-				
-=======
-				<h1>Résultat : Parc calculé</h1>
->>>>>>> 499d579af956a7fcd5faa0ab53fb0b2af9994e17
+
+				<h1>Résultat - Parc calculé</h1>
+
 				<div class="bloc">
 					<div class="row first">
 						<div class="span2">Type parc</div>
