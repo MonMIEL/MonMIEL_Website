@@ -12,10 +12,10 @@
 	</div>
 	<div class="span4">
 		<h4>Plan du site</h4>
-		<a href="index.php">Accueil</a></br>
-		<a href="problematique.php">Problématique</a></br>
-		<a href="ihm1.php">Simulez votre mix</a></br>
-		<a href="liens.php">Liens utiles</a></br>
-		<a href="contact.php">Contact</a></br>
+		<a href="index.php"><b>Accueil</b></a></br>
+		<a href="problematique.php"><b>Problématique</b></a></br>
+		<a href="ihm1.php"><b>Simulez votre mix</b></a></br>
+		<a href="liens.php"><b>Liens utiles</b></a></br>
+		<a href="contact.php"><b>Contact</b></a></br>
 	</div>
 </footer>
