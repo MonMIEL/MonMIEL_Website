@@ -181,8 +181,11 @@ function miseEnPlaceHighChart(){
             height:350,
             backgroundColor: 'rgba(255,255,255,0.5)'
         },
+        credits : {
+            enabled : false
+        },
         title: {
-            text: 'Mix Demandé'
+            text: 'MIEL ciblé'
         },
         tooltip: {
             pointFormat: '<b>{point.percentage}%</b> - ',
@@ -250,7 +253,10 @@ function miseEnPlaceHighChart(){
             backgroundColor: 'rgba(255,255,255,0.5)'
         },
         title: {
-            text: 'Mix Calculé'
+            text: 'MIEL calculé'
+        },
+        credits : {
+            enabled : false
         },
         tooltip: {
             pointFormat: ' <b>{point.percentage}% ({point.z}%)</b>',
