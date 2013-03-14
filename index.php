@@ -66,7 +66,7 @@
                             <img src="img/liens2.jpg" alt="">
                             <div class="container">
                                 <div class="carousel-caption">
-                                    <a class="btn btn-large btn-primary" href="liens.php">Liens utils</a>
+                                    <a class="btn btn-large btn-primary" href="liens.php">Liens utiles</a>
                                 </div>
                             </div>
                         </div>
