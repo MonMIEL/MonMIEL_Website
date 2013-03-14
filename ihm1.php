@@ -30,6 +30,9 @@
     <script src="js/dhtmlgoodies_slider.js"></script>
 	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+	<script type="text/javascript" src="js/infoBulle.js"></script>
+
+
 	
     <!-- script d'affichage du contenu du slider -->
 	<script rel="text/javasript">
@@ -50,30 +53,6 @@
         }
 	</script>
 	<!-- script d'affichage du contenu du slider -->
-	
-	<!-- script de bulles d'information -->
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$("#bulle").qtip({
-					content:'Test bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulleTest bulle',
-					position: {
-						corner:{
-							target:'topRight',
-							tooltip: 'bottomLeft'
-						}
-					},
-					style: {
-						name: 'cream',
-						padding:5,
-						tip: 'bottomLeft',
-						border: {
-							radius:5
-						}
-					}
-				});
-			});
-		</script>
-	<!-- script de bulles d'information -->
 	
 </head>
 <body>
@@ -155,7 +134,7 @@
 				Etape 1 - Scénario
 				
 			<!-- info bulle -->
-				<img src="img/bulle.png" id="bulle" style="height:25px; width:25px;" />
+				<img src="img/bulle.png" class="bulle" tooltip="YowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYowYow" style="height:25px; width:25px;" />
 			<!-- info bulle -->
 			
 			</h1>

@@ -59,6 +59,9 @@
             }
 			
         </script>
+		
+		<script type="text/javascript" src="js/infoBulle.js"></script>
+		
     </head>
     <body onload="init()">
 		<?php include("header.php"); ?>
