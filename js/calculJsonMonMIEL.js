@@ -413,6 +413,14 @@ function majChiffresParcCalcule(){
 }
 
 
+function majLegende(){
+	
+	$("#idLegendeRef .bar").append(totalParcPower.toFixed(0)+"MW");
+    $("#idLegendeCible .bar").append(totalParcTargetPower.toFixed(0)+"MW");
+
+}
+
+
 function postActionsJSON(){
 
     /*Parc*/
@@ -420,6 +428,7 @@ function postActionsJSON(){
     majBarresParcCalcule();
     majPourcentageDansBarres();
     majChiffresParcCalcule();
+	majLegende();
 
     document.getElementById("parc").style.display = "";
 	document.getElementById("calcul").style.display = "";
