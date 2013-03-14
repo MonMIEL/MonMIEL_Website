@@ -94,11 +94,8 @@ function calculerMonMIEL(){
     // !Chargement
 
     // Appel au serveur qui remplit dataJSON avec la valeur retournée
-    //Ordre : anneeRef, anneeCible, consommation2050, eNucTwh, ePhotoTwh, eEolTwh
+    //Ordre : eNucTwh, ePhotoTwh, eEolTwh, nbPoints
         manipulerCalculMonMIEL(
-            anneeRef,
-            anneeCible,
-            consommation2050,
             nuc_gwh,
             pho_gwh,
             eol_gwh,

@@ -27,7 +27,6 @@
         <script>
             var anneeRef;
             var anneeCible;
-            var consommation2050;
             var nuc_gwh;
             var pho_gwh;
             var eol_gwh;
@@ -35,21 +34,16 @@
             function init(){
                 anneeRef = 2011;
                 anneeCible = 2050;
-                consommation2050 = <?php echo $_GET["consommation2050"] ?>;
                 nuc_gwh = <?php echo $_GET["nuc_gwh"] ?>;
                 pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
                 eol_gwh = <?php echo $_GET["eol_gwh"] ?>;
                 nbPoints = <?php echo $_GET["nbPoints"] ?>;
                 console.log("anneeRef : "+anneeRef);
                 console.log("anneeCible : "+anneeCible);
-                console.log("consommation2050 : "+consommation2050);
                 console.log("nuc_gwh : "+nuc_gwh);
                 console.log("pho_gwh : "+pho_gwh);
                 console.log("eol_gwh : "+eol_gwh);
-                if(typeof(anneeRef)=="undefined" ||
-                        typeof(anneeCible)=="undefined" ||
-                        typeof(consommation2050)=="undefined" ||
-                        typeof(nuc_gwh)=="undefined" ||
+                if(typeof(nuc_gwh)=="undefined" ||
                         typeof(pho_gwh)=="undefined" ||
                         typeof(eol_gwh)=="undefined"){
                     alert();

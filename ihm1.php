@@ -41,8 +41,7 @@
 
         function gorendu(){
             var html = "rendu1.php?"+
-                    "consommation2050="+consommation2050+
-                    "&nuc_gwh="+ document.getElementById("nuc_gwh").value+
+                    "nuc_gwh="+ document.getElementById("nuc_gwh").value+
                     "&pho_gwh="+ document.getElementById("pho_gwh").value +
                     "&eol_gwh="+ document.getElementById("eol_gwh").value +
                     "&nbPoints=100";
@@ -308,7 +307,7 @@
         </div>
         </form>
 
-        <div id="simuler" style="display:none">
+        <div id="simuler">
 			<img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<div class="bouton">
 				<a onclick="gorendu()" href="#"><span class="but-icon"></span>Simuler</a>
