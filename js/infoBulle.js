@@ -13,11 +13,12 @@ $(document).ready(function()
 			}
 		},
 		style: {
-			name: 'red',
-			padding:5,
+			name: 'blue',
+			textAlign:'center',
 			tip: 'bottomLeft',
 			border: {
-				radius:5
+				radius:5,
+				width:1
 			}
 		}				 
 	  });
