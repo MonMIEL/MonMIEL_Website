@@ -85,7 +85,7 @@
 		</div>
 
     <!-- Horizon section -->
-        <!--<div id="horizon">
+        <div id="horizon">
 
             <?php if(isset($_GET['error'])) {
             echo "<div id='erreur' class='bloc'>";
@@ -95,8 +95,7 @@
                 echo "Merci de renseigner les informations avant de simuler";
             echo "</div>";
             }?>
-
-            <h1 id="titleHorizon">Etape 1 - Horizon</h1>
+        </div>
             <!--<ul class="pager">-->
             <!--<div class="bloc">
                 <div class="row">

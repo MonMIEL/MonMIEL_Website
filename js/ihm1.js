@@ -734,6 +734,8 @@ function passerChartRte(){
 }
 function validerScenario(){
     document.getElementById('monmix').style.display = "block";
+    document.getElementById('simuler').style.display = "block";
+
     //mise en place du camembert
     Highcharts.setOptions({
         colors: ['#166877', '#FF530D', '#E8C57A', '#1BAA8F', '#E81C0C', '#FF9655', '#FFF263']
