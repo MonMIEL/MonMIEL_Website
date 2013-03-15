@@ -48,7 +48,7 @@ var afficherPieChart2 = function(){ chart2.series[0].data[this.x].select(true);}
 function miseEnPlaceHighChart(){
 
 	Highcharts.setOptions({
-        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263']
+        colors: ['black','#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263']
     });
 
     Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
@@ -129,9 +129,9 @@ function miseEnPlaceHighChart(){
                 },
                 threshold: null
             },
-            area: {
+            line: {
                 stacking: 'normal',
-                lineWidth: 1,
+                lineWidth: 2,
                 marker: {
                     enabled: false,
                     states: {
@@ -141,13 +141,12 @@ function miseEnPlaceHighChart(){
                         }
                     }
                 },
-                shadow: false,
+                shadow: true,
                 states: {
                     hover: {
-                        lineWidth: 1
+                        lineWidth: 2
                     }
-                },
-                threshold: null
+                }
             }
         },
         series: [{
