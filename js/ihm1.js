@@ -95,7 +95,7 @@ function passerChartUfe(){
         chart: {
             renderTo: 'chart_Scenario',
             width: 700,
-            type: 'line',
+            type: 'area',
             backgroundColor: 'rgba(255,255,255,0.5)',
             style: {
                 fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
@@ -253,7 +253,7 @@ function passerChartPersonnel(){
         chart: {
             renderTo: 'chart_Scenario',
             width: 700,
-            type: 'line',
+            type: 'area',
             backgroundColor: 'rgba(255,255,255,0.5)',
             style: {
                 fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
@@ -354,7 +354,7 @@ function passerChartRte(){
         chart: {
             renderTo: 'chart_Scenario',
             width: 700,
-            type: 'line',
+            type: 'area',
             backgroundColor: 'rgba(255,255,255,0.5)',
             style: {
                 fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
