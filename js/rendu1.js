@@ -41,32 +41,30 @@ function exporterChartConso() {
         }
     });
 }
-
-var afficherPieChart1 = function(){
-    for(i=0;i<chart1.series[0].data.length;i++){
-        if(chart1.series[0].data[i].name == this.name){
-            if(this.select==true){
-                chart1.series[0].data[i].select(true);
-            }else{
-                chart1.series[0].data[i].select(false);
-            }
-        }
-    }
-}; //utilisé dans Chart2
 var ouvert=false;
 var name="";
-
-var afficherPieChart2 = function(){
-    for(i=0;i<chart2.series[0].data.length;i++){
-        if(name!="" && name!= this.name) ouvert=false;
-        console.log("this.name="+this.name);
-        console.log("chart2.series[0].data[i].name="+chart2.series[0].data[i].name);
-        if(chart2.series[0].data[i].name == this.name){
-            console.log("--egalité nom");
-                chart2.series[0].data[i].select(!ouvert);
+var afficherPieChart1 = function(){
+    var affecterancien=false;
+    if(name!="" && name!= this.name && ouvert==true){ chart1.series[0].select(false);ouvert=false};
+    for(i=0;i<chart1.series[0].data.length;i++){
+        if(chart1.series[0].data[i].name == this.name){
+            chart1.series[0].data[i].select(!ouvert);
             ouvert=(!ouvert);
         }
     }
+    name=this.name;
+}; //utilisé dans Chart2
+
+var afficherPieChart2 = function(){
+    var affecterancien=false;
+    if(name!="" && name!= this.name && ouvert==true){ chart2.series[0].select(false);ouvert=false};
+    for(i=0;i<chart2.series[0].data.length;i++){
+        if(chart2.series[0].data[i].name == this.name){
+            chart2.series[0].data[i].select(!ouvert);
+            ouvert=(!ouvert);
+        }
+    }
+    name=this.name;
 
 }; //utilisé dans Chart1
 
