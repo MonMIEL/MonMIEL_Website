@@ -40,7 +40,6 @@ function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints, consommat
         error:function (xhr, status, error){
             window.location = "ihm1.php?error=erreurChargementRendu1";
         },
-        complete:function(){
         dataType:'json'
     });
 }
