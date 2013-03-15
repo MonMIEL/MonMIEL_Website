@@ -450,3 +450,10 @@ footer {
 .progress .value {
     position: absolute;
 }
+
+.aide {
+	background-color: #e5f6fe;
+	border: 5px solid #add9ed;
+	padding: 10px;
+	margin-bottom: 10px;
+}
