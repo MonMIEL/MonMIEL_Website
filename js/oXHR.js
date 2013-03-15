@@ -25,7 +25,6 @@ function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints, consommat
      "&eol="+sVarEolTwh +
      "&point="+sVarNBPoints +
      "&hydro=50";
-    alert(url);
     console.log("URL : " + url);
         console.log("---------------------------------------------");
 
@@ -42,7 +41,6 @@ function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints, consommat
             window.location = "ihm1.php?error=erreurChargementRendu1";
         },
         complete:function(){
-            alert(url);},
         dataType:'json'
     });
 }
