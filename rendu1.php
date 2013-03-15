@@ -233,13 +233,25 @@
 
                 <div class="row first">
                     <div id="mixdemande" class="span6">
-                        <h1>MIEL ciblé <img src="img/help.png" class="bulle" tooltip="Le mix électrique ciblé est celui que vous avez choisi lors du paramétrage de la simulation" /></h1>
+                        <h1>Mix ciblé <img src="img/help.png" class="bulle" tooltip="Le mix électrique ciblé est celui que vous avez choisi lors du paramétrage de la simulation" /></h1>
                         <div id="chart_1" class="chart"></div>
                     </div>
                     <div id="mixcalcule" class="span6">
-                        <h1>MIEL Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le parc ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le parc ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
+                        <h1>Mix Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le parc ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le parc ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
                         <div id="chart_2" class="chart"></div>
                     </div>
+                </div>
+                <img class="separateur" src="img/separateur.jpg" alt="separateur" />
+
+                <h1>Explications des calculs <img src="img/help.png" class="bulle" tooltip="Découvrez le bilan des analyses et calculs réalisés dans cette partie !" /></h1>
+                <div class="aide">
+                    <p>Ce tableau présente le parc calculé par le simulateur.</p>
+                    <p>Le parc ciblé, celui qui a été saisi lors du paramétrage de la simulation, peut ne pas répondre au besoin en électricité. Il doit répondre à une règle importante :</p>
+                    <p><Strong>Production = Consommation</Strong></p>
+                    <p>La production représente l’ensemble de l’énergie générée par l’ensemble du parc électrique et la consommation ce qui est demandé par la population en électricité.</p>
+                    <p>Si la production est supérieure à la consommation, le réseau ne supporte pas et risque de s’endommager voire de provoquer une coupure générale.</p>
+                    <p>Si la production est inférieure à la demande, certains utilisateurs risquent de ne plus avoir d’électricité.</p>
+                    </p>
                 </div>
             </div>
 
