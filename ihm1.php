@@ -132,7 +132,7 @@
 				Etape 1 - Scénario
 				
 			<!-- info bulle -->
-				<img src="img/help.png" class="bulle" tooltip="Bulle" />
+			<img src="img/help.png" class="bulle" tooltip="Bulle" />
 			<!-- info bulle -->
 			
 			</h1>

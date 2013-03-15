@@ -78,7 +78,7 @@
 						<div class="span2 evol">Evolution de la puissance (MW)</div>
 					</div>
 					<div class="row">
-						<div class="span2">Nucléaire</div>
+						<div class="span2">Nucléaire <img src="img/help.png" class="bulle" tooltip="Bulle" /></div>
 						<div class="span6">
 							<div id="barParcTargetNuke" class="first progress progress-success progress-striped active">
 							    <span class="value"></span>
