@@ -686,7 +686,7 @@ function validerScenario(){
                 dataLabels: {
                     enabled: true,
                     color: 'black',
-                    connectorColor: '#000000',
+                    connectorColor: '#3E576F',
 
                     formatter: function() {
                         return  Math.floor(this.percentage) +' %';
@@ -707,7 +707,7 @@ function validerScenario(){
             {name :'Hydraulique',           y: 20,  visible:true},
             {name :'Centrales à flammes',   y: 20,   visible:true},
             {name :'STEP',   y: 0,  visible:false},
-            {name :'IMPORT',   y: 0,  visible:false}
+            {name :'Import',   y: 0,  visible:false}
         ]
         }]
     });
@@ -760,8 +760,7 @@ function updateCamembert(){
         {name :'Hydraulique',           y: hyd,  events:{click : null},visible:(hyd.toFixed(1)!=0.0)},
         {name :'Centrales à flammes',   y: cen,   events:{click : null},visible:(cen.toFixed(1)!=0.0)},
         {name :'STEP',   y: 0,   events:{click : null},visible:false},
-        {name :'IMPORT',   y: 0,   events:{click : null},visible:false}
-
+        {name :'Import',   y: 0,   events:{click : null},visible:false}
     ];
     chart_cam.series[0].setData(data);
 }

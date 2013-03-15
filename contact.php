@@ -104,7 +104,7 @@ if (isset($_POST['envoye']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="UTF-8" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-    <title></title>
+    <title>MonMIEL</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
@@ -112,6 +112,10 @@ if (isset($_POST['envoye']))
     <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
+
+    <!-- Le fav -->
+    <link rel="shortcut icon" href="img/logo.png">
+
 </head>
 <body>
 

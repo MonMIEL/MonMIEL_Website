@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta charset="UTF-8" />
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-        <title></title>
+        <title>MonMIEL</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/main.css">
@@ -54,6 +54,8 @@
             }
 			
         </script>
+        <!-- Le fav  -->
+        <link rel="shortcut icon" href="img/logo.png">
 		
     </head>
     <body onload="init()">
@@ -74,7 +76,7 @@
 				
 				<div class="aide">
 					<p>Ce tableau présente le parc calculé par le simulateur.</p>
-					<p>Le parc ciblé, celui qui a été saisi lors du paramétrage de la simulation, peut ne pas répondre au besoin en électricité. Il doit répondre à une règle importante :</p>
+					<p>Le parc ciblé, celui qui a été établi suite au paramétrage de la simulation, peut ne pas répondre au besoin en électricité. Il doit répondre à une règle importante :</p>
 					<p><Strong>Production = Consommation</Strong></p>
 					<p>La production représente l’ensemble de l’énergie générée par l’ensemble du parc électrique et la consommation ce qui est demandé par la population en électricité.</p>
 					<p>Si la production est supérieure à la consommation, le réseau ne supporte pas et risque de s’endommager voire de provoquer une coupure générale.</p>
@@ -95,7 +97,7 @@
 						<div class="span1"></div>
 						<div class="span4 legende-verte">
                             Puissance énergétique du parc ciblé
-							<div id="idLegendeRef" class="progress progress-success progress-striped active bulle" tooltip="Le parc ciblé est celui que vous avez choisi lors du paramétrage de la simulation">
+							<div id="idLegendeRef" class="progress progress-success progress-striped active bulle" tooltip="Le parc ciblé est le parc calculé à partir du mix énergétique définit dans le paramétrage de la simulation">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
 						</div>
@@ -233,11 +235,11 @@
 
                 <div class="row first">
                     <div id="mixdemande" class="span6">
-                        <h1>Mix ciblé <img src="img/help.png" class="bulle" tooltip="Le mix électrique ciblé est celui que vous avez choisi lors du paramétrage de la simulation" /></h1>
+                        <h1>MIEL ciblé <img src="img/help.png" class="bulle" tooltip="Le mix électrique ciblé est celui que vous avez choisi lors du paramétrage de la simulation" /></h1>
                         <div id="chart_1" class="chart"></div>
                     </div>
                     <div id="mixcalcule" class="span6">
-                        <h1>Mix Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le parc ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le parc ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
+                        <h1>MIEL Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le mix ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le mix ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
                         <div id="chart_2" class="chart"></div>
                     </div>
                 </div>

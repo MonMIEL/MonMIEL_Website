@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
+    <title>MonMIEL</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -52,6 +52,10 @@
         }
 	</script>
 	<!-- script d'affichage du contenu du slider -->
+
+    <!-- Le fav-->
+    <link rel="shortcut icon" href="img/logo.png">
+
 	
 </head>
 <body>
@@ -132,7 +136,7 @@
 				Etape 1 - Scénario
 				
 			<!-- info bulle -->
-			<img src="img/help.png" class="bulle" tooltip="Dans cette étape nous allons choisir notre scénario de consommation pour l'année cible (ex: 2015)" />
+			<img src="img/help.png" class="bulle" tooltip="La première étape dans le paramétrage de la simulation est de choisir une année et une consommation pour lesquelles le scénario doit être simulé" />
 			<!-- info bulle -->
 			
 			</h1>
@@ -143,23 +147,23 @@
                         <a class="brand">
 							Type de scénario
 							<!-- info bulle -->
-							<img src="img/help.png" class="bulle" tooltip="Ce bandeau représente les types de scénarios que l'on peut choisir parmi: RTE, personnel, UFE" />
+							<img src="img/help.png" class="bulle" tooltip="Ce bandeau représente les liste des types de scénarios qu'il est possible de choisir. De plus amples informations sont présentes en passant la souris sur chaque type de scénario" />
 							<!-- info bulle -->		
 						</a>
                         <ul class="nav">
                             <li class="active">
-								<a href="#tab1" data-toggle="tab" class="bulle" tooltip="" onclick="changementOnglet('RTE')">
+								<a href="#tab1" data-toggle="tab" class="bulle" tooltip="RTE, Réseau de Transport d'électricité, fournit un bilan prévisionnel sur la consommation future. Il est composé de quatre scénarios et va jusqu'en 2017" onclick="changementOnglet('RTE')">
 									RTE
 								</a>
 							</li>
-                            <li class="">
-								<a href="#tab2" data-toggle="tab" class="bulle" tooltip="" onclick="changementOnglet('Personnel')">
-									Personnel
+							<li class="">
+								<a href="#tab3" data-toggle="tab" class="bulle" tooltip="UFE, Union Française de l'Electricité, fournit un bilan prévisionnel basé sur la croissance du PIB" onclick="changementOnglet('UFE')">
+									UFE
 								</a>
 							</li>
                             <li class="">
-								<a href="#tab3" data-toggle="tab" class="bulle" tooltip="" onclick="changementOnglet('UFE')">
-									UFE
+								<a href="#tab2" data-toggle="tab" class="bulle" tooltip="Si les types de scénarios proposés ne sont pas adéquates, il est possible de saisie une année et une consommation, à condition que l'année soit comprise entre 2012 et 205, et la consommation entre 300 TWh et 700 TWh" onclick="changementOnglet('Personnel')">
+									Personnel
 								</a>
 							</li>
                         </ul>
@@ -207,14 +211,14 @@
             <h1 id="titleMonMix">
 				Etape 2 - Mon MIx ELectrique
 				<!-- info bulle -->
-				<img src="img/help.png" class="bulle" tooltip="" />
+				<img src="img/help.png" class="bulle" tooltip="Le mix électrique représente la répartition de la consommation sur les différents types de parc tels que le nucléaire, le photovoltaïque ou l'éolien" />
 				<!-- info bulle -->					
 			</h1>
 			<div id="monmix-right" style="width:48%;">
 				<h2>
 					Vos paramètres
 					<!-- info bulle -->
-					<img src="img/help.png" class="bulle" tooltip="" />
+					<img src="img/help.png" class="bulle" tooltip="Il est possible de répartir la consommation sur le nucléaire, le photovoltaïque et l'éolien. Les autres paramètres sont indépendants" />
 					<!-- info bulle -->
 				</h2>
 				<div class="bloc">
@@ -257,7 +261,7 @@
 				<h2>
 					Paramètres indépendants
 					<!-- info bulle -->
-					<img src="img/help.png" class="bulle" tooltip="" />
+					<img src="img/help.png" class="bulle" tooltip="L'hydraulique, les centrales à flammes, les STEP et l'import ne sont pas réglables dans la simulation" />
 					<!-- info bulle -->
 					
 				</h2>
