@@ -76,7 +76,9 @@ function changementOnglet(ongletClick){
 
     if(ongletClick=='Personnel'){
          document.getElementById('tab_chart_Scenario.qu').innerHTML="<input id='consoSaisie' type='text' onkeypress='validateNumber(event)' style='width :90%'  value='485' onchange='miseAjourGraphiquePersonnelConso()' />";
+        consommation2050=485;
          document.getElementById('tab_chart_Scenario.id').innerHTML="<input id='anneeSaisie' maxlength='4' onkeypress='validateNumber(event)' type='text' style='width :80%' value='2050' onchange='miseAjourGraphiquePersonnelAnnee()'/>";
+        anneeCible=2050;
         document.getElementById('bouton_scenario').style.display="";
         ongletActif=ongletClick;
         passerChartPersonnel();
@@ -117,8 +119,9 @@ function miseAjourGraphiquePersonnelConso(){
         document.getElementById('consoSaisie').value=300;
         document.getElementById('etatScenario').style.display="";
         document.getElementById('etatScenario').innerHTML="la consommation est comprise entre 300 et 700";
-    }else
+    }else{
          document.getElementById('etatScenario').style.display="none";
+    }
     consommation2050=y;
     chart_Scenario.series[0].data[1].y=parseInt(y);
     chart_Scenario.render();
@@ -520,7 +523,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point2',
                 x: 2014,
-                y: 493.8,
+                y: 494,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -530,7 +533,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point3',
                 x: 2015,
-                y: 499.7,
+                y: 500,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -540,7 +543,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point4',
                 x: 2016,
-                y: 505.1,
+                y: 505,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -550,7 +553,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point5',
                 x: 2017,
-                y: 509.7,
+                y: 510,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -574,7 +577,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point2',
                 x: 2014,
-                y: 486.5,
+                y: 487,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -584,7 +587,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point3',
                 x: 2015,
-                y: 490.9,
+                y: 491,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -594,7 +597,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point4',
                 x: 2016,
-                y: 494.1,
+                y: 495,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -604,7 +607,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point5',
                 x: 2017,
-                y: 497.4,
+                y: 497,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -628,7 +631,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point2',
                 x: 2014,
-                y: 478.9,
+                y: 479,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -638,7 +641,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point3',
                 x: 2015,
-                y: 480.9,
+                y: 481,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -648,7 +651,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point4',
                 x: 2016,
-                y: 482.4,
+                y: 482,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -658,7 +661,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point5',
                 x: 2017,
-                y: 483.7,
+                y: 484,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -672,7 +675,7 @@ function passerChartRte(){
                 color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
-                y: 485.0,
+                y: 485,
                 events:{
                     click:  null,
                     mouseOver: null
@@ -682,7 +685,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point2',
                 x: 2014,
-                y: 471.4,
+                y: 472,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -692,7 +695,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point3',
                 x: 2015,
-                y: 471.7,
+                y: 472,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -702,7 +705,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point4',
                 x: 2016,
-                y: 470.8,
+                y: 471,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}
@@ -712,7 +715,7 @@ function passerChartRte(){
                 color: '#FF00FF',
                 'id': 'point5',
                 x: 2017,
-                y: 470.8,
+                y: 471,
                 events : {
                     click:  function(event) {
                         affecterConsommation(this.x,this.y)}

@@ -15,6 +15,8 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+        <script src="js/infoBulle.js"></script>
         <script src="js/bootstrap.js"></script>
 		
 		<script src="js/highchart/highcharts.js"></script>
@@ -24,9 +26,6 @@
         <script src="js/calculJsonMonMIEL.js" ></script>
         <script src="js/oXHR.js"></script>
 		<script src="js/spin.js"></script>
-		<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
-		<script type="text/javascript" src="js/infoBulle.js"></script>
 		
         <script>
             var nuc_gwh;

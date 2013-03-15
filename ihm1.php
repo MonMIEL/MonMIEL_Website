@@ -23,14 +23,13 @@
     <!-- add scripts -->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
+    <script src="js/infoBulle.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/highchart/highcharts.js"></script>
     <script src="js/highchart/gray.js"></script>
     <script src="js/ihm1.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
-	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
-	<script type="text/javascript" src="js/infoBulle.js"></script>
 
 
 	
