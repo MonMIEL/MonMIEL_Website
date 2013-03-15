@@ -95,7 +95,7 @@
 						<div class="span1"></div>
 						<div class="span4 legende-verte">
                             Puissance énergétique du parc ciblé
-							<div id="idLegendeRef" class="progress progress-success progress-striped active bulle" tooltip="Le parc ciblé est celui que vous avez choisi lors du paramétrage de la simulation">
+							<div id="idLegendeRef" class="progress progress-success progress-striped active bulle" tooltip="Le parc ciblé est le parc calculé à partir du mix énergétique définit dans le paramétrage de la simulation">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
 						</div>
@@ -237,7 +237,7 @@
                         <div id="chart_1" class="chart"></div>
                     </div>
                     <div id="mixcalcule" class="span6">
-                        <h1>MIEL Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le parc ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le parc ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
+                        <h1>MIEL Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le mix ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le mix ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
                         <div id="chart_2" class="chart"></div>
                     </div>
                 </div>

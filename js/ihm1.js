@@ -777,7 +777,7 @@ function validerScenario(){
                 dataLabels: {
                     enabled: true,
                     color: 'black',
-                    connectorColor: '#000000',
+                    connectorColor: '#3E576F',
 
                     formatter: function() {
                         return  Math.floor(this.percentage) +' %';
@@ -793,13 +793,13 @@ function validerScenario(){
             type: 'pie',
             name: 'Dev #1',
             data: [
-                ['nucléaire', 50 ],
+                ['Nucléaire', 50 ],
                 ['Photovoltaïque', 10],
                 ['Eolien', 5],
                 ['Hydraulique', 5],
                 ['Centrales à flammes', 30],
                 ['STEP', 0],
-                ['IMPORT', 0]
+                ['Import', 0]
             ]
         }]
     });
@@ -852,7 +852,7 @@ function updateCamembert(){
         ['Hydraulique', hyd],
         ['Centrales à flammes', cen],
         ['STEP', 0],
-        ['IMPORT', 0]
+        ['Import', 0]
     ];
     chart_cam.series[0].setData(data);
 }
