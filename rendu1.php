@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta charset="UTF-8" />
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-        <title></title>
+        <title>MonMIEL</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/main.css">
@@ -54,6 +54,8 @@
             }
 			
         </script>
+        <!-- Le fav  -->
+        <link rel="shortcut icon" href="img/logo.png">
 		
     </head>
     <body onload="init()">

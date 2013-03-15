@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
+    <title>MonMIEL</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -52,6 +52,10 @@
         }
 	</script>
 	<!-- script d'affichage du contenu du slider -->
+
+    <!-- Le fav-->
+    <link rel="shortcut icon" href="img/logo.png">
+
 	
 </head>
 <body>
