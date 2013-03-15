@@ -313,6 +313,7 @@ function passerChartPersonnel(){
             }
         },
         series: [{
+            allowPointSelect: true,
             visible: true,
             name: 'Personnel',
             data: [{
@@ -326,6 +327,7 @@ function passerChartPersonnel(){
                     mouseOver: null
                 }
             },{
+                selected: true,
                 name: '2050', //Change au moment du choix de l'année de Référence
                 color: '#00FF00',
                 'id': 'point1',
@@ -342,8 +344,9 @@ function passerChartPersonnel(){
                     cursor: 'pointer',
                     point: {
                         events: {
-                            //mouseOver: chartScenarioHandlerOver,
-                            // click: chartScenarioHandlerClick
+                            click: function() {
+                                console.log(this.x);
+                            }
                         }
                     }
                 }
