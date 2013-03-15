@@ -27,7 +27,7 @@
     <script src="js/infoBulle.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/highchart/highcharts.js"></script>
-    <script src="js/highchart/gray.js"></script>
+
     <script src="js/ihm1.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
 
@@ -136,7 +136,7 @@
 				Etape 1 - Scénario
 				
 			<!-- info bulle -->
-			<img src="img/help.png" class="bulle" tooltip="Bulle" />
+			<img src="img/help.png" class="bulle" tooltip="La première étape dans le paramétrage de la simulation est de choisir une année et une consommation pour lesquelles le scénario doit être simulé" />
 			<!-- info bulle -->
 			
 			</h1>
@@ -144,11 +144,28 @@
                 <!--NavBar-->
                 <div class="navbar nav-tabs">
                     <div class="navbar-inner">
-                        <a class="brand">Type de scénario</a>
+                        <a class="brand">
+							Type de scénario
+							<!-- info bulle -->
+							<img src="img/help.png" class="bulle" tooltip="Ce bandeau représente les liste des types de scénarios qu'il est possible de choisir. De plus amples informations sont présentes en passant la souris sur chaque type de scénario" />
+							<!-- info bulle -->		
+						</a>
                         <ul class="nav">
-                            <li class="active"><a href="#tab1" data-toggle="tab" onclick="changementOnglet('RTE')">RTE</a></li>
-                            <li class=""><a href="#tab2" data-toggle="tab" onclick="changementOnglet('Personnel')">Personnel</a></li>
-                            <li class=""><a href="#tab3" data-toggle="tab" onclick="changementOnglet('UFE')">UFE</a></li>
+                            <li class="active">
+								<a href="#tab1" data-toggle="tab" class="bulle" tooltip="RTE, Réseau de Transport d'électricité, fournit un bilan prévisionnel sur la consommation future. Il est composé de quatre scénarios et va jusqu'en 2017" onclick="changementOnglet('RTE')">
+									RTE
+								</a>
+							</li>
+							<li class="">
+								<a href="#tab3" data-toggle="tab" class="bulle" tooltip="UFE, Union Française de l'Electricité, fournit un bilan prévisionnel basé sur la croissance du PIB" onclick="changementOnglet('UFE')">
+									UFE
+								</a>
+							</li>
+                            <li class="">
+								<a href="#tab2" data-toggle="tab" class="bulle" tooltip="Si les types de scénarios proposés ne sont pas adéquates, il est possible de saisie une année et une consommation, à condition que l'année soit comprise entre 2012 et 205, et la consommation entre 300 TWh et 700 TWh" onclick="changementOnglet('Personnel')">
+									Personnel
+								</a>
+							</li>
                         </ul>
                     </div>
 
@@ -191,11 +208,18 @@
         <div id="monmix" style="display:none">
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
-            <h1 id="titleMonMix">Etape 2 - Mon MIx ELectrique</h1>
+            <h1 id="titleMonMix">
+				Etape 2 - Mon MIx ELectrique
+				<!-- info bulle -->
+				<img src="img/help.png" class="bulle" tooltip="Le mix électrique représente la répartition de la consommation sur les différents types de parc tels que le nucléaire, le photovoltaïque ou l'éolien" />
+				<!-- info bulle -->					
+			</h1>
 			<div id="monmix-right" style="width:48%;">
 				<h2>
 					Vos paramètres
-					<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>			
+					<!-- info bulle -->
+					<img src="img/help.png" class="bulle" tooltip="Il est possible de répartir la consommation sur le nucléaire, le photovoltaïque et l'éolien. Les autres paramètres sont indépendants" />
+					<!-- info bulle -->
 				</h2>
 				<div class="bloc">
 					<div class="row first">
@@ -234,7 +258,13 @@
 						<div class="span1"><input type="text" id="eol_gwh" style="width:50px; background:none;"></div>
 					</div>
 				</div>
-				<h2>Paramètres indépendants</h2>
+				<h2>
+					Paramètres indépendants
+					<!-- info bulle -->
+					<img src="img/help.png" class="bulle" tooltip="L'hydraulique, les centrales à flammes, les STEP et l'import ne sont pas réglables dans la simulation" />
+					<!-- info bulle -->
+					
+				</h2>
 				<div class="bloc">
 					<div class="row first">
 						<div class="span3">Energie</div>
@@ -267,7 +297,7 @@
 								<td id="slider_target6"></td>
 								<td><input type="text" id="ste_txtfield" name="textfield6" size="3" value="50" onchange="" style="display:none"/></td>
 							</tr></table></div>
-						<div class="span1"><input type="text" id="ste" value="50" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="ste" value="??" style="width:30px; background:none;">%</div>
 						<div class="span1"><input type="text" id="ste_gwh" style="width:50px; background:none;"></div>
 					</div>
 
@@ -277,7 +307,7 @@
 								<td id="slider_target7"></td>
 								<td><input type="text" id="imp_txtfield" name="textfield7" size="3" value="50" onchange="" style="display:none"/></td>
 							</tr></table></div>
-						<div class="span1"><input type="text" id="imp" value="50" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="imp" value="??" style="width:30px; background:none;">%</div>
 						<div class="span1"><input type="text" id="imp_gwh" style="width:50px; background:none;"></div>
 					</div>
 					

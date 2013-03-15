@@ -76,7 +76,7 @@
 				
 				<div class="aide">
 					<p>Ce tableau présente le parc calculé par le simulateur.</p>
-					<p>Le parc ciblé, celui qui a été saisi lors du paramétrage de la simulation, peut ne pas répondre au besoin en électricité. Il doit répondre à une règle importante :</p>
+					<p>Le parc ciblé, celui qui a été établi suite au paramétrage de la simulation, peut ne pas répondre au besoin en électricité. Il doit répondre à une règle importante :</p>
 					<p><Strong>Production = Consommation</Strong></p>
 					<p>La production représente l’ensemble de l’énergie générée par l’ensemble du parc électrique et la consommation ce qui est demandé par la population en électricité.</p>
 					<p>Si la production est supérieure à la consommation, le réseau ne supporte pas et risque de s’endommager voire de provoquer une coupure générale.</p>
@@ -97,7 +97,7 @@
 						<div class="span1"></div>
 						<div class="span4 legende-verte">
                             Puissance énergétique du parc ciblé
-							<div id="idLegendeRef" class="progress progress-success progress-striped active bulle" tooltip="Le parc ciblé est celui que vous avez choisi lors du paramétrage de la simulation">
+							<div id="idLegendeRef" class="progress progress-success progress-striped active bulle" tooltip="Le parc ciblé est le parc calculé à partir du mix énergétique définit dans le paramétrage de la simulation">
 							  <div class="bar" style="width: 100%;"></div>
 							</div>
 						</div>
@@ -239,9 +239,21 @@
                         <div id="chart_1" class="chart"></div>
                     </div>
                     <div id="mixcalcule" class="span6">
-                        <h1>MIEL Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le parc ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le parc ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
+                        <h1>MIEL Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le mix ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le mix ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
                         <div id="chart_2" class="chart"></div>
                     </div>
+                </div>
+                <img class="separateur" src="img/separateur.jpg" alt="separateur" />
+
+                <h1>Explications des calculs <img src="img/help.png" class="bulle" tooltip="Découvrez le bilan des analyses et calculs réalisés dans cette partie !" /></h1>
+                <div class="aide">
+                    <p>Ce tableau présente le parc calculé par le simulateur.</p>
+                    <p>Le parc ciblé, celui qui a été saisi lors du paramétrage de la simulation, peut ne pas répondre au besoin en électricité. Il doit répondre à une règle importante :</p>
+                    <p><Strong>Production = Consommation</Strong></p>
+                    <p>La production représente l’ensemble de l’énergie générée par l’ensemble du parc électrique et la consommation ce qui est demandé par la population en électricité.</p>
+                    <p>Si la production est supérieure à la consommation, le réseau ne supporte pas et risque de s’endommager voire de provoquer une coupure générale.</p>
+                    <p>Si la production est inférieure à la demande, certains utilisateurs risquent de ne plus avoir d’électricité.</p>
+                    </p>
                 </div>
             </div>
 

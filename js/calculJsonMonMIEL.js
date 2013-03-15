@@ -50,6 +50,10 @@ var mixTargetHydrau;
 var mixFinalHydrau;
 var mixTargetPhoto;
 var mixFinalPhoto;
+var mixTargetSTEP;
+var mixFinalSTEP;
+var mixTargetImport;
+var mixFinalImport;
 /*------------------------Percentage-Mix--------------------*/
 var perMixTargetNuke;
 var perMixFinalNuke;
@@ -61,13 +65,18 @@ var perMixTargetHydrau;
 var perMixFinalHydrau;
 var perMixTargetPhoto;
 var perMixFinalPhoto;
+var perMixTargetSTEP;
+var perMixFinalSTEP;
+var perMixTargetImport;
+var perMixFinalImport;
 /*------------------------Diff PercMix--------------------*/
 var diffPerMixNuke;
 var diffPerMixFlame;
 var diffPerMixEol;
 var diffPerMixHydrau;
 var diffPerMixPhoto;
-
+var diffPerMixSTEP;
+var diffPerMixImport;
 
 function calculerMonMIEL(){
 
@@ -115,28 +124,48 @@ function initialiserVariablesMix(){
     mixFinalHydrau = dataJSON.finalConso.hydraulic      / 100000;
     mixTargetPhoto = dataJSON.targetConso.photovoltaic  / 100000;
     mixFinalPhoto = dataJSON.finalConso.photovoltaic    / 100000;
+   /* V2
+    mixTargetSTEP = dataJSON.targetConso.step           / 100000;
+    mixFinalSTE = dataJSON.finalConso.step              / 100000;
+    mixTargetImport = dataJSON.targetConso.import       / 100000;
+    mixFinalImport = dataJSON.finalConso.import         / 100000;
+    */
     console.log(" mixTargetNuke : "+mixTargetNuke);
     console.log(" mixTargetFlame : "+mixTargetFlame);
     console.log(" mixTargetEol : "+mixTargetEol);
     console.log(" mixTargetHydrau : "+mixTargetHydrau);
     console.log(" mixTargetPhoto : "+mixTargetPhoto);
+    /* V2
+    console.log(" mixTargetSTEP : "+mixTargetSTEP);
+    console.log(" mixTargetImport : "+mixTargetImport);
+    */
     console.log(" mixFinalNuke : "+mixFinalNuke);
     console.log(" mixFinalFlame : "+mixFinalFlame);
     console.log(" mixFinalEol : "+mixFinalEol);
     console.log(" mixFinalHydrau : "+mixFinalHydrau);
     console.log(" mixFinalPhoto : "+mixFinalPhoto);
+    /* V2
+    console.log(" mixFinalSTEP : "+mixFinalSTEP);
+    console.log(" mixFinalImport : "+mixFinalImport);
+    */
     totalMixTarget =
         mixTargetNuke +
         mixTargetFlame +
         mixTargetEol +
         mixTargetHydrau +
-        mixTargetPhoto;
+        mixTargetPhoto /* V2 +
+        mixTargetSTEP +
+        mixTargetImport*/
+        ;
     totalMixFinal =
         mixFinalNuke +
         mixFinalFlame +
         mixFinalEol +
         mixFinalHydrau +
-        mixFinalPhoto;
+        mixFinalPhoto /* V2 +
+        mixFinalSTEP +
+        mixFinalImport*/
+        ;
 
     perMixTargetNuke    = (mixTargetNuke     * 100 / totalMixTarget);
     perMixFinalNuke     = (mixFinalNuke      * 100 / totalMixFinal);
@@ -148,6 +177,12 @@ function initialiserVariablesMix(){
     perMixFinalHydrau   = (mixFinalHydrau    * 100 / totalMixFinal);
     perMixTargetPhoto   = (mixTargetPhoto    * 100 / totalMixTarget);
     perMixFinalPhoto    = (mixFinalPhoto     * 100 / totalMixFinal);
+    /* V2
+    perMixTargetSTEP    = (mixTargetSTEP     * 100 / totalMixTarget);
+    perMixFinalSTEP     = (mixFinalSTEP      * 100 / totalMixFinal);
+    perMixTargetImport  = (mixTargetImport   * 100 / totalMixTarget);
+    perMixFinalImport   = (mixFinalImport    * 100 / totalMixFinal);
+    */
 
     var op="";
         diffPerMixNuke = perMixFinalNuke - perMixTargetNuke;
@@ -170,22 +205,44 @@ function initialiserVariablesMix(){
         op=""; if(diffPerMixPhoto>0) op="+";
     diffPerMixPhoto=op+diffPerMixPhoto.toFixed(1);
 
+    /* V2
+        diffPerMixSTEP = perMixFinalSTEP.toFixed(1) - perMixTargetSTEP.toFixed(1);
+        op=""; if(diffPerMixSTEP>0) op="+";
+    diffPerMixSTEP=op+diffPerMixSTEP.toFixed(1);
+
+        diffPerMixImport = perMixFinalImport.toFixed(1) - perMixTargetImport.toFixed(1);
+        op=""; if(diffPerMixImport>0) op="+";
+    diffPerMixImport=op+diffPerMixImport.toFixed(1);
+    */
+
     console.log(" perMixTargetNuke : "+perMixTargetNuke.toFixed(1));
     console.log(" perMixTargetFlame : "+perMixTargetFlame);
     console.log(" perMixTargetEol : "+perMixTargetEol);
     console.log(" perMixTargetHydrau : "+perMixTargetHydrau);
     console.log(" perMixTargetPhoto : "+perMixTargetPhoto);
+    /* V2
+    console.log(" perMixTargetSTEP : "+perMixTargetSTEP);
+    console.log(" perMixTargetImport : "+perMixTargetImport);
+    */
     console.log(" perMixFinalNuke : "+perMixFinalNuke.toFixed(1));
     console.log(" perMixFinalFlame : "+perMixFinalFlame);
     console.log(" perMixFinalEol : "+perMixFinalEol);
     console.log(" perMixFinalHydrau : "+perMixFinalHydrau);
     console.log(" perMixFinalPhoto : "+perMixFinalPhoto);
+    /* V2
+    console.log(" perMixFinalSTEP : "+perMixFinalSTEP);
+    console.log(" perMixFinalImport : "+perMixFinalImport);
+    */
 
     console.log(" diffPerMixNuke : "+diffPerMixNuke);
     console.log(" diffPerMixFlame : "+diffPerMixFlame);
     console.log(" diffPerMixEol : "+diffPerMixEol);
     console.log(" diffPerMixHydrau : "+diffPerMixHydrau);
     console.log(" diffPerMixPhoto : "+diffPerMixPhoto);
+    /* V2
+    console.log(" diffPerMixSTEP : "+diffPerMixSTEP);
+    console.log(" diffPerMixImport : "+diffPerMixImport);
+    */
 }
 
 function initialiserVariablesParc(){
@@ -410,12 +467,9 @@ function majChiffresParcCalcule(){
 
 }
 
-
 function majLegende(){
-    totalParcPower
 	$("#idLegendeRef .bar").append(totalParcTargetPower.toFixed(0)+"MW");
     $("#idLegendeCible .bar").append(totalParcPower.toFixed(0)+"MW");
-
 }
 
 
