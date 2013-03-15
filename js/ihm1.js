@@ -179,6 +179,7 @@ function passerChartUfe(){
                 y: 625,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }]
@@ -203,6 +204,7 @@ function passerChartUfe(){
                 y: 570,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }]
@@ -227,6 +229,7 @@ function passerChartUfe(){
                 y: 550,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }]
@@ -337,14 +340,7 @@ function passerChartPersonnel(){
         }],
             plotOptions: {
                 series: {
-                    cursor: 'pointer',
-                    point: {
-                        events: {
-                            click: function() {
-                                console.log(this.x);
-                            }
-                        }
-                    }
+                    cursor: 'pointer'
                 }
             }
         });
@@ -442,6 +438,7 @@ function passerChartRte(){
                 y: 494,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -452,6 +449,7 @@ function passerChartRte(){
                 y: 500,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -462,6 +460,7 @@ function passerChartRte(){
                 y: 505,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -472,6 +471,7 @@ function passerChartRte(){
                 y: 510,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }]
@@ -496,6 +496,7 @@ function passerChartRte(){
                 y: 487,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -506,6 +507,7 @@ function passerChartRte(){
                 y: 491,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -516,6 +518,7 @@ function passerChartRte(){
                 y: 495,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -526,6 +529,7 @@ function passerChartRte(){
                 y: 497,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }]
@@ -550,6 +554,7 @@ function passerChartRte(){
                 y: 479,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -560,6 +565,7 @@ function passerChartRte(){
                 y: 481,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -570,6 +576,7 @@ function passerChartRte(){
                 y: 482,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -580,6 +587,7 @@ function passerChartRte(){
                 y: 484,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }]
@@ -604,6 +612,7 @@ function passerChartRte(){
                 y: 472,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -614,6 +623,7 @@ function passerChartRte(){
                 y: 472,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -624,6 +634,7 @@ function passerChartRte(){
                 y: 471,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }, {
@@ -634,21 +645,11 @@ function passerChartRte(){
                 y: 471,
                 events : {
                     click:  function(event) {
+                        this.select(true,false);
                         affecterConsommation(this.x,this.y)}
                 }
             }]
-        }],
-        plotOptions: {
-            series: {
-                cursor: 'pointer',
-                point: {
-                    events: {
-                        //mouseOver: chartScenarioHandlerOver,
-                        // click: chartScenarioHandlerClick
-                    }
-                }
-            }
-        }
+        }]
     });
 }
 function validerScenario(){
