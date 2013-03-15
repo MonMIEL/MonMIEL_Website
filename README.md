@@ -88,6 +88,24 @@ Lors du clique sur le bouton "Simuler" par l'utilisateur :
 #JSON
 
 La communication avec le serveur principal MonMIEL se fait à travers des appels ajax à l'API du serveur.
-Les données envoyés au serveur sont ceux récupéré à partir de l'IHM 1 (ihm1.php) :
-* La quantité de l'énergie en TWh (
+Les données envoyés au serveur sont ceux récupéré à partir de l'IHM 1 (ihm1.php).
+Le contenu de JSON est utilisé par la méthode "postActionsJSON()" dans "calculJsonMonMIEL.js".
 
+* Initialisation des variables du parc de consommation est réalisé : initialiserVariablesParc()
+* MaJ visuel de l'IHM du parc de consommation est réalisé : majBarresParcCalcule(), majPourcentageDansBarres(),
+majChiffresParcCalcule() et majLegende()
+* Le parc est affiché
+* Initialisation des variables du mix électrique calculé est faite : initialiserVariablesMix()
+
+En ce qui concerne le fichier JSON :
+* finalParcPower :
+* targetParcPower :
+* finalConso :
+* targetConso :
+* series :
+** nucleaire
+** photovoltaique
+** eolien
+** flamme
+** hydraulique
+** total
