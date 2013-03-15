@@ -294,7 +294,6 @@ function passerChartPersonnel(){
                     align: 'right'
                 }
             }
-            //categories: ['Apples', 'Bananas', 'Oranges']
         },
         yAxis: {
             title: {
@@ -313,12 +312,10 @@ function passerChartPersonnel(){
             }
         },
         series: [{
-            allowPointSelect: true,
             visible: true,
             name: 'Personnel',
             data: [{
                 name: '2011', //Change au moment du choix de l'année de Référence
-              //  color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -329,7 +326,6 @@ function passerChartPersonnel(){
             },{
                 selected: true,
                 name: '2050', //Change au moment du choix de l'année de Référence
-              //  color: '#00FF00',
                 'id': 'point1',
                 x: 2050, //Change au moment du choix de l'année de Référence
                 y: 485,
