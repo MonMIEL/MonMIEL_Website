@@ -58,6 +58,7 @@ var name="";
 
 var afficherPieChart2 = function(){
     for(i=0;i<chart2.series[0].data.length;i++){
+        if(name!="" && name!= this.name) ouvert=false;
         console.log("this.name="+this.name);
         console.log("chart2.series[0].data[i].name="+chart2.series[0].data[i].name);
         if(chart2.series[0].data[i].name == this.name){
