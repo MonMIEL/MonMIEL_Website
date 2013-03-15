@@ -7,69 +7,6 @@ var validHorizonCible=0; //=1 si la partie Horizon est validée, =0 sinon
 var validScenario=0;//=1 si la partie Scenario est validée, =0 sinon
 var validMonMix=0;  //=1 si la partie MonMixElectrique est validée, =0 sinon
 
-/*
-function majChartAvecAnneeRef(chart, series) {
-    for (var i = 0; i < series.length; i++) {
-        chart_Scenario.series[i].data[0].name = "Année : "+anneeRef;
-        chart_Scenario.series[i].data[0].x = parseInt(anneeRef);
-        chart_Scenario.series[i].data[1].name = "Année : "+anneeCible;
-        chart_Scenario.series[i].data[1].x = parseInt(anneeCible);
-        chart_Scenario.render();
-    }
-}
-*/
-/*
-function majChartAvecConso2050(chart, series) {
-    for (var i = 0; i < series.length; i++) {
-        chart_Scenario.series[i].data[1].y = parseInt(consommation2050);
-        chart_Scenario.render();
-    }
-}
-*/
-/*--------------------------------------------------------------------------*/
-
-/* function validerHorizonRef(){
-        //Récupération des données entrées
-        anneeRef=document.getElementById("anneeRef").value;
-
-        //MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
-        majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
-
-        var label =document.getElementById('labelHorizonRef');
-        label.innerHTML='<div style="text-align:center; color:green">L\'année de référence '+anneeRef+' est prise en compte <i class="icon-ok"></i></div>';
-
-        validHorizonRef=1;
-
-        if (validHorizonCible == 1) {
-		//MaJ de titleHorizon
-		document.getElementById("titleHorizon").style.cssText ="color:green";
-		
-		//Affichage du contenu suivant
-		document.getElementById('scenario').style.display = "block";
-	}
-} */
-/*
-function validerHorizonCible(){
-    //Récupération des données entrées
-    anneeCible=document.getElementById("anneeCible").value;
-
-	//MaJ du nom du premier point de chart_Scenario par rapport à la donnée anneeRef
-	majChartAvecAnneeRef(chart_Scenario, chart_Scenario.series);
-	
-	var label =document.getElementById('labelHorizonCible');
-	label.innerHTML='<div style="text-align:center; color:green">L\'année cible '+anneeCible+' est prise en compte <i class="icon-ok"></i></div>';
-
-	validHorizonCible=1;
-	
-	if (validHorizonRef == 1) {
-		//MaJ de titleHorizon
-		document.getElementById("titleHorizon").style.cssText ="color:green";
-		
-		//Affichage du contenu suivant
-		document.getElementById('scenario').style.display = "block";
-	}
-}
-*/
 var ongletActif='RTE';
 function changementOnglet(ongletClick){
     if(ongletActif==ongletClick) return;
@@ -146,27 +83,7 @@ function miseAjourGraphiquePersonnelAnnee(){
     chart_Scenario.series[0].data[1].name=x;
     chart_Scenario.render();
 }
-/*
-function testerTwh() {
-	var tempTwh = document.getElementById("valeurTwh").value;
 
-	if (tempTwh > 700 || tempTwh < 300) {
-		$('#boutonTwh').popover();
-	} else {
-		consommation2050 = tempTwh;
-
-		//MaJ de la consommation dans le graph chart_Scenario
-		majChartAvecConso2050(chart_Scenario, chart_Scenario.series);
-		
-		//MaJ du tableau de la quantité choisie en Gwh
-		document.getElementById("tab_chart_Scenario.id").innerHTML = anneeCible;
-		document.getElementById("tab_chart_Scenario.qu").innerHTML = consommation2050;
-		
-		chart_Scenario.series[0].show();
-        document.getElementById("bouton_scenario").style.display="";
-	}
-}
-*/
 var passe = false;
 var chart_cam;
 
@@ -763,10 +680,14 @@ function validerScenario(){
             plotBorderWidth: null,
             plotShadow: false,
             height:350,
+            borderWidth: 2,
             backgroundColor: 'rgba(255,255,255,0.5)'
         },
+        credits : {
+            enabled : false
+        },
         title: {
-            text: 'Repartition'
+            text: 'Repartition du Mix'
         },
         tooltip: {
             pointFormat: '<b>{point.percentage}%</b> - ',
@@ -804,7 +725,7 @@ function validerScenario(){
         }]
     });
 
-         form_widget_amount_slider('slider_target1',document.forms[0].textfield1,200,0,100,"updateTextInput('nuc');","normal",30);
+        form_widget_amount_slider('slider_target1',document.forms[0].textfield1,200,0,100,"updateTextInput('nuc');","normal",30);
         form_widget_amount_slider('slider_target2',document.forms[0].textfield2,200,0,100,"updateTextInput('pho');","normal",10);
         form_widget_amount_slider('slider_target3',document.forms[0].textfield3,200,0,100,"updateTextInput('eol');","normal",20);
         form_widget_amount_slider('slider_target4',document.forms[0].textfield4,200,0,100,"updateTextInput('hyd');","auto",20);

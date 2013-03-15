@@ -263,7 +263,7 @@
 								<td id="slider_target6"></td>
 								<td><input type="text" id="ste_txtfield" name="textfield6" size="3" value="50" onchange="" style="display:none"/></td>
 							</tr></table></div>
-						<div class="span1"><input type="text" id="ste" value="50" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="ste" value="??" style="width:30px; background:none;">%</div>
 						<div class="span1"><input type="text" id="ste_gwh" style="width:50px; background:none;"></div>
 					</div>
 
@@ -273,7 +273,7 @@
 								<td id="slider_target7"></td>
 								<td><input type="text" id="imp_txtfield" name="textfield7" size="3" value="50" onchange="" style="display:none"/></td>
 							</tr></table></div>
-						<div class="span1"><input type="text" id="imp" value="50" style="width:30px; background:none;">%</div>
+						<div class="span1"><input type="text" id="imp" value="??" style="width:30px; background:none;">%</div>
 						<div class="span1"><input type="text" id="imp_gwh" style="width:50px; background:none;"></div>
 					</div>
 					

@@ -90,16 +90,16 @@ function miseEnPlaceHighChart(){
             backgroundColor: 'rgba(255,255,255,0.5)',
             animation: false,
             zoomType: 'x',
-            borderWidth: 2
+            borderWidth: 2,
+            resetZoomButton: {
+                name: "hello"
+            }
         },
         credits : {
             enabled : false
         },
         title: {
             text: 'Puissance du parc'
-        },
-        subtitle: {
-            text: 'Année de reférence : 2050'
         },
         xAxis: {
             gridLineWidth: 0.3,
@@ -245,7 +245,7 @@ function miseEnPlaceHighChart(){
             enabled : false
         },
         title: {
-            text: 'Mix électrique en TWh'
+            text: 'Energie consommée ciblée (TWh)'
         },
         tooltip: {
             pointFormat: '<b>{point.percentage}%</b>',
@@ -299,7 +299,7 @@ function miseEnPlaceHighChart(){
             backgroundColor: 'rgba(255,255,255,0.5)'
         },
         title: {
-            text: 'Mix électrique en TWh'
+            text: 'Energie consommée obtenue (TWh)'
         },
         credits : {
             enabled : false
