@@ -91,6 +91,22 @@
 						<div class="span2 evol">Evolution de la puissance (MW)</div>
 					</div>
 					<div class="row">
+						<div class="span2">Légende</div>
+						<div class="span1"></div>
+						<div class="span4 legende-verte">
+                            Puissance énergétique du parc ciblé
+							<div id="idLegendeRef" class="progress progress-success progress-striped active bulle" tooltip="Le parc ciblé est celui que vous avez choisi lors du paramétrage de la simulation">
+							  <div class="bar" style="width: 100%;"></div>
+							</div>
+						</div>
+						<div class="span4 legende-jaune">
+                            Puissance énergétique du parc calculé
+							<div id="idLegendeCible" class="progress progress-warning progress-striped active bulle" tooltip="Le parc calculé est le parc ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le parc ciblé n’était pas assez flexible dans sa capacité à répondre à la demande">
+							  <div class="bar" style="width: 100%;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
 						<div class="span2">Nucléaire <img src="img/help.png" class="bulle" tooltip="Le nucléaire fournit une puissance importante mais son fonctionnement ne permet pas de changer la production rapidement" /></div>
 						<div class="span6">
 							<div id="barParcTargetNuke" class="first progress progress-success progress-striped active bulle" tooltip="Ce pourcentage représente la part du nucléaire sur le parc ciblé">
@@ -171,7 +187,7 @@
                         <div id="idDiffParcFlame" class="span1"></div>
 					</div>
 					<div class="row">
-						<div class="span2">STEP <img src="img/help.png" class="bulle" tooltip="texte" /></div>
+						<div class="span2">STEP <img src="img/help.png" class="bulle" tooltip="Les STEP sont un système qui permet de stocker de l'énergie grâce à des barrages. Lorsqu'il est possible de fournir une puissance électrique supérieur à la demande, l'électricité supplémentaire est utilisée pour faire monter l'eau vers les barrages. Quand la demande est forte, l'eau est libérée et elle génère de l'énergie grâce au barrage." /></div>
 						<div class="span6">
 							<div id="barParcTargetStep" class="first progress progress-success progress-striped active bulle" tooltip="Ce pourcentage représente la part des STEP sur le parc ciblé">
                                 <span class="value"></span>
@@ -187,7 +203,7 @@
                         <div id="idDiffParcStep" class="span1"></div>
 					</div>
 					<div class="row">
-						<div class="span2">Import <img src="img/help.png" class="bulle" tooltip="texte" /></div>
+						<div class="span2">Import <img src="img/help.png" class="bulle" tooltip="L'import représente l'énergie importée des pays voisins. Il faut savoir que lex prix fluctuent énormément et qu'il est parfois moins cher d'importer que d'allumer une centrale à flammes" /></div>
 						<div class="span6">
 							<div id="barParcTargetImport" class="first progress progress-success progress-striped active bulle" tooltip="Ce pourcentage représente la part de l’import sur le parc ciblé">
                                 <span class="value"></span>
@@ -202,22 +218,6 @@
                         <div id="idParcFinalImport" class="span1"></div>
                         <div id="idDiffParcImport" class="span1"></div>
 					</div>
-					<div class="row">
-						<div class="span2">Légende</div>
-						<div class="span1"></div>
-						<div class="span4 legende-verte">
-                            Puissance énergétique du parc ciblé
-							<div id="idLegendeRef" class="progress progress-success progress-striped active bulle" tooltip="Le parc ciblé est celui que vous avez choisi lors du paramétrage de la simulation">
-							  <div class="bar" style="width: 100%;"></div>
-							</div>
-						</div>
-						<div class="span4 legende-jaune">
-                            Puissance énergétique du parc calculé
-							<div id="idLegendeCible" class="progress progress-warning progress-striped active bulle" tooltip="Le parc calculé est le parc ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le parc ciblé n’était pas assez flexible dans sa capacité à répondre à la demande">
-							  <div class="bar" style="width: 100%;"></div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 
@@ -227,17 +227,17 @@
 
 
                 <div id="consommation">
-                    <h1>Résultat : Consommation</h1>
+                    <h1>Résultat - Consommation <img src="img/help.png" class="bulle" tooltip="Ce schéma représente la puissance délivrée par chaque type de parc sur l'année ciblée" /></h1>
                     <div id="chart_conso" class="chart"></div>
                 </div>
 
                 <div class="row first">
                     <div id="mixdemande" class="span6">
-                        <h1>MIEL ciblé</h1>
+                        <h1>MIEL ciblé <img src="img/help.png" class="bulle" tooltip="Le mix électrique ciblé est celui que vous avez choisi lors du paramétrage de la simulation" /></h1>
                         <div id="chart_1" class="chart"></div>
                     </div>
                     <div id="mixcalcule" class="span6">
-                        <h1>MIEL Calculé</h1>
+                        <h1>MIEL Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le parc ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le parc ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
                         <div id="chart_2" class="chart"></div>
                     </div>
                 </div>
