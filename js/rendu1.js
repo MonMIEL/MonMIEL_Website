@@ -71,7 +71,7 @@ var afficherPieChart2 = function(){
 function miseEnPlaceHighChart(){
 
 	Highcharts.setOptions({
-        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263']
+        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263'/*, 'black', 'white'*/]
     });
 
     Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
@@ -216,13 +216,15 @@ function miseEnPlaceHighChart(){
             data: dataJSON.series.nucleaire
             //   color: colorNuke
         }/*, {
+            pointInterval: 24*60 * 60 * 1000,
+            pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'STEP',
-            color: colorSTEP,
-            data: [0, 0, 0, 0, 0, 0, 0]
+            data: dataJSON.series.step
         }, {
+            pointInterval: 24*60 * 60 * 1000,
+            pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Import',
-            color: colorIMPORT,
-            data: [0, 0, 0, 0, 0, 0, 0]
+            data: dataJSON.series.import
         }*/]
     });
 
@@ -273,15 +275,10 @@ function miseEnPlaceHighChart(){
                 {name :'Eolien',                y: perMixTargetEol,     events:{click : afficherPieChart2},visible:(perMixTargetEol.toFixed(1)!=0.0)},
                 {name :'Hydraulique',           y: perMixTargetHydrau,  events:{click : afficherPieChart2},visible:(perMixTargetHydrau.toFixed(1)!=0.0)},
                 {name :'Nucléaire',             y: perMixTargetNuke,    events:{click : afficherPieChart2,visible:(perMixTargetNuke.toFixed(1)!=0.0)}}
-/*,
-                {name :'STEP', y: 0, events:{
-                    select : function(){chart2.series[0].data[this.x].select(true); },
-                    unselect : function(){chart2.series[0].data[this.x].select(false);}
-                }},
-                {name :'IMPORT', y: 0, events:{
-                    select : function(){chart2.series[0].data[this.x].select(true); },
-                    unselect : function(){chart2.series[0].data[this.x].select(false);}
-                }}*/
+                /*
+                {name :'STEP',                  y: perMixTargetSTEP,    events:{click : afficherPieChart2,visible:(perMixTargetSTEP.toFixed(1)!=0.0)}}
+                {name :'Import',                y: perMixTargetImport,  events:{click : afficherPieChart2,visible:(perMixTargetImport.toFixed(1)!=0.0)}}
+                */
             ]
         }]
     });
@@ -337,14 +334,10 @@ function miseEnPlaceHighChart(){
                 {name : 'Eolien',               y: perMixFinalEol,      z:diffPerMixEol,    events:{click : afficherPieChart1},visible:perMixFinalEol.toFixed(1)!=0.0},
                 {name : 'Hydraulique',          y: perMixFinalHydrau,   z:diffPerMixHydrau, events:{click : afficherPieChart1},visible:perMixFinalHydrau.toFixed(1)!=0.0},
                 {name : 'Nucléaire',            y: perMixFinalNuke,     z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalNuke.toFixed(1)!=0.0}
-               /* {name : 'STEP', y: 0,z:'0', events:{
-                    select : function(){chart1.series[0].data[this.x].select(true); },
-                    unselect : function(){chart2.series[0].data[this.x].select(false);}
-                }},
-                {name : 'IMPORT', y: 0,z:'0', events:{
-                    select : function(){chart1.series[0].data[this.x].select(true); },
-                    unselect : function(){chart2.series[0].data[this.x].select(false);}
-                }}*/
+                /*
+                {name : 'STEP',                 y: perMixFinalSTEP,     z:diffPerMixHydrau, events:{click : afficherPieChart1},visible:perMixFinalSTEP.toFixed(1)!=0.0},
+                {name : 'Import',               y: perMixFinalImport,   z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalImport.toFixed(1)!=0.0}
+                */
             ]
         }]
     });
