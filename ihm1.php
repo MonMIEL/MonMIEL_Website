@@ -132,7 +132,7 @@
 				Etape 1 - Scénario
 				
 			<!-- info bulle -->
-			<img src="img/help.png" class="bulle" tooltip="Bulle" />
+			<img src="img/help.png" class="bulle" tooltip="Dans cette étape nous allons choisir notre scénario de consommation pour l'année cible (ex: 2015)" />
 			<!-- info bulle -->
 			
 			</h1>
@@ -140,11 +140,28 @@
                 <!--NavBar-->
                 <div class="navbar nav-tabs">
                     <div class="navbar-inner">
-                        <a class="brand">Type de scénario</a>
+                        <a class="brand">
+							Type de scénario
+							<!-- info bulle -->
+							<img src="img/help.png" class="bulle" tooltip="Ce bandeau représente les types de scénarios que l'on peut choisir parmi: RTE, personnel, UFE" />
+							<!-- info bulle -->		
+						</a>
                         <ul class="nav">
-                            <li class="active"><a href="#tab1" data-toggle="tab" onclick="changementOnglet('RTE')">RTE</a></li>
-                            <li class=""><a href="#tab2" data-toggle="tab" onclick="changementOnglet('Personnel')">Personnel</a></li>
-                            <li class=""><a href="#tab3" data-toggle="tab" onclick="changementOnglet('UFE')">UFE</a></li>
+                            <li class="active">
+								<a href="#tab1" data-toggle="tab" class="bulle" tooltip="" onclick="changementOnglet('RTE')">
+									RTE
+								</a>
+							</li>
+                            <li class="">
+								<a href="#tab2" data-toggle="tab" class="bulle" tooltip="" onclick="changementOnglet('Personnel')">
+									Personnel
+								</a>
+							</li>
+                            <li class="">
+								<a href="#tab3" data-toggle="tab" class="bulle" tooltip="" onclick="changementOnglet('UFE')">
+									UFE
+								</a>
+							</li>
                         </ul>
                     </div>
 
@@ -187,11 +204,18 @@
         <div id="monmix" style="display:none">
             <img class="separateur" src="img/separateur.jpg" alt="separateur" />
 			<!-- <img class="separateur" src="img/separateur.jpg" alt="separateur" /> -->
-            <h1 id="titleMonMix">Etape 2 - Mon MIx ELectrique</h1>
+            <h1 id="titleMonMix">
+				Etape 2 - Mon MIx ELectrique
+				<!-- info bulle -->
+				<img src="img/help.png" class="bulle" tooltip="" />
+				<!-- info bulle -->					
+			</h1>
 			<div id="monmix-right" style="width:48%;">
 				<h2>
 					Vos paramètres
-					<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>			
+					<!-- info bulle -->
+					<img src="img/help.png" class="bulle" tooltip="" />
+					<!-- info bulle -->
 				</h2>
 				<div class="bloc">
 					<div class="row first">
@@ -230,7 +254,13 @@
 						<div class="span1"><input type="text" id="eol_gwh" style="width:50px; background:none;"></div>
 					</div>
 				</div>
-				<h2>Paramètres indépendants</h2>
+				<h2>
+					Paramètres indépendants
+					<!-- info bulle -->
+					<img src="img/help.png" class="bulle" tooltip="" />
+					<!-- info bulle -->
+					
+				</h2>
 				<div class="bloc">
 					<div class="row first">
 						<div class="span3">Energie</div>
