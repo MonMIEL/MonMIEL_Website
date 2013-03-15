@@ -90,7 +90,7 @@ et le déplacement des centrales à flammes pour une somme de 100%
 En effet l'hydraulique doit être affecter à une valeur et non un pourcentage. Du coup tout les sliders doivent être repositionnés
 pour que la somme soit toujours égale à 100%
 
-# Validation de l'IHM 1 (ihm1.php)
+# Validation de l'IHM 1 (ihm1.php) -> Apparence de l'IHM 2 du résultat
 
 Lors du clique sur le bouton "Simuler" par l'utilisateur :
 
