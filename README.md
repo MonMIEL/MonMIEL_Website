@@ -40,11 +40,19 @@ Cette valeur peut être choisie soit dans les scénarios prédéfinis, soit par 
 Au final, elle sera stockée dans la variable "consommation2050" et sera utilisée dans l'étape 2 de l'IHM.
 
 Conception :
-Ou se trouve dese charts.
-Comment sont elles MaJ avec des valeurs de utilisateur.
-Quels sont des données et des méthodes utilisées.
-Quels sont des types des scénarios.
------------------------------------------------à faire----------------------------------
+Les scenraios sont gérés gràce à deux fichiers:
+*ihm1.php : Page principal contenant le scenario. Le scenario se situe dans la div 'scenario'
+*ihm1.js : Ensemble de fonction servant au dynamisme des scenarios.
+
+Il existe différents type de scenarios gérés par des onglets. Ces onglets sont définis dans la div 'navbar nav-tabs'. 
+Le changement de graphique se fait gràce à la fonction changementOnglet() dans ihm1.js.
+Une fois le type de scenario choisit, le but est d'affecter la consommation et l'année ciblé. Pour cela il y a 2 comportements
+différents :
+*Pour les graphiques à valeurs prédéfinis (RTE,UFE), il faut cliquer sur le graphique. Cela est géré gràce à l'évenement
+click des highcahrts. Cette évenement va faire appel à affecterConsommation() pour affecter les valeurs.
+*Pour les graphiques à valeurs personnalisables (personnel), les valeurs sont saisies à la main. Pour cela nous utilisons
+2 inputs avec un evenemnt onchange pour lancer la fonction miseAjourGraphiquePersonnelConso ou miseAjourGraphiquePersonnelAnnee.
+Ces fonctions vont redéfinir le deuxième point du graphique  chart_Scenario.series[0].data[1] pour affihcer la nouvelle courbe
 
 ## Etape 2 Mon Mix Electrique
 Cette partie a pour but de fixer la répartition (des %) de chaque énergie électrique.
