@@ -113,12 +113,12 @@ function miseAjourGraphiquePersonnelConso(){
         y=700;
         document.getElementById('consoSaisie').value=700;
         document.getElementById('etatScenario').style.display="";
-        document.getElementById('etatScenario').innerHTML="la consommation est comprise entre 300 et 700";
+        document.getElementById('etatScenario').innerHTML="la consommation doit être comprise entre 300 et 700";
     }else if(parseInt(y)<300){
         y=300;
         document.getElementById('consoSaisie').value=300;
         document.getElementById('etatScenario').style.display="";
-        document.getElementById('etatScenario').innerHTML="la consommation est comprise entre 300 et 700";
+        document.getElementById('etatScenario').innerHTML="la consommation doit être comprise entre 300 et 700";
     }else{
          document.getElementById('etatScenario').style.display="none";
     }
@@ -133,12 +133,12 @@ function miseAjourGraphiquePersonnelAnnee(){
         x=2050;
         document.getElementById('anneeSaisie').value=2050;
         document.getElementById('etatScenario').style.display="";
-        document.getElementById('etatScenario').innerHTML="L'année est comprise entre 2012 et 2050";
+        document.getElementById('etatScenario').innerHTML="L'année doit être comprise entre 2012 et 2050";
     }else if(x<2012){
         x=2012;
         document.getElementById('anneeSaisie').value=2012;
         document.getElementById('etatScenario').style.display="";
-        document.getElementById('etatScenario').innerHTML="L'année est comprise entre 2012 et 2050";
+        document.getElementById('etatScenario').innerHTML="L'année doit être comprise entre 2012 et 2050";
     }else
          document.getElementById('etatScenario').style.display="none";
     anneeCible=x;
@@ -246,7 +246,7 @@ function passerChartUfe(){
             name: 'Croissance PIB 2.5%',
             data: [{
                 name: '2011', //Change au moment du choix de l'année de Référence
-                color: '#00FF00',
+               // color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -256,7 +256,7 @@ function passerChartUfe(){
                 }
             }, {
                 name: '2030',
-                color: '#FF00FF',
+              //  color: '#FF00FF',
                 'id': 'point2',
                 x: 2030,
                 y: 625,
@@ -270,7 +270,7 @@ function passerChartUfe(){
             name: 'Croissance PIB 1.5%',
             data: [{
                 name: '2011', //Change au moment du choix de l'année de Référence
-                color: '#00FF00',
+              //  color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -280,7 +280,7 @@ function passerChartUfe(){
                 }
             }, {
                 name: '2030',
-                color: '#FF00FF',
+              //  color: '#FF00FF',
                 'id': 'point2',
                 x: 2030,
                 y: 570,
@@ -294,7 +294,7 @@ function passerChartUfe(){
             name: 'Croissance PIB 1%',
             data: [{
                 name: '2011', //Change au moment du choix de l'année de Référence
-                color: '#00FF00',
+               // color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -304,7 +304,7 @@ function passerChartUfe(){
                 }
             }, {
                 name: '2030',
-                color: '#FF00FF',
+               // color: '#FF00FF',
                 'id': 'point2',
                 x: 2030,
                 y: 550,
@@ -361,7 +361,7 @@ function passerChartPersonnel(){
                 fontSize: '16px'
             }
         },
-        colors:['#2d6fb2'],
+      //  colors:['#2d6fb2'],
         /*subtitle: {
          text: 'Indiquer la quantité de la consommation annuelle en 2050',
          style: {
@@ -400,7 +400,7 @@ function passerChartPersonnel(){
             name: 'Personnel',
             data: [{
                 name: '2011', //Change au moment du choix de l'année de Référence
-                color: '#00FF00',
+              //  color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -410,7 +410,7 @@ function passerChartPersonnel(){
                 }
             },{
                 name: '2050', //Change au moment du choix de l'année de Référence
-                color: '#00FF00',
+              //  color: '#00FF00',
                 'id': 'point1',
                 x: 2050, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -470,18 +470,18 @@ function passerChartRte(){
                 fontSize: '16px'
             }
         },
-		colors:['#2d6fb2'],
+	//	colors:['#2d6fb2'],
         subtitle: {
             text: 'Veuillez sélectionner un des profils/points du schéma',
             style: {
-                color: '#3E576F'
+              //  color: '#3E576F'
             }
         },
         xAxis: {
             title: {
                 text: 'Année',
                 style: {
-                    color: '#3E576F',
+                  //  color: '#3E576F',
                     fontWeight: 'bold',
                     align: 'right'
                 }
@@ -492,7 +492,7 @@ function passerChartRte(){
             title: {
                 text: 'Quantité (TWh)',
                 style: {
-                    color: '#3E576F',
+                 //   color: '#3E576F',
                     fontWeight: 'bold'
                 }
             },
@@ -510,7 +510,7 @@ function passerChartRte(){
             name: 'Haut',
             data: [{
                 name: '2011', //Change au moment du choix de l'année de Référence
-                color: '#00FF00',
+                //color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -520,7 +520,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2014',
-                color: '#FF00FF',
+               // color: '#FF00FF',
                 'id': 'point2',
                 x: 2014,
                 y: 494,
@@ -530,7 +530,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2015',
-                color: '#FF00FF',
+               // color: '#FF00FF',
                 'id': 'point3',
                 x: 2015,
                 y: 500,
@@ -540,7 +540,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2016',
-                color: '#FF00FF',
+               // color: '#FF00FF',
                 'id': 'point4',
                 x: 2016,
                 y: 505,
@@ -550,7 +550,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2017',
-                color: '#FF00FF',
+               // color: '#FF00FF',
                 'id': 'point5',
                 x: 2017,
                 y: 510,
@@ -564,7 +564,7 @@ function passerChartRte(){
             name: 'Référence',
             data: [{
                 name: '2011', //Change au moment du choix de l'année de Référence
-                color: '#00FF00',
+              //  color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -574,7 +574,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2014',
-                color: '#FF00FF',
+              //  color: '#FF00FF',
                 'id': 'point2',
                 x: 2014,
                 y: 487,
@@ -584,7 +584,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2015',
-                color: '#FF00FF',
+              //  color: '#FF00FF',
                 'id': 'point3',
                 x: 2015,
                 y: 491,
@@ -594,7 +594,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2016',
-                color: '#FF00FF',
+               // color: '#FF00FF',
                 'id': 'point4',
                 x: 2016,
                 y: 495,
@@ -604,7 +604,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2017',
-                color: '#FF00FF',
+              //  color: '#FF00FF',
                 'id': 'point5',
                 x: 2017,
                 y: 497,
@@ -618,7 +618,7 @@ function passerChartRte(){
             name: 'MDE renforcée',
             data: [{
                 name: '2011', //Change au moment du choix de l'année de Référence
-                color: '#00FF00',
+              //  color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -628,7 +628,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2014',
-                color: '#FF00FF',
+              //  color: '#FF00FF',
                 'id': 'point2',
                 x: 2014,
                 y: 479,
@@ -638,7 +638,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2015',
-                color: '#FF00FF',
+             //   color: '#FF00FF',
                 'id': 'point3',
                 x: 2015,
                 y: 481,
@@ -648,7 +648,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2016',
-                color: '#FF00FF',
+            //    color: '#FF00FF',
                 'id': 'point4',
                 x: 2016,
                 y: 482,
@@ -658,7 +658,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2017',
-                color: '#FF00FF',
+            //    color: '#FF00FF',
                 'id': 'point5',
                 x: 2017,
                 y: 484,
@@ -672,7 +672,7 @@ function passerChartRte(){
             name: 'Bas',
             data: [{
                 name: '2011', //Change au moment du choix de l'année de Référence
-                color: '#00FF00',
+             //   color: '#00FF00',
                 'id': 'point1',
                 x: 2011, //Change au moment du choix de l'année de Référence
                 y: 485,
@@ -682,7 +682,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2014',
-                color: '#FF00FF',
+             //   color: '#FF00FF',
                 'id': 'point2',
                 x: 2014,
                 y: 472,
@@ -692,7 +692,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2015',
-                color: '#FF00FF',
+             //   color: '#FF00FF',
                 'id': 'point3',
                 x: 2015,
                 y: 472,
@@ -702,7 +702,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2016',
-                color: '#FF00FF',
+             //   color: '#FF00FF',
                 'id': 'point4',
                 x: 2016,
                 y: 471,
@@ -712,7 +712,7 @@ function passerChartRte(){
                 }
             }, {
                 name: '2017',
-                color: '#FF00FF',
+             //   color: '#FF00FF',
                 'id': 'point5',
                 x: 2017,
                 y: 471,
@@ -740,19 +740,7 @@ function validerScenario(){
     document.getElementById('simuler').style.display = "block";
 
     //mise en place du camembert
-    Highcharts.setOptions({
-        colors: ['#166877', '#FF530D', '#E8C57A', '#1BAA8F', '#E81C0C', '#FF9655', '#FFF263']
-    });
 
-    Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
-        return {
-            radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
-            stops: [
-                [0, color],
-                [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
-            ]
-        };
-    });
     //Affichage du contenu suivant
     if(!passe){
     // First chart initialization
@@ -763,7 +751,11 @@ function validerScenario(){
             plotBorderWidth: null,
             plotShadow: false,
             height:350,
+            borderWidth: 2,
             backgroundColor: 'rgba(255,255,255,0.5)'
+        },
+        credits : {
+            enabled : false
         },
         title: {
             text: 'Repartition'
@@ -792,15 +784,14 @@ function validerScenario(){
         series: [{
             type: 'pie',
             name: 'Dev #1',
-            data: [
-                ['nucléaire', 50 ],
-                ['Photovoltaïque', 10],
-                ['Eolien', 5],
-                ['Hydraulique', 5],
-                ['Centrales à flammes', 30],
-                ['STEP', 0],
-                ['IMPORT', 0]
-            ]
+            data: [{name :'Nucléaire',             y: 30,    visible:true},
+            {name :'Photovoltaïque',        y: 10 , visible:true},
+            {name :'Eolien',                y: 20,    visible:true},
+            {name :'Hydraulique',           y: 20,  visible:true},
+            {name :'Centrales à flammes',   y: 20,   visible:true},
+            {name :'STEP',   y: 0,  visible:false},
+            {name :'IMPORT',   y: 0,  visible:false}
+        ]
         }]
     });
 
@@ -846,13 +837,14 @@ function updateCamembert(){
     var eol =  Math.round(parseInt(document.getElementById("eol_txtfield").value));
 
     var data  =[
-        ['nucléaire', nuc ],
-        ['Photovoltaïque', pho],
-        ['Eolien', eol],
-        ['Hydraulique', hyd],
-        ['Centrales à flammes', cen],
-        ['STEP', 0],
-        ['IMPORT', 0]
+        {name :'Nucléaire',             y: nuc,    events:{click : null,visible:(nuc.toFixed(1)!=0.0)}},
+        {name :'Photovoltaïque',        y: pho ,  events:{click : null},visible:(pho.toFixed(1)!=0.0)},
+        {name :'Eolien',                y: eol,     events:{click : null},visible:(eol.toFixed(1)!=0.0)},
+        {name :'Hydraulique',           y: hyd,  events:{click : null},visible:(hyd.toFixed(1)!=0.0)},
+        {name :'Centrales à flammes',   y: cen,   events:{click : null},visible:(cen.toFixed(1)!=0.0)},
+        {name :'STEP',   y: 0,   events:{click : null},visible:false},
+        {name :'IMPORT',   y: 0,   events:{click : null},visible:false}
+
     ];
     chart_cam.series[0].setData(data);
 }
@@ -893,10 +885,22 @@ function affecterConsommation(X,Y){
 var chart_Scenario, chart2, chart3;
 // Once DOM (document) is finished loading
 $(document).ready(function() {
+    Highcharts.setOptions({
+        colors: ['#166877', '#FF530D', '#E8C57A', '#1BAA8F', '#E81C0C', '#FF9655', '#FFF263']
+    });
 
+    Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
+        return {
+            radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
+            stops: [
+                [0, color],
+                [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+            ]
+        };
+    });
     // First chart initialization
     passerChartRte();
-
+/*
     // Second chart initialization (pie chart)
     chart2 = new Highcharts.Chart({
         chart: {
@@ -983,6 +987,6 @@ $(document).ready(function() {
             ]
         }]
     });
-
+*/
 
 });

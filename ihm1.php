@@ -27,7 +27,7 @@
     <script src="js/infoBulle.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/highchart/highcharts.js"></script>
-    <script src="js/highchart/gray.js"></script>
+
     <script src="js/ihm1.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
 
