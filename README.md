@@ -39,20 +39,21 @@ désire avoir dans son calcul.
 Cette valeur peut être choisie soit dans les scénarios prédéfinis, soit par la valeur dite "libre".
 Au final, elle sera stockée dans la variable "consommation2050" et sera utilisée dans l'étape 2 de l'IHM.
 
-Conception :
+###Conception :
 Les scenraios sont gérés gràce à deux fichiers:
 * ihm1.php : Page principal contenant le scenario. Le scenario se situe dans la div 'scenario'
 * ihm1.js : Ensemble de fonction servant au dynamisme des scenarios.
 
 Il existe différents type de scenarios gérés par des onglets. Ces onglets sont définis dans la div 'navbar nav-tabs'. 
 Le changement de graphique se fait gràce à la fonction changementOnglet() dans ihm1.js.
+
 Une fois le type de scenario choisit, le but est d'affecter la consommation et l'année ciblé. Pour cela il y a 2 comportements
 différents :
 * Pour les graphiques à valeurs prédéfinis (RTE,UFE), il faut cliquer sur le graphique. Cela est géré gràce à l'évenement
 click des highcahrts. Cette évenement va faire appel à affecterConsommation() pour affecter les valeurs.
 * Pour les graphiques à valeurs personnalisables (personnel), les valeurs sont saisies à la main. Pour cela nous utilisons
 2 inputs avec un evenemnt onchange pour lancer la fonction miseAjourGraphiquePersonnelConso ou miseAjourGraphiquePersonnelAnnee.
-Ces fonctions vont redéfinir le deuxième point du graphique  chart_Scenario.series[0].data[1] pour affihcer la nouvelle courbe
+Ces fonctions vont redéfinir le deuxième point du graphique  chart_Scenario.series[0].data[1] pour afficher la nouvelle courbe.
 
 ## Etape 2 Mon Mix Electrique
 Cette partie a pour but de fixer la répartition (des %) de chaque énergie électrique.
@@ -69,11 +70,25 @@ Les énergies sont les suivantes :
 ** STEP                 (non utilisable par l'utilisateur)
 ** Import               (non utilisable par l'utilisateur)
 
-Conception :
-Ou se trouve dese charts.
-Comment sont elles MaJ avec des valeurs de utilisateur.
-Quels sont des données et des méthodes utilisées.
------------------------------------------------à faire----------------------------------
+###Conception :
+Dans cette partie nous retrouvons 2 grandes sous-parties:
+* Camembert : La répartition des energies se est afficher dans un graphiques camembert
+* Slier : la selection des energies se fait gràce à des sliders.
+
+Le tout est chargé une fois le scenario validé via la fonction validerScenario() dans ihm1.js. Cette fonction va :
+* Charger le highchart si il n'a jamais été chargé (new Highcharts.Chart)
+* Charger les sliders si ils n'ont jamais été chargé (form_widget_amount_slider)
+* Initialiser les valeurs.
+
+Les sliders sont gérés dans un fichier différent dhtmlgoodies_slider.js . Nous possédons 3 grandes fonctions pour les sliders :
+* form_widget_amount_slider: initialise les sliders en fonction de la taille, des valeurs et du type du slider.
+On possède 3 types de sliders :'normal', 'auto' (on ne peut pas bouger à la main mais seront bougé via d'autres valeurs),
+'disable' (impossible de les bouger et sont afficher en rouge).
+* startMoveSlider : Cette fonction est appelé lorsqu'on déplace un curseur. Dans cette fonction est géré les limites
+et le déplacement des centrales à flammes pour une somme de 100%
+* initialiserValeur : Cette fonction initialise les valeurs par default des sliders. Elle sert notamment a gérée l'hydraulique.
+En effet l'hydraulique doit être affecter à une valeur et non un pourcentage. Du coup tout les sliders doivent être repositionnés
+pour que la somme soit toujours égale à 100%
 
 # Validation de l'IHM 1 (ihm1.php)
 
