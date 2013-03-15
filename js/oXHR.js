@@ -38,7 +38,7 @@ function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints, consommat
             postActionsJSON();
         },
         error:function (xhr, status, error){
-            window.location = "ihm1.php?error=erreurChargementRendu1";
+            window.location = "saisiDonnees.php?error=erreurChargementRendu1";
         },
         dataType:'json'
     });

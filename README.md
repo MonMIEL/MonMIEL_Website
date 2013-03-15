@@ -26,7 +26,7 @@ Ansi que de nombreuses librairies et méthodologies :
 L'objectif est de réaliser un site web performant et facilement maintenable par les équipes, utilisant des technologies
 web récents.
 
-#IHM 1 (ihm1.php)
+#IHM 1 (saisiDonnees.php)
 
 Cette page est la premère IHM que l'utilisateur voit lors de la simulation du Mix Electrique.
 La page est divisée en 2 parties :
@@ -41,11 +41,11 @@ Au final, elle sera stockée dans la variable "consommation2050" et sera utilis�
 
 ###Conception :
 Les scenraios sont gérés gràce à deux fichiers:
-* ihm1.php : Page principal contenant le scenario. Le scenario se situe dans la div 'scenario'
-* ihm1.js : Ensemble de fonction servant au dynamisme des scenarios.
+* saisiDonnees.php : Page principal contenant le scenario. Le scenario se situe dans la div 'scenario'
+* saisiDonnees.js : Ensemble de fonction servant au dynamisme des scenarios.
 
 Il existe différents type de scenarios gérés par des onglets. Ces onglets sont définis dans la div 'navbar nav-tabs'. 
-Le changement de graphique se fait gràce à la fonction changementOnglet() dans ihm1.js.
+Le changement de graphique se fait gràce à la fonction changementOnglet() dans saisiDonnees.js.
 
 Une fois le type de scenario choisit, le but est d'affecter la consommation et l'année ciblé. Pour cela il y a 2 comportements
 différents :
@@ -75,7 +75,7 @@ Dans cette partie nous retrouvons 2 grandes sous-parties:
 * Camembert : La répartition des energies se est afficher dans un graphiques camembert
 * Slier : la selection des energies se fait gràce à des sliders.
 
-Le tout est chargé une fois le scenario validé via la fonction validerScenario() dans ihm1.js. Cette fonction va :
+Le tout est chargé une fois le scenario validé via la fonction validerScenario() dans saisiDonnees.js. Cette fonction va :
 * Charger le highchart si il n'a jamais été chargé (new Highcharts.Chart)
 * Charger les sliders si ils n'ont jamais été chargé (form_widget_amount_slider)
 * Initialiser les valeurs.
@@ -90,28 +90,28 @@ et le déplacement des centrales à flammes pour une somme de 100%
 En effet l'hydraulique doit être affecter à une valeur et non un pourcentage. Du coup tout les sliders doivent être repositionnés
 pour que la somme soit toujours égale à 100%
 
-# Validation de l'IHM 1 (ihm1.php) -> Apparence de l'IHM 2 du résultat
+# Validation de l'IHM 1 (saisiDonnees.php) -> Apparence de l'IHM 2 du résultat
 
 Lors du clique sur le bouton "Simuler" par l'utilisateur :
 
-1/ Les informations suivantes sont envoyés à la page rendu1.php :
+1/ Les informations suivantes sont envoyés à la page resCalculMonMiel.php :
 * Repartition des énergies (en TWh) :
 ** Nucléaire
 ** Photovoltaïque
 ** Eolien
 
-2/ Lors du chargement de rendu1.php, la méthode "init()" se lance et récupères les trois variables.
+2/ Lors du chargement de resCalculMonMiel.php, la méthode "init()" se lance et récupères les trois variables.
 
 3/ La récupération des données se lance via la méthode "init()"->"manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints)"
 * Cette méthode se trouve dans oXHR.js
 * L'appel ajax est réalisé au serveur central avec des données de l'utilsiateur.
 * Lors du succès de l'opération, les postActionns sont réalisés sur l'objet récupéré JSON.
-* Lors de l'échec de l'opération, la page ihm1.php est retournée avec le code d'erreur.
+* Lors de l'échec de l'opération, la page saisiDonnees.php est retournée avec le code d'erreur.
 
 #JSON
 
 La communication avec le serveur principal MonMIEL se fait à travers des appels ajax à l'API du serveur.
-Les données envoyés au serveur sont ceux récupéré à partir de l'IHM 1 (ihm1.php).
+Les données envoyés au serveur sont ceux récupéré à partir de l'IHM 1 (saisiDonnees.php).
 Le contenu de JSON est utilisé par la méthode "postActionsJSON()" dans "calculJsonMonMIEL.js".
 
 * Initialisation des variables du parc de consommation est réalisé : initialiserVariablesParc()

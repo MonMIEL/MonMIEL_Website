@@ -14,11 +14,11 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/ihm1.css">
+	<link rel="stylesheet" href="css/saisiDonnees.css">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/ihm1.css">
+    <link rel="stylesheet" href="css/saisiDonnees.css">
 
     <!-- add scripts -->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -28,7 +28,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/highchart/highcharts.js"></script>
 
-    <script src="js/ihm1.js"></script>
+    <script src="js/saisiDonnees.js"></script>
     <script src="js/dhtmlgoodies_slider.js"></script>
 
 
@@ -42,7 +42,7 @@
 		}
 
         function gorendu(){
-            var html = "rendu1.php?"+
+            var html = "resCalculMonMiel.php?"+
                     "consommation2050="+ consommation2050+
                     "&nuc_gwh="+ document.getElementById("nuc_gwh").value+
                     "&pho_gwh="+ document.getElementById("pho_gwh").value +

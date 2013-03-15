@@ -22,7 +22,7 @@
 		<script src="js/highchart/highcharts.js"></script>
         <script src="js/highchart/exporting.js"></script>
 
-		<script src="js/rendu1.js" ></script>
+		<script src="js/resCalculMonMiel.js" ></script>
         <script src="js/calculJsonMonMIEL.js" ></script>
         <script src="js/oXHR.js"></script>
 		<script src="js/spin.js"></script>
@@ -48,7 +48,7 @@
                         typeof(pho_gwh)=="undefined" ||
                         typeof(eol_gwh)=="undefined"){
                     alert();
-                    window.location = "ihm1.php?error=manqueDonnee";
+                    window.location = "saisiDonnees.php?error=manqueDonnee";
                 }
                 calculerMonMIEL();
             }

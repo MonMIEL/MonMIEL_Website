@@ -50,7 +50,7 @@
                             <img src="img/simulez.PNG" alt="">
                             <div class="container">
                                 <div class="carousel-caption">
-                                   <a class="btn btn-large btn-primary" href="ihm1.php">Simulez</a>
+                                   <a class="btn btn-large btn-primary" href="saisiDonnees.php">Simulez</a>
                                 </div>
                             </div>
                         </div>
