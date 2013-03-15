@@ -42,13 +42,26 @@ function exporterChartConso() {
     });
 }
 
-var afficherPieChart1 = function(){ chart1.series[0].data[this.x].select(true);}; //utilisé dans Chart2
-var afficherPieChart2 = function(){ chart2.series[0].data[this.x].select(true);}; //utilisé dans Chart1
+var afficherPieChart1 = function(){
+    for(i=0;i<chart1.series[0].data.length;i++){
+        if(chart1.series[0].data[i].name == this.name){
+            chart1.series[0].data[i].select(true);
+        }
+    }
+}; //utilisé dans Chart2
+var afficherPieChart2 = function(){
+    for(i=0;i<chart2.series[0].data.length;i++){
+        if(chart2.series[0].data[i].name == this.name){
+            chart2.series[0].data[i].select(true);
+        }
+    }
+
+}; //utilisé dans Chart1
 
 function miseEnPlaceHighChart(){
 
 	Highcharts.setOptions({
-        colors: ['black','#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263']
+        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263']
     });
 
     Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
@@ -66,7 +79,8 @@ function miseEnPlaceHighChart(){
             type: 'area',
             backgroundColor: 'rgba(255,255,255,0.5)',
             animation: false,
-            zoomType: 'x'
+            zoomType: 'x',
+            borderWidth: 2
         },
         credits : {
             enabled : false
@@ -78,6 +92,8 @@ function miseEnPlaceHighChart(){
             text: 'Année de reférence : 2050'
         },
         xAxis: {
+            gridLineWidth: 0.3,
+            gridLineColor:'black',
             type: 'datetime',
             //maxZoom : 10,
             title: {
@@ -91,6 +107,8 @@ function miseEnPlaceHighChart(){
             }
         },
         yAxis: {
+            gridLineWidth: 0.3,
+            gridLineColor:'black',
             title: {
                 text: 'Puissance (Gw) '
             },
@@ -131,7 +149,7 @@ function miseEnPlaceHighChart(){
             },
             line: {
                 stacking: 'normal',
-                lineWidth: 2,
+                lineWidth: 1.5,
                 marker: {
                     enabled: false,
                     states: {
@@ -144,12 +162,13 @@ function miseEnPlaceHighChart(){
                 shadow: true,
                 states: {
                     hover: {
-                        lineWidth: 2
+                        lineWidth: 1.5
                     }
                 }
             }
         },
         series: [{
+            color:'black',
             type:'line',
             pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
@@ -207,6 +226,7 @@ function miseEnPlaceHighChart(){
             plotBorderWidth: null,
             plotShadow: false,
             height:350,
+            borderWidth: 2,
             backgroundColor: 'rgba(255,255,255,0.5)'
         },
         credits : {
@@ -220,7 +240,7 @@ function miseEnPlaceHighChart(){
             percentageDecimals: 1
         },
         plotOptions: {
-            pie: {
+            series: {
                 dataLabels: {
                     enabled: true,
                     color: '#000000',
@@ -268,6 +288,7 @@ function miseEnPlaceHighChart(){
             plotBorderWidth: null,
             plotShadow: false,
             height: 350,
+            borderWidth: 2,
             backgroundColor: 'rgba(255,255,255,0.5)'
         },
         title: {
@@ -281,7 +302,7 @@ function miseEnPlaceHighChart(){
             percentageDecimals: 1
         },
         plotOptions: {
-            pie: {
+            series: {
                 allowPointSelect: true,
                 cursor: 'pointer',
                 dataLabels: {
