@@ -120,15 +120,35 @@ majChiffresParcCalcule() et majLegende()
 * Le parc est affiché
 * Initialisation des variables du mix électrique calculé est faite : initialiserVariablesMix()
 
-En ce qui concerne le fichier JSON :
+##En ce qui concerne le fichier JSON :
 * finalParcPower :
+Les informations sur la répartition de la puissance énergétique (visée) en France en MW suivant chaque énergie
+    -> utilisé pour être affiché dans l'affichage du parc ciblé
 * targetParcPower :
-* finalConso :
+Les informations sur la répartition de la puissance énergétique (calculée) en France en MW suivant chaque énergie
+    -> utilisé pour être affiché dans l'affichage du parc calculé
+
 * targetConso :
-* series :
+Les informations sur la répartition de la consommation énergétique (ciblée) (de chaque énergie) en MWh
+    -> utilisé pour être affiché dans le MIX ELECTRIQUE ciblé
+* finalConso :
+Les informations sur la répartition de la consommation énergétique (calculée) (de chaque énergie) en MWh
+    -> utilisé pour être affiché dans le MIX ELECTRIQUE obtenu
+
+* series : En Twh. Elles sont affectés dans le chart représentant la puissance énergétique repartie sur toute l'année ciblée.
+Les énergies sont :
 ** nucleaire
 ** photovoltaique
 ** eolien
 ** flamme
 ** hydraulique
 ** total
+
+#Equipe
+La partie WebSite du projet MonMIEL a été réalisée par l'équipe de 5 personnes de Grenoble dans le cadre de cours
+de Master 2 MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises).
+
+#Contributing (en)
+Please submit all pull requests against *-wip branches. If your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the Code Guide, maintained by Mark Otto.
+
+Thanks!
