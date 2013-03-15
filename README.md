@@ -148,7 +148,7 @@ Les énergies sont :
 La partie WebSite du projet MonMIEL a été réalisée par l'équipe de 5 personnes de Grenoble dans le cadre de cours
 de Master 2 MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises).
 
-#Contributing (en)
-Please submit all pull requests against *-wip branches. If your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the Code Guide, maintained by Mark Otto.
+
+
 
 Thanks!
