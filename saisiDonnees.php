@@ -73,7 +73,7 @@
             <?php if(isset($_GET['error'])) {
             echo "<div id='erreur' class='bloc'>";
             if($_GET['error']=="erreurChargementRendu1")
-                echo "Erreur lors du chargement du calculateur";
+                echo "Erreur lors de la simulation.\nVeilluez refaire la simulation ...";
             else if ($_GET['error']=="manqueDonnee")
                 echo "Merci de renseigner les informations avant de simuler";
             echo "</div>";

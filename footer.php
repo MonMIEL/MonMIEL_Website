@@ -2,7 +2,7 @@
 	<div class="span4">
 		<h4><b>Auteur</b></h4>
 		<p>Groupe d'étudiants M2MIAGE option: Energie</p>
-		<p>Copyright © 2013. Tous droits reservés</p>
+		<p>Copyright © 2013. Tous droits réservés</p>
 	</div>
 	<div class="span4">
 		<h4><b>Partenaires</b></h4>

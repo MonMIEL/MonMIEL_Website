@@ -19,7 +19,7 @@ function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints, consommat
         console.log("eEolTwh : "+sVarEolTwh);
     var sVarNBPoints = encodeURIComponent(nbPoints);
 
-    var url = "http://localhost:8888/app_dev.php/api/v1/"+consommation2050+".json?"+
+    var url = "http://monmiel-env-stg2h7stbj.elasticbeanstalk.com/api/v1/"+consommation2050+".json?"+
      "nuke="+sVarNucTwh +
      "&photo="+sVarPhotoTwh +
      "&eol="+sVarEolTwh +
