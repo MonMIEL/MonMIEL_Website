@@ -184,13 +184,18 @@ function miseEnPlaceHighChart(){
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Total de consommation',
             data: dataJSON.series.total
-        },{
+        }, {
             pointInterval: 24 * 60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'Centrales à flammes',
             data: dataJSON.series.flamme
             //data : [20000, 40000],
           //  color: colorFlammes
+        }, {
+            pointInterval: 24*60 * 60 * 1000,
+            pointStart: Date.UTC(anneeCible, 0, 01),
+            name: 'Import',
+            data: dataJSON.series.import
         }, {
             pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
@@ -215,16 +220,11 @@ function miseEnPlaceHighChart(){
             name: 'Nucléaire',
             data: dataJSON.series.nucleaire
             //   color: colorNuke
-        }/*, {
+        } /*, {
             pointInterval: 24*60 * 60 * 1000,
             pointStart: Date.UTC(anneeCible, 0, 01),
             name: 'STEP',
             data: dataJSON.series.step
-        }, {
-            pointInterval: 24*60 * 60 * 1000,
-            pointStart: Date.UTC(anneeCible, 0, 01),
-            name: 'Import',
-            data: dataJSON.series.import
         }*/]
     });
 
@@ -274,11 +274,9 @@ function miseEnPlaceHighChart(){
                 {name :'Photovoltaïque',        y: perMixTargetPhoto ,  events:{click : afficherPieChart2},visible:(perMixTargetPhoto.toFixed(1)!=0.0)},
                 {name :'Eolien',                y: perMixTargetEol,     events:{click : afficherPieChart2},visible:(perMixTargetEol.toFixed(1)!=0.0)},
                 {name :'Hydraulique',           y: perMixTargetHydrau,  events:{click : afficherPieChart2},visible:(perMixTargetHydrau.toFixed(1)!=0.0)},
-                {name :'Nucléaire',             y: perMixTargetNuke,    events:{click : afficherPieChart2,visible:(perMixTargetNuke.toFixed(1)!=0.0)}}
-                /*
-                {name :'STEP',                  y: perMixTargetSTEP,    events:{click : afficherPieChart2,visible:(perMixTargetSTEP.toFixed(1)!=0.0)}}
-                {name :'Import',                y: perMixTargetImport,  events:{click : afficherPieChart2,visible:(perMixTargetImport.toFixed(1)!=0.0)}}
-                */
+                {name :'Nucléaire',             y: perMixTargetNuke,    events:{click : afficherPieChart2,visible:(perMixTargetNuke.toFixed(1)!=0.0)}},
+                {name :'Import',                y: perMixTargetImport,  events:{click : afficherPieChart2,visible:(perMixTargetImport.toFixed(1)!=0.0)}},
+//                {name :'STEP',                  y: perMixTargetSTEP,    events:{click : afficherPieChart2,visible:(perMixTargetSTEP.toFixed(1)!=0.0)}}
             ]
         }]
     });
@@ -333,11 +331,9 @@ function miseEnPlaceHighChart(){
                 {name : 'Photovoltaïque',       y: perMixFinalPhoto,    z:diffPerMixPhoto,  events:{click : afficherPieChart1},visible:perMixFinalPhoto.toFixed(1)!=0.0},
                 {name : 'Eolien',               y: perMixFinalEol,      z:diffPerMixEol,    events:{click : afficherPieChart1},visible:perMixFinalEol.toFixed(1)!=0.0},
                 {name : 'Hydraulique',          y: perMixFinalHydrau,   z:diffPerMixHydrau, events:{click : afficherPieChart1},visible:perMixFinalHydrau.toFixed(1)!=0.0},
-                {name : 'Nucléaire',            y: perMixFinalNuke,     z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalNuke.toFixed(1)!=0.0}
-                /*
-                {name : 'STEP',                 y: perMixFinalSTEP,     z:diffPerMixHydrau, events:{click : afficherPieChart1},visible:perMixFinalSTEP.toFixed(1)!=0.0},
-                {name : 'Import',               y: perMixFinalImport,   z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalImport.toFixed(1)!=0.0}
-                */
+                {name : 'Nucléaire',            y: perMixFinalNuke,     z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalNuke.toFixed(1)!=0.0},
+                {name : 'Import',               y: perMixFinalImport,   z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalImport.toFixed(1)!=0.0},
+//                {name : 'STEP',                 y: perMixFinalSTEP,     z:diffPerMixHydrau, events:{click : afficherPieChart1},visible:perMixFinalSTEP.toFixed(1)!=0.0}
             ]
         }]
     });
