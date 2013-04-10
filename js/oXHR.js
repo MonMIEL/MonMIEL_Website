@@ -9,14 +9,14 @@ var lien;
  * Appel à la fonction de l'appel au serveur
  * */
 function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints, consommation2050){
-        console.log("---------------------------------------------");
-        console.log("Construction du lien avec des données :")
+//        console.log("---------------------------------------------");
+//        console.log("Construction du lien avec des données :")
     var sVarNucTwh = encodeURIComponent(eNucTwh);
-        console.log("eNucTwh : "+sVarNucTwh);
+//        console.log("eNucTwh : "+sVarNucTwh);
     var sVarPhotoTwh = encodeURIComponent(ePhotoTwh);
-        console.log("ePhotoTwh : "+sVarPhotoTwh);
+//        console.log("ePhotoTwh : "+sVarPhotoTwh);
     var sVarEolTwh = encodeURIComponent(eEolTwh);
-        console.log("eEolTwh : "+sVarEolTwh);
+//        console.log("eEolTwh : "+sVarEolTwh);
     var sVarNBPoints = encodeURIComponent(nbPoints);
 
     var url = "http://monmiel-env-stg2h7stbj.elasticbeanstalk.com/api/v1/"+consommation2050+".json?"+
@@ -25,8 +25,8 @@ function manipulerCalculMonMIEL(eNucTwh, ePhotoTwh, eEolTwh, nbPoints, consommat
      "&eol="+sVarEolTwh +
      "&point="+sVarNBPoints +
      "&hydro=50";
-    console.log("URL : " + url);
-        console.log("---------------------------------------------");
+//    console.log("URL : " + url);
+//        console.log("---------------------------------------------");
 
     $.ajax({
         url:url,

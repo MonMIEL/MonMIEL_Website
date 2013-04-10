@@ -41,9 +41,9 @@
                 pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
                 eol_gwh = <?php echo $_GET["eol_gwh"] ?>;
                 nbPoints = <?php echo $_GET["nbPoints"] ?>;
-                console.log("nuc_gwh : "+nuc_gwh);
-                console.log("pho_gwh : "+pho_gwh);
-                console.log("eol_gwh : "+eol_gwh);
+//                console.log("nuc_gwh : "+nuc_gwh);
+//                console.log("pho_gwh : "+pho_gwh);
+//                console.log("eol_gwh : "+eol_gwh);
                 if(typeof(nuc_gwh)=="undefined" ||
                         typeof(pho_gwh)=="undefined" ||
                         typeof(eol_gwh)=="undefined"){

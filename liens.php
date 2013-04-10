@@ -30,10 +30,10 @@
     <div id="contenu_lien">
         <h1>Partenaires</h1>
 		<div class="bloc">
-			<div class="row first" style="font-weight: normal">
+			<!--<div class="row first" style="font-weight: normal">
 				<div class ="span6 gauche">Réseau de Transport d'Electricité : </div>
 				<div class ="span6 droite"><a href="http://www.rte-france.com/fr/"><img src="img/rte.png" style="height: 45px;"/></a></div></br></br>
-			</div>
+			</div>-->
 			<div class="row first" style="font-weight: normal">
 				<div class ="span6 gauche">UJF : </div>
 				<div class ="span6 droite"><a href="http://www.ujf-grenoble.fr/"><img src="img/logo-ujf-gs.gif" style="height: 45px;"/></a></div></br></br>
@@ -47,7 +47,7 @@
 		<div class="bloc">
 			<div class="row first" style="font-weight: normal">
 			   <div class ="span6 gauche">Révolution fiscale :  </div>
-			   <div class ="span6 droite"><a href="http://www.revolution-fiscale.fr/"><img src="img/revolution.png" style="height: 30px;"/></a> </div></br></br>
+			   <div class ="span6 droite"><a href="http://www.revolution-fiscale.fr/"><img src="img/revolution.PNG" style="height: 30px;"/></a> </div></br></br>
 			</div>
 		</div>
     </div>

@@ -71,7 +71,7 @@ var afficherPieChart2 = function(){
 function miseEnPlaceHighChart(){
 
 	Highcharts.setOptions({
-        colors: ['#E81C0C', '#FF530D', '#E8C57A', '#1BAA8F', '#166877', '#FF9655', '#FFF263'/*, 'black', 'white'*/]
+        colors: ['#E81C0C', '#7e7e7e', '#FF530D', '#E8C57A', '#1BAA8F', '#166877']
     });
 
     Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
@@ -271,11 +271,11 @@ function miseEnPlaceHighChart(){
             name: 'Dev #1',
             data: [
                 {name :'Centrales à flammes',   y: perMixTargetFlame,   events:{click : afficherPieChart2},visible:(perMixTargetFlame.toFixed(1)!=0.0)},
+                {name :'Import',                y: perMixTargetImport,  events:{click : afficherPieChart2,visible:(perMixTargetImport.toFixed(1)!=0.0)}},
                 {name :'Photovoltaïque',        y: perMixTargetPhoto ,  events:{click : afficherPieChart2},visible:(perMixTargetPhoto.toFixed(1)!=0.0)},
                 {name :'Eolien',                y: perMixTargetEol,     events:{click : afficherPieChart2},visible:(perMixTargetEol.toFixed(1)!=0.0)},
                 {name :'Hydraulique',           y: perMixTargetHydrau,  events:{click : afficherPieChart2},visible:(perMixTargetHydrau.toFixed(1)!=0.0)},
-                {name :'Nucléaire',             y: perMixTargetNuke,    events:{click : afficherPieChart2,visible:(perMixTargetNuke.toFixed(1)!=0.0)}},
-                {name :'Import',                y: perMixTargetImport,  events:{click : afficherPieChart2,visible:(perMixTargetImport.toFixed(1)!=0.0)}},
+                {name :'Nucléaire',             y: perMixTargetNuke,    events:{click : afficherPieChart2,visible:(perMixTargetNuke.toFixed(1)!=0.0)}}
 //                {name :'STEP',                  y: perMixTargetSTEP,    events:{click : afficherPieChart2,visible:(perMixTargetSTEP.toFixed(1)!=0.0)}}
             ]
         }]
@@ -328,11 +328,11 @@ function miseEnPlaceHighChart(){
             name: 'calculé',
             data: [
                 {name : 'Centrales à flammes',  y: perMixFinalFlame,    z:diffPerMixFlame,  events:{click : afficherPieChart1},visible:perMixFinalFlame.toFixed(1)!=0.0},
+                {name : 'Import',               y: perMixFinalImport,   z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalImport.toFixed(1)!=0.0},
                 {name : 'Photovoltaïque',       y: perMixFinalPhoto,    z:diffPerMixPhoto,  events:{click : afficherPieChart1},visible:perMixFinalPhoto.toFixed(1)!=0.0},
                 {name : 'Eolien',               y: perMixFinalEol,      z:diffPerMixEol,    events:{click : afficherPieChart1},visible:perMixFinalEol.toFixed(1)!=0.0},
                 {name : 'Hydraulique',          y: perMixFinalHydrau,   z:diffPerMixHydrau, events:{click : afficherPieChart1},visible:perMixFinalHydrau.toFixed(1)!=0.0},
-                {name : 'Nucléaire',            y: perMixFinalNuke,     z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalNuke.toFixed(1)!=0.0},
-                {name : 'Import',               y: perMixFinalImport,   z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalImport.toFixed(1)!=0.0},
+                {name : 'Nucléaire',            y: perMixFinalNuke,     z:diffPerMixNuke,   events:{click : afficherPieChart1},visible:perMixFinalNuke.toFixed(1)!=0.0}
 //                {name : 'STEP',                 y: perMixFinalSTEP,     z:diffPerMixHydrau, events:{click : afficherPieChart1},visible:perMixFinalSTEP.toFixed(1)!=0.0}
             ]
         }]

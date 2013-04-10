@@ -130,20 +130,20 @@ function initialiserVariablesMix(){
      mixTargetSTEP = dataJSON.targetConso.step           / 100000;
      mixFinalSTE = dataJSON.finalConso.step              / 100000;
      */
-    console.log(" mixTargetNuke : "+mixTargetNuke);
-    console.log(" mixTargetFlame : "+mixTargetFlame);
-    console.log(" mixTargetEol : "+mixTargetEol);
-    console.log(" mixTargetHydrau : "+mixTargetHydrau);
-    console.log(" mixTargetPhoto : "+mixTargetPhoto);
-    console.log(" mixTargetImport : "+mixTargetImport);
+//    console.log(" mixTargetNuke : "+mixTargetNuke);
+//    console.log(" mixTargetFlame : "+mixTargetFlame);
+//    console.log(" mixTargetEol : "+mixTargetEol);
+//    console.log(" mixTargetHydrau : "+mixTargetHydrau);
+//    console.log(" mixTargetPhoto : "+mixTargetPhoto);
+//    console.log(" mixTargetImport : "+mixTargetImport);
 //    console.log(" mixTargetSTEP : "+mixTargetSTEP);
-    console.log(" mixFinalNuke : "+mixFinalNuke);
-    console.log(" mixFinalFlame : "+mixFinalFlame);
-    console.log(" mixFinalEol : "+mixFinalEol);
-    console.log(" mixFinalHydrau : "+mixFinalHydrau);
-    console.log(" mixFinalPhoto : "+mixFinalPhoto);
+//    console.log(" mixFinalNuke : "+mixFinalNuke);
+//    console.log(" mixFinalFlame : "+mixFinalFlame);
+//    console.log(" mixFinalEol : "+mixFinalEol);
+//    console.log(" mixFinalHydrau : "+mixFinalHydrau);
+//    console.log(" mixFinalPhoto : "+mixFinalPhoto);
 //    console.log(" mixFinalSTEP : "+mixFinalSTEP);
-    console.log(" mixFinalImport : "+mixFinalImport);
+//    console.log(" mixFinalImport : "+mixFinalImport);
     totalMixTarget =
         mixTargetNuke +
         mixTargetFlame +
@@ -207,28 +207,28 @@ function initialiserVariablesMix(){
         op=""; if(diffPerMixImport>0) op="+";
     diffPerMixImport=op+diffPerMixImport.toFixed(1);
 
-    console.log(" perMixTargetNuke : "+perMixTargetNuke.toFixed(1));
-    console.log(" perMixTargetFlame : "+perMixTargetFlame);
-    console.log(" perMixTargetEol : "+perMixTargetEol);
-    console.log(" perMixTargetHydrau : "+perMixTargetHydrau);
-    console.log(" perMixTargetPhoto : "+perMixTargetPhoto);
+//    console.log(" perMixTargetNuke : "+perMixTargetNuke.toFixed(1));
+//    console.log(" perMixTargetFlame : "+perMixTargetFlame);
+//    console.log(" perMixTargetEol : "+perMixTargetEol);
+//    console.log(" perMixTargetHydrau : "+perMixTargetHydrau);
+//    console.log(" perMixTargetPhoto : "+perMixTargetPhoto);
 //    console.log(" perMixTargetSTEP : "+perMixTargetSTEP);
-    console.log(" perMixTargetImport : "+perMixTargetImport);
-    console.log(" perMixFinalNuke : "+perMixFinalNuke.toFixed(1));
-    console.log(" perMixFinalFlame : "+perMixFinalFlame);
-    console.log(" perMixFinalEol : "+perMixFinalEol);
-    console.log(" perMixFinalHydrau : "+perMixFinalHydrau);
-    console.log(" perMixFinalPhoto : "+perMixFinalPhoto);
+//    console.log(" perMixTargetImport : "+perMixTargetImport);
+//    console.log(" perMixFinalNuke : "+perMixFinalNuke.toFixed(1));
+//    console.log(" perMixFinalFlame : "+perMixFinalFlame);
+//    console.log(" perMixFinalEol : "+perMixFinalEol);
+//    console.log(" perMixFinalHydrau : "+perMixFinalHydrau);
+//    console.log(" perMixFinalPhoto : "+perMixFinalPhoto);
 //    console.log(" perMixFinalSTEP : "+perMixFinalSTEP);
-    console.log(" perMixFinalImport : "+perMixFinalImport);
+//    console.log(" perMixFinalImport : "+perMixFinalImport);
 
-    console.log(" diffPerMixNuke : "+diffPerMixNuke);
-    console.log(" diffPerMixFlame : "+diffPerMixFlame);
-    console.log(" diffPerMixEol : "+diffPerMixEol);
-    console.log(" diffPerMixHydrau : "+diffPerMixHydrau);
-    console.log(" diffPerMixPhoto : "+diffPerMixPhoto);
+//    console.log(" diffPerMixNuke : "+diffPerMixNuke);
+//    console.log(" diffPerMixFlame : "+diffPerMixFlame);
+//    console.log(" diffPerMixEol : "+diffPerMixEol);
+//    console.log(" diffPerMixHydrau : "+diffPerMixHydrau);
+//    console.log(" diffPerMixPhoto : "+diffPerMixPhoto);
 //    console.log(" diffPerMixSTEP : "+diffPerMixSTEP);
-    console.log(" diffPerMixImport : "+diffPerMixImport);
+//    console.log(" diffPerMixImport : "+diffPerMixImport);
 }
 
 function initialiserVariablesParc(){
@@ -251,7 +251,7 @@ function initialiserVariablesParc(){
 			dataJSON.targetParcPower.import+
 			dataJSON.targetParcPower.step
         ;
-    console.log("Total Parc(Gw) : "+totalParcPower);
+//    console.log("Total Parc(Gw) : "+totalParcPower);
 
     parcTargetNuke = dataJSON.targetParcPower.nuclear;
     parcFinalNuke = dataJSON.finalParcPower.nuclear;
@@ -271,45 +271,45 @@ function initialiserVariablesParc(){
     //Calcul du parc Nuke
     perParcTargetNuke       = parcTargetNuke *100 / totalParcTargetPower;
     perParcFinalNuke        = parcFinalNuke  *100 / totalParcPower;
-        console.log("Parc Nuke(Mw) : ["+parcTargetNuke+"]["+parcFinalNuke+"]");
-        console.log("Parc Nuke(%) : ["+perParcTargetNuke+"]["+perParcFinalNuke+"]");
+//        console.log("Parc Nuke(Mw) : ["+parcTargetNuke+"]["+parcFinalNuke+"]");
+//        console.log("Parc Nuke(%) : ["+perParcTargetNuke+"]["+perParcFinalNuke+"]");
 
     //Calcul du parc Flame
     perParcTargetFlame      = parcTargetFlame   *100 / totalParcTargetPower;
     perParcFinalFlame       = parcFinalFlame    *100 / totalParcPower;
-        console.log("Parc Flammes(Mw) : ["+parcTargetFlame+"]["+parcFinalFlame+"]");
-        console.log("Parc Flammes(%) : ["+perParcTargetFlame+"]["+perParcFinalFlame+"]");
+//        console.log("Parc Flammes(Mw) : ["+parcTargetFlame+"]["+parcFinalFlame+"]");
+//        console.log("Parc Flammes(%) : ["+perParcTargetFlame+"]["+perParcFinalFlame+"]");
 
     //Calcul du parc Eolien
     perParcTargetEol        = parcTargetEol    *100 / totalParcTargetPower;
     perParcFinalEol         = parcFinalEol     *100 / totalParcPower;
-    console.log("Parc Eol(Mw) : ["+parcTargetEol+"]["+parcFinalEol+"]");
-    console.log("Parc Eol(%) : ["+perParcTargetEol+"]["+perParcFinalEol+"]");
+//    console.log("Parc Eol(Mw) : ["+parcTargetEol+"]["+parcFinalEol+"]");
+//    console.log("Parc Eol(%) : ["+perParcTargetEol+"]["+perParcFinalEol+"]");
 
     //Calcul du parc Hydraulique
     perParcTargetHydrau     = parcTargetHydrau *100   / totalParcTargetPower;
     perParcFinalHydrau      = parcFinalHydrau  *100   / totalParcPower;
-    console.log("Parc Hydro(Mw) : ["+parcTargetHydrau+"]["+parcFinalHydrau+"]");
-    console.log("Parc Hydro(%) : ["+perParcTargetHydrau+"]["+perParcFinalHydrau+"]");
+//    console.log("Parc Hydro(Mw) : ["+parcTargetHydrau+"]["+parcFinalHydrau+"]");
+//    console.log("Parc Hydro(%) : ["+perParcTargetHydrau+"]["+perParcFinalHydrau+"]");
 
     //Calcul du parc Photovoltaique
     perParcTargetPhoto      = parcTargetPhoto *100 / totalParcTargetPower;
     perParcFinalPhoto       = parcFinalPhoto  *100 / totalParcPower;
-    console.log("Parc Photo(Mw) : ["+parcTargetPhoto+"]["+parcFinalPhoto+"]");
-    console.log("Parc Photo(%) : ["+perParcTargetPhoto+"]["+perParcFinalPhoto+"]");
+//    console.log("Parc Photo(Mw) : ["+parcTargetPhoto+"]["+parcFinalPhoto+"]");
+//    console.log("Parc Photo(%) : ["+perParcTargetPhoto+"]["+perParcFinalPhoto+"]");
 	
 	//Calcul du parc Import
     perParcTargetImport      = parcTargetImport *100 / totalParcTargetPower;
     perParcFinalImport       = parcFinalImport  *100 / totalParcPower;
-    console.log("Parc Import(Mw) : ["+parcTargetImport+"]["+parcFinalImport+"]");
-    console.log("Parc Import(%) : ["+perParcTargetImport+"]["+perParcFinalImport+"]");
+//    console.log("Parc Import(Mw) : ["+parcTargetImport+"]["+parcFinalImport+"]");
+//    console.log("Parc Import(%) : ["+perParcTargetImport+"]["+perParcFinalImport+"]");
 	
 	//Calcul du parc STEP
     perParcTargetStep      = parcTargetStep *100 / totalParcTargetPower;
     perParcFinalStep       = parcFinalStep  *100 / totalParcPower;
-    console.log("Parc STEP(Mw) : ["+parcTargetStep+"]["+parcFinalStep+"]");
-    console.log("Parc STEP(%) : ["+perParcTargetStep+"]["+perParcFinalStep+"]");
-    console.log("-----------------------------------------------------------------");
+//    console.log("Parc STEP(Mw) : ["+parcTargetStep+"]["+parcFinalStep+"]");
+//    console.log("Parc STEP(%) : ["+perParcTargetStep+"]["+perParcFinalStep+"]");
+//    console.log("-----------------------------------------------------------------");
 }
 
 function majBarresParcCalcule(){
@@ -474,5 +474,5 @@ function postActionsJSON(){
     /*Mix*/
     initialiserVariablesMix();
 
-    console.log(dataJSON);
+//    console.log(dataJSON);
 }
