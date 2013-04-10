@@ -92,7 +92,7 @@ function miseEnPlaceHighChart(){
             zoomType: 'x',
             borderWidth: 2,
             resetZoomButton: {
-                name: "hello"
+                name: "Reset"
             }
         },
         credits : {

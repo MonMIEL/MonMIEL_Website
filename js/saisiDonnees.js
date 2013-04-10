@@ -138,6 +138,16 @@ function passerChartUfe(){
                     fontWeight: 'bold',
                     align: 'right'
                 }
+            },
+            labels: {
+                formatter: function() {
+                    if(this.value == 2011){
+                        return "2011";
+                    }else if (this.value ==2030){
+                        return "2030";
+                    }
+                    return "";
+                }
             }
             //categories: ['Apples', 'Bananas', 'Oranges']
         },
@@ -296,6 +306,11 @@ function passerChartPersonnel(){
                     fontWeight: 'bold',
                     align: 'right'
                 }
+            },
+            labels: {
+                formatter: function() {
+                    return this.value; // clean, unformatted number for year
+                }
             }
         },
         yAxis: {
@@ -396,6 +411,11 @@ function passerChartRte(){
                   //  color: '#3E576F',
                     fontWeight: 'bold',
                     align: 'right'
+                }
+            },
+            labels: {
+                formatter: function() {
+                    return this.value; // clean, unformatted number for year
                 }
             }
             //categories: ['Apples', 'Bananas', 'Oranges']
