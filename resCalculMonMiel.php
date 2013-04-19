@@ -91,37 +91,37 @@
 
 			<div id="loadCalculMonMIEL"></div>
             <div id="RappelDonnées" style="display:none;">
-                <h1>Calcul réussit!</h1>
-                <h6>Scénario choisi : </h6>
-                <table class="table table-bordered">
-                    <tr class="success">
-                        <th>Année de référence</th>
-                        <th>Année cible</th>
-                        <th>Consommation brute annuelle</th>
-                    </tr>
-                    <tr>
-                        <td id="tab_rappel_donnees1.anneeref">1</td>
-                        <td id="tab_rappel_donnees1.anneecible">1</td>
-                        <td id="tab_rappel_donnees1.conso">1</td>
-                    </tr>
-                </table>
-                <h6>Mix Electrique choisi : </h6>
-                <table class="table table-bordered">
-                    <tr class="success">
-                        <th>Energie nucléaire</th>
-                        <th>Energie photovoltaïque</th>
-                        <th>Energie éolienne</th>
-                        <th>Energie hydraulique</th>
-                        <th>Energie des centrales à flamme</th>
-                    </tr>
-                    <tr>
-                        <td id="tab_rappel_donnees2.nuc">1</td>
-                        <td id="tab_rappel_donnees2.photo">1</td>
-                        <td id="tab_rappel_donnees2.eol">1</td>
-                        <td id="tab_rappel_donnees2.hydrau">1</td>
-                        <td id="tab_rappel_donnees2.flames">1</td>
-                    </tr>
-                </table>
+                <h1>Données saisies pour la simulation</h1>
+                <h2>Scénario choisi </h2>
+				<div class="bloc">
+					<div class="row first">
+						<div class="span3">Année de référence</div>
+						<div class="span4">Année cible</div>
+						<div class="span4">Consommation brute annuelle</div>
+					</div>
+					<div class="row">
+						<div class="span3" id="tab_rappel_donnees1.anneeref"></div>
+						<div class="span4" id="tab_rappel_donnees1.anneecible"></div>
+						<div class="span4" id="tab_rappel_donnees1.conso"></div>
+					</div>
+				</div>
+                <h2>Mix Electrique choisi</h2>
+				<div class="bloc">
+					<div class="row first">
+						<div class="span2">Energie nucléaire</div>
+						<div class="span2 double">Energie photovoltaïque</div>
+						<div class="span2">Energie éolienne</div>
+						<div class="span2 double">Energie hydraulique</div>
+						<div class="span3">Energie des centrales à flamme</div>
+					</div>
+					<div class="row">
+						<div class="span2 without" id="tab_rappel_donnees2.nuc"></div>
+						<div class="span2 without" id="tab_rappel_donnees2.photo"></div>
+						<div class="span2 without" id="tab_rappel_donnees2.eol"></div>
+						<div class="span2 without" id="tab_rappel_donnees2.hydrau"></div>
+						<div class="span3" id="tab_rappel_donnees2.flames"></div>
+					</div>
+				</div>
 
                 <img class="separateur" src="img/separateur.jpg" alt="separateur" />
             </div>

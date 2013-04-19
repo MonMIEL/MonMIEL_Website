@@ -106,8 +106,13 @@ section #camembert {
 }
 
 .row.first .span1,
-.row.first .evol {
+.row.first .evol,
+.row.first .double {
 	margin-top: 0px;
+}
+
+.row .span2.without {
+	margin-top:0;
 }
 
 
