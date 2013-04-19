@@ -16,6 +16,7 @@ function chartselect( chart, index){
 }
 
 var passer=false;
+
 function passerEnergetique(){
     document.getElementById('ariane').innerHTML="<img src='img/ariane3.png' />";
     document.getElementById("rendue2").style.display="";
@@ -26,6 +27,7 @@ function passerEnergetique(){
     passer=true;
     }
 }
+
 function passerParc(){
     document.getElementById('ariane').innerHTML="<img src='img/ariane2.png' />";
     document.getElementById("parc").style.display="";
@@ -41,8 +43,11 @@ function exporterChartConso() {
         }
     });
 }
+
 var ouvert=false;
+
 var name="";
+
 var afficherPieChart1 = function(){
     var affecterancien=false;
     if(name!="" && name!= this.name && ouvert==true){ chart1.series[0].select(false);ouvert=false};

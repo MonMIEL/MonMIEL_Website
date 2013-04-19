@@ -44,10 +44,19 @@
 
         function gorendu(){
             var html = "resCalculMonMiel.php?"+
-                    "consommation2050="+ consommation2050+
-                    "&nuc_gwh="+ document.getElementById("nuc_gwh").value+
-                    "&pho_gwh="+ document.getElementById("pho_gwh").value +
-                    "&eol_gwh="+ document.getElementById("eol_gwh").value +
+                    "aref="+anneeRef+
+                    "&acible="+anneeCible+
+                    "&cons="+ consommation2050+
+                    "&nucp="+ document.getElementById("nuc").value +
+                    "&nucv="+ document.getElementById("nuc_gwh").value +
+                    "&php="+ document.getElementById("pho").value +
+                    "&phv="+ document.getElementById("pho_gwh").value +
+                    "&eolp="+ document.getElementById("eol").value +
+                    "&eolv="+ document.getElementById("eol_gwh").value +
+                    "&hydp="+ document.getElementById("hyd").value +
+                    "&hydv="+ document.getElementById("hyd_gwh").value +
+                    "&cenp="+ document.getElementById("cen").value +
+                    "&cenv="+ document.getElementById("cen_gwh").value +
                     "&nbPoints=100";
             window.location = html;
         }
@@ -57,7 +66,6 @@
     <!-- Le fav-->
     <link rel="shortcut icon" href="img/logo.png">
 
-	
 </head>
 <body>
     <?php include("header.php"); ?>
@@ -79,54 +87,6 @@
                 echo "Merci de renseigner les informations avant de simuler";
             echo "</div>";
             }?>
-        </div>
-            <!--<ul class="pager">-->
-            <!--<div class="bloc">
-                <div class="row">
-					
-					<div class="span6 gauche">Année de référence :</div>
-					<div class="span6 droite">
-						<select id="anneeRef">
-							<option>2011</option>
-							<option>2012</option>
-						</select>
-						<!-- info bulle -->
-				<!--		<a href="#" class="bulle">
-							<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
-							<span class="bulle-content">On choisit ici une année de référence, qu'on prendra pour le calcul de notre scénario.</span>
-						</a>
-						<!-- info bulle -->
-					<!--</div>
-				</div>
-				<p id="labelHorizonRef"></p>
-                <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
-				<!--<div class="bouton">
-					<a onclick="validerHorizonRef()"><span class="but-icon"></span>Valider</a>
-				</div>
-            </div>
-			
-			<div class="bloc last">
-                <div class="row">
-					<div class="span6 gauche">Année cible :</div>
-					<div class="span6 droite">
-						<select id="anneeCible">
-							<option>2050</option>
-						</select>
-						<!-- info bulle -->
-					<!--	<a href="#" class="bulle">
-							<img src="img/bulle.png" class="bulle" style="height:25px; width:25px;"/>
-							<span class="bulle-content">L'année lors de laquelle on désire connaitre la consommation plus tard.</span>
-						</a>
-						<!-- info bulle -->						
-				<!--	</div>
-				</div>
-				<p id="labelHorizonCible"></p>
-                <!--<li><a id="ValiderHorizon" onclick="validerHorizon()">Valider</a></li>-->
-				<!--<div class="bouton">
-					<a onclick="validerHorizonCible()"><span class="but-icon"></span>Valider</a>
-				</div>
-            </div>
-
         </div>
 
         <!-- Scenario section -->
@@ -188,8 +148,8 @@
 												<th>Consommation</br>(TWh)</th>
 											</tr>
 											<tr>
-												<td id="tab_chart_Scenario.id"></td>
-												<td id="tab_chart_Scenario.qu"></td>
+												<td id="tab_chart_Scenario.id">1</td>
+												<td id="tab_chart_Scenario.qu">1</td>
 											</tr>
 										</table>
 										<div id="etatScenario" style="display:none"></div>

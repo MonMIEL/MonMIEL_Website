@@ -468,8 +468,10 @@ function postActionsJSON(){
     majChiffresParcCalcule();
 	majLegende();
 
+    document.getElementById("RappelDonnées").style.display = "";
+    majRappelDonnees();
     document.getElementById("parc").style.display = "";
-	document.getElementById("calcul").style.display = "";
+    document.getElementById("calcul").style.display = "";
 
     /*Mix*/
     initialiserVariablesMix();

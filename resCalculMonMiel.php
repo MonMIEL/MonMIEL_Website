@@ -31,19 +31,27 @@
             var nuc_gwh;
             var pho_gwh;
             var eol_gwh;
+            var hyd_gwh;
+            var cen_gwh;
             var nbPoints;
             var consommation2050;
             function init(){
-                anneeRef = 2011;
-                anneeCible = 2050;
-                consommation2050 = <?php echo $_GET["consommation2050"] ?>;
-                nuc_gwh = <?php echo $_GET["nuc_gwh"] ?>;
-                pho_gwh = <?php echo $_GET["pho_gwh"] ?>;
-                eol_gwh = <?php echo $_GET["eol_gwh"] ?>;
+                anneeRef = <?php echo $_GET["aref"] ?>;
+                anneeCible = <?php echo $_GET["acible"] ?>;
+                consommation2050 = <?php echo $_GET["cons"] ?>;
+                //valeurs
+                nuc_gwh = <?php echo $_GET["nucv"] ?>;
+                pho_gwh = <?php echo $_GET["phv"] ?>;
+                eol_gwh = <?php echo $_GET["eolv"] ?>;
+                hyd_gwh = <?php echo $_GET["hydv"] ?>;
+                cen_gwh = <?php echo $_GET["cenv"] ?>;
+
+                nuc_per = <?php echo $_GET["nucp"] ?>;
+                pho_per = <?php echo $_GET["php"] ?>;
+                eol_per = <?php echo $_GET["eolp"] ?>;
+                hyd_per = <?php echo $_GET["hydp"] ?>;
+                cen_per = <?php echo $_GET["cenp"] ?>;
                 nbPoints = <?php echo $_GET["nbPoints"] ?>;
-//                console.log("nuc_gwh : "+nuc_gwh);
-//                console.log("pho_gwh : "+pho_gwh);
-//                console.log("eol_gwh : "+eol_gwh);
                 if(typeof(nuc_gwh)=="undefined" ||
                         typeof(pho_gwh)=="undefined" ||
                         typeof(eol_gwh)=="undefined"){
@@ -52,7 +60,20 @@
                 }
                 calculerMonMIEL();
             }
-			
+
+            function majRappelDonnees(){
+
+                document.getElementById('tab_rappel_donnees1.anneeref').innerHTML  =anneeRef;          //MaJ tableau année
+                document.getElementById('tab_rappel_donnees1.anneecible').innerHTML  =anneeCible;          //MaJ tableau année
+                document.getElementById('tab_rappel_donnees1.conso').innerHTML  =consommation2050+" TwH";    //MaJ tableau conso
+
+                document.getElementById('tab_rappel_donnees2.nuc').innerHTML    =nuc_per+" %";          //MaJ tableau année
+                document.getElementById('tab_rappel_donnees2.photo').innerHTML  =pho_per+" %";    //MaJ tableau conso
+                document.getElementById('tab_rappel_donnees2.eol').innerHTML    =eol_per+" %";          //MaJ tableau année
+                document.getElementById('tab_rappel_donnees2.hydrau').innerHTML =hyd_per+" %";    //MaJ tableau conso
+                document.getElementById('tab_rappel_donnees2.flames').innerHTML =cen_per+" %";          //MaJ tableau année
+
+            }
         </script>
         <!-- Le fav  -->
         <link rel="shortcut icon" href="img/logo.png">
@@ -69,7 +90,41 @@
 			</div>
 
 			<div id="loadCalculMonMIEL"></div>
+            <div id="RappelDonnées" style="display:none;">
+                <h1>Calcul réussit!</h1>
+                <h6>Scénario choisi : </h6>
+                <table class="table table-bordered">
+                    <tr class="success">
+                        <th>Année de référence</th>
+                        <th>Année cible</th>
+                        <th>Consommation brute annuelle</th>
+                    </tr>
+                    <tr>
+                        <td id="tab_rappel_donnees1.anneeref">1</td>
+                        <td id="tab_rappel_donnees1.anneecible">1</td>
+                        <td id="tab_rappel_donnees1.conso">1</td>
+                    </tr>
+                </table>
+                <h6>Mix Electrique choisi : </h6>
+                <table class="table table-bordered">
+                    <tr class="success">
+                        <th>Energie nucléaire</th>
+                        <th>Energie photovoltaïque</th>
+                        <th>Energie éolienne</th>
+                        <th>Energie hydraulique</th>
+                        <th>Energie des centrales à flamme</th>
+                    </tr>
+                    <tr>
+                        <td id="tab_rappel_donnees2.nuc">1</td>
+                        <td id="tab_rappel_donnees2.photo">1</td>
+                        <td id="tab_rappel_donnees2.eol">1</td>
+                        <td id="tab_rappel_donnees2.hydrau">1</td>
+                        <td id="tab_rappel_donnees2.flames">1</td>
+                    </tr>
+                </table>
 
+                <img class="separateur" src="img/separateur.jpg" alt="separateur" />
+            </div>
 			<div id="parc" style="display:none;">
 
 				<h1>Résultat - Parc calculé</h1>
@@ -242,18 +297,6 @@
                         <h1>MIEL Calculé <img src="img/help.png" class="bulle" tooltip="Le mix calculé est le mix ciblé avec les ajustements fait par le simulateur. Il peut y avoir un écart important si le mix ciblé n’était pas assez flexible dans sa capacité à répondre à la demande" /></h1>
                         <div id="chart_2" class="chart"></div>
                     </div>
-                </div>
-                <img class="separateur" src="img/separateur.jpg" alt="separateur" />
-
-                <h1>Explications des calculs <img src="img/help.png" class="bulle" tooltip="Découvrez le bilan des analyses et calculs réalisés dans cette partie !" /></h1>
-                <div class="aide">
-                    <p>Ce tableau présente le parc calculé par le simulateur.</p>
-                    <p>Le parc ciblé, celui qui a été saisi lors du paramétrage de la simulation, peut ne pas répondre au besoin en électricité. Il doit répondre à une règle importante :</p>
-                    <p><Strong>Production = Consommation</Strong></p>
-                    <p>La production représente l’ensemble de l’énergie générée par l’ensemble du parc électrique et la consommation ce qui est demandé par la population en électricité.</p>
-                    <p>Si la production est supérieure à la consommation, le réseau ne supporte pas et risque de s’endommager voire de provoquer une coupure générale.</p>
-                    <p>Si la production est inférieure à la demande, certains utilisateurs risquent de ne plus avoir d’électricité.</p>
-                    </p>
                 </div>
             </div>
 

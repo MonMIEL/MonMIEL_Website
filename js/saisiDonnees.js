@@ -1,13 +1,14 @@
-var anneeRef;         //année de référence choisie par l'utilisateur dans la partie Horizon
-var anneeCible;         //année de référence choisie par l'utilisateur dans la partie Horizon
-var consommation2050 = 700; //consommation pour l'année 2050 choisie par l'utilisateur dans la partie Scenario
+var anneeRef;               //année de référence choisie par l'utilisateur dans la partie Horizon
+var anneeCible;      //année de référence choisie par l'utilisateur dans la partie Horizon
+var consommation2050; //consommation pour l'année 2050 choisie par l'utilisateur dans la partie Scenario
 
-var validHorizonRef=0; //=1 si la partie Horizon est validée, =0 sinon
-var validHorizonCible=0; //=1 si la partie Horizon est validée, =0 sinon
-var validScenario=0;//=1 si la partie Scenario est validée, =0 sinon
-var validMonMix=0;  //=1 si la partie MonMixElectrique est validée, =0 sinon
+var validHorizonRef=0;      //=1 si la partie Horizon est validée, =0 sinon
+var validHorizonCible=0;    //=1 si la partie Horizon est validée, =0 sinon
+var validScenario=0;        //=1 si la partie Scenario est validée, =0 sinon
+var validMonMix=0;          //=1 si la partie MonMixElectrique est validée, =0 sinon
 
 var ongletActif='RTE';
+
 function changementOnglet(ongletClick){
     if(ongletActif==ongletClick) return;
 
@@ -34,6 +35,7 @@ function changementOnglet(ongletClick){
     }
 
 }
+
 function validateNumber(evt) {
     var theEvent = evt || window.event;
     var key = theEvent.keyCode || theEvent.which;
@@ -44,6 +46,7 @@ function validateNumber(evt) {
         if(theEvent.preventDefault) theEvent.preventDefault();
     }
 }
+
 function miseAjourGraphiquePersonnelConso(){
     var y =parseInt( document.getElementById('consoSaisie').value);
     if(parseInt(y)>700){
@@ -63,6 +66,7 @@ function miseAjourGraphiquePersonnelConso(){
     chart_Scenario.series[0].data[1].y=parseInt(y);
     chart_Scenario.render();
 }
+
 function miseAjourGraphiquePersonnelAnnee(){
 
     var x = document.getElementById('anneeSaisie').value;
@@ -85,6 +89,7 @@ function miseAjourGraphiquePersonnelAnnee(){
 }
 
 var passe = false;
+
 var chart_cam;
 
 function passerChartUfe(){
@@ -257,6 +262,7 @@ function passerChartUfe(){
         }
     });
 }
+
 function passerChartPersonnel(){
 
     chart_Scenario = new Highcharts.Chart({
@@ -361,6 +367,7 @@ function passerChartPersonnel(){
         });
 
 }
+
 function passerChartRte(){
     anneeCible="";
     consommation2050="";
@@ -672,6 +679,7 @@ function passerChartRte(){
         }]
     });
 }
+
 function validerScenario(){
     document.getElementById('monmix').style.display = "block";
     document.getElementById('simuler').style.display = "block";
@@ -785,36 +793,24 @@ function updateCamembert(){
     chart_cam.series[0].setData(data);
 }
 
-// function chartScenarioHandlerOver() {
-    // //console.log(this);
-
-    // //MaJ du tableau de la quantité choisie en Gwh
-    // document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
-    // document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
-
-// }
-
-// function chartScenarioHandlerClick() {
-    // //console.log(this);
-
-    // //Permettre le click sur le bouton "suivant"
-    // document.getElementById("buttonValiderScenario").removeAttribute("disabled");
-
-    // //MaJ du tableau de la quantité choisie en Gwh
-    // document.getElementById("tab_chart_Scenario.id").innerHTML = anneeRef;
-    // document.getElementById("tab_chart_Scenario.qu").innerHTML = this.y;
-    // document.getElementById("etatScenario").innerHTML = '<div style="color:green">VALIDE</div>';
-    // consommation2050 = this.y;
-
-// }
-
-
 function affecterConsommation(X,Y){
     consommation2050=Y;
     anneeCible=X;
     document.getElementById('tab_chart_Scenario.qu').innerHTML=Y;
     document.getElementById('tab_chart_Scenario.id').innerHTML=X;
     document.getElementById('bouton_scenario').style.display="";
+}
+
+function affecterConsommationLoadingPageRTE(){
+    //attention : la première chart est celle de RTE, contenant 4 points pour la première courbe
+
+    anneeCible          = chart_Scenario.series[0].data[4].x;   //choisir l'année cible de RTE
+    consommation2050    = chart_Scenario.series[0].data[4].y;   //choisir la consommation correspondante
+    chart_Scenario.series[0].data[4].select();                  //choisir le bouton cliqué sur la chart
+
+    document.getElementById('tab_chart_Scenario.qu').innerHTML=consommation2050;          //MaJ tableau année
+    document.getElementById('tab_chart_Scenario.id').innerHTML=anneeCible;    //MaJ tableau conso
+    document.getElementById('bouton_scenario').style.display="";                    //MaJ bouton click
 }
 
 // Two charts definition
@@ -836,93 +832,8 @@ $(document).ready(function() {
     });
     // First chart initialization
     passerChartRte();
-/*
-    // Second chart initialization (pie chart)
-    chart2 = new Highcharts.Chart({
-        chart: {
-            renderTo: 'chart_2',
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            height: 350
-        },
-        title: {
-            text: 'Pie chart diagram for the first developer'
-        },
-        tooltip: {
-            pointFormat: '<b>{point.percentage}%</b>',
-            percentageDecimals: 1
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },
-        series: [{
-            type: 'pie',
-            name: 'Dev #1',
-            data: [
-                ['Processing.js', 5],
-                ['Impact.js', 10],
-                ['Other', 20],
-                ['Ease.js', 22],
-                ['Box2D.js', 25],
-                ['WebGL', 28],
-                ['DOM', 30],
-                ['CSS', 40],
-                ['Canvas', 80],
-                ['Javascript', 90]
-            ]
-        }]
-    });
-
-    chart3 = new Highcharts.Chart({
-        chart: {
-            renderTo: 'chart_3',
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            height: 350
-        },
-        title: {
-            text: 'Pie chart diagram for the first developer'
-        },
-        tooltip: {
-            pointFormat: '<b>{point.percentage}%</b>',
-            percentageDecimals: 1
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },
-        series: [{
-            type: 'pie',
-            name: 'Dev #1',
-            data: [
-                ['Nucléaire', 15],
-                ['Photovoltaïque', 10],
-                ['Other', 20],
-                ['Ease.js', 22],
-                ['Box2D.js', 25],
-                ['WebGL', 28],
-                ['DOM', 30],
-                ['CSS', 40],
-                ['Canvas', 80],
-                ['Javascript', 90]
-            ]
-        }]
-    });
-*/
-
+    //init anneeRef
+    anneeRef=2011;
+    // First default value initialization
+    affecterConsommationLoadingPageRTE();
 });
